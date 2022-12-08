@@ -1,4 +1,19 @@
+@font-face {
+  font-family: "Baloo";
+  src: url("./fonts/BalooBhaijaan2.ttf");
+}
+
 body {
-  margin: 0;
-  background-color: blueviolet;
+  margin: 15px 50px 15px 50px;
+  background-image: url("./imgs/mainBackground.svg");
+  font-family: 'Baloo';
+  color: white;
+}
+
+.mainMenu{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  background-color: red;
+
 }
