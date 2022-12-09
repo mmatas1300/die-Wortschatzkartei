@@ -1,17 +1,48 @@
 [
-    {
-        "category": "Substantive",
-        "artist": "Palaye Royale",
-        "songs": "",
-        "id": 62
-    },
+  {
+    "wort": "Station",
+    "typ": "Nomen-1",
+    "artikle": "die",
+    "sg": "Station",
+    "pl": "Stationen",
+    "verwandte": "der Zug - U-Bahn",
+    "beispiel": "Da ist die Station.",
+    "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
+    "id": 1
+  },
+  
+  {
+    "wort": "Obst",
+    "typ": "Nomen-1",
+    "artikle": "das",
+    "sg": "Obst",
+    "pl": "-(sg)",
+    "verwandte": "Äpfel - Mango - Ananas",
+    "beispiel": "Das Obst ist gesund.",
+    "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
+    "id": 2
+  },
 
-    {
-        "category": "Verben",
-        "artist": "Palaye Royale",
-        "songs": "",
-        "id": 64
-    }
+  {
+    "wort": "Friseur",
+    "typ": "Nomen-2",
+    "mann": "Friseur",
+    "manner": "Friseure",
+    "frau": "Friseurin",
+    "frauen": "Friseurinnen",
+    "verwandte": "Beruf",
+    "beispiel": "Sie ist Frieseurin von Beruf",
+    "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
+    "id": 3
+  },
 
-
+  {
+    "wort": "Besuchen",
+    "typ": "Verb",
+    "präsens": ["Besuche","Besuchst","Besucht","Besuchen","Besucht","Besuchen"],
+    "verwandte": "der Zug",
+    "beispiel": "Er besucht meine Oma.",
+    "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
+    "id": 4
+  }
 ]

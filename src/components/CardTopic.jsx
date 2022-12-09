@@ -1,4 +1,5 @@
-export function CardTopic(card){
-    return <li><div>{card.category}</div></li>;
+export function CardTopic({card}){
+
+    return <li><div>{card.wort}</div></li>;
 
 }
