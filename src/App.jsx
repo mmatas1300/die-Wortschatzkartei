@@ -7,9 +7,9 @@ export function App() {
     </header>
     <main>
       <ul className="mainMenu">
-        <li>A1</li>
-        <li>A2</li>
-        <li>B1</li>
+        <li className="levelCard lcA1">A1</li>
+        <li className="levelCard lcA2">A2</li>
+        <li className="levelCard lcB1">B1</li>
       </ul>
     </main>
     <footer>
