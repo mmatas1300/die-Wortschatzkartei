@@ -1,0 +1,14 @@
+.cardMenuGrid{
+    list-style: none;
+    text-align: center;
+    font-size: 180%;
+    padding: 50px;
+    background-color: rgb(232, 158, 0);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.cardMenuGrid:hover{
+    scale: 1.07;
+}

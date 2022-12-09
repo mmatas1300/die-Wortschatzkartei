@@ -5,19 +5,3 @@
     padding: 0;
     justify-content: center;
 }
-
-.elementGrid{
-    list-style: none;
-    text-align: center;
-    font-size: 170%;
-    padding: 50px;
-    background-color: red;
-    border-radius: 20px;
-    cursor: pointer;
-
-}
-
-.elementGrid:hover{
-    scale: 1.1;
-    transition: 0.2 ease-in-out;
-}
