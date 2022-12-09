@@ -16,18 +16,24 @@ body {
   color: white;
 }
 
+h1 {
+  text-align: center;
+}
+
 .mainMenu{
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
   justify-content: center;
-  gap: 25px;
 }
 
 .levelCard{
   list-style: none;
-  padding: 30px;
-  margin: 5px;
+  padding: 12px 120px;
+  margin: 0;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .lcA1{
@@ -42,7 +48,6 @@ body {
   background-color: var(--color-netzwerk-B1);
 }
 
-.levelCard:hover{
-  scale: 1.1;
-  transition: 1s;
-}
+
+
+
