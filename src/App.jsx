@@ -6,11 +6,15 @@ export function App() {
       <h1>die Wortschatzkartei</h1>
     </header>
     <main>
-      <ul className="mainMenu">
-        <li className="levelCard lcA1">A1</li>
-        <li className="levelCard lcA2">A2</li>
-        <li className="levelCard lcB1">B1</li>
-      </ul>
+      <div className="mainMenu">
+        <ul className="levelCard lcA1">
+          <li>A1</li>
+          <li className="levelTopics">Lebensmittel</li>
+          <li className="levelTopics">Berufe</li>
+        </ul>
+        <ul className="levelCard lcA2">A2</ul>
+        <ul className="levelCard lcB1">B1</ul>
+      </div>
     </main>
     <footer>
       2023

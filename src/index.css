@@ -4,9 +4,9 @@
 }
 
 :root {
-  --color-netzwerk-A1: #b82c50;
-  --color-netzwerk-A2: #79ac2b;
-  --color-netzwerk-B1: #0079a4;
+  --color-red: #b82c50;
+  --color-green: #79ac2b;
+  --color-blue: #0079a4;
 }
 
 body {
@@ -21,31 +21,39 @@ h1 {
 }
 
 .mainMenu{
-  display: grid;
-  grid-template-columns: 1fr;
+  padding: 0;
+  display: flex;
+  justify-content: center;
   gap: 20px;
 }
 
 .levelCard{
   list-style: none;
-  padding: 12px 120px;
+  text-align: center;
+  padding: 120px 30px;
   margin: 0;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
 
 .lcA1{
-  background-color: var(--color-netzwerk-A1);
+  background-color: var(--color-red);
 }
 
 .lcA2{
-  background-color: var(--color-netzwerk-A2);
+  background-color: var(--color-green);
 }
 
 .lcB1{
-  background-color: var(--color-netzwerk-B1);
+  background-color: var(--color-blue);
 }
+
+.levelCard:hover{
+  padding: 120px 30px;
+}
+
 
 
 
