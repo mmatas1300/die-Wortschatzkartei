@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/die-Wortschatzkartei/static/css/main.5a68d625.css",
-    "main.js": "/die-Wortschatzkartei/static/js/main.38cb0035.js",
+    "main.css": "/die-Wortschatzkartei/static/css/main.f690c58a.css",
+    "main.js": "/die-Wortschatzkartei/static/js/main.8cf7cb54.js",
     "static/media/BalooBhaijaan2.ttf": "/die-Wortschatzkartei/static/media/BalooBhaijaan2.f668947fd71ee6f29d88.ttf",
     "static/media/mainBackground.svg": "/die-Wortschatzkartei/static/media/mainBackground.31b67fa3839bef6328ff.svg",
     "index.html": "/die-Wortschatzkartei/index.html",
-    "main.5a68d625.css.map": "/die-Wortschatzkartei/static/css/main.5a68d625.css.map",
-    "main.38cb0035.js.map": "/die-Wortschatzkartei/static/js/main.38cb0035.js.map"
+    "main.f690c58a.css.map": "/die-Wortschatzkartei/static/css/main.f690c58a.css.map",
+    "main.8cf7cb54.js.map": "/die-Wortschatzkartei/static/js/main.8cf7cb54.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a68d625.css",
-    "static/js/main.38cb0035.js"
+    "static/css/main.f690c58a.css",
+    "static/js/main.8cf7cb54.js"
   ]
 }
