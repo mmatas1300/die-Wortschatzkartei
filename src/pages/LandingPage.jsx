@@ -1,7 +1,7 @@
-import {CardsGrid} from "../components/CardsGrid";
+import {MenuGrid} from "../components/MenuGrid";
 
 export function LandingPage(){
-    return <div>Hola
-        <CardsGrid />
+    return <div>
+        <MenuGrid />
     </div>;
 }
