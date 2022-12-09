@@ -1,0 +1,15 @@
+.headPage{
+    display: grid;
+    grid-template-columns: 50px auto 35px;
+    gap: 5px;
+}
+
+.titlePage{
+    margin: 0;
+}
+
+.backButton{
+    display: flex;
+    align-self: center;
+}
+
