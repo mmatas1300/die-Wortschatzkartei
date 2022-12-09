@@ -4,9 +4,12 @@
 }
 
 :root {
+  --color-rose: #c51487;
   --color-red: #b82c50;
   --color-green: #79ac2b;
   --color-blue: #0079a4;
+  --color-yellow: #fffb15;
+  --color-orange: #ffaa00;
 }
 
 body {
@@ -28,41 +31,21 @@ h1 {
   gap: 20px;
 }
 
-.levelCard{
+.topicCard{
   position: relative;
-  padding: 180px 25px;
+  padding: 100px 100px;
   margin: 0;
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  transition: 0.5s ease-in-out;
 }
 
-.levelTopics{
-  position: absolute;
-  top:0;
-  left: 10;
-  opacity: 0%;
+
+.verben{
+  background-color: var(--color-orange);
 }
 
-.levelCard:hover .levelTopics{
-  left: 40px;
-  opacity: 100%;
-  transition: 1.2s ease-in-out;
+.substantive{
+  background-color: var(--color-rose);
 }
 
-.levelCard:hover{
-  padding-right: 170px;
-}
-
-.lcA1{
-  background-color: var(--color-red);
-}
-
-.lcA2{
-  background-color: var(--color-green);
-}
-
-.lcB1{
-  background-color: var(--color-blue);
-}
