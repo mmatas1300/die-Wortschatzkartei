@@ -1,21 +1,13 @@
 import { useParams } from "react-router-dom";
-
-
+import { CardsSlide } from "./CardsSlide.jsx";
 
 export function CardsSlideGrid(){
 
     const {letterId} =useParams();
     const wortschatzkartei = require("./Wortschatzkartei.json");
-    const filterWortschatzkartei =wortschatzkartei.filter(e => e.anfangsbuchstabe == letterId);
-
-    
-    for (const i in filterWortschatzkartei) {
-        if (filterWortschatzkartei[i].typ == "Verb") {
-            var verben = filterWortschatzkartei[i];
-        }
-    }
-
-
-    console.log(verben);
-    return "Hecho mi pana";
+    const filterWortschatzkartei =wortschatzkartei.filter(e => e.anfangsbuchstabe == letterId);  
+    return (<ul>
+        {filterWortschatzkartei.map((card) => (<CardsSlide card={card}/>))}
+    </ul>
+    );
 }

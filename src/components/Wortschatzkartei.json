@@ -1,31 +1,21 @@
 [
   {
-    "anfangsbuchstabe": "O",
-    "typ": "Nomen-1",
-    "artikle": "die",
-    "sg": "das Station",
-    "pl": "die Stationen",
+    "type": "Nomen-1",
+    "anfangsbuchstabe": "F",
+    "typ": "Nomen",
+    "artikle": "das",
+    "sg": "das Flugzeug",
+    "pl": "die Flugzeuge",
     "verwandte": "der Zug - U-Bahn",
-    "beispiel": "Da ist die Station.",
+    "beispiel": "Da ist das Flugzeug.",
     "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
     "id": 1
   },
-  
-  {
-    "anfangsbuchstabe": "O",
-    "typ": "Nomen-1",
-    "artikle": "das",
-    "sg": "das Obst",
-    "pl": "-(Sg)",
-    "verwandte": "Äpfel - Mango - Ananas",
-    "beispiel": "Das Obst ist gesund.",
-    "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
-    "id": 2
-  },
 
   {
-    "anfangsbuchstabe": "O",
-    "typ": "Nomen-2",
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "F",
+    "typ": "Nomen",
     "mann": "der Friseur",
     "manner": "die Friseure",
     "frau": "die Friseurin",
@@ -33,26 +23,24 @@
     "verwandte": "Beruf",
     "beispiel": "Sie ist Frieseurin von Beruf",
     "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
+    "id": 2
+  },
+  
+  {
+    "type": "Verbe",
+    "anfangsbuchstabe": "F",
+    "typ": "Verbe",
+    "infinitiv": "Finden",
+    "präsens1": "Finde",
+    "präsens2": "Findest",
+    "präsens3": "Findet",
+    "präsens4": "Finden",
+    "präsens5": "Findet",
+    "präsens6": "Finden",
+    "beispiel": "Das Obst ist gesund.",
+    "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
     "id": 3
-  },
-
-  {
-    "anfangsbuchstabe": "O",
-    "typ": "Verb",
-    "präsens": ["Besuche","Besuchst","Besucht","Besuchen","Besucht","Besuchen"],
-    "verwandte": "der Zug",
-    "beispiel": "Er besucht meine Oma.",
-    "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
-    "id": 4
-  },
-
-  {
-    "anfangsbuchstabe": "O",
-    "typ": "Verb",
-    "präsens": ["Habe","Hast","Hat","Haben","Habt","Haben"],
-    "verwandte": "Habr ein",
-    "beispiel": "Du hast mich",
-    "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
-    "id": 4
   }
+
+
 ]
