@@ -1,6 +1,6 @@
 import { LandingPage } from "./pages/LandingPage";
 import { BrowserRouter as Router, Routes,  Route, Link} from "react-router-dom";
-import { CardsReel } from "./pages/CardsReel";
+import { CardsSlidePage } from "./pages/CardsSlidePage";
 
 //Componente de inicio
 export function App() {
@@ -8,7 +8,7 @@ export function App() {
     <main>
       <Routes>
       <Route path="/die-Wortschatzkartei" element={<LandingPage/>} />
-      <Route path="/die-Wortschatzkartei/:letterId" element={<CardsReel/>} />
+      <Route path="/die-Wortschatzkartei/:letterId" element={<CardsSlidePage/>} />
       </Routes>
     </main>
   </Router>

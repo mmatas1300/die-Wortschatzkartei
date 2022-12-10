@@ -1,10 +1,10 @@
 [
   {
-    "wort": "Station",
+    "anfangsbuchstabe": "O",
     "typ": "Nomen-1",
     "artikle": "die",
-    "sg": "Station",
-    "pl": "Stationen",
+    "sg": "das Station",
+    "pl": "die Stationen",
     "verwandte": "der Zug - U-Bahn",
     "beispiel": "Da ist die Station.",
     "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
@@ -12,11 +12,11 @@
   },
   
   {
-    "wort": "Obst",
+    "anfangsbuchstabe": "O",
     "typ": "Nomen-1",
     "artikle": "das",
-    "sg": "Obst",
-    "pl": "-(sg)",
+    "sg": "das Obst",
+    "pl": "-(Sg)",
     "verwandte": "Äpfel - Mango - Ananas",
     "beispiel": "Das Obst ist gesund.",
     "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
@@ -24,12 +24,12 @@
   },
 
   {
-    "wort": "Friseur",
+    "anfangsbuchstabe": "O",
     "typ": "Nomen-2",
-    "mann": "Friseur",
-    "manner": "Friseure",
-    "frau": "Friseurin",
-    "frauen": "Friseurinnen",
+    "mann": "der Friseur",
+    "manner": "die Friseure",
+    "frau": "die Friseurin",
+    "frauen": "die Friseurinnen",
     "verwandte": "Beruf",
     "beispiel": "Sie ist Frieseurin von Beruf",
     "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
@@ -37,11 +37,21 @@
   },
 
   {
-    "wort": "Besuchen",
+    "anfangsbuchstabe": "O",
     "typ": "Verb",
     "präsens": ["Besuche","Besuchst","Besucht","Besuchen","Besucht","Besuchen"],
     "verwandte": "der Zug",
     "beispiel": "Er besucht meine Oma.",
+    "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
+    "id": 4
+  },
+
+  {
+    "anfangsbuchstabe": "O",
+    "typ": "Verb",
+    "präsens": ["Habe","Hast","Hat","Haben","Habt","Haben"],
+    "verwandte": "Habr ein",
+    "beispiel": "Du hast mich",
     "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
     "id": 4
   }
