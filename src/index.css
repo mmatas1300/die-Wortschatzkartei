@@ -6,7 +6,7 @@
 :root {
   --color-rose: #c51487;
   --color-red: #b82c50;
-  --color-green: #79ac2b;
+  --color-green: #4dac2b;
   --color-blue: #0079a4;
   --color-yellow: #fffb15;
   --color-orange: #ffaa00;
@@ -25,28 +25,8 @@ h1 {
 }
 
 .mainMenu{
-
   padding: 0;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
-
-.topicCard{
-  position: relative;
-  padding: 100px 100px;
-  margin: 0;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-
-.verben{
-  background-color: var(--color-orange);
-}
-
-.substantive{
-  background-color: var(--color-rose);
-}
-
