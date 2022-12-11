@@ -1,0 +1,137 @@
+.karte{
+    margin: 20px;
+    padding: 20px;
+    height: 200px;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+    list-style: none;
+    transition: 0.2s ease-in-out;
+}
+
+
+
+.typ{
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+.sg{
+    position: absolute;
+    font-size: 120%;
+    top: 25px;
+    left: 40px;
+}
+
+.pl{
+    position: absolute;
+    font-size: 120%;
+    top: 60px;
+    left: 40px;
+}
+
+.verwandte{
+    position: absolute;
+    font-size: 100%;
+    top: 160px;
+    left: 40px;
+}
+
+.beispiel{
+    position: absolute;
+    font-size: 100%;
+    top: 190px;
+    left: 40px;
+}
+
+.infinitiv{
+    position: absolute;
+    font-size: 120%;
+    top: 25px;
+    left: 100px;
+}
+
+.präsens1{
+    position: absolute;
+    top: 50px;
+}
+
+.präsens2{
+    position: absolute;
+    top: 70px;
+}
+
+.präsens3{
+    position: absolute;
+    top: 90px;
+}
+
+.präsens4{
+    position: absolute;
+    top: 110px;
+}
+
+.präsens5{
+    position: absolute;
+    top: 130px;
+}
+
+.präsens6{
+    position: absolute;
+    top: 150px;
+}
+
+.mann{
+    position: absolute;
+    font-size: 120%;
+    top: 25px;
+    left: 40px;
+}
+
+
+.manner{
+    position: absolute;
+    font-size: 120%;
+    top: 45px;
+    left: 40px;
+}
+
+.frau{
+    position: absolute;
+    font-size: 120%;
+    top: 75px;
+    left: 40px;
+}
+
+.frauen{
+    position: absolute;
+    font-size: 120%;
+    top: 95px;
+    left: 40px;
+}
+
+
+.karteVerbe{
+    background-color: #ffaa00;
+}
+
+.karteNomenDas{
+    background-color: #4dac2b;
+}
+
+.karteNomenDie{
+    background-color: #b82c50;
+}
+
+.karteNomenDer{
+    background-color: #0079a4;
+}
+
+.karteNomen2{
+    background: linear-gradient(#0079a4, #b82c50);
+}
+
+.karte:hover{
+    scale: 1.05;
+}

@@ -1,12 +1,11 @@
 [
   {
-    "type": "Nomen-1",
+    "type": "Nomen-das",
     "anfangsbuchstabe": "F",
     "typ": "Nomen",
-    "artikle": "das",
     "sg": "das Flugzeug",
     "pl": "die Flugzeuge",
-    "verwandte": "der Zug - U-Bahn",
+    "verwandte": "der Zug - das Schiff",
     "beispiel": "Da ist das Flugzeug.",
     "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
     "id": 1
@@ -21,7 +20,7 @@
     "frau": "die Friseurin",
     "frauen": "die Friseurinnen",
     "verwandte": "Beruf",
-    "beispiel": "Sie ist Frieseurin von Beruf",
+    "beispiel": "Sie ist Friseurin von Beruf",
     "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
     "id": 2
   },
@@ -37,9 +36,33 @@
     "präsens4": "Finden",
     "präsens5": "Findet",
     "präsens6": "Finden",
-    "beispiel": "Das Obst ist gesund.",
+    "beispiel": "Wo finde ich die Schule?",
     "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
     "id": 3
+  },
+
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "F",
+    "typ": "Nomen",
+    "sg": "die Fahrkarte",
+    "pl": "die Fahrkarten",
+    "verwandte": "die Karte",
+    "beispiel": "Da ist die Fahrkarte.",
+    "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
+    "id": 4
+  },
+
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "F",
+    "typ": "Nomen",
+    "sg": "der Familienname",
+    "pl": "die Familiennamen",
+    "verwandte": "der Name",
+    "beispiel": "Mein Name ist Mario.",
+    "image": "https://i.scdn.co/image/ab67616d0000b273ba4846438180facd6b6935a8",
+    "id": 5
   }
 
 
