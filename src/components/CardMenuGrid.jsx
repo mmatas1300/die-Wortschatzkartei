@@ -1,5 +1,5 @@
 import styles from "./CardMenuGrid.module.css";
-import { HashRouter, Routes,  Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export function CardMenuGrid({letter}){
     return <Link to={"/"+letter}>
