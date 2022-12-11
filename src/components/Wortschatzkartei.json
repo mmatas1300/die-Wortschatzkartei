@@ -935,8 +935,61 @@
     "beispiel": "Sie zeichnet ein Bild",
     "image": "https://img.freepik.com/vector-gratis/ilustracion-icono-dibujos-animados-lapiz-papel-concepto-icono-objeto-educacion-aislado-estilo-dibujos-animados-plana_138676-2137.jpg",
     "id": 55
-  }
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "W",
+    "wort": "Wort",
+    "typ": "Nomen",
+    "sg": "das Wort",
+    "pl": "die Wörter",
+    "verwandte": "die Antwort",
+    "beispiel": "Wort ist ein Wort.",
+    "image": "https://png.pngtree.com/png-vector/20190224/ourlarge/pngtree-vector-construction-house-icon-png-image_701126.jpg",
+    "id": 56
+  },
 
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "T",
+    "wort": "Text",
+    "typ": "Nomen",
+    "sg": "der Text",
+    "pl": "die Texte",
+    "verwandte": "",
+    "beispiel": "Ich schreibe einen text.",
+    "image": "https://static.vecteezy.com/system/resources/previews/002/599/691/non_2x/paper-document-file-with-text-lines-line-style-icon-free-vector.jpg",
+    "id": 57
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "I",
+    "wort": "Ingenieur",
+    "typ": "Nomen",
+    "mann": "der Ingenieur",
+    "manner": "die Ingenieure",
+    "frau": "die Ingenieurin",
+    "frauen": "die Ingenieurinnen",
+    "verwandte": "der Beruf - der Techniker",
+    "beispiel": "Ich bin Ingenieur von Beruf",
+    "image": "https://static.vecteezy.com/ti/vetor-gratis/p1/1842088-capacete-com-icone-de-engrenagem-gratis-vetor.jpg",
+    "id": 58
+  },
+
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "P",
+    "wort": "Person",
+    "typ": "Nomen",
+    "sg": "die Person",
+    "pl": "die Personen",
+    "verwandte": "die Leute",
+    "beispiel": "",
+    "image": "https://static.vecteezy.com/system/resources/previews/005/276/776/non_2x/logo-icon-person-on-white-background-free-vector.jpg",
+    "id": 59
+  }
 
 
 
