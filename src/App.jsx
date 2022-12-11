@@ -1,10 +1,12 @@
 import { LandingPage } from "./pages/LandingPage";
 import { HashRouter, Routes,  Route, Link} from "react-router-dom";
 import { CardsSlidePage } from "./pages/CardsSlidePage";
+import ScrollToTop from "./components/ScrollToTop";
 
 //Componente de inicio
 export function App() {
   return <HashRouter>
+    <ScrollToTop />
     <main>
       <Routes>
       <Route path="/" element={<LandingPage/>} />

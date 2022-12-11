@@ -3,7 +3,6 @@ import { CardsSlide } from "./CardsSlide.jsx";
 import styles from "./CardsSlideGrid.module.css";
 import { Fade } from "react-awesome-reveal";
 
-
 export function CardsSlideGrid(){
     const {letterId} =useParams();
     const wortschatzkartei = require("./Wortschatzkartei.json");

@@ -1,7 +1,5 @@
 import styles from "./CardsSlide.module.css";
 
-
-
 export function CardsSlide({card}){
     
     if(card.type=="Nomen-das"){
