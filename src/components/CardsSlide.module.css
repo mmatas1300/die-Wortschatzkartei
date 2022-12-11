@@ -9,6 +9,16 @@
     transition: 0.2s ease-in-out;
 }
 
+.image{
+    position: absolute;
+    height: 50px;
+    top: 5px;
+    left: 5px;
+    border-radius: 50px;
+    display: grid;
+    place-self: center;
+}
+
 .typ{
     position: absolute;
     top: 5px;
@@ -17,15 +27,15 @@
 
 .sg{
     position: absolute;
-    font-size: 120%;
-    top: 25px;
+    font-size: 140%;
+    top: 40px;
     left: 40px;
 }
 
 .pl{
     position: absolute;
     font-size: 120%;
-    top: 60px;
+    top: 75px;
     left: 40px;
 }
 
@@ -33,14 +43,14 @@
     position: absolute;
     font-size: 100%;
     top: 160px;
-    left: 40px;
+    left: 20px;
 }
 
 .beispiel{
     position: absolute;
     font-size: 100%;
-    top: 190px;
-    left: 40px;
+    top: 180px;
+    left: 20px;
 }
 
 .infinitiv{
@@ -82,30 +92,29 @@
 
 .mann{
     position: absolute;
-    font-size: 120%;
-    top: 25px;
+    font-size: 140%;
+    top: 30px;
     left: 40px;
 }
-
 
 .manner{
     position: absolute;
     font-size: 120%;
-    top: 45px;
+    top: 60px;
     left: 40px;
 }
 
 .frau{
     position: absolute;
-    font-size: 120%;
-    top: 75px;
+    font-size: 140%;
+    top: 90px;
     left: 40px;
 }
 
 .frauen{
     position: absolute;
     font-size: 120%;
-    top: 95px;
+    top: 120px;
     left: 40px;
 }
 
