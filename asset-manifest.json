@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/die-Wortschatzkartei/static/css/main.abd367a7.css",
-    "main.js": "/die-Wortschatzkartei/static/js/main.f0ff5988.js",
+    "main.js": "/die-Wortschatzkartei/static/js/main.ed28a862.js",
     "static/media/BalooBhaijaan2.ttf": "/die-Wortschatzkartei/static/media/BalooBhaijaan2.f668947fd71ee6f29d88.ttf",
     "index.html": "/die-Wortschatzkartei/index.html",
     "main.abd367a7.css.map": "/die-Wortschatzkartei/static/css/main.abd367a7.css.map",
-    "main.f0ff5988.js.map": "/die-Wortschatzkartei/static/js/main.f0ff5988.js.map"
+    "main.ed28a862.js.map": "/die-Wortschatzkartei/static/js/main.ed28a862.js.map"
   },
   "entrypoints": [
     "static/css/main.abd367a7.css",
-    "static/js/main.f0ff5988.js"
+    "static/js/main.ed28a862.js"
   ]
 }
