@@ -49,6 +49,7 @@
 .beispiel{
     position: absolute;
     font-size: 100%;
+    line-height: 18px;
     top: 180px;
     left: 20px;
 }
@@ -57,7 +58,7 @@
     position: absolute;
     font-size: 120%;
     top: 25px;
-    left: 100px;
+    left: 70px;
 }
 
 .präsens1{
@@ -139,5 +140,5 @@
 }
 
 .karte:hover{
-    scale: 1.05;
+    scale: 1.2;
 }
