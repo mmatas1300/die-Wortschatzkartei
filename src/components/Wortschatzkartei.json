@@ -2,6 +2,7 @@
   {
     "type": "Nomen-das",
     "anfangsbuchstabe": "F",
+    "wort": "Flugzeug",
     "typ": "Nomen",
     "sg": "das Flugzeug",
     "pl": "die Flugzeuge",
@@ -14,6 +15,7 @@
   {
     "type": "Nomen-2",
     "anfangsbuchstabe": "F",
+    "wort": "Friseur",
     "typ": "Nomen",
     "mann": "der Friseur",
     "manner": "die Friseure",
@@ -28,6 +30,7 @@
   {
     "type": "Verbe",
     "anfangsbuchstabe": "F",
+    "wort": "Finden",
     "typ": "Verbe",
     "infinitiv": "Finden",
     "präsens1": "Finde",
@@ -44,6 +47,7 @@
   {
     "type": "Nomen-die",
     "anfangsbuchstabe": "F",
+    "wort": "Fahrkarte",
     "typ": "Nomen",
     "sg": "die Fahrkarte",
     "pl": "die Fahrkarten",
@@ -56,6 +60,7 @@
   {
     "type": "Nomen-der",
     "anfangsbuchstabe": "F",
+    "wort": "Familienname",
     "typ": "Nomen",
     "sg": "der Familienname",
     "pl": "die Familiennamen",

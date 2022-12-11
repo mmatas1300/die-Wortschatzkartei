@@ -9,8 +9,6 @@
     transition: 0.2s ease-in-out;
 }
 
-
-
 .typ{
     position: absolute;
     top: 5px;
@@ -110,7 +108,6 @@
     top: 95px;
     left: 40px;
 }
-
 
 .karteVerbe{
     background-color: #ffaa00;

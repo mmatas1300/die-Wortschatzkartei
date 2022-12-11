@@ -1,5 +1,7 @@
 import styles from "./CardsSlide.module.css";
 
+
+
 export function CardsSlide({card}){
     
     if(card.type=="Nomen-das"){
@@ -14,7 +16,7 @@ export function CardsSlide({card}){
         cardStyleColor = styles.karteVerbe;
     }
 
-    return <div className={`${cardStyleColor} ${styles.karte}`}>
+    return<li className={`${cardStyleColor} ${styles.karte}`}>
         
         <li className={styles.typ}>{card.typ}</li>
 
@@ -38,7 +40,7 @@ export function CardsSlide({card}){
         <li className={styles.verwandte}>{card.verwandte}</li>
         <li className={styles.beispiel}>{card.beispiel}</li>
 
-    </div>;
+    </li>;
 }
 
 

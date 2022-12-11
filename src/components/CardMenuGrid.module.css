@@ -11,6 +11,7 @@
 
 .cardMenuGrid:hover{
     scale: 1.07;
+    background-color: #ffae00;
 }
 
 a {
