@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 import {FaArrowCircleLeft} from "react-icons/fa";
-import { BrowserRouter as Router, Routes,  Route, Link} from "react-router-dom";
+import { HashRouter, Routes,  Route, Link} from "react-router-dom";
 import styles from "./CardSlidePage.module.css";
 import { CardsSlideGrid } from "../components/CardsSlideGrid";
 
@@ -8,7 +8,7 @@ export function CardsSlidePage(){
     const {letterId} =useParams();
     return <div>
         <div className={styles.headPage}>
-            <Link to="/die-Wortschatzkartei/" className={styles.backButton}><FaArrowCircleLeft size={35} /></Link>
+            <Link to="/" className={styles.backButton}><FaArrowCircleLeft size={35} /></Link>
             <h1 className={styles.titlePage}>Wörter mit {letterId}</h1>
         </div>
         <main>

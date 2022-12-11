@@ -1,15 +1,19 @@
 import { LandingPage } from "./pages/LandingPage";
-import { BrowserRouter as Router, Routes,  Route, Link} from "react-router-dom";
+import { HashRouter, Routes,  Route, Link} from "react-router-dom";
 import { CardsSlidePage } from "./pages/CardsSlidePage";
 
 //Componente de inicio
 export function App() {
-  return <Router>
+  return <HashRouter>
     <main>
       <Routes>
-      <Route path="/die-Wortschatzkartei" element={<LandingPage/>} />
-      <Route path="/die-Wortschatzkartei/:letterId" element={<CardsSlidePage/>} />
+      <Route path="/" element={<LandingPage/>} />
+      <Route path="/:letterId" element={<CardsSlidePage/>} />
       </Routes>
     </main>
-  </Router>
+    <div class="breaker"></div>
+    <footer>
+      <p>© 2023</p>
+    </footer>
+  </HashRouter>
 }
