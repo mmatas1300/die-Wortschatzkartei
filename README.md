@@ -1,4 +1,4 @@
-#die Wortschatzkartei
+# die Wortschatzkartei
 
 An app designed to learn german words (nouns, verbs, adjectives, etc.) and sentences. The topics are obtained from the book "Netzwerk neu" published by Klett.
 
