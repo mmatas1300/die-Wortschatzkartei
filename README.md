@@ -2,11 +2,14 @@
 
 An app designed to learn german words (nouns, verbs, adjectives, etc.) and sentences. The topics are obtained from the book "Netzwerk neu" published by Klett.
 
+## Screenshots
+
+![Home](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Cards](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
 ## Deployment
 
 Deployed by GitHub Pages: https://mmatas1300.github.io/die-Wortschatzkartei/
-
 
 ## Authors
 
