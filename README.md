@@ -2,10 +2,9 @@
 
 An app designed to learn german words (nouns, verbs, adjectives, etc.) and sentences. The topics are obtained from the book "Netzwerk neu" published by Klett.
 
-## Screenshots
+## Screenshot
 
-<img src="/public/Menu.jpg" alt="Menu" style="width:200px;"/>
-<img src="/public/Cards.jpg" alt="Cards" style="width:200px;"/>
+<img src="/public/screenshot.jpg" alt="Menu" style="width:300px;"/>
 
 
 ## Deployment
