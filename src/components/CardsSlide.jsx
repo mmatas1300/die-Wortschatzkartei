@@ -12,6 +12,8 @@ export function CardsSlide({card}){
         cardStyleColor = styles.karteNomen2;
     }else if(card.type === "Verbe"){
         cardStyleColor = styles.karteVerbe;
+    }else if(card.type === "Nomen-pl"){
+        cardStyleColor = styles.karteNomenPl;
     }
 
     return<li className={`${cardStyleColor} ${styles.karte}`}>

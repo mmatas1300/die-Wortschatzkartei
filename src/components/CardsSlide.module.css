@@ -42,7 +42,7 @@
 .verwandte{
     position: absolute;
     font-size: 100%;
-    top: 160px;
+    top: 155px;
     left: 20px;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .karteVerbe{
-    background-color: #ffaa00;
+    background-color: #ff7514;
 }
 
 .karteNomenDas{
@@ -137,6 +137,10 @@
 
 .karteNomen2{
     background: linear-gradient(#0079a4, #b82c50);
+}
+
+.karteNomenPl{
+    background-color: #e3cd39;
 }
 
 .karte:hover{

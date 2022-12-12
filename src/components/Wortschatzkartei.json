@@ -21,7 +21,7 @@
     "manner": "die Friseure",
     "frau": "die Friseurin",
     "frauen": "die Friseurinnen",
-    "verwandte": "Beruf",
+    "verwandte": "der Beruf",
     "beispiel": "Sie ist Friseurin von Beruf",
     "image": "https://static9.depositphotos.com/1185628/1184/v/450/depositphotos_11846008-stock-illustration-haircut-or-hair-salon-symbol.jpg",
     "id": 2
@@ -989,7 +989,483 @@
     "beispiel": "",
     "image": "https://static.vecteezy.com/system/resources/previews/005/276/776/non_2x/logo-icon-person-on-white-background-free-vector.jpg",
     "id": 59
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "P",
+    "wort": "Partner",
+    "typ": "Nomen",
+    "mann": "der Partner",
+    "manner": "die Partner",
+    "frau": "die Partnerin",
+    "frauen": "die Partnerinnen",
+    "verwandte": "",
+    "beispiel": "Sie ist meine Partnerin.",
+    "image": "https://png.pngtree.com/png-vector/20190728/ourlarge/pngtree-friends-business-group-people-protection-team-workgroup--f-png-image_1620120.jpg",
+    "id": 60
+  },
+
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "A",
+    "wort": "Antwort",
+    "typ": "Nomen",
+    "sg": "die Antwort",
+    "pl": "die Antworten",
+    "verwandte": "die Frage",
+    "beispiel": "Ich weiß die richtige Antwort.",
+    "image": "https://png.pngtree.com/element_our/20200702/ourlarge/pngtree-two-hand-drawn-web-dialogs-image_2294416.jpg",
+    "id": 61
+  },
+
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "Z",
+    "wort": "Zahl",
+    "typ": "Nomen",
+    "sg": "die Zahl",
+    "pl": "die Zahlen",
+    "verwandte": "Ich zähle",
+    "beispiel": "Zwanzig ist eine Zahl.",
+    "image": "https://us.123rf.com/450wm/martialred/martialred1807/martialred180700020/martialred180700020.jpg?ver=6",
+    "id": 62
+  },
+
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "S",
+    "wort": "Sprache",
+    "typ": "Nomen",
+    "sg": "die Sprache",
+    "pl": "die Sprachen",
+    "verwandte": "Spanisch - Englisch - Deutsch",
+    "beispiel": "Welche Sprachen sprichst du?",
+    "image": "https://static.vecteezy.com/system/resources/previews/005/260/776/non_2x/language-translation-icon-free-vector.jpg",
+    "id": 63
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "L",
+    "wort": "Land",
+    "typ": "Nomen",
+    "sg": "das Land",
+    "pl": "die Länder",
+    "verwandte": "Mexiko - die USA - Deutschland",
+    "beispiel": "Die Stadt Peking ist in dem Land China.",
+    "image": "https://img.icons8.com/small/512/country.png",
+    "id": 64
+  },
+
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "H",
+    "wort": "Handynummer",
+    "typ": "Nomen",
+    "sg": "die Handynummer",
+    "pl": "die Handynummern",
+    "verwandte": "die Telefonnummer",
+    "beispiel": "Wie ist deine Handynummer?",
+    "image": "https://cdn-icons-png.flaticon.com/512/725/725624.png",
+    "id": 65
+  },
+
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "T",
+    "wort": "Telefonnummer",
+    "typ": "Nomen",
+    "sg": "die Telefonnummer",
+    "pl": "die Telefonnummern",
+    "verwandte": "die Handynummer",
+    "beispiel": "Wie ist ihre Telefonnummer?",
+    "image": "https://cdn-icons-png.flaticon.com/512/725/725624.png",
+    "id": 66
+  },
+
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "E",
+    "wort": "E-Mail-Adresse",
+    "typ": "Nomen",
+    "sg": "die E-Mail-Adresse",
+    "pl": "die E-Mail-Adressen",
+    "verwandte": "@: ät | .: punkt | -: minus",
+    "beispiel": "Wie ist ihre E-Mail-Adresse?",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFlrHlKyXuddlAhp2B88ndGpSCjSUcXGjx5Q&usqp=CAU",
+    "id": 67
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "H",
+    "wort": "Hobby",
+    "typ": "Nomen",
+    "sg": "das Hobby",
+    "pl": "die Hobbys",
+    "verwandte": "Singen - Joggen - Musik hören",
+    "beispiel": "Was machst du gern?",
+    "image": "https://cdn-icons-png.flaticon.com/512/2853/2853408.png",
+    "id": 68
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "B",
+    "wort": "Buch",
+    "typ": "Nomen",
+    "sg": "das Buch",
+    "pl": "die Bücher",
+    "verwandte": "Lesen",
+    "beispiel": "Sie lesen 20 bücher pro Jahr!",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1ZNWYNEPf-UH6iXGL1-Hznp69ls8FPZ5kNg&usqp=CAU",
+    "id": 69
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "C",
+    "wort": "Café",
+    "typ": "Nomen",
+    "sg": "das Café",
+    "pl": "die Cafés",
+    "verwandte": "Kaffee",
+    "beispiel": "Gehen wir ins Café?",
+    "image": "https://thumbs.dreamstime.com/b/cafes-icon-cafeteria-150681481.jpg",
+    "id": 70
+  },
+
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "C",
+    "wort": "Computer",
+    "typ": "Nomen",
+    "sg": "der Computer",
+    "pl": "die Computer",
+    "verwandte": "",
+    "beispiel": "Ich habe einen Computer.",
+    "image": "https://cdn-icons-png.flaticon.com/512/224/224597.png",
+    "id": 71
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "V",
+    "wort": "Verabredung",
+    "typ": "Nomen",
+    "sg": "die Verabredung",
+    "pl": "die Verabredungen",
+    "verwandte": "",
+    "beispiel": "Heute habe ich eine Verabredung mit dem Schicksal.",
+    "image": "https://us.123rf.com/450wm/ahasoft2000/ahasoft20001601/ahasoft2000160102560/51026580-fecha-y-hora-de-iconos-de-vectores-el-estilo-es-s%C3%ADmbolo-de-un-c%C3%ADrculo-bicolor-plana-colores-azul-y-g.jpg?ver=6",
+    "id": 72
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "F",
+    "wort": "Freund",
+    "typ": "Nomen",
+    "mann": "der Freund",
+    "manner": "die Freunde",
+    "frau": "die Freundin",
+    "frauen": "die Freundinnen",
+    "verwandte": "",
+    "beispiel": "Wie viele chinesische Freunde haben Sie?",
+    "image": "https://i.pinimg.com/originals/e0/0f/27/e00f27269606a9a25c7cdaf97f2960f8.png",
+    "id": 73
+  },
+  
+  {
+    "type": "Nomen-pl",
+    "anfangsbuchstabe": "L",
+    "wort": "Leute",
+    "typ": "Nomen",
+    "sg": "- (Pl.)",
+    "pl": "die Leute",
+    "verwandte": "die Menschen",
+    "beispiel": "Manche Leute mögen keinen Winter.",
+    "image": "https://cdn-icons-png.flaticon.com/512/6556/6556391.png",
+    "id": 74
+  },
+
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "F",
+    "wort": "Fußball",
+    "typ": "Nomen",
+    "sg": "der Fußball",
+    "pl": "- (Sg.)",
+    "verwandte": "der Basketball",
+    "beispiel": "Ich spiele gerne fußball.",
+    "image": "https://cdn-icons-png.flaticon.com/512/123/123495.png",
+    "id": 75
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "K",
+    "wort": "Kino",
+    "typ": "Nomen",
+    "sg": "das Kino",
+    "pl": "die Kinos",
+    "verwandte": "der Film",
+    "beispiel": "Wann gehen wir ins Kino?",
+    "image": "https://static.vecteezy.com/system/resources/previews/000/660/143/non_2x/vector-movie-theater-icons.jpg",
+    "id": 76
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "M",
+    "wort": "Museum",
+    "typ": "Nomen",
+    "sg": "das Museum",
+    "pl": "die Museen",
+    "verwandte": "",
+    "beispiel": "Wann gehen wir ins Museum?",
+    "image": "https://static.vecteezy.com/system/resources/previews/000/660/143/non_2x/vector-movie-theater-icons.jpg",
+    "id": 77
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "T",
+    "wort": "Theater",
+    "typ": "Nomen",
+    "sg": "das Theater",
+    "pl": "die Theater",
+    "verwandte": "das Kino",
+    "beispiel": "Wann gehen wir ins Theater?",
+    "image": "https://cdn-icons-png.flaticon.com/512/201/201610.png",
+    "id": 78
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "M",
+    "wort": "Musik",
+    "typ": "Nomen",
+    "sg": "die Musik",
+    "pl": "- (Sg.)",
+    "verwandte": "Hören",
+    "beispiel": "Hörst du gern Musik?",
+    "image": "https://cdn-icons-png.flaticon.com/512/3844/3844724.png",
+    "id": 79
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "S",
+    "wort": "Schwimmbad",
+    "typ": "Nomen",
+    "sg": "das Schwimmbad",
+    "pl": "die Schwimmbäder",
+    "verwandte": "Schwimmen",
+    "beispiel": "Wo finde ich ein Schwimmbad?",
+    "image": "https://png.pngtree.com/png-vector/20190228/ourlarge/pngtree-vector-swimming-pool-icon-png-image_711126.jpg",
+    "id": 80
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "F",
+    "wort": "Foto",
+    "typ": "Nomen",
+    "sg": "das Foto",
+    "pl": "die Fotos",
+    "verwandte": "Fotografieren",
+    "beispiel": "Das Foto zeigt ein Pferd.",
+    "image": "https://icons.iconarchive.com/icons/designbolts/free-multimedia/1024/Photo-icon.png",
+    "id": 81
+  },
+
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "B",
+    "wort": "Beruf",
+    "typ": "Nomen",
+    "sg": "der Beruf",
+    "pl": "die Berufe",
+    "verwandte": "Arbeiten",
+    "beispiel": "Was sind Sie von Beruf?",
+    "image": "https://img2.freepng.es/20181120/cba/kisspng-job-computer-icons-vector-graphics-illustration-em-5bf40ad62b7ba4.6073968715427202141781.jpg",
+    "id": 82
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "A",
+    "wort": "Arzt",
+    "typ": "Nomen",
+    "mann": "der Arzt",
+    "manner": "die Ärzte",
+    "frau": "die Ärztin",
+    "frauen": "die Ärztinnen",
+    "verwandte": "der Beruf - das Krankenhaus",
+    "beispiel": "Du bist Arzt von Beruf.",
+    "image": "https://cdn-icons-png.flaticon.com/512/1869/1869354.png",
+    "id": 83
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "K",
+    "wort": "Krankenhaus",
+    "typ": "Nomen",
+    "sg": "das Krankenhaus",
+    "pl": "die Krankenhäuser",
+    "verwandte": "der Arzt - das Haus",
+    "beispiel": "Das Krankenhaus hat 480 Zimmer.",
+    "image": "https://cdn-icons-png.flaticon.com/512/4625/4625853.png",
+    "id": 84
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "H",
+    "wort": "Handwerker",
+    "typ": "Nomen",
+    "mann": "der Handwerker",
+    "manner": "die Handwerkere",
+    "frau": "die Handwerkerin",
+    "frauen": "die Handwerkerinnen",
+    "verwandte": "der Beruf - der Techniker",
+    "beispiel": "Er arbeitet als Handwerker.",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/006/326/918/small/wrench-and-screwdriver-on-the-middle-of-gear-repair-and-maintenance-service-icon-illustration-free-vector.jpg",
+    "id": 85
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "J",
+    "wort": "Journalist",
+    "typ": "Nomen",
+    "mann": "der Journalist",
+    "manner": "die Journalisten",
+    "frau": "die Journalistin",
+    "frauen": "die Journalistinnen",
+    "verwandte": "der Beruf",
+    "beispiel": "Sie arbeitet als Journalistin.",
+    "image": "https://i.pinimg.com/564x/77/5e/c0/775ec04eda79e1585a8c73eed188e066.jpg",
+    "id": 86
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "K",
+    "wort": "Kellner",
+    "typ": "Nomen",
+    "mann": "der Kellner",
+    "manner": "die Kellner",
+    "frau": "die Kellnerin",
+    "frauen": "die Kellnerinnen",
+    "verwandte": "der Beruf - das Restaurant",
+    "beispiel": "Sie arbeitet als Kellnerin.",
+    "image": "https://cdn-icons-png.flaticon.com/512/206/206872.png",
+    "id": 87
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "K",
+    "wort": "Koch",
+    "typ": "Nomen",
+    "mann": "der Koch",
+    "manner": "die Köche",
+    "frau": "die Köchin",
+    "frauen": "die Köchinnen",
+    "verwandte": "der Beruf - das Restaurant",
+    "beispiel": "Sie arbeitet als Köchin.",
+    "image": "https://cdn1.iconfinder.com/data/icons/avatars-1-5/136/92-512.png",
+    "id": 88
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "K",
+    "wort": "Krankenpfleger",
+    "typ": "Nomen",
+    "mann": "der Krankenpfleger",
+    "manner": "die Krankenpfleger",
+    "frau": "die Krankenpflegerin",
+    "frauen": "die Krankenpflegerinnen",
+    "verwandte": "der Beruf - das Krankenhaus",
+    "beispiel": "Er arbeitet in einem Krankenhaus.",
+    "image": "https://cdn-icons-png.flaticon.com/512/3210/3210031.png",
+    "id": 89
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "R",
+    "wort": "Restaurant",
+    "typ": "Nomen",
+    "sg": "das Restaurant",
+    "pl": "die Restaurants",
+    "verwandte": "der Kellner",
+    "beispiel": "Wo ist bitte ein Restaurant?",
+    "image": "https://cdn-icons-png.flaticon.com/512/4625/4625853.png",
+    "id": 90
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "K",
+    "wort": "Kollege",
+    "typ": "Nomen",
+    "mann": "der Kollege",
+    "manner": "die Kollegen",
+    "frau": "die Kollegin",
+    "frauen": "die Kolleginnen",
+    "verwandte": "der Partner",
+    "beispiel": "Wir sind Kollegen",
+    "image": "https://i.pinimg.com/originals/e0/0f/27/e00f27269606a9a25c7cdaf97f2960f8.png",
+    "id": 91
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "F",
+    "wort": "Firma",
+    "typ": "Nomen",
+    "sg": "die Firma",
+    "pl": "die Firmen",
+    "verwandte": "Arbeiten - der Beruf",
+    "beispiel": "Jetzt will die Firma Geld sparen.",
+    "image": "https://grupomaxgas.com.br/wp-content/uploads/2021/08/CONDOMINIOS.png",
+    "id": 92
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "L",
+    "wort": "Lehrer",
+    "typ": "Nomen",
+    "mann": "der Lehrer",
+    "manner": "die Lehrer",
+    "frau": "die Lehrerin",
+    "frauen": "die Lehrerinnen",
+    "verwandte": "die Schule - Lehren",
+    "beispiel": "Sie ist Lehrerin von Beruf",
+    "image": "https://static.vecteezy.com/system/resources/previews/011/232/530/non_2x/teacher-female-flat-long-shadow-icon-vector.jpg",
+    "id": 93
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "S",
+    "wort": "Schule",
+    "typ": "Nomen",
+    "sg": "die Schule",
+    "pl": "die Schulen",
+    "verwandte": "der Student - Studieren",
+    "beispiel": "Wo ist die Schule?",
+    "image": "https://grupomaxgas.com.br/wp-content/uploads/2021/08/CONDOMINIOS.png",
+    "id": 94
   }
+
 
 
 
