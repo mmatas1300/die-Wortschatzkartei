@@ -4,7 +4,7 @@ An app designed to learn german words (nouns, verbs, adjectives, etc.) and sente
 
 ## Screenshot
 
-<img src="/screenshot.jpg" alt="Menu" style="width:500px;"/>
+<img src="/screenshot.jpg" alt="Menu"/>
 
 
 ## Deployment
