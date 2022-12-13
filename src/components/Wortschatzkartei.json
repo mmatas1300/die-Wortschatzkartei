@@ -1225,7 +1225,7 @@
     "pl": "die Museen",
     "verwandte": "",
     "beispiel": "Wann gehen wir ins Museum?",
-    "image": "https://static.vecteezy.com/system/resources/previews/000/660/143/non_2x/vector-movie-theater-icons.jpg",
+    "image": "https://cdn-icons-png.flaticon.com/512/236/236981.png",
     "id": 77
   },
   
@@ -1406,7 +1406,7 @@
     "pl": "die Restaurants",
     "verwandte": "der Kellner",
     "beispiel": "Wo ist bitte ein Restaurant?",
-    "image": "https://cdn-icons-png.flaticon.com/512/4625/4625853.png",
+    "image": "https://cdn2.iconfinder.com/data/icons/building-vol-2/512/restaurant-512.png",
     "id": 90
   },
 
@@ -1420,7 +1420,7 @@
     "frau": "die Kollegin",
     "frauen": "die Kolleginnen",
     "verwandte": "der Partner",
-    "beispiel": "Wir sind Kollegen",
+    "beispiel": "Wir sind Kollegen.",
     "image": "https://i.pinimg.com/originals/e0/0f/27/e00f27269606a9a25c7cdaf97f2960f8.png",
     "id": 91
   },
@@ -1448,7 +1448,7 @@
     "frau": "die Lehrerin",
     "frauen": "die Lehrerinnen",
     "verwandte": "die Schule - Lehren",
-    "beispiel": "Sie ist Lehrerin von Beruf",
+    "beispiel": "Sie ist Lehrerin von Beruf.",
     "image": "https://static.vecteezy.com/system/resources/previews/011/232/530/non_2x/teacher-female-flat-long-shadow-icon-vector.jpg",
     "id": 93
   },
@@ -1464,7 +1464,388 @@
     "beispiel": "Wo ist die Schule?",
     "image": "https://grupomaxgas.com.br/wp-content/uploads/2021/08/CONDOMINIOS.png",
     "id": 94
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "K",
+    "wort": "Kurs",
+    "typ": "Nomen",
+    "sg": "der Kurs",
+    "pl": "die Kurse",
+    "verwandte": "die Schule - Studieren",
+    "beispiel": "Ich habe pro Woche 24 Stunden Kurse.",
+    "image": "https://thetreeschool.org/wp-content/uploads/2015/05/icono-talleres.png",
+    "id": 95
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "M",
+    "wort": "Mechaniker",
+    "typ": "Nomen",
+    "mann": "der Mechaniker",
+    "manner": "die Mechaniker",
+    "frau": "die Mechanikerin",
+    "frauen": "die Mechanikerinnen",
+    "verwandte": "der Beruf - der Techniker",
+    "beispiel": "Er ist Mechaniker von Beruf.",
+    "image": "https://static.vecteezy.com/system/resources/previews/007/672/670/non_2x/mechanic-service-icon-filled-line-icon-style-design-modern-illustration-editable-vector.jpg",
+    "id": 96
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "P",
+    "wort": "Polizist",
+    "typ": "Nomen",
+    "mann": "der Polizist",
+    "manner": "die Polizisten",
+    "frau": "die Polizistin",
+    "frauen": "die Polizistinnen",
+    "verwandte": "der Beruf - die Polizei",
+    "beispiel": "Ich bin Polizist von Beruf.",
+    "image": "https://cdn-icons-png.flaticon.com/512/3076/3076189.png",
+    "id": 97
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "S",
+    "wort": "Student",
+    "typ": "Nomen",
+    "mann": "der Student",
+    "manner": "die Studenten",
+    "frau": "die Studentin",
+    "frauen": "die Studentinnen",
+    "verwandte": "die Schule - Studieren",
+    "beispiel": "Ich bin Student.",
+    "image": "https://cdn-icons-png.flaticon.com/512/354/354637.png",
+    "id": 98
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "U",
+    "wort": "Universität",
+    "typ": "Nomen",
+    "sg": "die Universität",
+    "pl": "die Universitäten",
+    "verwandte": "der Student - Studieren",
+    "beispiel": "Wo finde ich die Universität?",
+    "image": "https://grupomaxgas.com.br/wp-content/uploads/2021/08/CONDOMINIOS.png",
+    "id": 99
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "S",
+    "wort": "Seminar",
+    "typ": "Nomen",
+    "sg": "das Seminar",
+    "pl": "die Seminare",
+    "verwandte": "der Student - der Kurs",
+    "beispiel": "Ich habe pro Woche 24 Stunden Seminare.",
+    "image": "https://thetreeschool.org/wp-content/uploads/2015/05/icono-talleres.png",
+    "id": 100
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "T",
+    "wort": "Taxifahrer",
+    "typ": "Nomen",
+    "mann": "der Taxifahrer",
+    "manner": "die Taxifahrer",
+    "frau": "die Taxifahrerin",
+    "frauen": "die Taxifahrerinnen",
+    "verwandte": "der Beruf - das Taxi",
+    "beispiel": "Ich bin Taxifahrer.",
+    "image": "https://cdn-icons-png.flaticon.com/512/206/206883.png",
+    "id": 101
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "T",
+    "wort": "Taxi",
+    "typ": "Nomen",
+    "sg": "das Taxi",
+    "pl": "die Taxis",
+    "verwandte": "das Auto - der Taxifahrer",
+    "beispiel": "Ich habe ein Taxi.",
+    "image": "https://previews.123rf.com/images/123vector/123vector1710/123vector171000175/88111415-ilustraci%C3%B3n-del-icono-de-taxi-de-color-amarillo-del-coraz%C3%B3n-.jpg",
+    "id": 102
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "V",
+    "wort": "Verkäufer",
+    "typ": "Nomen",
+    "mann": "der Verkäufer",
+    "manner": "die Verkäufer",
+    "frau": "die Verkäuferin",
+    "frauen": "die Verkäuferinnen",
+    "verwandte": "der Beruf - das Geschäfte",
+    "beispiel": "Sie sind Verkäuferinnen.",
+    "image": "https://cdn-icons-png.flaticon.com/512/1169/1169904.png",
+    "id": 103
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "A",
+    "wort": "Architekt",
+    "typ": "Nomen",
+    "mann": "der Architekt",
+    "manner": "die Architekten",
+    "frau": "die Architektin",
+    "frauen": "die Architektinnen",
+    "verwandte": "der Beruf",
+    "beispiel": "Sie sind Architekt.",
+    "image": "https://cdn-icons-png.flaticon.com/512/432/432424.png",
+    "id": 104
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "T",
+    "wort": "Techniker",
+    "typ": "Nomen",
+    "mann": "der Techniker",
+    "manner": "die Techniker",
+    "frau": "die Technikerin",
+    "frauen": "die Technikerinnen",
+    "verwandte": "der Beruf - der Ingenieur",
+    "beispiel": "Sie sind Techniker.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbewBVOpY4Mf2toyKraHF6-ilucmpPk1dxiomCvAbsdb5KZZZaX-959zGd1DFVUZKy3DM&usqp=CAU",
+    "id": 105
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "M",
+    "wort": "Moment",
+    "typ": "Nomen",
+    "sg": "der Moment",
+    "pl": "die Momente",
+    "verwandte": "die Zeit - der Augenblick",
+    "beispiel": "Im Moment habe ich keine weiteren Fragen.",
+    "image": "https://cdn-icons-png.flaticon.com/512/2784/2784459.png",
+    "id": 106
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "S",
+    "wort": "Stunde",
+    "typ": "Nomen",
+    "sg": "die Stunde",
+    "pl": "die Stunden",
+    "verwandte": "die Zeit - die Uhr",
+    "beispiel": "Ich habe pro Woche 24 Stunden Kurse.",
+    "image": "https://cdn-icons-png.flaticon.com/512/2784/2784459.png",
+    "id": 107
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "T",
+    "wort": "Tag",
+    "typ": "Nomen",
+    "sg": "der Tag",
+    "pl": "die Tage",
+    "verwandte": "die Zeit - der Wochentag",
+    "beispiel": "Ich habe zwei tage frei: Samstag und Sonntag.",
+    "image": "https://cdn.pixabay.com/photo/2019/08/11/18/50/icon-4399684_960_720.png",
+    "id": 108
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "W",
+    "wort": "Wochentag",
+    "typ": "Nomen",
+    "sg": "der Wochentag",
+    "pl": "die Wochentage",
+    "verwandte": "der Montag,-e | Am Dienstag | Mittwoch | Donnerstag | Freitag | Samstag | Sonntag",
+    "beispiel": "",
+    "image": "https://cdn.pixabay.com/photo/2019/08/11/18/50/icon-4399684_960_720.png",
+    "id": 109
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "W",
+    "wort": "Woche",
+    "typ": "Nomen",
+    "sg": "die Woche",
+    "pl": "die Wochen",
+    "verwandte": "der Tag",
+    "beispiel": "Ich habe pro Woche 24 Stunden Kurse.",
+    "image": "https://cdn.pixabay.com/photo/2019/08/11/18/50/icon-4399684_960_720.png",
+    "id": 110
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "W",
+    "wort": "Wochenende",
+    "typ": "Nomen",
+    "sg": "das Wochenende",
+    "pl": "die Wochenenden",
+    "verwandte": "der Samstang - der Sonntag",
+    "beispiel": "Was machst du am Wochenende?",
+    "image": "https://cdn.pixabay.com/photo/2019/08/11/18/50/icon-4399684_960_720.png",
+    "id": 111
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "J",
+    "wort": "Jahr",
+    "typ": "Nomen",
+    "sg": "das Jahr",
+    "pl": "die Jahre",
+    "verwandte": "die Zeit - der Monat",
+    "beispiel": "Sein Sohn ist acht Jahre alt.",
+    "image": "https://us.123rf.com/450wm/vectorplusb/vectorplusb1707/vectorplusb170700032/81366428-calendario-para-el-a%C3%B1o-2018-icono-ilustraci%C3%B3n-vectorial.jpg?ver=6",
+    "id": 112
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "M",
+    "wort": "Monat",
+    "typ": "Nomen",
+    "sg": "der Monat",
+    "pl": "die Monate",
+    "verwandte": "der Januar | Februar | März | April | Mai | Juni | Juli | August | September | Oktober | November | Dezember",
+    "beispiel": "",
+    "image": "https://cdn.pixabay.com/photo/2019/08/11/18/50/icon-4399684_960_720.png",
+    "id": 113
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "J",
+    "wort": "Jahreszeit",
+    "typ": "Nomen",
+    "sg": "die Jahreszeit",
+    "pl": "die Jahreszeiten",
+    "verwandte": "der Frühling | Sommer | Herbst | Winter",
+    "beispiel": "",
+    "image": "https://t3.ftcdn.net/jpg/02/95/46/96/360_F_295469621_VTqeoGDaXTsj0v1QkdKIuyAamynTUPep.jpg",
+    "id": 114
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "T",
+    "wort": "Termin",
+    "typ": "Nomen",
+    "sg": "der Termin",
+    "pl": "die Termine",
+    "verwandte": "die Verabredung",
+    "beispiel": "Er soll alle Termine absagen.",
+    "image": "https://us.123rf.com/450wm/ahasoft2000/ahasoft20001601/ahasoft2000160102560/51026580-fecha-y-hora-de-iconos-de-vectores-el-estilo-es-s%C3%ADmbolo-de-un-c%C3%ADrculo-bicolor-plana-colores-azul-y-g.jpg?ver=6",
+    "id": 115
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "A",
+    "wort": "Adresse",
+    "typ": "Nomen",
+    "sg": "die Adresse",
+    "pl": "die Adressen",
+    "verwandte": "die E-Mail-Adresse - die Straße - die Hausnummer",
+    "beispiel": "",
+    "image": "https://static.vecteezy.com/system/resources/previews/008/015/118/non_2x/address-icon-free-vector.jpg",
+    "id": 116
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "S",
+    "wort": "Straße",
+    "typ": "Nomen",
+    "sg": "die Straße",
+    "pl": "die Straßen",
+    "verwandte": "die Adresse - die Hausnummer",
+    "beispiel": "Nehmen Sie die rechte Straße.",
+    "image": "https://cdn-icons-png.flaticon.com/512/201/201945.png",
+    "id": 117
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "H",
+    "wort": "Hausnummer",
+    "typ": "Nomen",
+    "sg": "die Hausnummer",
+    "pl": "die Hausnummern",
+    "verwandte": "die Adresse - die Handynummer",
+    "beispiel": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi0TKqMwMLhWGVfAyvllZHuC3mHYx_LVHa6g&usqp=CAU",
+    "id": 118
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "I",
+    "wort": "Information",
+    "typ": "Nomen",
+    "sg": "die Information",
+    "pl": "die Informationen",
+    "verwandte": "das Formular",
+    "beispiel": "Ergänzen Sie das Formular mit Ihren Informationen.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbIiaaoa_slPNuJUOfo1K0kIToGijX-bJ9Kmz2dTjAuB0sh6799glvzHDqG3b1loGSfus&usqp=CAU",
+    "id": 119
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "F",
+    "wort": "Formular",
+    "typ": "Nomen",
+    "sg": "das Formular",
+    "pl": "die Formulare",
+    "verwandte": "die Information",
+    "beispiel": "Ergänzen Sie das Formular mit Ihren Informationen.",
+    "image": "https://us.123rf.com/450wm/ahasoft2000/ahasoft20001511/ahasoft2000151100853/47619119-pad-icono-formulario-del-vector-el-estilo-es-el-s%C3%ADmbolo-plana-redondeada-colores-brillantes-%C3%A1ngulos-.jpg",
+    "id": 120
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "O",
+    "wort": "Ort",
+    "typ": "Nomen",
+    "sg": "der Ort",
+    "pl": "die Orte",
+    "verwandte": "der Wohnort - der Geburtsort",
+    "beispiel": "Er kennt diesen Ort wie seine Westentasche.",
+    "image": "https://png.pngtree.com/png-vector/20190430/ourlarge/pngtree-vector-location-icon-png-image_1005774.jpg",
+    "id": 121
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "A",
+    "wort": "Ausstellung",
+    "typ": "Nomen",
+    "sg": "die Ausstellung",
+    "pl": "die Ausstellungen",
+    "verwandte": "das Museum",
+    "beispiel": "Die Ausstellung war beeindruckend.",
+    "image": "https://cdn-icons-png.flaticon.com/512/806/806652.png",
+    "id": 122
   }
+
+
+
 
 
 

@@ -42,6 +42,7 @@
 .verwandte{
     position: absolute;
     font-size: 100%;
+    line-height: 18px;
     top: 155px;
     left: 20px;
 }
