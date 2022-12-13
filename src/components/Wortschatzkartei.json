@@ -1842,7 +1842,206 @@
     "beispiel": "Die Ausstellung war beeindruckend.",
     "image": "https://cdn-icons-png.flaticon.com/512/806/806652.png",
     "id": 122
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "D",
+    "wort": "Datum",
+    "typ": "Nomen",
+    "sg": "das Datum",
+    "pl": "die Daten",
+    "verwandte": "das Geburtsdatum",
+    "beispiel": "Ich habe mich im Datum geirrt.",
+    "image": "https://thumbs.dreamstime.com/b/vector-icono-calendario-n%C3%BAmero-de-d%C3%ADa-mes-vectores-d%C3%ADas-del-ilustraci%C3%B3n-estilo-plano-fecha-la-semana-a%C3%B1o-domingo-lunes-martes-207902180.jpg",
+    "id": 123
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "B",
+    "wort": "Beispiel",
+    "typ": "Nomen",
+    "sg": "das Beispiel",
+    "pl": "die Beispiele",
+    "verwandte": "",
+    "beispiel": "Beispielsätze mit deutschen Wörtern.",
+    "image": "https://cdn-icons-png.flaticon.com/512/5650/5650378.png",
+    "id": 124
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "W",
+    "wort": "Wörterbuch",
+    "typ": "Nomen",
+    "sg": "das Wörterbuch",
+    "pl": "die Wörterbücher",
+    "verwandte": "das Buch - das Wort",
+    "beispiel": "Dieses Wörterbuch ist ein gutes Lehrmaterial für Lehrer.",
+    "image": "https://us.123rf.com/450wm/juliarstudio/juliarstudio1512/juliarstudio151200757/49201613-diccionario-ingl%C3%A9s-icono-plana-libro-verde-con-el-az-en-la-portada-sobre-fondo-azul.jpg",
+    "id": 125
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "Z",
+    "wort": "Zimmer",
+    "typ": "Nomen",
+    "sg": "das Zimmer",
+    "pl": "die Zimmer",
+    "verwandte": "das Haus",
+    "beispiel": "Ich habe eine Illustrierte in meinem Zimmer.",
+    "image": "https://thumbs.dreamstime.com/b/icono-de-l%C3%ADnea-color-la-habitaci%C3%B3n-se%C3%B1al-reserva-apartamento-tomar-el-descanso-en-pictograma-p%C3%A1gina-web-aplicaci%C3%B3n-m%C3%B3vil-167062062.jpg",
+    "id": 126
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "Z",
+    "wort": "Ziel",
+    "typ": "Nomen",
+    "sg": "das Ziel",
+    "pl": "die Ziele",
+    "verwandte": "",
+    "beispiel": "Es ist ein ziemlich unrealistisches Ziel.",
+    "image": "https://media.istockphoto.com/id/872729198/es/vector/icono-de-la-raza.jpg?s=170667a&w=0&k=20&c=bscwvP1P66C1nJfLTwCVORIUz6LeIOB23aNjonXTOSs=",
+    "id": 127
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "S",
+    "wort": "Start",
+    "typ": "Nomen",
+    "sg": "der Start",
+    "pl": "- (Sg.)",
+    "verwandte": "",
+    "beispiel": "Ein neuer Start.",
+    "image": "https://thumbs.dreamstime.com/b/apague-la-muestra-del-vector-icono-y-el-s%C3%ADmbolo-aislado-en-fondo-blanco-da-vuelta-de-concepto-logotipo-133824287.jpg",
+    "id": 128
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "P",
+    "wort": "Plan",
+    "typ": "Nomen",
+    "sg": "der Plan",
+    "pl": "die Pläne",
+    "verwandte": "",
+    "beispiel": "Ich habe Pläne gemacht.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWRN3RH0NujNgL1c8KY1NTDiv-eUFyUCBiiN5QZHukNeEdi6tK0HuVLylRQGp0idGQ3YY&usqp=CAU",
+    "id": 129
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "M",
+    "wort": "Mitte",
+    "typ": "Nomen",
+    "sg": "die Mitte",
+    "pl": "- (Sg.)",
+    "verwandte": "",
+    "beispiel": "Ich stehe in der Mitte des Schulhofes.",
+    "image": "https://t3.ftcdn.net/jpg/00/39/08/82/360_F_39088209_biSnw46JlHYIXlF4eoeG3ps5KMFJx0EP.jpg",
+    "id": 130
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "W",
+    "wort": "Weg",
+    "typ": "Nomen",
+    "sg": "der Weg",
+    "pl": "die Wege",
+    "verwandte": "",
+    "beispiel": "Es ist ein weiter Weg bis zur Stadt.",
+    "image": "https://cdn-icons-png.flaticon.com/512/201/201945.png",
+    "id": 131
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "S",
+    "wort": "Schiff",
+    "typ": "Nomen",
+    "sg": "das Schiff",
+    "pl": "die Schiffe",
+    "verwandte": "der Zug - das Flugzeug",
+    "beispiel": "Das Schiff war auf dem Kurs nach Kairo.",
+    "image": "https://st.depositphotos.com/1001248/4935/v/450/depositphotos_49351209-stock-illustration-ship-icon.jpg",
+    "id": 132
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "S",
+    "wort": "S-Bahn",
+    "typ": "Nomen",
+    "sg": "die S-Bahn",
+    "pl": "die S-Bahnen",
+    "verwandte": "die U-Bahn - der Zug",
+    "beispiel": "",
+    "image": "https://static.vecteezy.com/system/resources/previews/000/420/305/non_2x/vector-train-icon.jpg",
+    "id": 133
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "U",
+    "wort": "U-Bahn",
+    "typ": "Nomen",
+    "sg": "die U-Bahn",
+    "pl": "die U-Bahnen",
+    "verwandte": "die S-Bahn - der Zug",
+    "beispiel": "",
+    "image": "https://static.vecteezy.com/system/resources/previews/000/420/305/non_2x/vector-train-icon.jpg",
+    "id": 134
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "Z",
+    "wort": "Zug",
+    "typ": "Nomen",
+    "sg": "der Zug",
+    "pl": "die Züge",
+    "verwandte": "das Schiff - das Flugzeug",
+    "beispiel": "Ich nehme den Zug.",
+    "image": "https://media.istockphoto.com/id/970037700/tr/vekt%C3%B6r/tren-turuncu-daire-d%C3%BCz-simgesi.jpg?s=170667a&w=0&k=20&c=YUWdNp5K1cjmTP_CqaeS50RyuSqUCXB63yjPmtua9mo=",
+    "id": 135
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "B",
+    "wort": "Bus",
+    "typ": "Nomen",
+    "sg": "der Bus",
+    "pl": "die Busse",
+    "verwandte": "die U-Bahn",
+    "beispiel": " Ich fahre nicht mit dem Bus zur Schule.",
+    "image": "https://previews.123rf.com/images/asmati/asmati1610/asmati161000018/63402436-ilustraci%C3%B3n-de-signo-de-autob%C3%BAs-icono-blanco-en-c%C3%ADrculo-rojo-.jpg",
+    "id": 136
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "F",
+    "wort": "Fahrrad",
+    "typ": "Nomen",
+    "sg": "das Fahrrad",
+    "pl": "die Fahrräder",
+    "verwandte": "der Bus",
+    "beispiel": "Sie fährt mit dem Fahrrad zur Schule.",
+    "image": "https://img.freepik.com/vector-premium/icono-bicicleta-icono-ciclo-negro-e-icono-bicicleta-logotipo-bicicleta-montana-ilustracion-vectorial_485380-696.jpg?w=2000",
+    "id": 137
   }
+
+
+
+
 
 
 
