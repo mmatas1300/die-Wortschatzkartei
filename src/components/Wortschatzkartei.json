@@ -987,7 +987,7 @@
     "pl": "die Personen",
     "verwandte": "die Leute",
     "beispiel": "",
-    "image": "https://static.vecteezy.com/system/resources/previews/005/276/776/non_2x/logo-icon-person-on-white-background-free-vector.jpg",
+    "image": "https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824144_1280.png",
     "id": 59
   },
 
@@ -1130,7 +1130,7 @@
     "typ": "Nomen",
     "sg": "das Café",
     "pl": "die Cafés",
-    "verwandte": "Kaffee",
+    "verwandte": "der Kaffee",
     "beispiel": "Gehen wir ins Café?",
     "image": "https://cdn-icons-png.flaticon.com/512/169/169884.png",
     "id": 70
@@ -2205,8 +2205,679 @@
     "verwandte": "",
     "beispiel": "Klar, eine Menge Leute gehen zur Kirche.",
     "image": "https://cdn-icons-png.flaticon.com/512/233/233956.png",
-    "id": 147
+    "id": 150
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "K",
+    "wort": "Konzerthaus",
+    "typ": "Nomen",
+    "sg": "das Konzerthaus",
+    "pl": "die Konzerthäuser",
+    "verwandte": "das Haus - die Konzertkarte",
+    "beispiel": "In welches Konzerthaus?",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ1Zu6uqYoNvOeyLUywSX1yKaBuH4yU1U5Rw&usqp=CAU",
+    "id": 151
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "K",
+    "wort": "Konzertkarte",
+    "typ": "Nomen",
+    "sg": "die Konzertkarte",
+    "pl": "die Konzertkarten",
+    "verwandte": "die Konzerthaus - die Fahrkarte",
+    "beispiel": "",
+    "image": "https://cdn-icons-png.flaticon.com/512/230/230403.png",
+    "id": 152
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "R",
+    "wort": "Rathaus",
+    "typ": "Nomen",
+    "sg": "das Rathaus",
+    "pl": "die Rathäuser",
+    "verwandte": "das Haus -Raten",
+    "beispiel": "Das Rathaus ist zwanzig Meter hoch.",
+    "image": "https://media.istockphoto.com/id/1127741905/es/vector/ilustraci%C3%B3n-de-ayuntamiento.jpg?s=612x612&w=0&k=20&c=AfjgHVQ5Vfz7nadFtKiWBOrxz2Pi7qZAvYXBMzZcYU0=",
+    "id": 153
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "H",
+    "wort": "Haus",
+    "typ": "Nomen",
+    "sg": "das Haus",
+    "pl": "die Häuser",
+    "verwandte": "",
+    "beispiel": "Das sind zwei Häuser.",
+    "image": "https://w7.pngwing.com/pngs/752/675/png-transparent-building-computer-icons-architecture-building-building-insurance-%D0%B8%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0-home.png",
+    "id": 154
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "M",
+    "wort": "Mensch",
+    "typ": "Nomen",
+    "sg": "der Mensch",
+    "pl": "die Menschen",
+    "verwandte": "die Leute - die Person",
+    "beispiel": "Mensch, pass doch auf!",
+    "image": "https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824144_1280.png",
+    "id": 155
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "L",
+    "wort": "Lösung",
+    "typ": "Nomen",
+    "sg": "die Lösung",
+    "pl": "die Lösungen",
+    "verwandte": "",
+    "beispiel": "Es gibt keine einfache Lösung.",
+    "image": "https://aydai.com/wp-content/uploads/2014/12/soluciones-aydai-icono-consultoria.png",
+    "id": 156
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "W",
+    "wort": "Welt",
+    "typ": "Nomen",
+    "sg": "die Welt",
+    "pl": "die Welten",
+    "verwandte": "",
+    "beispiel": "Geld regiert die Welt.",
+    "image": "https://cdn-icons-png.flaticon.com/512/139/139706.png",
+    "id": 157
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "T",
+    "wort": "Test",
+    "typ": "Nomen",
+    "sg": "der Test",
+    "pl": "die Tests",
+    "verwandte": "",
+    "beispiel": "Der Test liegt in 99 von 100 Fällen richtig.",
+    "image": "https://img2.freepng.es/20180404/xkw/kisspng-computer-icons-survey-methodology-flat-design-survey-5ac518348189d6.3076048615228662285306.jpg",
+    "id": 158
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "G",
+    "wort": "Glück",
+    "typ": "Nomen",
+    "sg": "das Glück",
+    "pl": "- (Sg.)",
+    "verwandte": "",
+    "beispiel": "Viel Glück!",
+    "image": "https://cdn-icons-png.flaticon.com/512/1983/1983742.png",
+    "id": 159
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "P",
+    "wort": "Plakat",
+    "typ": "Nomen",
+    "sg": "das Plakat",
+    "pl": "die Plakate",
+    "verwandte": "",
+    "beispiel": "Ein Plakat ankleben.",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/007/435/476/small/signboard-icon-style-vector.jpg",
+    "id": 160
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "B",
+    "wort": "Bild",
+    "typ": "Nomen",
+    "sg": "das Bild",
+    "pl": "die Bilder",
+    "verwandte": "",
+    "beispiel": "Welches Bild passt?",
+    "image": "https://icons.iconarchive.com/icons/designbolts/free-multimedia/1024/Photo-icon.png",
+    "id": 161
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "G",
+    "wort": "Gruppe",
+    "typ": "Nomen",
+    "sg": "die Gruppe",
+    "pl": "die Gruppen",
+    "verwandte": "",
+    "beispiel": "In Gruppen zu sechs.",
+    "image": "https://cdn-icons-png.flaticon.com/512/6556/6556391.png",
+    "id": 162
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "R",
+    "wort": "Regisseur",
+    "typ": "Nomen",
+    "mann": "der Regisseur",
+    "manner": "die Regisseure",
+    "frau": "die Regisseurin",
+    "frauen": "die Regisseurinnen",
+    "verwandte": "der Beruf - der Film",
+    "beispiel": "Ein prämierter Regisseur.",
+    "image": "https://img.freepik.com/vector-gratis/cartel-silla-cine-camara_603843-2752.jpg?w=2000",
+    "id": 163
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "S",
+    "wort": "Schauspieler",
+    "typ": "Nomen",
+    "mann": "der Schauspieler",
+    "manner": "die Schauspieler",
+    "frau": "die Schauspielerin",
+    "frauen": "die Schauspielerinnen",
+    "verwandte": "der Beruf - der Film",
+    "beispiel": "Ein volkstümlicher Schauspieler.",
+    "image": "https://cdn-icons-png.flaticon.com/512/475/475283.png",
+    "id": 164
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "F",
+    "wort": "Film",
+    "typ": "Nomen",
+    "sg": "der Film",
+    "pl": "die Filme",
+    "verwandte": "das Kino - der Schauspieler",
+    "beispiel": "Im Fernsehen läuft ein guter Film.",
+    "image": "https://cdn-icons-png.flaticon.com/512/306/306337.png",
+    "id": 165
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "C",
+    "wort": "Chor",
+    "typ": "Nomen",
+    "sg": "der Chor",
+    "pl": "die Chöre",
+    "verwandte": "das Konzert",
+    "beispiel": "Gruppe von Sängern.",
+    "image": "https://cdn-icons-png.flaticon.com/512/5278/5278585.png",
+    "id": 166
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "O",
+    "wort": "Orchester",
+    "typ": "Nomen",
+    "sg": "das Orchester",
+    "pl": "die Orchester",
+    "verwandte": "der Chor - das Konzert",
+    "beispiel": "Im Orchester schlägt er die Trommel.",
+    "image": "https://cdn-icons-png.flaticon.com/512/195/195126.png",
+    "id": 167
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "K",
+    "wort": "Konzert",
+    "typ": "Nomen",
+    "sg": "das Konzert",
+    "pl": "die Konzerte",
+    "verwandte": "das Konzerthaus - das Orchester",
+    "beispiel": "Hast du noch Karten für das Konzert bekommen?",
+    "image": "https://cdn-icons-png.flaticon.com/512/195/195126.png",
+    "id": 168
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "G",
+    "wort": "Gast",
+    "typ": "Nomen",
+    "sg": "der Gast",
+    "pl": "die Gäste",
+    "verwandte": "",
+    "beispiel": "Wir bitten alle Gäste, ihre Zimmer bis spätestens 12 Uhr zu räumen.",
+    "image": "https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824144_1280.png",
+    "id": 169
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "B",
+    "wort": "Besucher",
+    "typ": "Nomen",
+    "mann": "der Besucher",
+    "manner": "die Besucher",
+    "frau": "die Besucherin",
+    "frauen": "die Besucherinnen",
+    "verwandte": "das Land - Besuchen",
+    "beispiel": "Die Zahl der Besucher.",
+    "image": "https://cdn-icons-png.flaticon.com/512/825/825379.png",
+    "id": 170
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "P",
+    "wort": "Publikum",
+    "typ": "Nomen",
+    "sg": "das Publikum",
+    "pl": "- (Sg.)",
+    "verwandte": "das Konzert",
+    "beispiel": "Das Publikum in unserem Restaurant ist sehr gemischt.",
+    "image": "https://cdn-icons-png.flaticon.com/512/6556/6556391.png",
+    "id": 171
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "T",
+    "wort": "Ticket",
+    "typ": "Nomen",
+    "sg": "das Ticket",
+    "pl": "die Tickets",
+    "verwandte": "die Karte",
+    "beispiel": "",
+    "image": "https://cdn-icons-png.flaticon.com/512/230/230403.png",
+    "id": 172
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "F",
+    "wort": "Festival",
+    "typ": "Nomen",
+    "sg": "das Festival",
+    "pl": "die Festivals",
+    "verwandte": "",
+    "beispiel": "",
+    "image": "https://images.vexels.com/media/users/3/296034/isolated/preview/5f1b7e371a5e3ee7c86401243713a31d-tent-flat-circus-icons.png",
+    "id": 173
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "E",
+    "wort": "Event",
+    "typ": "Nomen",
+    "sg": "das Event",
+    "pl": "die Events",
+    "verwandte": "",
+    "beispiel": "",
+    "image": "https://images.vexels.com/media/users/3/296034/isolated/preview/5f1b7e371a5e3ee7c86401243713a31d-tent-flat-circus-icons.png",
+    "id": 174
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "N",
+    "wort": "Name",
+    "typ": "Nomen",
+    "sg": "der Name",
+    "pl": "die Namen",
+    "verwandte": "der Vorname",
+    "beispiel": "Mein Name ist Mario.",
+    "image": "https://us.123rf.com/450wm/jovanas/jovanas1610/jovanas161000937/64113028-hola-mi-nombre-de-tarjeta-con-el-icono-de-espacio-de-la-copia.jpg?ver=6",
+    "id": 175
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "S",
+    "wort": "Stadt",
+    "typ": "Nomen",
+    "sg": "die Stadt",
+    "pl": "die Städte",
+    "verwandte": "",
+    "beispiel": "Mexiko-Stadt.",
+    "image": "https://png.pngtree.com/png-vector/20190430/ourlarge/pngtree-vector-location-icon-png-image_1005774.jpg",
+    "id": 176
+  },
+  
+  {
+    "type": "Verbe",
+    "anfangsbuchstabe": "A",
+    "wort": "Arbeiten",
+    "typ": "Verbe",
+    "infinitiv": "Arbeiten",
+    "präsens1": "Arbeite",
+    "präsens2": "Arbeitest",
+    "präsens3": "Arbeitet",
+    "präsens4": "Arbeiten",
+    "präsens5": "Arbeitet",
+    "präsens6": "Arbeiten",
+    "beispiel": "Ich arbeite in einem Krankenhaus.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOtFyxSMoLayeNQRj3npcJCGj_nVTEzOimoLN87pl4HpT37eQdzW8N8Sq3ToxhvdOTH-Q&usqp=CAU",
+    "id": 177
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "A",
+    "wort": "Apfel",
+    "typ": "Nomen",
+    "sg": "der Apfel",
+    "pl": "die Äpfel",
+    "verwandte": "das Obst",
+    "beispiel": "Ich esse einen Apfel.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSav7z5ys4HBsJXnggpthcjUtPbNPZjDHqD88HW08goJv9fG_pSwx3vPwq8_RSHoG_HTgw&usqp=CAU",
+    "id": 178
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "B",
+    "wort": "Banane",
+    "typ": "Nomen",
+    "sg": "die Banane",
+    "pl": "die Bananen",
+    "verwandte": "",
+    "beispiel": "das Obst",
+    "image": "https://media.istockphoto.com/id/1165244327/es/vector/banana-icon-flat.jpg?s=170667a&w=0&k=20&c=SwL-OL9A_2Jki4Z2L4uhdkR2gNOV47Ct5qIxim-rZzM=",
+    "id": 179
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "B",
+    "wort": "Birne",
+    "typ": "Nomen",
+    "sg": "die Birne",
+    "pl": "die Birnen",
+    "verwandte": "",
+    "beispiel": "das Obst",
+    "image": "https://img.freepik.com/vector-premium/ilustracion-icono-dibujos-animados-fruta-pera_670095-17.jpg?w=2000",
+    "id": 180
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "M",
+    "wort": "Mango",
+    "typ": "Nomen",
+    "sg": "die Mango",
+    "pl": "die Mangos",
+    "verwandte": "",
+    "beispiel": "das Obst",
+    "image": "https://cdn-icons-png.flaticon.com/512/1862/1862212.png",
+    "id": 181
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "O",
+    "wort": "Orange",
+    "typ": "Nomen",
+    "sg": "die Orange",
+    "pl": "die Orangen",
+    "verwandte": "",
+    "beispiel": "das Obst",
+    "image": "https://img.freepik.com/vector-premium/ilustracion-icono-vector-dibujos-animados-fruta-naranja_480044-490.jpg?w=360",
+    "id": 182
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "A",
+    "wort": "Ananas",
+    "typ": "Nomen",
+    "sg": "die Ananas",
+    "pl": "die Ananase",
+    "verwandte": "",
+    "beispiel": "das Obst",
+    "image": "https://png.pngtree.com/png-vector/20190328/ourlarge/pngtree-vector-pineapple-icon-png-image_883300.jpg",
+    "id": 183
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "E",
+    "wort": "Erdbeere",
+    "typ": "Nomen",
+    "sg": "die Erdbeere",
+    "pl": "die Erdbeeren",
+    "verwandte": "",
+    "beispiel": "das Obst",
+    "image": "https://icon-library.com/images/strawberry-icon/strawberry-icon-2.jpg",
+    "id": 184
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "M",
+    "wort": "Melone",
+    "typ": "Nomen",
+    "sg": "die Melone",
+    "pl": "die Melonen",
+    "verwandte": "",
+    "beispiel": "das Obst",
+    "image": "https://images.vexels.com/media/users/3/128211/isolated/preview/af538d53a26ee71fe028abeac3a70782-melon-flat-circle-icon.png",
+    "id": 185
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "T",
+    "wort": "Traube",
+    "typ": "Nomen",
+    "sg": "die Traube",
+    "pl": "die Trauben",
+    "verwandte": "",
+    "beispiel": "das Obst",
+    "image": "https://img.freepik.com/vector-premium/ilustracion-icono-dibujos-animados-lindo-uva_315787-56.jpg",
+    "id": 186
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "K",
+    "wort": "Kokosnuss",
+    "typ": "Nomen",
+    "sg": "die Kokosnuss",
+    "pl": "die Kokosnüsse",
+    "verwandte": "",
+    "beispiel": "das Obst",
+    "image": "https://img.freepik.com/vector-gratis/ilustracion-icono-vector-dibujos-animados-fruta-coco-concepto-icono-naturaleza-alimentos-aislado-vector-premium_138676-5145.jpg",
+    "id": 187
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "O",
+    "wort": "Obst",
+    "typ": "Nomen",
+    "sg": "das Obst",
+    "pl": "- (Sg.)",
+    "verwandte": "",
+    "beispiel": "die Mango - der Apfel",
+    "image": "https://cdn-icons-png.flaticon.com/512/1514/1514469.png",
+    "id": 188
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "G",
+    "wort": "Gemüse",
+    "typ": "Nomen",
+    "sg": "das Gemüse",
+    "pl": "- (Sg.)",
+    "verwandte": "",
+    "beispiel": "die Gurke - die Tomate",
+    "image": "https://cdn-icons-png.flaticon.com/512/3058/3058995.png",
+    "id": 189
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "G",
+    "wort": "Gurke",
+    "typ": "Nomen",
+    "sg": "die Gurke",
+    "pl": "die Gurken",
+    "verwandte": "",
+    "beispiel": "das Gemüse",
+    "image": "https://img.freepik.com/vector-gratis/ilustracion-icono-vector-dibujos-animados-rebanada-pepino-flotante-concepto-icono-objeto-comida-aislado-premium_138676-4297.jpg?w=2000",
+    "id": 190
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "K",
+    "wort": "Kartoffel",
+    "typ": "Nomen",
+    "sg": "die Kartoffel",
+    "pl": "die Kartoffeln",
+    "verwandte": "",
+    "beispiel": "das Gemüse",
+    "image": "https://img.freepik.com/vector-gratis/ilustracion-icono-vector-dibujos-animados-vegetales-patata-concepto-icono-naturaleza-alimentos-aislado-vector-premium_138676-5159.jpg?w=2000",
+    "id": 191
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "S",
+    "wort": "Salat",
+    "typ": "Nomen",
+    "sg": "der Salat",
+    "pl": "die Salate",
+    "verwandte": "",
+    "beispiel": "das Gemüse",
+    "image": "https://img.freepik.com/vector-gratis/flotante-lechuga-mostaza-verde-dibujos-animados-vector-icono-ilustracion-comida-naturaleza-icono-concepto-aislado_138676-4298.jpg",
+    "id": 192
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "T",
+    "wort": "Tomate",
+    "typ": "Nomen",
+    "sg": "die Tomate",
+    "pl": "die Tomaten",
+    "verwandte": "",
+    "beispiel": "das Gemüse",
+    "image": "https://img.freepik.com/vector-gratis/tomate-vegetal-dibujos-animados-vector-icono-ilustracion-comida-naturaleza-icono-concepto-aislado-vector-premium_138676-5094.jpg?auto=format&h=200",
+    "id": 193
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "O",
+    "wort": "Olive",
+    "typ": "Nomen",
+    "sg": "die Olive",
+    "pl": "die Oliven",
+    "verwandte": "",
+    "beispiel": "das Gemüse",
+    "image": "https://us.123rf.com/450wm/mountainbrothers/mountainbrothers2001/mountainbrothers200100490/mountainbrothers200100490.jpg?ver=6",
+    "id": 194
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "Z",
+    "wort": "Zwiebel",
+    "typ": "Nomen",
+    "sg": "die Zwiebel",
+    "pl": "die Zwiebeln",
+    "verwandte": "",
+    "beispiel": "das Gemüse",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvEHme524rqOGTjHDm28IGiTUDChkGOhazMg&usqp=CAU",
+    "id": 195
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "A",
+    "wort": "Avokado",
+    "typ": "Nomen",
+    "sg": "die Avokado",
+    "pl": "die Avokados",
+    "verwandte": "",
+    "beispiel": "das Gemüse",
+    "image": "https://st2.depositphotos.com/5375910/8792/v/600/depositphotos_87927608-stock-illustration-fruits-avocado-icon.jpg",
+    "id": 196
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "K",
+    "wort": "Karotte",
+    "typ": "Nomen",
+    "sg": "die Karotte",
+    "pl": "die Karotten",
+    "verwandte": "",
+    "beispiel": "das Gemüse",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/007/580/411/small/cute-carrot-vegetable-icon-cartoon-on-blue-background-vector.jpg",
+    "id": 197
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "P",
+    "wort": "Pilz",
+    "typ": "Nomen",
+    "sg": "der Pilz",
+    "pl": "die Pilze",
+    "verwandte": "",
+    "beispiel": "das Gemüse",
+    "image": "https://cdn-icons-png.flaticon.com/512/1228/1228634.png",
+    "id": 198
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "Z",
+    "wort": "Zitrone",
+    "typ": "Nomen",
+    "sg": "die Zitrone",
+    "pl": "die Zitronen",
+    "verwandte": "",
+    "beispiel": "das Obst",
+    "image": "https://static.vecteezy.com/system/resources/previews/001/998/079/non_2x/fresh-lemon-citrus-icon-free-vector.jpg",
+    "id": 199
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "B",
+    "wort": "Brot",
+    "typ": "Nomen",
+    "sg": "das Brot",
+    "pl": "die Brote",
+    "verwandte": "",
+    "beispiel": "die Backwaren",
+    "image": "https://img.freepik.com/vector-premium/elemento-diseno-pan-icono-plano-ilustracion_645658-133.jpg?w=2000",
+    "id": 200
   }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
