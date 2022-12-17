@@ -1983,7 +1983,7 @@
     "pl": "die S-Bahnen",
     "verwandte": "die U-Bahn - der Zug",
     "beispiel": "",
-    "image": "https://static.vecteezy.com/system/resources/previews/000/420/305/non_2x/vector-train-icon.jpg",
+    "image": "https://media.istockphoto.com/id/970037700/tr/vekt%C3%B6r/tren-turuncu-daire-d%C3%BCz-simgesi.jpg?s=170667a&w=0&k=20&c=YUWdNp5K1cjmTP_CqaeS50RyuSqUCXB63yjPmtua9mo=",
     "id": 133
   },
   
@@ -2021,7 +2021,7 @@
     "sg": "der Bus",
     "pl": "die Busse",
     "verwandte": "die U-Bahn",
-    "beispiel": " Ich fahre nicht mit dem Bus zur Schule.",
+    "beispiel": "Ich fahre nicht mit dem Bus zur Schule.",
     "image": "https://e7.pngegg.com/pngimages/99/401/png-clipart-airport-bus-travel-ticket-hotel-bus-vector-icons-vehicle.png",
     "id": 136
   },
@@ -2037,6 +2037,175 @@
     "beispiel": "Sie fährt mit dem Fahrrad zur Schule.",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGQP-9Wz8aKwccD0no6IUcfNeNcmZ2hVRrTw&usqp=CAU",
     "id": 137
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "E",
+    "wort": "Euro",
+    "typ": "Nomen",
+    "sg": "der Euro",
+    "pl": "die Euros",
+    "verwandte": "das Geld",
+    "beispiel": "Das kostet zwei Euro fünfzig.",
+    "image": "https://cdn-icons-png.flaticon.com/512/1490/1490850.png",
+    "id": 138
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "M",
+    "wort": "Meter",
+    "typ": "Nomen",
+    "sg": "der Meter",
+    "pl": "- (Sg.)",
+    "verwandte": "der Kilometer",
+    "beispiel": "Es ist einundvierzig Meter lang und sechzehn Meter breit.",
+    "image": "https://cdn-icons-png.flaticon.com/512/4220/4220178.png",
+    "id": 139
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "S",
+    "wort": "Station",
+    "typ": "Nomen",
+    "sg": "die Station",
+    "pl": "die Stationen",
+    "verwandte": "der Zug - der Bus",
+    "beispiel": "Der Zug fährt jetzt in die dritte Station der Linie 6 ein.",
+    "image": "https://cdn-icons-png.flaticon.com/512/2093/2093835.png",
+    "id": 140
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "M",
+    "wort": "Meer",
+    "typ": "Nomen",
+    "sg": "das Meer",
+    "pl": "die Meere",
+    "verwandte": "der Fluss - der See",
+    "beispiel": "Der Wind teilt das Meer!",
+    "image": "https://cdn-icons-png.flaticon.com/512/191/191038.png",
+    "id": 141
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "F",
+    "wort": "Fluss",
+    "typ": "Nomen",
+    "sg": "der Fluss",
+    "pl": "die Flüsse",
+    "verwandte": "das Meer - der See",
+    "beispiel": "Ich sah einen Hund über den Fluss schwimmen.",
+    "image": "https://cdn-icons-png.flaticon.com/512/119/119573.png",
+    "id": 142
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "S",
+    "wort": "See",
+    "typ": "Nomen",
+    "sg": "der See",
+    "pl": "die Seen",
+    "verwandte": "das Meer - der Fluss",
+    "beispiel": "In dem See gibt es viele Fische.",
+    "image": "https://cdn-icons-png.flaticon.com/512/3277/3277621.png",
+    "id": 143
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "B",
+    "wort": "Bahnhof",
+    "typ": "Nomen",
+    "sg": "der Bahnhof",
+    "pl": "die Bahnhöfe",
+    "verwandte": "der Zug - die Station",
+    "beispiel": "Wollt ihr mit zum Bahnhof fahren?",
+    "image": "https://cdn-icons-png.flaticon.com/512/2093/2093835.png",
+    "id": 144
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "M",
+    "wort": "Markt",
+    "typ": "Nomen",
+    "sg": "der Markt",
+    "pl": "die Märkte",
+    "verwandte": "der Supermarkt",
+    "beispiel": "Wir müssen zum Markt.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCfUXYqJz21DYgTDNinO_aEWXgxJ0LwypVNZts7nd_qV9kmLWsfNo03ScanDwGzYIsr1E&usqp=CAU",
+    "id": 145
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "T",
+    "wort": "Turm",
+    "typ": "Nomen",
+    "sg": "der Turm",
+    "pl": "die Türme",
+    "verwandte": "",
+    "beispiel": "Der schiefe Turm von Pisa.",
+    "image": "https://cdn-icons-png.flaticon.com/512/1864/1864418.png",
+    "id": 146
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "B",
+    "wort": "Brücke",
+    "typ": "Nomen",
+    "sg": "die Brücke",
+    "pl": "die Brücken",
+    "verwandte": "",
+    "beispiel": "Unter der Brücke.",
+    "image": "https://cdn-icons-png.flaticon.com/512/440/440710.png",
+    "id": 147
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "P",
+    "wort": "Park",
+    "typ": "Nomen",
+    "sg": "der Park",
+    "pl": "die Parks",
+    "verwandte": "",
+    "beispiel": "Dies war einst ein Park.",
+    "image": "https://img.freepik.com/vector-premium/banco-parque-lampara-ilustracion-icono-vector-dibujos-animados-hierba-concepto-icono-parque-al-aire-libre-vector-premium-aislado-estilo-plano-dibujos-animados_138676-1458.jpg?w=2000",
+    "id": 148
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "H",
+    "wort": "Hotel",
+    "typ": "Nomen",
+    "sg": "das Hotel",
+    "pl": "die Hotels",
+    "verwandte": "",
+    "beispiel": "In welches Hotel?",
+    "image": "https://cdn-icons-png.flaticon.com/512/235/235889.png",
+    "id": 149
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "K",
+    "wort": "Kirche",
+    "typ": "Nomen",
+    "sg": "die Kirche",
+    "pl": "die Kirchen",
+    "verwandte": "",
+    "beispiel": "Klar, eine Menge Leute gehen zur Kirche.",
+    "image": "https://cdn-icons-png.flaticon.com/512/233/233956.png",
+    "id": 147
   }
 
 
