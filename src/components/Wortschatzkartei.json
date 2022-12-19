@@ -3061,7 +3061,348 @@
     "beispiel": "",
     "image": "https://img.freepik.com/vector-premium/linda-comida-sal-kawaii_24877-12895.jpg?w=2000",
     "id": 215
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "Z",
+    "wort": "Zucker",
+    "typ": "Nomen",
+    "sg": "der Zucker",
+    "pl": "- (Sg.)",
+    "verwandte": "die Lebensmittel",
+    "beispiel": "",
+    "image": "https://cdn-icons-png.flaticon.com/512/552/552680.png",
+    "id": 216
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "E",
+    "wort": "Essig",
+    "typ": "Nomen",
+    "sg": "der Essig",
+    "pl": "die Essige",
+    "verwandte": "die Lebensmittel",
+    "beispiel": "",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/014/481/006/small/vinegar-bottle-icon-flat-style-vector.jpg",
+    "id": 217
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "O",
+    "wort": "Öl",
+    "typ": "Nomen",
+    "sg": "das Öl",
+    "pl": "die Öle",
+    "verwandte": "die Lebensmittel",
+    "beispiel": "",
+    "image": "https://us.123rf.com/450wm/makc76/makc761611/makc76161100127/68043950-botella-de-aceite-vegetal-vector-de-la-historieta-de-aceite-de-cocina-botella-de-la-grasa-de-los-ali.jpg?ver=6",
+    "id": 218
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "N",
+    "wort": "Nudel",
+    "typ": "Nomen",
+    "sg": "die Nudel",
+    "pl": "die Nudeln",
+    "verwandte": "die Lebensmittel",
+    "beispiel": "",
+    "image": "https://cdn-icons-png.flaticon.com/512/1656/1656198.png",
+    "id": 219
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "R",
+    "wort": "Reis",
+    "typ": "Nomen",
+    "sg": "der Reis",
+    "pl": "- (Sg.)",
+    "verwandte": "die Lebensmittel",
+    "beispiel": "",
+    "image": "https://media.istockphoto.com/id/817359366/es/vector/arroz-en-vector-de-placa.jpg?b=1&s=612x612&w=0&k=20&c=zsv9bRzi6xT4QwNUTeTLCFYuI_TdrVlJGhr9bwrCYag=",
+    "id": 220
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "E",
+    "wort": "Ei",
+    "typ": "Nomen",
+    "sg": "das Ei",
+    "pl": "die Eier",
+    "verwandte": "die Lebensmittel",
+    "beispiel": "",
+    "image": "https://img.freepik.com/vector-premium/huevo-iconvector-ilustracion-aislado-sobre-fondo-blanco_736051-23.jpg?w=360",
+    "id": 221
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "F",
+    "wort": "Fisch",
+    "typ": "Nomen",
+    "sg": "der Fisch",
+    "pl": "die Fische",
+    "verwandte": "die Lebensmittel",
+    "beispiel": "",
+    "image": "https://static.vecteezy.com/system/resources/previews/007/478/602/non_2x/icon-fish-suitable-for-sea-symbol-long-shadow-style-simple-design-editable-design-template-simple-symbol-illustration-vector.jpg",
+    "id": 222
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "S",
+    "wort": "Schokolade",
+    "typ": "Nomen",
+    "sg": "die Schokolade",
+    "pl": "die Schokoladen",
+    "verwandte": "die Lebensmittel",
+    "beispiel": "",
+    "image": "https://img.freepik.com/vector-gratis/ilustracion-icono-dibujos-animados-barra-chocolate_138676-1965.jpg",
+    "id": 223
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "M",
+    "wort": "Marmelade",
+    "typ": "Nomen",
+    "sg": "die Marmelade",
+    "pl": "die Marmeladen",
+    "verwandte": "die Lebensmittel",
+    "beispiel": "",
+    "image": "https://img.freepik.com/vector-premium/ilustracion-icono-vector-dibujos-animados-mermelada-fresa-concepto-icono-objeto-comida-aislado-vector-premium_138676-4305.jpg?w=2000",
+    "id": 224
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "M",
+    "wort": "Müsli",
+    "typ": "Nomen",
+    "sg": "das Müsli",
+    "pl": "die Müslis",
+    "verwandte": "die Lebensmittel",
+    "beispiel": "",
+    "image": "https://thumbs.dreamstime.com/b/granola-de-la-avena-de-muesli-93332824.jpg",
+    "id": 225
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "G",
+    "wort": "Getränk",
+    "typ": "Nomen",
+    "sg": "das Getränk",
+    "pl": "die Getränke",
+    "verwandte": "der Saft - das Wasser",
+    "beispiel": "",
+    "image": "https://img.freepik.com/vector-premium/conjunto-icono-bebidas-bebidas_18591-190.jpg",
+    "id": 226
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "W",
+    "wort": "Wasser",
+    "typ": "Nomen",
+    "sg": "das Wasser",
+    "pl": "die Wasser",
+    "verwandte": "die Getränke",
+    "beispiel": "",
+    "image": "https://cdn-icons-png.flaticon.com/512/234/234794.png",
+    "id": 227
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "S",
+    "wort": "Saft",
+    "typ": "Nomen",
+    "sg": "der Saft",
+    "pl": "die Säfte",
+    "verwandte": "die Getränke - der Apfelsaft - der Orangensaft",
+    "beispiel": "",
+    "image": "https://static.vecteezy.com/system/resources/previews/004/697/536/non_2x/juice-flat-icon-vector.jpg",
+    "id": 228
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "L",
+    "wort": "Limonade",
+    "typ": "Nomen",
+    "sg": "die Limonade",
+    "pl": "die Limonaden",
+    "verwandte": "die Getränke",
+    "beispiel": "",
+    "image": "https://cdn-icons-png.flaticon.com/512/201/201700.png",
+    "id": 229
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "C",
+    "wort": "Cola",
+    "typ": "Nomen",
+    "sg": "die Cola",
+    "pl": "die Colas",
+    "verwandte": "die Getränke",
+    "beispiel": "",
+    "image": "https://cdn-icons-png.flaticon.com/512/2688/2688584.png",
+    "id": 230
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "K",
+    "wort": "Kaffee",
+    "typ": "Nomen",
+    "sg": "der Kaffee",
+    "pl": "die Kaffees",
+    "verwandte": "die Getränke",
+    "beispiel": "",
+    "image": "https://png.pngtree.com/png-vector/20190328/ourlarge/pngtree-vector-coffee-icon-png-image_883268.jpg",
+    "id": 231
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "T",
+    "wort": "Tee",
+    "typ": "Nomen",
+    "sg": "der Tee",
+    "pl": "die Tees",
+    "verwandte": "die Getränke",
+    "beispiel": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS_RGxQ2Q52g1gR1D9VwnwhP6vd3cauBCQwg&usqp=CAU",
+    "id": 232
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "B",
+    "wort": "Bäckerei",
+    "typ": "Nomen",
+    "sg": "die Bäckerei",
+    "pl": "die Bäckereien",
+    "verwandte": "die Geschäfte",
+    "beispiel": "",
+    "image": "https://img.freepik.com/vector-premium/edificio-panaderia-e-ilustracion-dibujos-animados-emblematicos_75802-317.jpg?w=2000",
+    "id": 233
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "M",
+    "wort": "Metzgerei",
+    "typ": "Nomen",
+    "sg": "die Metzgerei",
+    "pl": "die Metzgereien",
+    "verwandte": "die Geschäfte",
+    "beispiel": "",
+    "image": "https://cdn-icons-png.flaticon.com/512/1919/1919947.png",
+    "id": 234
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "Z",
+    "wort": "Zeitung",
+    "typ": "Nomen",
+    "sg": "die Zeitung",
+    "pl": "die Zeitungen",
+    "verwandte": "",
+    "beispiel": "Ich lese die Zeitung.",
+    "image": "https://cdn-icons-png.flaticon.com/512/330/330703.png",
+    "id": 235
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "P",
+    "wort": "Pommes",
+    "typ": "Nomen",
+    "sg": "- (Pl.)",
+    "pl": "die Pommes frites",
+    "verwandte": "die Gerichte",
+    "beispiel": "",
+    "image": "https://img.freepik.com/vector-gratis/ilustracion-icono-dibujos-animados-papas-fritas-concepto-icono-comida-rapida-aislado-estilo-dibujos-animados-plana_138676-2923.jpg",
+    "id": 236
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "P",
+    "wort": "Pizza",
+    "typ": "Nomen",
+    "sg": "die Pizza",
+    "pl": "die Pizzas/Pizzen",
+    "verwandte": "die Gerichte",
+    "beispiel": "",
+    "image": "https://img.freepik.com/vector-premium/icono-pizza-coleccion-comida-rapida-icono-comida-aislado_138676-504.jpg",
+    "id": 237
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "S",
+    "wort": "Suppe",
+    "typ": "Nomen",
+    "sg": "die Suppe",
+    "pl": "die Suppen",
+    "verwandte": "die Gerichte",
+    "beispiel": "",
+    "image": "https://us.123rf.com/450wm/juliasart/juliasart1801/juliasart180100140/juliasart180100140.jpg?ver=6",
+    "id": 238
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "K",
+    "wort": "Kilo",
+    "typ": "Nomen",
+    "sg": "das Kilo",
+    "pl": "das Gramm",
+    "verwandte": "",
+    "beispiel": "Ich nehme noch 150 Gramm Schinken.",
+    "image": "https://st4.depositphotos.com/1005920/21992/v/600/depositphotos_219924748-stock-illustration-flat-design-weight-kg-kilogram.jpg",
+    "id": 239
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "L",
+    "wort": "Liter",
+    "typ": "Nomen",
+    "sg": "der Liter",
+    "pl": "- (Sg.)",
+    "verwandte": "",
+    "beispiel": "Ich trinke 1 Liter Milch.",
+    "image": "https://st4.depositphotos.com/1005920/21992/v/600/depositphotos_219924748-stock-illustration-flat-design-weight-kg-kilogram.jpg",
+    "id": 240
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "E",
+    "wort": "Essen",
+    "typ": "Nomen",
+    "sg": "das Essen",
+    "pl": "die Essen",
+    "verwandte": "",
+    "beispiel": "",
+    "image": "https://static.vecteezy.com/system/resources/previews/005/845/871/non_2x/breakfast-food-on-plate-with-egg-and-sausage-cartoon-icon-illustration-breakfast-icon-concept-isolated-premium-flat-cartoon-style-vector.jpg",
+    "id": 241
   }
+
+
+
 
 
   
