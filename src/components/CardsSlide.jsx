@@ -25,12 +25,13 @@ export function CardsSlide({card}){
 
 
         <p className={styles.infinitiv}>{card.infinitiv}</p>
-        <p className={styles.präsens1}>{card.präsens1}</p>
-        <p className={styles.präsens2}>{card.präsens2}</p>
-        <p className={styles.präsens3}>{card.präsens3}</p>
-        <p className={styles.präsens4}>{card.präsens4}</p>
-        <p className={styles.präsens5}>{card.präsens5}</p>
-        <p className={styles.präsens6}>{card.präsens6}</p>
+        <p className={styles.zeitformen}>{card.zeitformen}</p>
+        <p className={styles.personalpronomen1}>{card.personalpronomen1}</p>
+        <p className={styles.personalpronomen2}>{card.personalpronomen2}</p>
+        <p className={styles.personalpronomen3}>{card.personalpronomen3}</p>
+        <p className={styles.personalpronomen4}>{card.personalpronomen4}</p>
+        <p className={styles.personalpronomen5}>{card.personalpronomen5}</p>
+        <p className={styles.personalpronomen6}>{card.personalpronomen6}</p>
 
         <p className={styles.mann}>{card.mann}</p>
         <p className={styles.manner}>{card.manner}</p>

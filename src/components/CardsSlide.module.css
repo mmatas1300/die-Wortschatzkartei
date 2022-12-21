@@ -57,39 +57,49 @@
 
 .infinitiv{
     position: absolute;
-    font-size: 120%;
+    font-size: 140%;
     top: 25px;
     left: 70px;
 }
 
-.präsens1{
+.zeitformen{
     position: absolute;
-    top: 50px;
+    font-size: 120%;
+    top: 55px;
+    left: 70px;
 }
 
-.präsens2{
-    position: absolute;
-    top: 70px;
-}
-
-.präsens3{
+.personalpronomen1{
     position: absolute;
     top: 90px;
 }
 
-.präsens4{
+.personalpronomen2{
     position: absolute;
     top: 110px;
 }
 
-.präsens5{
+.personalpronomen3{
     position: absolute;
     top: 130px;
 }
 
-.präsens6{
+.personalpronomen4{
     position: absolute;
-    top: 150px;
+    top: 90px;
+    left: 140px;
+}
+
+.personalpronomen5{
+    position: absolute;
+    top: 110px;
+    left: 140px;
+}
+
+.personalpronomen6{
+    position: absolute;
+    top: 130px;
+    left: 140px;
 }
 
 .mann{
