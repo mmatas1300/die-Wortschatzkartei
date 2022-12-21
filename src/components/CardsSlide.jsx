@@ -40,7 +40,7 @@ export function CardsSlide({card}){
         <p className={styles.verwandte}>{card.verwandte}</p>
         <p className={styles.beispiel}>{card.beispiel}</p>
 
-        <img className={styles.image} src={card.image} alt={card.wort} />
+        <img className={styles.bild} src={card.bild} alt={card.wort} />
 
     </li>;
 }
