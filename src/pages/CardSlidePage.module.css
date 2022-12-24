@@ -4,11 +4,11 @@
     gap: 5px;
 }
 
-.titlePage{
-    margin: 0;
-}
-
 .backButton{
     display: flex;
     align-self: center;
+}
+
+.titlePage{
+    margin: 0;
 }

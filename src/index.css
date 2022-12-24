@@ -3,15 +3,6 @@
   src: url("./fonts/BalooBhaijaan2.ttf");
 }
 
-:root {
-  --color-rose: #c51487;
-  --color-red: #b82c50;
-  --color-green: #4dac2b;
-  --color-blue: #0079a4;
-  --color-yellow: #fffb15;
-  --color-orange: #ffaa00;
-}
-
 body {
   margin: 15px 50px 15px 50px;
   background-color: #212121;

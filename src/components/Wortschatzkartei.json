@@ -3464,5 +3464,102 @@
     "beispiel": "Richtig oder falsch.",
     "bild": "https://static.vecteezy.com/system/resources/previews/005/845/871/non_2x/breakfast-food-on-plate-with-egg-and-sausage-cartoon-icon-illustration-breakfast-icon-concept-isolated-premium-flat-cartoon-style-vector.jpg",
     "id": 242
+  },
+  
+  {
+    "type": "Nomen-das",
+    "anfangsbuchstabe": "Beispiele",
+    "wort": "Beispielbild",
+    "typ": "Nomen-das",
+    "sg": "Singular",
+    "pl": "Plural",
+    "verwandte": "Verwandte Wörter",
+    "beispiel": "Beispielsätze",
+    "bild": "",
+    "id": 243
+  },
+  
+  {
+    "type": "Nomen-der",
+    "anfangsbuchstabe": "Beispiele",
+    "wort": "Beispielbild",
+    "typ": "Nomen-der",
+    "sg": "Singular",
+    "pl": "Plural",
+    "verwandte": "Verwandte Wörter",
+    "beispiel": "Beispielsätze",
+    "bild": "",
+    "id": 244
+  },
+  
+  {
+    "type": "Nomen-die",
+    "anfangsbuchstabe": "Beispiele",
+    "wort": "Beispielbild",
+    "typ": "Nomen-die",
+    "sg": "Singular",
+    "pl": "Plural",
+    "verwandte": "Verwandte Wörter",
+    "beispiel": "Beispielsätze",
+    "bild": "",
+    "id": 245
+  },
+  
+  {
+    "type": "Nomen-pl",
+    "anfangsbuchstabe": "Beispiele",
+    "wort": "Beispielbild",
+    "typ": "Nomen-Plural",
+    "sg": "-",
+    "pl": "Plural",
+    "verwandte": "Verwandte Wörter",
+    "beispiel": "Beispielsätze",
+    "bild": "",
+    "id": 246
+  },
+  
+  {
+    "type": "Verbe",
+    "anfangsbuchstabe": "Beispiele",
+    "wort": "Beispielbild",
+    "typ": "Verbe",
+    "infinitiv": "Infinitiv",
+    "zeitformen": "Zeitformen",
+    "personalpronomen1": "ich",
+    "personalpronomen2": "du",
+    "personalpronomen3": "er/sie/es",
+    "personalpronomen4": "wir",
+    "personalpronomen5": "ihr",
+    "personalpronomen6": "Sie/sie",
+    "beispiel": "Beispielsätze",
+    "bild": "",
+    "id": 247
+  },
+  
+  {
+    "type": "Andere-Wort",
+    "anfangsbuchstabe": "Beispiele",
+    "wort": "Beispielbild",
+    "typ": "Andere Wörter",
+    "andereWort": "Wort",
+    "verwandte": "Verwandte Wörter",
+    "beispiel": "Beispielsätze",
+    "bild": "",
+    "id": 248
+  },
+
+  {
+    "type": "Nomen-2",
+    "anfangsbuchstabe": "Beispiele",
+    "wort": "Beispielbild",
+    "typ": "Nomen für Mann und Frau",
+    "mann": "der Mann",
+    "manner": "die Männer",
+    "frau": "die Frau",
+    "frauen": "die Frauen",
+    "verwandte": "Verwandte Wörter",
+    "beispiel": "Beispielsätze",
+    "bild": "",
+    "id": 249
   }
 ]

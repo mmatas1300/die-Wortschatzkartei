@@ -1,7 +1,7 @@
+import styles from "./CardSlidePage.module.css";
 import {useParams} from "react-router-dom";
 import {FaArrowCircleLeft} from "react-icons/fa";
 import {Link} from "react-router-dom";
-import styles from "./CardSlidePage.module.css";
 import { CardsSlideGrid } from "../components/CardsSlideGrid";
 
 export function CardsSlidePage(){

@@ -3,7 +3,6 @@ import { HashRouter, Routes,  Route} from "react-router-dom";
 import { CardsSlidePage } from "./pages/CardsSlidePage";
 import ScrollToTop from "./components/ScrollToTop";
 
-//Componente de inicio
 export function App() {
   return <HashRouter>
     <ScrollToTop />

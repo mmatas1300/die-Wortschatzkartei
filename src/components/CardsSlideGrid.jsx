@@ -1,6 +1,6 @@
+import styles from "./CardsSlideGrid.module.css";
 import { useParams } from "react-router-dom";
 import { CardsSlide } from "./CardsSlide.jsx";
-import styles from "./CardsSlideGrid.module.css";
 import { Fade } from "react-awesome-reveal";
 import { useState, useEffect } from 'react';
 

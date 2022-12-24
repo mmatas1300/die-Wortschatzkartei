@@ -19,14 +19,10 @@ export function CardsSlide({card}){
     }
 
     return<li className={`${cardStyleColor} ${styles.karte}`}>
-        
         <p className={styles.typ}>{card.typ}</p>
-
         <p className={styles.sg}>{card.sg}</p>
         <p className={styles.pl}>{card.pl}</p>
-
         <p className={styles.andereWort}>{card.andereWort}</p>
-
         <p className={styles.infinitiv}>{card.infinitiv}</p>
         <p className={styles.zeitformen}>{card.zeitformen}</p>
         <p className={styles.personalpronomen1}>{card.personalpronomen1}</p>
@@ -35,18 +31,12 @@ export function CardsSlide({card}){
         <p className={styles.personalpronomen4}>{card.personalpronomen4}</p>
         <p className={styles.personalpronomen5}>{card.personalpronomen5}</p>
         <p className={styles.personalpronomen6}>{card.personalpronomen6}</p>
-
         <p className={styles.mann}>{card.mann}</p>
         <p className={styles.manner}>{card.manner}</p>
         <p className={styles.frau}>{card.frau}</p>
         <p className={styles.frauen}>{card.frauen}</p>
-
         <p className={styles.verwandte}>{card.verwandte}</p>
         <p className={styles.beispiel}>{card.beispiel}</p>
-
         <img className={styles.bild} src={card.bild} alt={card.wort} />
-
     </li>;
 }
-
-
