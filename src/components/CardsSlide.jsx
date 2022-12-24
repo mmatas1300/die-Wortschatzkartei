@@ -14,6 +14,8 @@ export function CardsSlide({card}){
         cardStyleColor = styles.karteVerbe;
     }else if(card.type === "Nomen-pl"){
         cardStyleColor = styles.karteNomenPl;
+    }else if(card.type === "Andere-Wort"){
+        cardStyleColor = styles.karteAndereWort;
     }
 
     return<li className={`${cardStyleColor} ${styles.karte}`}>
@@ -23,6 +25,7 @@ export function CardsSlide({card}){
         <p className={styles.sg}>{card.sg}</p>
         <p className={styles.pl}>{card.pl}</p>
 
+        <p className={styles.andereWort}>{card.andereWort}</p>
 
         <p className={styles.infinitiv}>{card.infinitiv}</p>
         <p className={styles.zeitformen}>{card.zeitformen}</p>

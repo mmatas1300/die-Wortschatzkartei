@@ -39,6 +39,13 @@
     left: 40px;
 }
 
+.andereWort{
+    position: absolute;
+    font-size: 140%;
+    top: 75px;
+    left: 40px;
+}
+
 .verwandte{
     position: absolute;
     font-size: 100%;
@@ -151,6 +158,10 @@
 }
 
 .karteNomenPl{
+    background-color: #e3c817;
+}
+
+.karteAndereWort{
     background-color: #9e007e;
 }
 
