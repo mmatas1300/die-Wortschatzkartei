@@ -3456,7 +3456,7 @@
   
   {
     "type": "Andere-Wort",
-    "anfangsbuchstabe": "E",
+    "anfangsbuchstabe": "R",
     "wort": "Richtig",
     "typ": "Adjektive",
     "andereWort": "Richtig",
@@ -3468,9 +3468,9 @@
   
   {
     "type": "Nomen-das",
-    "anfangsbuchstabe": "Beispiele",
-    "wort": "Beispielbild",
-    "typ": "Nomen-das",
+    "anfangsbuchstabe": "Wie",
+    "wort": "Beispielbild ´",
+    "typ": "Neutrum Nomen",
     "sg": "Singular",
     "pl": "Plural",
     "verwandte": "Verwandte Wörter",
@@ -3481,9 +3481,9 @@
   
   {
     "type": "Nomen-der",
-    "anfangsbuchstabe": "Beispiele",
-    "wort": "Beispielbild",
-    "typ": "Nomen-der",
+    "anfangsbuchstabe": "Wie",
+    "wort": "Beispielbild ´",
+    "typ": "Maskulim Nomen",
     "sg": "Singular",
     "pl": "Plural",
     "verwandte": "Verwandte Wörter",
@@ -3494,9 +3494,9 @@
   
   {
     "type": "Nomen-die",
-    "anfangsbuchstabe": "Beispiele",
-    "wort": "Beispielbild",
-    "typ": "Nomen-die",
+    "anfangsbuchstabe": "Wie",
+    "wort": "Beispielbild ´",
+    "typ": "Feminin Nomen",
     "sg": "Singular",
     "pl": "Plural",
     "verwandte": "Verwandte Wörter",
@@ -3507,9 +3507,9 @@
   
   {
     "type": "Nomen-pl",
-    "anfangsbuchstabe": "Beispiele",
-    "wort": "Beispielbild",
-    "typ": "Nomen-Plural",
+    "anfangsbuchstabe": "Wie",
+    "wort": "Beispielbild ´",
+    "typ": "Plural Nomen",
     "sg": "-",
     "pl": "Plural",
     "verwandte": "Verwandte Wörter",
@@ -3520,8 +3520,8 @@
   
   {
     "type": "Verbe",
-    "anfangsbuchstabe": "Beispiele",
-    "wort": "Beispielbild",
+    "anfangsbuchstabe": "Wie",
+    "wort": "Beispielbild ´",
     "typ": "Verbe",
     "infinitiv": "Infinitiv",
     "zeitformen": "Zeitformen",
@@ -3538,8 +3538,8 @@
   
   {
     "type": "Andere-Wort",
-    "anfangsbuchstabe": "Beispiele",
-    "wort": "Beispielbild",
+    "anfangsbuchstabe": "Wie",
+    "wort": "Beispielbild ´",
     "typ": "Andere Wörter",
     "andereWort": "Wort",
     "verwandte": "Verwandte Wörter",
@@ -3550,8 +3550,8 @@
 
   {
     "type": "Nomen-2",
-    "anfangsbuchstabe": "Beispiele",
-    "wort": "Beispielbild",
+    "anfangsbuchstabe": "Wie",
+    "wort": "Beispielbild ´",
     "typ": "Nomen für Mann und Frau",
     "mann": "der Mann",
     "manner": "die Männer",

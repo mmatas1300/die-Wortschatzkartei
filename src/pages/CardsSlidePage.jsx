@@ -6,10 +6,14 @@ import { CardsSlideGrid } from "../components/CardsSlideGrid";
 
 export function CardsSlidePage(){
     const {letterId} =useParams();
+    let PageTitle='Wörter mit '+letterId;
+    if(letterId==="Wie"){
+        PageTitle='Wie liest man die Karten?';  
+    }
     return <div>
         <div className={styles.headPage}>
-            <Link to="/" className={styles.backButton}><FaArrowCircleLeft size={35} /></Link>
-            <h1 className={styles.titlePage}>Wörter mit {letterId}</h1>
+            <Link to="/" className={styles.backButton}><FaArrowCircleLeft size={35} /></Link> 
+            <h1 className={styles.titlePage}>{PageTitle}</h1>
         </div>
         <main>
             <CardsSlideGrid />
