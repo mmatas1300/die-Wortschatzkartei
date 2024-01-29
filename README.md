@@ -1,3 +1,17 @@
+# Die Wortschatzkartei
+
+A web app designed to learn german words (nouns, verbs, adjectives, etc.) and sentences. The topics are obtained from the book "Netzwerk neu" published by Klett.
+
+## Deployment
+
+Deployed by GitHub Pages: https://mmatas1300.github.io/die-Wortschatzkartei/
+
+## Authors
+
+- [@mmatas1300](https://www.github.com/mmatas1300)
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
