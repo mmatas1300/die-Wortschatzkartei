@@ -13,6 +13,6 @@ const userSchema = new Schema({
     }
 })
 
-const User = model.User || model('User', userSchema) //Si ya existe un modelo reutilizalo
+const User = model.User || model('User', userSchema); //Si ya existe un modelo reutilizalo
 
-export default User;
+export default User
