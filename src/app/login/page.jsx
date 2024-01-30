@@ -61,26 +61,19 @@ function LoginPage() {
         e.preventDefault();
         setButtonState(<Spinner className="mt-2.5 h-10 w-10" />);
         const formData = new FormData(e.currentTarget)//extraer datos del form
-        console.log(formData.email)
         try {
             const res = await signIn("credentials", {
                 email: formData.get("email"),
                 password: formData.get("password"),
                 redirect: false
             });
-            console.log(res)
-            setFormError()    
-            
             if(res.ok) return router.push("/dashboard")
+            setFormError(res.error) 
             
         } catch (error) {
             console.log(error)
         }
-
-   
         setButtonState(<button>Weiter</button>);
-    
-
     };
 
     return (

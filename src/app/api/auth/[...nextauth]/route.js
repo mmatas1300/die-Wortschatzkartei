@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { connectDB } from "@/libs/mongodb";
 import User from '@/models/user'
 import bcrypt from 'bcryptjs'
+import { NextResponse } from "next/server";
 
 const handler = NextAuth({
     providers: [
@@ -16,14 +17,12 @@ const handler = NextAuth({
                 await connectDB()
 
                 const userFound = await User.findOne({email: credentials.email}).select("+password");
-                
-                if(!userFound)throw new Error("Invalid credentials1");
+
+                if(!userFound) throw new Error("Ungültige Daten")
 
                 const passwordMatch = await bcrypt.compare(credentials.password, userFound.password)
 
-                if(!passwordMatch)throw new Error("Invalid credentials2");
-
-                console.log(userFound)
+                if(!passwordMatch)throw new Error("Ungültige Daten")
 
                 return userFound;
             }
