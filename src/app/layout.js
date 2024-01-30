@@ -1,5 +1,6 @@
 import { baloo } from '@/app/ui/fonts';
 import "./globals.css";
+import Providers from './Providers';
 
 
 export const metadata = {
@@ -10,7 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="de">
-      <body className={baloo.className}>{children}</body>
+      <body className={baloo.className}>
+        <Providers>{children}</Providers>
+        </body>
     </html>
   );
 }
