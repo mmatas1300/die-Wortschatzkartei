@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --blue-card: #0078A3;
+  --red-card: #B72B4F;
+  --green-card: #4CAB2A;
+  --white-card: #F8F9FA;
+  --black-card: #1E1E1E;
+  --orange-card: #FE7413;
+  --yellow-card: #E89E00;
+}
+
 *{
     margin: 0;
     padding: 0;

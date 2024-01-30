@@ -4,12 +4,12 @@ section{
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  color: var(--white-card)
 }
 
 .container{
-  background-color: #1E1E1E;
+  background-color: var(--black-card);
   border-radius: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
   width: 768px;
@@ -20,38 +20,37 @@ section{
 .container p{
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.3px;
   margin: 20px 0;
 }
 
-.container span{
-  font-size: 12px;
+.container .error{
+  color: var(--yellow-card);
+  font-size: 14px;
 }
 
-.container a{
-  color: #333;
-  font-size: 13px;
-  text-decoration: none;
-  margin: 15px 0 10px;
+.container h1{
+  font-size: 20px;
 }
+
+.container label{
+  align-self: flex-start;
+  font-size: 10px;
+  line-height: 20px;
+}
+
 
 .container button{
-  background-color: #4CAB2A;
-  color: #fff;
-  font-size: 12px;
-  padding: 10px 45px;
-  border: 1px solid transparent;
+  background-color: var(--green-card);
+  font-size: 13px;
+  padding: 10px 25px;
   border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
   margin-top: 10px;
   cursor: pointer;
 }
 
 
 .container form{
-  background-color: #1E1E1E;
+  background-color: var(--black-card);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,9 +60,10 @@ section{
 }
 
 .container input{
-  background-color: #eee;
+  background-color: var(--white-card);
+  color: var(--black-card);
   border: none;
-  margin: 8px 0;
+  margin: 0 0 8px 0;
   padding: 10px 15px;
   font-size: 13px;
   border-radius: 8px;
@@ -131,9 +131,8 @@ section{
 }
 
 .toggle{
-  background-color: #B72B4F;
+  background-color: var(--red-card);
   height: 100%;
-  color: #fff;
   position: relative;
   left: -100%;
   height: 100%;
@@ -143,7 +142,7 @@ section{
 }
 
 .container.active .toggle{
-  background-color: #0078A3;
+  background-color: var(--blue-card);
   transform: translateX(50%);
 }
 

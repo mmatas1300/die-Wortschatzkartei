@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.8",
     "axios": "^1.6.7",
     "bcryptjs": "^2.4.3",
     "mongoose": "^8.1.1",
