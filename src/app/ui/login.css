@@ -29,6 +29,11 @@ section{
   font-size: 14px;
 }
 
+.container .success{
+  color: var(--green-card);
+  font-size: 14px;
+}
+
 .container h1{
   font-size: 20px;
 }

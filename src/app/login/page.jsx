@@ -39,11 +39,19 @@ function LoginPage() {
                 })
                 console.log(res)
                 setFormError()
+                setButtonState(<div className='success'>Erfolgreiche Registrierung!</div>);
+                setTimeout(function() {
+                    setFormState("container")
+                    setButtonState(<button>Weiter</button>)
+                  }, 1500);
+                
             } catch (error) {
                 setFormError(error.response.data.message)
             }
+        } else{
+            setButtonState(<button>Weiter</button>);
         }
-        setButtonState(<button>Weiter</button>);
+
     };
 
     return (
