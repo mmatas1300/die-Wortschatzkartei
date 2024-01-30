@@ -9,7 +9,7 @@ export async function POST(request) {
     if (!password || password.length < 3) //Validación contraseña
         return NextResponse.json(
             {
-                message: "Passwörter müssen mindestens 3 Zeichen lang sein."
+                message: "Passwörter müssen mindestens 3 Zeichen lang sein"
             },
             {
                 status: 400

@@ -1,6 +1,6 @@
 'use client'
-import '@/app/ui/login.css'
 import { Spinner } from "@material-tailwind/react";
+import '@/app/ui/login.css'
 import { useState } from "react"
 import axios from 'axios';
 
@@ -8,13 +8,16 @@ import axios from 'axios';
 function LoginPage() {
 
     const [formState, setFormState] = useState("container");
-    const [buttonState, setButtonState] = useState("Weiter");
+    const [buttonState, setButtonState] = useState(<button>Weiter</button>);
     const [formError, setFormError] = useState();
 
     const dataValidation = (data) => {
         let validation = true;
         if (data.get("email").length === 0) {
             setFormError("Gib deine E-Mail-Adresse ein")
+            validation = false;
+        }else if (data.get("password").length<3){
+            setFormError("Passwörter müssen mindestens 3 Zeichen lang sein")
             validation = false;
         } else if (data.get("password") !== data.get("confirmPassword")) {
             setFormError("Die Passwörter stimmen nicht überein")
@@ -25,7 +28,7 @@ function LoginPage() {
 
     const handleRegistrierenSubmit = async (e) => {
         e.preventDefault();
-        setButtonState(<Spinner />);
+        setButtonState(<Spinner className="mt-2.5 h-10 w-10" />);
         const formData = new FormData(e.currentTarget)//extraer datos del form
 
         if (dataValidation(formData)) {
@@ -40,7 +43,7 @@ function LoginPage() {
                 setFormError(error.response.data.message)
             }
         }
-        setButtonState("Weiter");
+        setButtonState(<button>Weiter</button>);
     };
 
     return (
@@ -57,7 +60,7 @@ function LoginPage() {
                         <label htmlFor="confirmPassword">Passwort nochmals eingeben:</label>
                         <input type="password" placeholder="Passwort nochmals eingeben" name="confirmPassword" />
                         {formError && <div className='error'>{formError}</div>}
-                        <button>{buttonState}</button>
+                        {buttonState}
                     </form>
                 </div>
                 <div className="form-container sign-in">
@@ -69,7 +72,7 @@ function LoginPage() {
                         <label htmlFor="password">Dein Passwort:</label>
                         <input type="password" placeholder="Passwort" />
                         {formError && <div className='error'>{formError}</div>}
-                        <button>{buttonState}</button>
+                        {buttonState}
                     </form>
                 </div>
                 <div className="toggle-container">
