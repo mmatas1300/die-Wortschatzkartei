@@ -15,7 +15,6 @@ export async function POST(request) {
                 status: 400
             }
         );
-
         
     try {
         await connectDB() //Conecta a db
