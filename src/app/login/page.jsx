@@ -3,6 +3,8 @@ import { Spinner } from "@material-tailwind/react";
 import '@/app/ui/login.css'
 import { useState } from "react"
 import axios from 'axios';
+import {useRouter} from "next/navigation";
+import { signIn } from "next-auth/react";
 
 
 function LoginPage() {
@@ -10,6 +12,7 @@ function LoginPage() {
     const [formState, setFormState] = useState("container");
     const [buttonState, setButtonState] = useState(<button>Weiter</button>);
     const [formError, setFormError] = useState();
+    const router = useRouter();
 
     const dataValidation = (data) => {
         let validation = true;
@@ -54,6 +57,32 @@ function LoginPage() {
 
     };
 
+    const handleAnmeldenSubmit = async (e) => {
+        e.preventDefault();
+        setButtonState(<Spinner className="mt-2.5 h-10 w-10" />);
+        const formData = new FormData(e.currentTarget)//extraer datos del form
+        console.log(formData.email)
+        try {
+            const res = await signIn("credentials", {
+                email: formData.get("email"),
+                password: formData.get("password"),
+                redirect: false
+            });
+            console.log(res)
+            setFormError()    
+            
+            if(res.ok) return router.push("/dashboard")
+            
+        } catch (error) {
+            console.log(error)
+        }
+
+   
+        setButtonState(<button>Weiter</button>);
+    
+
+    };
+
     return (
         <section>
             <div className={formState}>
@@ -72,13 +101,13 @@ function LoginPage() {
                     </form>
                 </div>
                 <div className="form-container sign-in">
-                    <form>
+                    <form onSubmit={handleAnmeldenSubmit}>
                         <h1>Anmelden</h1>
                         <p>Willkommen zurück!</p>
                         <label htmlFor="email">Deine E-Mail-Adresse:</label>
-                        <input type="email" placeholder="E-Mail-Adresse" />
+                        <input type="email" placeholder="E-Mail-Adresse" name="email" />
                         <label htmlFor="password">Dein Passwort:</label>
-                        <input type="password" placeholder="Passwort" />
+                        <input type="password" placeholder="Passwort" name="password" />
                         {formError && <div className='error'>{formError}</div>}
                         {buttonState}
                     </form>

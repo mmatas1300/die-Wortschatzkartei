@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const userSchema = new Schema({
     email: {
@@ -15,6 +15,6 @@ const userSchema = new Schema({
           
 })
 
-const User = model.User || model('User', userSchema); //Si ya existe un modelo reutilizalo
+const User = models.User || model('User', userSchema); //Si ya existe un modelo reutilizalo
 
 export default User
