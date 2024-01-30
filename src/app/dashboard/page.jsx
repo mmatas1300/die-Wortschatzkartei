@@ -8,7 +8,11 @@ function DashboardPage(){
     console.log(session,status);
 
     return(
-        <div>Hola</div>
+        <div>
+            <h1>Buenas tardes</h1>
+            <div>{JSON.stringify(session)}</div>
+            <div>{JSON.stringify(status)}</div>
+        </div>
     )
 }
 
