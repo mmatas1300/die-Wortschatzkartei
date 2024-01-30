@@ -10,7 +10,9 @@ const userSchema = new Schema({
         type: String,
         required: [true, 'Password is required'],
         select: false
-    }
+    },
+    cards: [{cardId: Schema.Types.ObjectId, phase: Number}]
+          
 })
 
 const User = model.User || model('User', userSchema); //Si ya existe un modelo reutilizalo
