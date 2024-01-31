@@ -1,6 +1,7 @@
 import { baloo } from '@/app/ui/fonts';
 import "./globals.css";
 import Providers from './Providers';
+import Navbar from '@/components/Navbar';
 
 
 export const metadata = {
@@ -12,7 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="de">
       <body className={baloo.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Navbar />
+            {children}
+        </Providers>
         </body>
     </html>
   );
