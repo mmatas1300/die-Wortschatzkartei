@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="de">
       <body className={baloo.className}>
-        <Providers>
+        <Providers>         
           <Navbar />
             {children}
         </Providers>
