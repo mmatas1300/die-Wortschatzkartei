@@ -9,7 +9,7 @@ import { signIn } from "next-auth/react";
 
 function LoginPage() {
 
-    const [formState, setFormState] = useState("container");
+    const [formState, setFormState] = useState(style["container"]);
     const [buttonState, setButtonState] = useState(<button>Weiter</button>);
     const [formError, setFormError] = useState();
     const router = useRouter();
@@ -42,9 +42,9 @@ function LoginPage() {
                 })
                 console.log(res)
                 setFormError()
-                setButtonState(<div className='success'>Erfolgreiche Registrierung!</div>);
+                setButtonState(<div className={style['success']}>Erfolgreiche Registrierung!</div>);
                 setTimeout(function() {
-                    setFormState("container")
+                    setFormState(style["container"])
                     setButtonState(<button>Weiter</button>)
                   }, 1500);
                 
@@ -77,9 +77,9 @@ function LoginPage() {
     };
 
     return (
-        <section className={style["form-container"]}>
+        <section className={style["section"]}>
             <div className={formState}>
-                <div className="form-container sign-up">
+                <div className={`${style["form-container"]} ${style["sign-up"]}`}>
                     <form onSubmit={handleRegistrierenSubmit}>
                         <h1>Registrieren</h1>
                         <p>Es geht ganz schnell und einfach.</p>
@@ -89,11 +89,11 @@ function LoginPage() {
                         <input type="password" placeholder="Neues Passwort" name="password" />
                         <label htmlFor="confirmPassword">Passwort nochmals eingeben:</label>
                         <input type="password" placeholder="Passwort nochmals eingeben" name="confirmPassword" />
-                        {formError && <div className='error'>{formError}</div>}
+                        {formError && <div className={style['error']}>{formError}</div>}
                         {buttonState}
                     </form>
                 </div>
-                <div className="form-container sign-in">
+                <div className={`${style["form-container"]} ${style["sign-in"]}`}>
                     <form onSubmit={handleAnmeldenSubmit}>
                         <h1>Anmelden</h1>
                         <p>Willkommen zurück!</p>
@@ -101,23 +101,23 @@ function LoginPage() {
                         <input type="email" placeholder="E-Mail-Adresse" name="email" />
                         <label htmlFor="password">Dein Passwort:</label>
                         <input type="password" placeholder="Passwort" name="password" />
-                        {formError && <div className='error'>{formError}</div>}
+                        {formError && <div className={style['error']}>{formError}</div>}
                         {buttonState}
                     </form>
                 </div>
-                <div className="toggle-container">
-                    <div className="toggle">
-                        <div className="toggle-panel toggle-left">
+                <div className={style["toggle-container"]}>
+                    <div className={style["toggle"]}>
+                        <div className={`${style["toggle-panel"]} ${style["toggle-left"]}`}>
                             <h1>Willkommen zurück!</h1>
                             <p>Du hast bereits ein Konto?</p>
-                            <button id="login" onClick={() => { setFormError(); setFormState("container") }}>
+                            <button onClick={() => { setFormError(); setFormState(style["container"]) }}>
                                 Anmelden
                             </button>
                         </div>
-                        <div className="toggle-panel toggle-right">
+                        <div className={`${style["toggle-panel"]} ${style["toggle-right"]}`}>
                             <h1>Willkommen!</h1>
                             <p>Du hast kein Konto?</p>
-                            <button onClick={() => { setFormError(); setFormState("container active") }}>
+                            <button onClick={() => { setFormError(); setFormState(`${style["container"]} ${style["active"]}`) }}>
                                 Registrieren
                             </button>
                         </div>
