@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { signOut } from 'next-auth/react';
 import { useState, useEffect } from 'react';
-import '@/components/Navbar.css';
+import style from '@/components/Navbar.module.css';
 
 function Navbar() {
     const { status } = useSession();
@@ -11,16 +11,17 @@ function Navbar() {
     const varLinks = (status) => {
         if (status === "authenticated") {
             return (<>
-                <Link className='navLink block' href="/">Home</Link>
-                <Link className='navLink block' href="/dashboard">Perfil</Link>
-                <Link className='navLink block' href="/contact">Kontakt</Link>
-                <button className='navLink block' onClick={() => { signOut() }}>Abmelden</button>
+                <Link className={style['navLink']} href="/dashboard">Mein Konto</Link>
+                <Link className={style['navLink']} href="/contact">Üben</Link>
+                <Link className={style['navLink']} href="/contact">Wörterbuch</Link>
+                <Link className={style['navLink']} href="/contact">Kontakt</Link>
+                <button className={style['navLink']} onClick={() => { signOut() }}>Abmelden</button>
             </>)
         } else {
             return (<>
-                <Link className='navLink block' href="/">Home</Link>
-                <Link className='navLink block' href="/contact">Kontakt</Link>
-                <Link className='navLink block' href="/login">Anmelden</Link>
+                <Link className={style['navLink']} href="/contact">Wörterbuch</Link>
+                <Link className={style['navLink']} href="/contact">Kontakt</Link>
+                <Link className={style['navLink']} href="/login">Anmelden</Link>
             </>)
         }
     }
@@ -36,22 +37,22 @@ function Navbar() {
 
     function menuToggle() {
         if (toggle === "h-0") {
-            setToggle("h-32")
+            setToggle(status=== "authenticated" ? "h-48" : "h-32")
             setTimeout(() => {
                 setBurgerLinks('opacity-0');
-            }, 100)
-            setTimeout(() => {
-                setBurgerLinks('opacity-25');
-            }, 150)
-            setTimeout(() => {
-                setBurgerLinks('opacity-50');
             }, 200)
             setTimeout(() => {
-                setBurgerLinks('opacity-75');
+                setBurgerLinks('opacity-25');
             }, 250)
             setTimeout(() => {
-                setBurgerLinks('opacity-100');
+                setBurgerLinks('opacity-50');
             }, 300)
+            setTimeout(() => {
+                setBurgerLinks('opacity-75');
+            }, 350)
+            setTimeout(() => {
+                setBurgerLinks('opacity-100');
+            }, 400)
         }
         else {
             setToggle("h-0")
@@ -89,7 +90,7 @@ function Navbar() {
 
 
     return (
-        <nav className="" role="navigation">
+        <nav className={style.nav} role="navigation">
             <div className="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
                 <div className="mr-4 md:mr-8">
                     <Link className='text-2xl' href="/">die Wortschatzkartei</Link>
@@ -125,7 +126,7 @@ function Navbar() {
                 </div>
                 <div
                     
-                    className={`w-full ${toggle} transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center`}
+                    className={`w-full ${toggle} transition-all ease-out duration-300 md:transition-none md:w-auto md:flex-grow md:flex md:items-center`}
                 >
                     <div
                         id="ulMenu"

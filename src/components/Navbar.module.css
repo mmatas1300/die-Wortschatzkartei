@@ -1,15 +1,16 @@
-nav {
+.nav {
     background-color: var(--blue-card);
     color: var(--white-card);
     border-radius: 0 0 10px 40px;
 }
 
-button{
+.nav button{
     background-color: var(--red-card);
 }
 
 .navLink{
     padding: 5px 10px 5px 10px;
+    display: block;
 }
 
 .navLink:hover{
@@ -18,5 +19,7 @@ button{
 }
 
 button.navLink{
+
     background-color: transparent;
+    text-align: start;
 }
