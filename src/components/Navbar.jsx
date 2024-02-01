@@ -19,11 +19,13 @@ function Navbar() {
             return(<>
                 <Link className='navLink block' href="/">Home</Link>
                 <Link className='navLink block' href="/dashboard">Perfil</Link>
+                <Link className='navLink block' href="/contact">Kontakt</Link>
                 <button className='navLink block' onClick={()=>{signOut()}}>Abmelden</button>
             </>)
         } else{
             return(<>
             <Link className='navLink block' href="/">Home</Link>
+            <Link className='navLink block' href="/contact">Kontakt</Link>
             <Link className='navLink block' href="/login">Anmelden</Link>
             </>)
         }

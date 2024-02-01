@@ -17,3 +17,6 @@ button{
     border-radius: 5px;
 }
 
+button.navLink{
+    background-color: transparent;
+}
