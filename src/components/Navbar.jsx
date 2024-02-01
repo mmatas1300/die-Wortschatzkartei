@@ -12,14 +12,14 @@ function Navbar() {
         if (status === "authenticated") {
             return (<>
                 <Link className={style['navLink']} href="/dashboard">Mein Konto</Link>
-                <Link className={style['navLink']} href="/contact">Üben</Link>
-                <Link className={style['navLink']} href="/contact">Wörterbuch</Link>
+                <Link className={style['navLink']} href="/uben">Üben</Link>
+                <Link className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
                 <Link className={style['navLink']} href="/contact">Kontakt</Link>
                 <button className={style['navLink']} onClick={() => { signOut() }}>Abmelden</button>
             </>)
         } else {
             return (<>
-                <Link className={style['navLink']} href="/contact">Wörterbuch</Link>
+                <Link className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
                 <Link className={style['navLink']} href="/contact">Kontakt</Link>
                 <Link className={style['navLink']} href="/login">Anmelden</Link>
             </>)
@@ -82,7 +82,7 @@ function Navbar() {
                 <div className="ml-auto md:hidden">
                     <button
                         onClick={menuToggle}
-                        className="flex items-center px-3 py-2 border rounded"
+                        className="flex items-center px-3 py-2 rounded"
                         type="button"
                     >
                         {toggle !== 'h-0' ? (<svg className="h-6 w-6"

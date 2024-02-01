@@ -1,7 +1,7 @@
 export {default} from 'next-auth/middleware';
 
 export const config ={
-    matcher: ['/dashboard']
+    matcher: ['/dashboard','/uben']
 }
 
 //con :path* se protegen todas las rutas
