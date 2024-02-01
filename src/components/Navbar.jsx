@@ -26,18 +26,13 @@ function Navbar() {
         }
     }
 
-
-
-
-
     const [toggle, setToggle] = useState('h-0');
     const [burgerLinks, setBurgerLinks] = useState("hidden")
-
-
+    const [windowSize, setWindowSize] = useState([1920,1080]);
 
     function menuToggle() {
         if (toggle === "h-0") {
-            setToggle(status=== "authenticated" ? "h-48" : "h-32")
+            setToggle(status === "authenticated" ? "h-48" : "h-32")
             setTimeout(() => {
                 setBurgerLinks('opacity-0');
             }, 200)
@@ -60,14 +55,8 @@ function Navbar() {
         };
     }
 
-
-    const [windowSize, setWindowSize] = useState([
-        window.innerWidth,
-        window.innerHeight,
-    ]);
-
-
     useEffect(() => {
+
         const menuResize = () => {
             const window_size = window.innerWidth //|| document.body.clientWidth;
             if (window_size > 719) {
@@ -84,11 +73,6 @@ function Navbar() {
         };
     }, []);
 
-
-
-
-
-
     return (
         <nav className={style.nav} role="navigation">
             <div className="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
@@ -101,31 +85,31 @@ function Navbar() {
                         className="flex items-center px-3 py-2 border rounded"
                         type="button"
                     >
-                        {toggle !=='h-0' ? (<svg className="h-6 w-6"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor" >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M6 18L18 6M6 6l12 12" />
-                            </svg>) : (<svg className="h-6 w-6"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M4 6h16M4 12h16m-7 6h7" />
-                            </svg>)}
+                        {toggle !== 'h-0' ? (<svg className="h-6 w-6"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor" >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>) : (<svg className="h-6 w-6"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>)}
                     </button>
                 </div>
                 <div
-                    
+
                     className={`w-full ${toggle} transition-all ease-out duration-300 md:transition-none md:w-auto md:flex-grow md:flex md:items-center`}
                 >
                     <div

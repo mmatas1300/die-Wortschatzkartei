@@ -8,11 +8,13 @@ function DashboardPage(){
     console.log(session,status);
 
     return(
-        <div>
-            <h1>Buenas tardes</h1>
+        <section className='container mx-auto mt-12'>
+            <div className='flex flex-col justify-center items-center'>
+            <h1 className='text-2xl'>Willkommen Freund!</h1>
             <div>{JSON.stringify(session)}</div>
-            <div>{JSON.stringify(status)}</div>
-        </div>
+            </div>
+
+        </section>
     )
 }
 
