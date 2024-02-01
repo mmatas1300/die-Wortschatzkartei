@@ -11,7 +11,8 @@ const userSchema = new Schema({
         required: [true, 'Password is required'],
         select: false
     },
-    cards: [{cardId: Schema.Types.ObjectId, phase: Number}]
+    progress: [{cardId: Schema.Types.ObjectId, phase: Number, date: Date}],
+    myCards:[{k: Number}]
           
 })
 
