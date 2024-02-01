@@ -1,6 +1,6 @@
 'use client'
 import { Spinner } from "@material-tailwind/react";
-import '@/app/ui/login.css'
+import style from '@/app/ui/login.module.css'
 import { useState } from "react"
 import axios from 'axios';
 import {useRouter} from "next/navigation";
@@ -77,7 +77,7 @@ function LoginPage() {
     };
 
     return (
-        <section>
+        <section className={style["form-container"]}>
             <div className={formState}>
                 <div className="form-container sign-up">
                     <form onSubmit={handleRegistrierenSubmit}>
