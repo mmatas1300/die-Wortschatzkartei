@@ -42,3 +42,13 @@ export async function POST(request) {
 
     
 }
+
+export async function GET(){
+    try {
+        await connectDB();
+        const allCards = await AndereCard.find({});
+        return NextResponse.json(allCards);
+    } catch (error) {
+        return NextResponse.json(error);
+    }
+}
