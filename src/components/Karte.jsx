@@ -1,19 +1,28 @@
-import style from '@/components/Karte.module.css'
+'use client'
+import ReactCardFlip from 'react-card-flip';
+import { useState } from 'react';
 
 function Karte(){
+
+    const [isFlipped, setIsFlipped] = useState(true);
+
+    function FlipCard(){
+        setIsFlipped(!isFlipped);
+    }
+
     return (
-        <section className='flex justify-center items-center'>
-        <div className={style.karte}>
-            <div className={style.kartefront}>
-                <p>Das Kind</p>
-
-            </div>
-            <div className={style.karteback}>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit delectus eum ipsum asperiores velit reiciendis facilis, error quisquam iste et laboriosam? Eum odio, dolorum quasi architecto impedit ullam! Quia, voluptatibus?</p>
-            </div>
+        <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
+        <div className='bg-blue-gray-400'>
+          This is the front of the card.
+          <button onClick={FlipCard}>Click to flip</button>
         </div>
-        </section>
 
+        <div className='border-b-deep-orange-700'>
+          This is ssssthe back of the card.
+          <button onClick={FlipCard}>Click to flip</button>
+        </div>
+
+        </ReactCardFlip>
 
     );
 }
