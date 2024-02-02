@@ -10,18 +10,19 @@ function Navbar() {
 
     const varLinks = (status) => {
         if (status === "authenticated") {
+            
             return (<>
-                <Link className={style['navLink']} href="/dashboard">Mein Konto</Link>
-                <Link className={style['navLink']} href="/uben">Üben</Link>
-                <Link className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
-                <Link className={style['navLink']} href="/contact">Kontakt</Link>
-                <button className={style['navLink']} onClick={() => { signOut() }}>Abmelden</button>
+                <Link onClick={menuToggle} className={style['navLink']} href="/dashboard">Mein Konto</Link>
+                <Link onClick={menuToggle} className={style['navLink']} href="/uben">Üben</Link>
+                <Link onClick={menuToggle} className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
+                <Link onClick={menuToggle} className={style['navLink']} href="/contact">Kontakt</Link>
+                <button className={style['navLink']} onClick={() => { signOut(); }}>Abmelden</button>
             </>)
         } else {
             return (<>
-                <Link className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
-                <Link className={style['navLink']} href="/contact">Kontakt</Link>
-                <Link className={style['navLink']} href="/login">Anmelden</Link>
+                <Link onClick={menuToggle} className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
+                <Link onClick={menuToggle} className={style['navLink']} href="/contact">Kontakt</Link>
+                <Link onClick={menuToggle} className={style['navLink']} href="/login">Anmelden</Link>
             </>)
         }
     }
@@ -29,9 +30,9 @@ function Navbar() {
     const [toggle, setToggle] = useState('h-0');
     const [burgerLinks, setBurgerLinks] = useState("hidden")
     const [windowSize, setWindowSize] = useState([1920,1080]);
-
+    
     function menuToggle() {
-        if (toggle === "h-0") {
+        if ((toggle === "h-0")&&(windowSize[0]<720)) {
             setToggle(status === "authenticated" ? "h-48" : "h-32")
             setTimeout(() => {
                 setBurgerLinks('opacity-0');
@@ -59,11 +60,14 @@ function Navbar() {
 
         const menuResize = () => {
             const window_size = window.innerWidth //|| document.body.clientWidth;
+            
             if (window_size > 719) {
                 setToggle("h-0");
                 setBurgerLinks("hidden");
             }
             setWindowSize([window.innerWidth, window.innerHeight]);
+
+            
         };
 
         window.addEventListener('resize', menuResize);
