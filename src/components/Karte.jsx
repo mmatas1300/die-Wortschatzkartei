@@ -1,28 +1,33 @@
 'use client'
 import ReactCardFlip from 'react-card-flip';
 import { useState } from 'react';
+import style from '@/components/Karte.module.css'
 
-function Karte(){
+function Karte() {
 
-    const [isFlipped, setIsFlipped] = useState(true);
+    const [isFlipped, setIsFlipped] = useState(false);
 
-    function FlipCard(){
-        setIsFlipped(!isFlipped);
-    }
 
     return (
-        <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-        <div className='bg-blue-gray-400'>
-          This is the front of the card.
-          <button onClick={FlipCard}>Click to flip</button>
-        </div>
+        <div className='flex flex-col justify-center items-center'>
+            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+                <div className={`${style.karte} flex  flex-col justify-center items-center`}>
+                    das Kind
+                </div>
 
-        <div className='border-b-deep-orange-700'>
-          This is ssssthe back of the card.
-          <button onClick={FlipCard}>Click to flip</button>
-        </div>
+                <div className={`${style.karte} flex  flex-col justify-center items-center`}>
+                    <p>Nomen</p>
+                    <p>das Kind</p>
+                    <p>die Kinder</p>
+                    <p>bild</p>
+                    <p>das Mädchen</p>
+                    <p>Er ist ein Kind</p>
+                    <p>Kid | Niño</p>
+                </div>
+            </ReactCardFlip>
+            <button className={`${style.flipButton} ${isFlipped? "hidden" : ""}`} onClick={()=>{setIsFlipped(true)}}>Umdrehen</button>   
 
-        </ReactCardFlip>
+        </div>
 
     );
 }
