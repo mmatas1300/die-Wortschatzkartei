@@ -1,6 +1,6 @@
 import style from '@/app/ui/dashboard.module.css'
 
-function ContactPage() {
+function KontaktPage() {
 
 
     return(
@@ -23,4 +23,4 @@ function ContactPage() {
     );
 }
 
-export default ContactPage
+export default KontaktPage

@@ -15,13 +15,13 @@ function Navbar() {
                 <Link onClick={menuToggle} className={style['navLink']} href="/konto">Mein Konto</Link>
                 <Link onClick={menuToggle} className={style['navLink']} href="/uben">Üben</Link>
                 <Link onClick={menuToggle} className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
-                <Link onClick={menuToggle} className={style['navLink']} href="/contact">Kontakt</Link>
+                <Link onClick={menuToggle} className={style['navLink']} href="/kontakt">Kontakt</Link>
                 <button className={style['navLink']} onClick={() => { signOut(); }}>Abmelden</button>
             </>)
         } else {
             return (<>
                 <Link onClick={menuToggle} className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
-                <Link onClick={menuToggle} className={style['navLink']} href="/contact">Kontakt</Link>
+                <Link onClick={menuToggle} className={style['navLink']} href="/kontakt">Kontakt</Link>
                 <Link onClick={menuToggle} className={style['navLink']} href="/login">Anmelden</Link>
             </>)
         }
