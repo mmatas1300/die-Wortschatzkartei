@@ -18,7 +18,7 @@ export async function POST(request) {
         
     try {
         await connectDB() //Conecta a db
-        
+
         const userFound = await User.findOne({ email })//Validación cuenta ya existente
 
         if (userFound)
@@ -34,6 +34,7 @@ export async function POST(request) {
         const hashedPassword = await bcrypt.hash(password, 10);//Encriptación de contraseña
 
 
+
         const user = new User({
             email,
             password: hashedPassword,
@@ -41,8 +42,9 @@ export async function POST(request) {
             myCards
         })
 
+        console.log(user)
         const savedUser = await user.save(); //Guardando en la db
-
+        console.log("guarado en db")
 
         return NextResponse.json(savedUser);
     } catch (error) {

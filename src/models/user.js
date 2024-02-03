@@ -1,21 +1,13 @@
 import { Schema, model, models } from "mongoose";
 
 const userSchema = new Schema({
-    email: {
-        type: String,
-        unique: true,
-        required: [true, 'Email is required']
-    },
-    password: {
-        type: String,
-        required: [true, 'Password is required'],
-        select: false
-    },
+    email: String,
+    password:String,
     progress: [{cardId: Schema.Types.ObjectId, phase: Number, date: Date}],
-    myCards:[{k: Number}]
+    myCards:[Schema.Types.Mixed]
           
 })
 
-const User = models.User || model('User', userSchema); //Si ya existe un modelo reutilizalo
+const User = models.User || model('User', userSchema,'users'); //Si ya existe un modelo reutilizalo
 
 export default User

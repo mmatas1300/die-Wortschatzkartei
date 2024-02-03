@@ -2,7 +2,7 @@ import { Schema, model, models } from "mongoose";
 
 const verbCardSchema = new Schema({
     type: String,
-    wort: {type: String, unique: true, required: true},
+    wort: String,
     prasens: [String],
     prateritum:[String],
     partizip2: String,
@@ -14,7 +14,7 @@ const verbCardSchema = new Schema({
 
 const nomenCardSchema = new Schema({
     type: String,
-    wort: {type: String, unique: true, required: true},
+    wort: String,
     plural: String,
     bild: String,
     verwandte: String,
@@ -24,7 +24,7 @@ const nomenCardSchema = new Schema({
 
 const nomenMUFCardSchema = new Schema({
     type: String,
-    wort: {type: String, unique: true, required: true},
+    wort: String,
     manner: String,
     frau: String,
     frauen: String,
@@ -36,7 +36,7 @@ const nomenMUFCardSchema = new Schema({
 
 const andereCardSchema = new Schema({
     type: String,
-    wort: {type: String, unique: true, required: true},
+    wort: String,
     bild: String,
     verwandte: String,
     beispiel: String,
