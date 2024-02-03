@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/react'
 import Kontoeinstellungen from '@/components/Kontoeinstellungen';
 import { useState, useEffect } from 'react';
 import { Spinner } from "@material-tailwind/react";
+import Karteneditor from '@/components/Karteneditor';
 
 function KontoPage() {
 
@@ -19,6 +20,7 @@ function KontoPage() {
             setUserMessages(<>
                 <h1 className='text-2xl mb-10'>{session.user.config.nick ? "Willkommen "+session.user.config.nick+"!":"Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
                 <Kontoeinstellungen />
+                <Karteneditor />
                 <div>{JSON.stringify(session)}</div>
                 <div>{JSON.stringify(status)}</div>
             </>)

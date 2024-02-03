@@ -1,0 +1,90 @@
+
+
+.category button:hover{
+  background-color: var(--green-card);
+}
+
+
+.category button{
+  border-radius: 10px 10px 0px 0px;
+  background-color: var(--black-card);
+  padding: 10px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+
+
+
+.editor{
+  border-radius: 5px 25px 25px 25px;
+  overflow: hidden;
+  width: 450px;
+  max-width: 100%;
+  min-height: 180px;
+  z-index: 5;
+}
+
+.andere{
+  background-color: var(--purple-card);
+}
+
+.nomen{
+  background-color: var(--blue-card);
+}
+
+.nomenMUF{
+  background-image: linear-gradient(to right, var(--blue-card) , var(--red-card));
+}
+
+.verb{
+  background-color: var(--orange-card);
+}
+
+.editor input{
+    background-color: var(--white-card);
+    color: var(--black-card);
+    border: none;
+    margin: 0 0 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+  }
+
+  .editor select{
+    background-color: var(--white-card);
+    color: var(--black-card);
+    border: none;
+    margin: 0 0 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+  }
+
+  .editor button{
+    background-color: var(--green-card);
+    font-size: 13px;
+    padding: 10px 25px;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+
+  .editor label{
+    align-self: flex-start;
+    font-size: 10px;
+    line-height: 20px;
+  }
+
+  .editor p{
+    font-size: 14px;
+    line-height: 20px;
+    margin: 20px 0;
+  }
