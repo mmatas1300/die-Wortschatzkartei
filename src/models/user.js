@@ -5,7 +5,7 @@ const userSchema = new Schema({
     password:String,
     progress: [{cardId: Schema.Types.ObjectId, phase: Number, date: Date}],
     myCards:[Schema.Types.Mixed],
-    config:[{nick:String,practiceFrom:String}]
+    config:{nick:String, cardsSet:String}
           
 })
 

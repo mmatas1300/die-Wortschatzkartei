@@ -1,17 +1,34 @@
 'use client'
-import {useSession} from 'next-auth/react'
+import { useSession } from 'next-auth/react'
+import Kontoeinstellungen from '@/components/Kontoeinstellungen';
+import { useState, useEffect } from 'react';
+import { Spinner } from "@material-tailwind/react";
 
-function KontoPage(){
-    
-    const {data: session, status} = useSession();
-    
-    console.log(session,status);
+function KontoPage() {
 
-    return(
-        <section className='container mx-auto mt-12'>
+    const { data: session, status } = useSession();
+
+    const [userMessages, setUserMessages] = useState(<Spinner className="mt-2.5 h-10 w-10" />);
+
+    console.log(session, status);
+
+    useEffect(() => {
+        if (status === "loading") {
+            setUserMessages(<Spinner className="mt-2.5 h-10 w-10" />)
+        } else if (status === "authenticated") {
+            setUserMessages(<>
+                <h1 className='text-2xl mb-10'>{session.user.config.nick ? "Willkommen "+session.user.config.nick+"!":"Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
+                <Kontoeinstellungen />
+                <div>{JSON.stringify(session)}</div>
+                <div>{JSON.stringify(status)}</div>
+            </>)
+        }
+    }, [status])
+
+    return (
+        <section className='mx-auto mt-12'>
             <div className='flex flex-col justify-center items-center'>
-            <h1 className='text-2xl'>Willkommen Freund!</h1>
-            <div>{JSON.stringify(session)}</div>
+                {userMessages}
             </div>
 
         </section>

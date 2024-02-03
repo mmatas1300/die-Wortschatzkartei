@@ -1,4 +1,4 @@
-import style from '@/app/ui/dashboard.module.css'
+import style from '@/app/ui/kontakt.module.css'
 
 function KontaktPage() {
 

@@ -40,7 +40,10 @@ export async function POST(request) {
             password: hashedPassword,
             progress,
             myCards,
-            config
+            config:{
+                nick: "",
+                cardsSet:"app"
+            }
         })
 
         console.log(user)
