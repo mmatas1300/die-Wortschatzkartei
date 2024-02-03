@@ -12,7 +12,7 @@ function Navbar() {
         if (status === "authenticated") {
             
             return (<>
-                <Link onClick={menuToggle} className={style['navLink']} href="/dashboard">Mein Konto</Link>
+                <Link onClick={menuToggle} className={style['navLink']} href="/konto">Mein Konto</Link>
                 <Link onClick={menuToggle} className={style['navLink']} href="/uben">Üben</Link>
                 <Link onClick={menuToggle} className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
                 <Link onClick={menuToggle} className={style['navLink']} href="/contact">Kontakt</Link>

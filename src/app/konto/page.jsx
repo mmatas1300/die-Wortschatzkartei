@@ -1,7 +1,7 @@
 'use client'
 import {useSession} from 'next-auth/react'
 
-function DashboardPage(){
+function KontoPage(){
     
     const {data: session, status} = useSession();
     
@@ -18,4 +18,4 @@ function DashboardPage(){
     )
 }
 
-export default DashboardPage
+export default KontoPage

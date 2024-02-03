@@ -67,7 +67,7 @@ function LoginPage() {
                 password: formData.get("password"),
                 redirect: false
             });
-            if(res.ok) return router.push("/dashboard")
+            if(res.ok) return router.push("/konto")
             setFormError(res.error) 
             
         } catch (error) {
