@@ -17,8 +17,7 @@
     "next-auth": "^4.24.5",
     "react": "^18",
     "react-card-flip": "^1.2.2",
-    "react-dom": "^18",
-    "reactjs-flip-card": "^2.0.3"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

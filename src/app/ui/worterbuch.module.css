@@ -1,0 +1,7 @@
+.card{
+    background-color: var(--orange-card);
+}
+
+.card:hover{
+    background-color: var(--yellow-card);
+}
