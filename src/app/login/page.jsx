@@ -36,7 +36,7 @@ function LoginPage() {
 
         if (dataValidation(formData)) {
             try {
-                const res = await axios.post('die-wortschatzkartei.vercel.app/api/auth/signup', {
+                const res = await axios.post('/api/auth/signup', {
                     email: formData.get("email"),
                     password: formData.get("password")
                 })
