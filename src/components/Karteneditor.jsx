@@ -65,7 +65,7 @@ function Karteneditor() {
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
         const card = createCard(formData);
-        const res = await axios.post('http://localhost:3000/api/cards', card);
+        const res = await axios.post('/api/cards', card);
         console.log(res)
 
     }

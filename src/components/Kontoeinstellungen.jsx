@@ -19,7 +19,7 @@ function Kontoeinstellungen() {
         try {
             const userData = await axios({
                 method: 'put',
-                url: 'http://localhost:3000/api/users',
+                url: '/api/users',
                 data: {
                     _id: session.user._id,
                     config: config

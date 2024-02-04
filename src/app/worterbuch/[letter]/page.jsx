@@ -5,7 +5,7 @@ import style from "@/app/ui/worterbuch.module.css"
 
 async function WorterMitPage({ params }) {
 
-    const response = await fetch('http://localhost:3000/api/cards');
+    const response = await fetch('/api/cards');
     const data = await response.json();
     await console.log(data)
 

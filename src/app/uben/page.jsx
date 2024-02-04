@@ -9,7 +9,7 @@ function UbenPage() {
     useEffect(()=>{
         fetch('/api/cards')
             .then(res=> res.json())
-            .then(data=>console.log(data))
+            .then(data=> setMyKarten(data))
     },[])
 
   
