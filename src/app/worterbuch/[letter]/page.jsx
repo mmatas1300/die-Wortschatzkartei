@@ -11,7 +11,7 @@ function WorterMitPage({ params }) {
 
     useEffect(()=>{
         fetch('/api/cards')
-            .then((res)=>res.json)
+            .then((res)=>res.json())
             .then((data)=>setCards(data))
     },[])
 
