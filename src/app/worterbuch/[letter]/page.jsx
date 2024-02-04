@@ -1,15 +1,22 @@
+'use client'
 import Karte from "@/components/KarteWorterbuch";
 import arrow from '@/app/ui/arrow.png';
 import Link from 'next/link'
 import style from "@/app/ui/worterbuch.module.css"
+import { useEffect, useState } from "react";
 
-async function WorterMitPage({ params }) {
+function WorterMitPage({ params }) {
 
-    const response = await fetch('/api/cards');
-    const data = await response.json();
-    await console.log(data)
+    const [cards, setCards] = useState(["a","b"])
 
-    const dataFilter = data.filter((card) => {
+    useEffect(()=>{
+        fetch('/api/cards')
+            .then((res)=>res.json)
+            .then((data)=>setCards(data))
+    },[])
+
+
+    const dataFilter = cards.filter((card) => {
         return card.wort.charAt(0) === params.letter
     })
 
