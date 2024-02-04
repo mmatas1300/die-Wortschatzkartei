@@ -1,16 +1,17 @@
+'use client'
 import Karte from "@/components/Karte";
-import axios from "axios";
+import { useEffect, useState } from "react";
 
-const getCards = async () => {
-    const res = await axios.get('/api/cards')
-    return res.data
-  };
+function UbenPage() {
 
+    const [myKarten, setMyKarten] = useState(["a","b"]);
 
-async function UbenPage() {
+    useEffect(()=>{
+        fetch('/api/cards')
+            .then(res=> res.json())
+            .then(data=>console.log(data))
+    },[])
 
-
-    const myKarten = await getCards();
   
     return (
         <div className="flex flex-col justify-center items-center mt-12">
