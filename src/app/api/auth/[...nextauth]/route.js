@@ -14,7 +14,7 @@ const handler = NextAuth({
             },
             async authorize(credentials,req){
                 await connectDB()
-
+                console.log("conectssss")
                 const userFound = await User.findOne({email: credentials.email}).select("+password");
 
                 if(!userFound) throw new Error("Ungültige Daten")
@@ -39,6 +39,7 @@ const handler = NextAuth({
         },
         session({session, token}){
             session.user = token.user; //pasar el token a la session
+            console.log("callbask en sessison")
             return session
         }
     },
