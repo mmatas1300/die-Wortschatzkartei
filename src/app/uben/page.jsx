@@ -2,7 +2,7 @@ import Karte from "@/components/Karte";
 import axios from "axios";
 
 const getCards = async () => {
-    const res = await axios.get('http://localhost:3000/api/cards')
+    const res = await axios.get('/api/cards')
     return res.data
   };
 
