@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 function WorterMitPage({ params }) {
 
-    const [cards, setCards] = useState(["a","b"])
+    const [cards, setCards] = useState([{wort:"ap"}])
 
     useEffect(()=>{
         fetch('/api/cards')
