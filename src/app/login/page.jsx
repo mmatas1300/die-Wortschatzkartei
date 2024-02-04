@@ -67,6 +67,7 @@ function LoginPage() {
                 password: formData.get("password"),
                 callbackUrl: "/konto"
             });
+            console.log("AAAAAAAAAAAAAAAAAAAAAAAA")
             if(res.ok) return router.push("/konto")
             setFormError(res.error) 
             
