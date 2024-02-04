@@ -5,3 +5,4 @@ export const config ={
 }
 
 //con :path* se protegen todas las rutas
+

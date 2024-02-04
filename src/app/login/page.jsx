@@ -65,7 +65,7 @@ function LoginPage() {
             const res = await signIn("credentials", {
                 email: formData.get("email"),
                 password: formData.get("password"),
-                redirect: false
+                callbackUrl: "/konto"
             });
             if(res.ok) return router.push("/konto")
             setFormError(res.error) 
