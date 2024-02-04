@@ -16,9 +16,9 @@ function WorterMitPage({ params }) {
     },[])
 
 
-    const dataFilter = cards.filter((card) => {
-        return card.wort.charAt(0) === params.letter
-    })
+    // const dataFilter = cards.filter((card) => {
+    //     return card.wort.charAt(0) === params.letter
+    // })
 
     return (
         <section>
@@ -31,7 +31,7 @@ function WorterMitPage({ params }) {
             </div>
 
             <div className="flex flex-row flex-wrap justify-center items-center mt-12">
-                {dataFilter.map((karte) => {
+                {cards.map((karte) => {
                     return (<div key={karte._id} className="m-5"><Karte {...karte} /></div>)
                 })}
             </div>
