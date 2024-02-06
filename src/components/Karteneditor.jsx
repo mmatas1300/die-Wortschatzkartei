@@ -1,12 +1,16 @@
 import style from '@/components/Karteneditor.module.css'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Spinner } from "@material-tailwind/react";
+import { useSession } from 'next-auth/react'
 
 function Karteneditor() {
 
     const [newCardState, setNewCardState] = useState(<button>Fertig</button>);
     
+    const { data: session, status } = useSession();
+
+
     const createCard = (formData) =>{ 
         if(formData.get('wortNomen')){
             const card = {
@@ -72,8 +76,15 @@ function Karteneditor() {
         setNewCardState(<Spinner className="mt-2.5 h-10 w-10" />);
         const formData = new FormData(e.currentTarget)
         const card = createCard(formData);
+
+
         try{
-            const res = await axios.post('/api/cards', card);
+            if(session.user.email ==="mmatas1300@gmail.com"){
+                await axios.post('/api/cards', card);
+            } else{
+                card._id=card.wort+session.user.email;
+                await axios.put('/api/user/cards', {email: session.user.email,card: card});
+            }
             setNewCardState(<div className={style['success']}>Karte hinzugefügt!</div>);
             setTimeout(function() {
                 setNewCardState(<button>Fertig</button>)
