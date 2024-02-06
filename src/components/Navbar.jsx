@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { signOut } from 'next-auth/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import style from '@/components/Navbar.module.css';
 
 function Navbar() {
@@ -29,7 +29,8 @@ function Navbar() {
 
     const [toggle, setToggle] = useState('h-0');
     const [burgerLinks, setBurgerLinks] = useState("hidden")
-    const [windowSize, setWindowSize] = useState([719,1080]);
+    const [windowSize, setWindowSize] = useState([0,0]);
+
     
     function menuToggle() {
         if ((toggle === "h-0")&&(windowSize[0]<720)) {
@@ -56,8 +57,14 @@ function Navbar() {
         };
     }
 
+
+
+
     useEffect(() => {
 
+        if(windowSize[0] === 0){
+            setWindowSize([window.innerWidth, window.innerHeight]);
+        }
         const menuResize = () => {
             const window_size = window.innerWidth //|| document.body.clientWidth;
             
@@ -65,12 +72,11 @@ function Navbar() {
                 setToggle("h-0");
                 setBurgerLinks("hidden");
             }
-            setWindowSize([window.innerWidth, window.innerHeight]);
-
-            
+            setWindowSize([window.innerWidth, window.innerHeight]);  
         };
 
         window.addEventListener('resize', menuResize);
+
 
         return () => {
             window.removeEventListener('resize', menuResize);

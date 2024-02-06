@@ -3,7 +3,7 @@
   background-color: var(--red-card);
   border-radius: 25px;
   overflow: hidden;
-  width: 450px;
+  width: 400px;
   max-width: 100%;
   min-height: 180px;
 }
