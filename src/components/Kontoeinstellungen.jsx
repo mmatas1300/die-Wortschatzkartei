@@ -19,7 +19,7 @@ function Kontoeinstellungen() {
         try {
             const userData = await axios({
                 method: 'put',
-                url: '/api/users',
+                url: '/api/user/config',
                 data: {
                     _id: session.user._id,
                     config: config
