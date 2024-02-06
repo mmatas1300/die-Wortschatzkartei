@@ -29,7 +29,7 @@ function Navbar() {
 
     const [toggle, setToggle] = useState('h-0');
     const [burgerLinks, setBurgerLinks] = useState("hidden")
-    const [windowSize, setWindowSize] = useState([1920,1080]);
+    const [windowSize, setWindowSize] = useState([719,1080]);
     
     function menuToggle() {
         if ((toggle === "h-0")&&(windowSize[0]<720)) {
@@ -79,6 +79,7 @@ function Navbar() {
 
     return (
         <nav className={style.nav} role="navigation">
+            <div>{windowSize}</div>
             <div className="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
                 <div className="mr-4 md:mr-8">
                     <Link onClick={menuToggle} className='text-2xl' href="/">die Wortschatzkartei</Link>
