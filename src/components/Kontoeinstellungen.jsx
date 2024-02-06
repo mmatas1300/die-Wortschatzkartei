@@ -34,9 +34,8 @@ function Kontoeinstellungen() {
     }
 
     return (
-        <div className={`${style.konto} flex flex-col justify-center items-center`}>
-            <h1 className='mt-4'>Kontoeinstellungen</h1>
-            <form className='flex flex-col justify-center items-center' onSubmit={handleKontoeinstellungen}>
+        <div className={`${style.konto} mt-12 flex flex-col justify-center items-center`}>
+            <form className='mt-4 flex flex-col justify-center items-center' onSubmit={handleKontoeinstellungen}>
                 <label htmlFor="nick">Spitzname:</label>
                 <input type="text" placeholder={session.user.config.nick} name='nick' />
                 <label htmlFor="cardsSet">Möchtest du lieber deine eigenen Karten verwenden oder die der App?</label>

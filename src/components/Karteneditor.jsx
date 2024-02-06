@@ -266,7 +266,6 @@ function Karteneditor() {
 
     return (
         <div className='mt-12 flex flex-col justify-center items-center'>
-            <h1>der Karteneditor</h1>
             <div className={`${style.category} self-start flex flex-row ms-2`}>
                 <button onClick={setNomenForm} className={`transition duration-200 hover:scale-105`}>Nomen</button>
                 <button onClick={setVerbForm} className='transition duration-200 hover:scale-105'>Verb</button>

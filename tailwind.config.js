@@ -9,7 +9,21 @@ module.exports = withMT({
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'green-card': '#4CAB2A',
+        'red-card': '#B72B4F',
+        'blue-card': '#0078A3',
+        'black-card': '#1E1E1E',
+        'yellow-card': '#E89E00',
+        'orange-card': '#FE7413',
+        'purple-card': '#CC348D',
+        'white-card': '#F8F9FA',
+      }
+    },
   },
   plugins: [],
 });
+
+
+
