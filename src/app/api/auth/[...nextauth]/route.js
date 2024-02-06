@@ -14,7 +14,8 @@ const handler = NextAuth({
             },
             async authorize(credentials,req){
                 await connectDB()
-                const userFound = await User.findOne({email: credentials.email}).select("+password");
+                const userFound = await User.findOne({email: credentials.email},{ email: 1, password: 1, config: 1});
+
 
                 if(!userFound) throw new Error("Ungültige Daten")
 
@@ -22,7 +23,12 @@ const handler = NextAuth({
 
                 if(!passwordMatch)throw new Error("Ungültige Daten")
 
-                return userFound;
+                const userData={
+                    email: userFound.email,
+                    config: userFound.config
+                }
+                
+                return userData;
             }
         })
     ],
