@@ -77,12 +77,11 @@ function Karteneditor() {
         const formData = new FormData(e.currentTarget)
         const card = createCard(formData);
 
-
         try{
-            if(session.user.email === process.env.ADMIN_MAIL){
+            if(session.user.email === "mmatas1300@gmail.com"){
                 await axios.post('/api/cards', card);
             } else{
-                card._id=card.wort+session.user.email;
+                card._id=card.wort+session.user.email+Date.now();
                 await axios.put('/api/user/cards', {email: session.user.email,card: card});
             }
             setNewCardState(<div className={style['success']}>Karte hinzugefügt!</div>);
