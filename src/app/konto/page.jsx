@@ -130,7 +130,6 @@ function KontoPage() {
                                         <TabPanel key={value} value={value}>
                                             {desc}
                                         </TabPanel>
-                                    
                                 ))}
                             </ThemeProvider>
                         </TabsBody>

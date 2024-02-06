@@ -16,7 +16,7 @@ function Navbar() {
                 <Link onClick={menuToggle} className={style['navLink']} href="/uben">Üben</Link>
                 <Link onClick={menuToggle} className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
                 <Link onClick={menuToggle} className={style['navLink']} href="/kontakt">Kontakt</Link>
-                <button className={style['navLink']} onClick={() => { signOut(); }}>Abmelden</button>
+                <button className={`${style['navLink']}`} onClick={() => { signOut(); }}>Abmelden</button>
             </>)
         } else {
             return (<>

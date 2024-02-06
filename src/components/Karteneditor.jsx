@@ -1,9 +1,12 @@
 import style from '@/components/Karteneditor.module.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Spinner } from "@material-tailwind/react";
 
 function Karteneditor() {
 
+    const [newCardState, setNewCardState] = useState(<button>Fertig</button>);
+    
     const createCard = (formData) =>{ 
         if(formData.get('wortNomen')){
             const card = {
@@ -63,10 +66,22 @@ function Karteneditor() {
 
     const handlePostCard = async (e)=>{
         e.preventDefault();
+        setNewCardState(<Spinner className="mt-2.5 h-10 w-10" />);
         const formData = new FormData(e.currentTarget)
         const card = createCard(formData);
-        const res = await axios.post('/api/cards', card);
-        console.log(res)
+        try{
+            const res = await axios.post('/api/cards', card);
+            setNewCardState(<div className={style['success']}>Karte hinzugefügt!</div>);
+            setTimeout(function() {
+                setNewCardState(<button>Fertig</button>)
+              }, 1500);
+        } catch(error){
+            setNewCardState(<div className={style['success']}>{error.response.data.message}</div>);
+            setTimeout(function() {
+                setNewCardState(<button>Fertig</button>)
+              }, 1500);
+        }
+
 
     }
 
@@ -275,7 +290,7 @@ function Karteneditor() {
             <div className={`${style.editor} ${typeColor}`}>
                 <form onSubmit={handlePostCard} className="flex flex-col justify-normal items-center m-12">
                     {typeFields}
-                    <button>Fertig</button>
+                    {newCardState}
                 </form>
             </div>
 

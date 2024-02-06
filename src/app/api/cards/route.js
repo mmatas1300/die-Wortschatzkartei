@@ -37,7 +37,8 @@ export async function POST(request) {
             return NextResponse.json(savedAndereCard);
         }
     } catch (error) {
-        console.log(error)
+        
+        return NextResponse.json({message: "Error"},{status: 400});
     }
 
     
