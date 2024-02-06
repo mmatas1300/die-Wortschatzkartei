@@ -79,7 +79,7 @@ function Karteneditor() {
 
 
         try{
-            if(session.user.email ==="mmatas1300@gmail.com"){
+            if(session.user.email === process.env.ADMIN_MAIL){
                 await axios.post('/api/cards', card);
             } else{
                 card._id=card.wort+session.user.email;

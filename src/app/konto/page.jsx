@@ -112,8 +112,8 @@ function KontoPage() {
         } else if (status === "authenticated") {
             setUserMessages(<>
                 <h1 className='text-2xl mb-10'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
-                <div className='mx-auto'>{JSON.stringify(session)}</div>
-                <div className='mx-auto'>{JSON.stringify(status)}</div> 
+                {/* <div className='mx-auto'>{JSON.stringify(session)}</div>
+                <div className='mx-auto'>{JSON.stringify(status)}</div>  */}
                 <ThemeProvider value={tabTheme}>
                     <Tabs value="Kontoeinstellungen" className="max-w-[40rem]">
                         <TabsHeader className='bg-yellow-card bg-opacity-100'>
