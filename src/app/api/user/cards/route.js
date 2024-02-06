@@ -13,3 +13,16 @@ export async function PUT(request){
         return NextResponse.json(error);
     }
 }
+
+
+export async function POST(request){
+    const {email} = await request.json()
+
+    try{
+        await connectDB();
+        const userFound = await User.findOne({email: email});
+        return NextResponse.json(userFound.myCards)
+    } catch (error) {
+        return NextResponse.json(error);
+    }
+}
