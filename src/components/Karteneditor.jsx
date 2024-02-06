@@ -60,6 +60,9 @@ function Karteneditor() {
                 beispiel: formData.get('beispiel'),
                 ubersetzung: formData.get('ubersetzung')
             }
+            if(formData.get('pm1')===""){
+                card.prateritum=[];
+            }
             return card
         }
     }
