@@ -1,6 +1,6 @@
 import style from '@/components/Karteneditor.module.css'
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function Karteneditor() {
 
@@ -70,6 +70,21 @@ function Karteneditor() {
 
     }
 
+    const [genderSelect, setGenderSelect] =useState("")
+
+    const handleChangeGender = (e) =>{
+        if(e.target.value ==="Nomen-das"){
+            setTypeColor(style.nomenDas)
+        } else if(e.target.value ==="Nomen-der"){
+            setTypeColor(style.nomenDer)
+        } else if(e.target.value ==="Nomen-die"){
+            setTypeColor(style.nomenDie)
+        } else if(e.target.value ==="Nomen-pl"){
+            setTypeColor(style.nomenPl)
+        }
+        setGenderSelect(e.target.selectedOptions[0].label);
+    };
+
     const verbFields = (<>
         <label htmlFor="wortVerb">Infinitiv</label>
         <input type="text" placeholder='Sein' name='wortVerb' />
@@ -79,32 +94,32 @@ function Karteneditor() {
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="ps1">Ich:</label>
-                <input className='max-w-40' type="text" placeholder='Bin' name='ps1' />
+                <input className='max-w-32' type="text" placeholder='Bin' name='ps1' />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="ps4">Wir:</label>
-                <input className='max-w-40' type="text" placeholder='Sind' name='ps4' />
+                <input className='max-w-32' type="text" placeholder='Sind' name='ps4' />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="ps2">Du:</label>
-                <input className='max-w-40' type="text" placeholder='Bist' name='ps2' />
+                <input className='max-w-32' type="text" placeholder='Bist' name='ps2' />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="ps5">Ihr:</label>
-                <input className='max-w-40' type="text" placeholder='Seid' name='ps5' />
+                <input className='max-w-32' type="text" placeholder='Seid' name='ps5' />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="ps3">Er/Sie/Es:</label>
-                <input className='max-w-40' type="text" placeholder='Ist' name='ps3' />
+                <input className='max-w-32' type="text" placeholder='Ist' name='ps3' />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="ps6">Sie:</label>
-                <input className='max-w-40' type="text" placeholder='Sind' name='ps6' />
+                <input className='max-w-32' type="text" placeholder='Sind' name='ps6' />
             </div>
         </div>
 
@@ -113,32 +128,32 @@ function Karteneditor() {
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="pm1">Ich:</label>
-                <input className='max-w-40' type="text" placeholder='War' name='pm1' />
+                <input className='max-w-32' type="text" placeholder='War' name='pm1' />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="pm4">Wir:</label>
-                <input className='max-w-40' type="text" placeholder='Waren' name='pm4' />
+                <input className='max-w-32' type="text" placeholder='Waren' name='pm4' />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="pm2">Du:</label>
-                <input className='max-w-40' type="text" placeholder='Warst' name='pm2' />
+                <input className='max-w-32' type="text" placeholder='Warst' name='pm2' />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="pm5">Ihr:</label>
-                <input className='max-w-40' type="text" placeholder='Wart' name='pm5' />
+                <input className='max-w-32' type="text" placeholder='Wart' name='pm5' />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="pm3">Er/Sie/Es:</label>
-                <input className='max-w-40' type="text" placeholder='War' name='pm3' />
+                <input className='max-w-32' type="text" placeholder='War' name='pm3' />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="pm6">Sie:</label>
-                <input className='max-w-40' type="text" placeholder='Waren' name='pm6' />
+                <input className='max-w-32' type="text" placeholder='Waren' name='pm6' />
             </div>
         </div>
         <label htmlFor="partizip2">Partizip II:</label>
@@ -157,23 +172,23 @@ function Karteneditor() {
         <div className='grid grid-cols-2 w-full'>
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="wortMUF">Maskulim:</label>
-                <input className='max-w-40' type="text" placeholder='Koch' name='wortMUF'/>
+                <input className='max-w-32' type="text" placeholder='Koch' name='wortMUF'/>
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="frau">Feminin:</label>
-                <input className='max-w-40' type="text" placeholder='Köchin' name="frau"/>
+                <input className='max-w-32' type="text" placeholder='Köchin' name="frau"/>
 
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="manner">Plural:</label>
-                <input className='max-w-40' type="text" placeholder='Köche' name="manner"/>
+                <input className='max-w-32' type="text" placeholder='Köche' name="manner"/>
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="frauen">Plural:</label>
-                <input className='max-w-40' type="text" placeholder='Köchinnen' name='frauen' />
+                <input className='max-w-32' type="text" placeholder='Köchinnen' name='frauen' />
             </div>
 
         </div>
@@ -189,7 +204,8 @@ function Karteneditor() {
 
     const nomenFields = (<>
         <label htmlFor="type">Typ:</label>
-        <select name="type">
+        <select name="type" onChange={handleChangeGender}>
+
             <option value="Nomen-das">Neutrum</option>
             <option value="Nomen-der">Maskulim</option>
             <option value="Nomen-die">Feminin</option>
@@ -225,12 +241,12 @@ function Karteneditor() {
     </>)
 
     const [typeFields, setTypeFields] = useState(nomenFields);
-    const [typeColor, setTypeColor] = useState(style.nomen);
+    const [typeColor, setTypeColor] = useState(style.nomenDas);
 
 
     const setNomenForm = () => {
         setTypeFields(nomenFields)
-        setTypeColor(style.nomen)
+        setTypeColor(style.nomenDas)
     }
 
     const setAndereForm = () => {

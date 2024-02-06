@@ -31,8 +31,20 @@
   background-color: var(--purple-card);
 }
 
-.nomen{
+.nomenDer{
   background-color: var(--blue-card);
+}
+
+.nomenDas{
+  background-color: var(--green-card);
+}
+
+.nomenDie{
+  background-color: var(--red-card);
+}
+
+.nomenPl{
+  background-color: var(--yellow-card);
 }
 
 .nomenMUF{
@@ -68,7 +80,7 @@
   }
 
   .editor button{
-    background-color: var(--green-card);
+    background-color: var(--black-card);
     font-size: 13px;
     padding: 10px 25px;
     border-radius: 8px;

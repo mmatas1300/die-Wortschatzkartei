@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { signOut } from 'next-auth/react';
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect} from 'react';
 import style from '@/components/Navbar.module.css';
 
 function Navbar() {
@@ -85,7 +85,6 @@ function Navbar() {
 
     return (
         <nav className={style.nav} role="navigation">
-            <div>{windowSize}</div>
             <div className="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
                 <div className="mr-4 md:mr-8">
                     <Link onClick={menuToggle} className='text-2xl' href="/">die Wortschatzkartei</Link>
