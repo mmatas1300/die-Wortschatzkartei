@@ -43,7 +43,8 @@ export async function POST(request) {
             config:{
                 nick: "",
                 cardsSet:"app"
-            }
+            },
+            lastPlay: 0
         })
 
         console.log(user)

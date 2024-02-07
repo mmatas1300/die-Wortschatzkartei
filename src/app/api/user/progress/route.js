@@ -8,7 +8,7 @@ export async function POST(request){
     try {
         await connectDB();
         const userFound = await User.findOne({email: email});
-        return NextResponse.json(userFound.progress);
+        return NextResponse.json({progress:userFound.progress,lastPlay:userFound.lastPlay});
     } catch (error) {
         return NextResponse.json(error);
     }
