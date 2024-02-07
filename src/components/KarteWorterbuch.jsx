@@ -1,5 +1,4 @@
 'use client'
-import ReactCardFlip from 'react-card-flip';
 import { useState } from 'react';
 import style from '@/components/Karte.module.css'
 
