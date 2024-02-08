@@ -1,13 +1,12 @@
 'use client'
 import ReactCardFlip from 'react-card-flip';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import style from '@/components/Karte.module.css'
 
 
-function Karte(karte) {
+function Karte({karte,status}) {
 
-    const [isFlipped, setIsFlipped] = useState(false);
-
+    const [flip, setFlip] = useState(false);
     const [showUbersetzung, setShowUbersetzung] = useState(false);
 
     const toggleUbersetzung = () => {
@@ -65,9 +64,17 @@ function Karte(karte) {
         }
     };
 
+
+    useEffect(() => {
+
+      setFlip(false)
+    
+    }, [status])
+    
+
     return (
         <div className='flex flex-col justify-center items-center'>
-            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+            <ReactCardFlip isFlipped={flip} flipDirection="horizontal">
                 <div className={`${style.karte} flex  flex-col justify-center items-center text-xl ${colorKarte()}`}>
                     {wortKarte()}
                 </div>
@@ -114,7 +121,7 @@ function Karte(karte) {
                     <p onClick={toggleUbersetzung} className='mb-4 bg-gray-900 p-1 rounded-md cursor-pointer text-sm'>{showUbersetzung ? karte.ubersetzung : "Übersetzung"}</p>
                 </div>
             </ReactCardFlip>
-            <button className={`${style.flipButton} ${isFlipped ? "hidden" : ""}`} onClick={() => { setIsFlipped(true) }}>Umdrehen</button>
+            <button className={` ${flip ? "hidden" : ""}`} onClick={() => { setFlip(true) }}>Umdrehen</button>
 
         </div>
 
