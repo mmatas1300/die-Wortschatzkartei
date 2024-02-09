@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import style from '@/components/Karte.module.css'
 
 
-function Karte({karte,status}) {
+function Karte({karte,flip}) {
 
-    const [flip, setFlip] = useState(false);
+
     const [showUbersetzung, setShowUbersetzung] = useState(false);
 
     const toggleUbersetzung = () => {
@@ -64,14 +64,6 @@ function Karte({karte,status}) {
         }
     };
 
-
-    useEffect(() => {
-
-      setFlip(false)
-    
-    }, [status])
-    
-
     return (
         <div className='flex flex-col justify-center items-center'>
             <ReactCardFlip isFlipped={flip} flipDirection="horizontal">
@@ -121,7 +113,6 @@ function Karte({karte,status}) {
                     <p onClick={toggleUbersetzung} className='mb-4 bg-gray-900 p-1 rounded-md cursor-pointer text-sm'>{showUbersetzung ? karte.ubersetzung : "Übersetzung"}</p>
                 </div>
             </ReactCardFlip>
-            <button className={` ${flip ? "hidden" : ""}`} onClick={() => { setFlip(true) }}>Umdrehen</button>
 
         </div>
 

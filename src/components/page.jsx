@@ -29,25 +29,7 @@ function UbenPage() {
         return dataStatistics//Trae progreso
     }
 
-    const generateGameData = (cards,stats) => {
-        if (cards.length >= 5) {
-            if (stats.progress.length === 0) {
-                //primera vez
-                const cardsRandom = cards.sort(() => Math.random() - 0.5);
-                const cardsToPlay = cardsRandom.slice(0, 5);
-                const todayProgress = cardsToPlay.map((card) => {
-                    return { cardId: card._id, phase: 0, date: Date.now() };
-                })
-                setStatistics(todayProgress)
-                setCards(cardsToPlay)
-                return [cardsToPlay, todayProgress];
-            } else {
-                //volver a jugar
-            }
-        } else {
-            console.log("Necesitas más de 5 tarjetas para jugar")
-        }
-    }
+
 
     const cardCheck = () => {
         setIsFlipped(!isFlipped);

@@ -8,8 +8,10 @@ function UbenPage() {
 
     const { data: session, status } = useSession();
     const [statistics, setStatistics] = useState();
+    const [cards, setCards] = useState();
     const [startPlay, setStartPlay] = useState(false);
     const [isTimeToPlay, setIsTimeToPlay] = useState(false);
+    const [buttonState, setButtonState] = useState(false);
 
 
     const getStats = async () => {
@@ -23,6 +25,34 @@ function UbenPage() {
         const dataStatistics = await responseStatistics.json();
         setStatistics(dataStatistics)
         return dataStatistics;
+    }
+
+    const getCards = async () => {
+        //trae cartas
+        if (session.user.config.cardsSet === "app") {
+            const responseCards = await fetch('/api/cards');
+            const dataCards = await responseCards.json();
+            setCards(dataCards)
+            return dataCards
+        } else { //personal cards
+            const responseCards = await fetch('/api/user/cards', {
+                method: "POST", // 
+                body: JSON.stringify({ email: session.user.email }), // 
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            const dataCards = await responseCards.json()
+            setCards(dataCards)
+            return dataCards
+        }
+    }
+
+
+    const gameStart = async () =>{
+        setButtonState(true)
+        await getCards()
+        setStartPlay(true)
     }
 
     useEffect(() => {//Config Inicial
@@ -43,28 +73,22 @@ function UbenPage() {
         <div className="flex flex-col justify-center items-center mt-12">
             {statistics ?
                 (startPlay ?
-                    (<PlayScreen stats={statistics} />) :
+                    (<PlayScreen stats={statistics} cards={cards} />) :
                     (isTimeToPlay ?
                         (<>
                             <div>
                                 <div>Es ist Zeit zu üben!</div>
-                                <button onClick={() => { setStartPlay(true) }}>Weiter</button>
+                                {buttonState?(<Spinner className="mt-2.5 h-10 w-10" />):
+                                (<button onClick={() => { gameStart() }}>Weiter</button>)}
+
                             </div>
                         </>) :
                         (<div>Für heute reicht das Üben!</div>)
                     )
                 )
                 : (<Spinner className="mt-2.5 h-10 w-10" />)}
-
-
-
-
-
-
         </div>
     );
-
-
 }
 
 export default UbenPage
