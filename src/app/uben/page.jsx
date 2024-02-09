@@ -7,8 +7,9 @@ import PlayScreen from "@/components/PlayScreen";
 function UbenPage() {
 
     const { data: session, status } = useSession();
-    const [statistics, setStatistics] = useState({ progress: [], lastPlay: 0 });
+    const [statistics, setStatistics] = useState();
     const [startPlay, setStartPlay] = useState(false);
+    const [isTimeToPlay, setIsTimeToPlay] = useState(false);
 
 
     const getStats = async () => {
@@ -21,12 +22,18 @@ function UbenPage() {
         });
         const dataStatistics = await responseStatistics.json();
         setStatistics(dataStatistics)
+        return dataStatistics;
     }
 
     useEffect(() => {//Config Inicial
         const loadData = async () => {
             if (status === "authenticated") {
-                await getStats() //Trae stats<
+                const stats = await getStats() //Trae stats<
+                const lastPlay = new Date(stats.lastPlay)
+                const now = new Date()
+                if(lastPlay<now){
+                    setIsTimeToPlay(true)
+                }
             }
         }
         loadData();
@@ -34,10 +41,10 @@ function UbenPage() {
 
     return (
         <div className="flex flex-col justify-center items-center mt-12">
-            {status === "authenticated" ?
+            {statistics ?
                 (startPlay ?
-                    (<PlayScreen stats={statistics} />) : 
-                    ((Date.now() - statistics.lastPlay) > 86_400_000 ? 
+                    (<PlayScreen stats={statistics} />) :
+                    (isTimeToPlay ?
                         (<>
                             <div>
                                 <div>Es ist Zeit zu üben!</div>

@@ -44,10 +44,8 @@ export async function POST(request) {
                 nick: "",
                 cardsSet:"app"
             },
-            lastPlay: 0
+            lastPlay: new Date('1995-12-17T03:24:00')
         })
-
-        console.log(user)
         const savedUser = await user.save(); //Guardando en la db
         console.log("guarado en db")
 
