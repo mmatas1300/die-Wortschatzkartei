@@ -12,6 +12,7 @@ function UbenPage() {
     const [startPlay, setStartPlay] = useState(false);
     const [isTimeToPlay, setIsTimeToPlay] = useState(false);
     const [buttonState, setButtonState] = useState(false);
+    const [isGameFinish, setIsGameFinish] = useState(false);
 
 
     const getStats = async () => {
@@ -49,16 +50,15 @@ function UbenPage() {
     }
 
 
-    const gameStart = async () =>{
+    const gameStart = async () => {
         setButtonState(true)
         await getCards()
         setStartPlay(true)
     }
 
 
-    const finishGame = ()=>{
-        setStartPlay(false);
-        setIsTimeToPlay(false);
+    const finishGame = () => {
+        setIsGameFinish(true)
     }
 
     useEffect(() => {//Config Inicial
@@ -66,8 +66,9 @@ function UbenPage() {
             if (status === "authenticated") {
                 const stats = await getStats() //Trae stats<
                 const lastPlay = new Date(stats.lastPlay)
+                lastPlay.setDate(lastPlay.getDate()+1);
                 const now = new Date()
-                if(lastPlay<now){
+                if (lastPlay < now) {
                     setIsTimeToPlay(true)
                 }
             }
@@ -77,22 +78,21 @@ function UbenPage() {
 
     return (
         <div className="flex flex-col justify-center items-center mt-12">
-            {statistics ?
+            {!isGameFinish ? (statistics ?
                 (startPlay ?
                     (<PlayScreen stats={statistics} cards={cards} finishGame={finishGame} />) :
                     (isTimeToPlay ?
                         (<>
-                            <div>
-                                <div>Es ist Zeit zu üben!</div>
-                                {buttonState?(<Spinner className="mt-2.5 h-10 w-10" />):
-                                (<button onClick={() => { gameStart() }}>Weiter</button>)}
 
-                            </div>
+                            <div className="text-xl">Es ist Zeit zu üben!</div>
+                            {buttonState ? (<Spinner className="mt-2.5 h-10 w-10" />) :
+                            (<button className="bg-green-card rounded-lg py-2 px-6 text-sm mt-4" onClick={() => { gameStart() }}>Weiter</button>)}
+
                         </>) :
                         (<div>Für heute reicht das Üben!</div>)
                     )
                 )
-                : (<Spinner className="mt-2.5 h-10 w-10" />)}
+                : (<Spinner className="mt-2.5 h-10 w-10" />)) : (<div>Herzlichen Glückwunsch, gute Übung!</div>)}
         </div>
     );
 }

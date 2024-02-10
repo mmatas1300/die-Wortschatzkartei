@@ -21,5 +21,6 @@
 
 body{
   background-color: #212529;
+  scrollbar-color: var(--red-card) var(--green-card);
   color: var(--white-card);
 }

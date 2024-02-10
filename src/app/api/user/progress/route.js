@@ -13,3 +13,18 @@ export async function POST(request){
         return NextResponse.json(error);
     }
 }
+
+export async function PUT(request){
+
+    const { email, progress,lastPlay} = await request.json()//Corresponde a recuperar el body
+
+    try {
+        await connectDB();
+        console.log(email)
+        const userNew = await User.findOneAndUpdate({ email: email },{lastPlay:lastPlay, $push: {progress: progress}});
+        console.log(userNew)
+        return NextResponse.json({message: "Update successful"},{status: 200});
+    } catch (error) {
+        return NextResponse.json(error);
+    }
+}
