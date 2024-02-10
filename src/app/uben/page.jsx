@@ -55,6 +55,12 @@ function UbenPage() {
         setStartPlay(true)
     }
 
+
+    const finishGame = ()=>{
+        setStartPlay(false);
+        setIsTimeToPlay(false);
+    }
+
     useEffect(() => {//Config Inicial
         const loadData = async () => {
             if (status === "authenticated") {
@@ -73,7 +79,7 @@ function UbenPage() {
         <div className="flex flex-col justify-center items-center mt-12">
             {statistics ?
                 (startPlay ?
-                    (<PlayScreen stats={statistics} cards={cards} />) :
+                    (<PlayScreen stats={statistics} cards={cards} finishGame={finishGame} />) :
                     (isTimeToPlay ?
                         (<>
                             <div>

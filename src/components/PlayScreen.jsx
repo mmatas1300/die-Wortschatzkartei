@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Karte from "./Karte";
 import { Spinner } from "@material-tailwind/react";
 
-function PlayScreen({stats,cards}) {
+function PlayScreen({stats,cards,finishGame}) {
 
     const [cardsToPlay, setCardsToPlay] = useState();
     const [todayProgress, setTodayProgress] = useState();
@@ -39,7 +39,8 @@ function PlayScreen({stats,cards}) {
                 setCardPlayed(cardPlayed+1);
             },450)
         }else{
-            console.log("fin de la ronda")
+            finishGame();
+
         }
 
     }
