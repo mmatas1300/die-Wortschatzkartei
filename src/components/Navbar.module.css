@@ -4,9 +4,7 @@
     border-radius: 0 0 10px 40px;
 }
 
-.nav button{
-    background-color: var(--red-card);
-}
+
 
 .navLink{
     padding: 5px 10px 5px 10px;
@@ -16,10 +14,4 @@
 .navLink:hover{
     background-color: var(--green-card);
     border-radius: 5px;
-}
-
-button.navLink{
-
-    background-color: transparent;
-    text-align: start;
 }

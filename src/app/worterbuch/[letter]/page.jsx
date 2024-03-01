@@ -51,7 +51,7 @@ function WorterMitPage({ params }) {
     return (
         <section>
             <div className="flex flex-row justify-between items-center mt-12">
-                <Link href="/worterbuch" className={`bg-orange-card hover:bg-yellow-card ms-12 h-10 w-10 rounded-full`}>
+                <Link href="/worterbuch" className='bg-orange-card hover:bg-yellow-card ms-12 h-10 w-10 rounded-full'>
                     <img className="" src={arrow.src} alt="Back" />
                 </Link>
                 <h1 className="text-lg text-center mx-auto">Wörter mit {params.letter}</h1>

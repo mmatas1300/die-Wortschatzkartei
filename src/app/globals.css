@@ -21,6 +21,54 @@
 
 body{
   background-color: #212529;
-  scrollbar-color: var(--red-card) var(--green-card);
   color: var(--white-card);
+}
+
+h1{
+  font-size: 20px;
+}
+
+p{
+  font-size: 14px;
+  line-height: 20px;
+}
+
+label{
+  align-self: flex-start;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+input{
+  background-color: var(--white-card);
+  color: var(--black-card);
+  border: none;
+  margin: 0 0 8px 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+textarea{
+  background-color: var(--white-card);
+  color: var(--black-card);
+  border: none;
+  margin: 0 0 8px 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+
+button{
+  background-color: var(--green-card);
+  font-size: 14px;
+  padding: 10px 25px;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
 }

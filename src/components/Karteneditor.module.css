@@ -5,15 +5,7 @@
 }
 
 
-.category button{
-  border-radius: 10px 10px 0px 0px;
-  background-color: var(--black-card);
-  padding: 10px 10px;
-  font-size: 14px;
-  line-height: 20px;
-  z-index: 3;
-  cursor: pointer;
-}
+
 
 .editor .success{
   color: var(--white-card);
@@ -83,24 +75,3 @@
     outline: none;
   }
 
-  .editor button{
-    background-color: var(--black-card);
-    font-size: 13px;
-    padding: 10px 25px;
-    border-radius: 8px;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-
-
-  .editor label{
-    align-self: flex-start;
-    font-size: 10px;
-    line-height: 20px;
-  }
-
-  .editor p{
-    font-size: 14px;
-    line-height: 20px;
-    margin: 20px 0;
-  }

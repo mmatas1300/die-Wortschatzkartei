@@ -32,24 +32,3 @@
     outline: none;
   }
 
-  .konto button{
-    background-color: var(--green-card);
-    font-size: 13px;
-    padding: 10px 25px;
-    border-radius: 8px;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-
-
-  .konto label{
-    align-self: flex-start;
-    font-size: 10px;
-    line-height: 20px;
-  }
-
-  .konto p{
-    font-size: 14px;
-    line-height: 20px;
-    margin: 20px 0;
-  }

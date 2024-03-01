@@ -6,9 +6,9 @@ function KontaktPage() {
     return(
     <section className="flex flex-col justify-center items-center mt-12">
 
-        <div className={style['kontakt']}>
+        <div className="bg-red-card rounded-3xl overflow-hidden w-96 max-w-full">
             <form action="https://formsubmit.co/fd1bcb62bc2401733e36b575bd39902c" method="POST" className="flex flex-col justify-center items-center w-80 py-7 m-auto">
-                <h1 className='text-xl'>Kontakt</h1>
+                <h1>Kontakt</h1>
                 <p>Sie möchten mit uns in Kontakt treten?</p>
                 <label htmlFor="name" className="self-start">Name:</label>
                 <input type="text" placeholder="Name" name="name" required />
