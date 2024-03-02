@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { signOut } from 'next-auth/react';
 import { useState, useEffect} from 'react';
-import style from '@/components/Navbar.module.css';
 
 function Navbar() {
     const { status } = useSession();
@@ -12,17 +11,17 @@ function Navbar() {
         if (status === "authenticated") {
             
             return (<>
-                <Link onClick={menuToggle} className={style['navLink']} href="/konto">Mein Konto</Link>
-                <Link onClick={menuToggle} className={style['navLink']} href="/uben">Üben</Link>
-                <Link onClick={menuToggle} className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
-                <Link onClick={menuToggle} className={style['navLink']} href="/kontakt">Kontakt</Link>
-                <button className={`${style['navLink']}`} onClick={() => { signOut(); }}>Abmelden</button>
+                <Link onClick={menuToggle} className="block px-3 py-1" href="/konto">Mein Konto</Link>
+                <Link onClick={menuToggle} className="block px-3 py-1" href="/uben">Üben</Link>
+                <Link onClick={menuToggle} className="block px-3 py-1" href="/worterbuch">Wörterbuch</Link>
+                <Link onClick={menuToggle} className="block px-3 py-1" href="/kontakt">Kontakt</Link>
+                <button className="bg-transparent text-base m-0 block text-start px-3 py-1" onClick={() => { signOut(); }}>Abmelden</button>
             </>)
         } else {
             return (<>
-                <Link onClick={menuToggle} className={style['navLink']} href="/worterbuch">Wörterbuch</Link>
-                <Link onClick={menuToggle} className={style['navLink']} href="/kontakt">Kontakt</Link>
-                <Link onClick={menuToggle} className={style['navLink']} href="/login">Anmelden</Link>
+                <Link onClick={menuToggle} className="block px-3 py-1" href="/worterbuch">Wörterbuch</Link>
+                <Link onClick={menuToggle} className="block px-3 py-1" href="/kontakt">Kontakt</Link>
+                <Link onClick={menuToggle} className="block px-3 py-1" href="/login">Anmelden</Link>
             </>)
         }
     }
@@ -84,7 +83,7 @@ function Navbar() {
     }, []);
 
     return (
-        <nav className={style.nav} role="navigation">
+        <nav className="bg-blue-card rounded-bl-2xl" role="navigation">
             <div className="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
                 <div className="mr-4 md:mr-8">
                     <Link onClick={menuToggle} className='text-2xl' href="/">die Wortschatzkartei</Link>
@@ -92,7 +91,7 @@ function Navbar() {
                 <div className="ml-auto md:hidden">
                     <button
                         onClick={menuToggle}
-                        className="flex items-center px-3 py-2 rounded"
+                        className="bg-red-card m-0 flex items-center px-3 py-2 rounded"
                         type="button"
                     >
                         {toggle !== 'h-0' ? (<svg className="h-6 w-6"
