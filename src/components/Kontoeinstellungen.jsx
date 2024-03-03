@@ -1,7 +1,6 @@
-import style from '@/components/Kontoeinstellungen.module.css'
 import { useSession } from 'next-auth/react'
 import axios from 'axios';
-import { useState } from 'react';
+
 
 
 function Kontoeinstellungen() {
@@ -34,7 +33,7 @@ function Kontoeinstellungen() {
     }
 
     return (
-        <div className={`${style.konto} mt-12 flex flex-col justify-center items-center`}>
+        <div className={`bg-red-card w-96 rounded-3xl p-8 mt-12 flex flex-col justify-center items-center`}>
             <form className='mt-4 flex flex-col justify-center items-center' onSubmit={handleKontoeinstellungen}>
                 <label htmlFor="nick">Spitzname:</label>
                 <input type="text" placeholder={session.user.config.nick} name='nick' />

@@ -63,6 +63,17 @@ textarea{
   outline: none;
 }
 
+select{
+  background-color: var(--white-card);
+  color: var(--black-card);
+  border: none;
+  margin: 0 0 8px 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
 
 button{
   background-color: var(--green-card);
