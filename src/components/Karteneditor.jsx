@@ -1,4 +1,4 @@
-import style from '@/components/Karteneditor.module.css'
+
 import axios from 'axios'
 import { useState } from 'react'
 import { Spinner } from "@material-tailwind/react";
@@ -84,12 +84,12 @@ function Karteneditor() {
                 card._id=card.wort+session.user.email+Date.now();
                 await axios.put('/api/user/cards', {email: session.user.email,card: card});
             }
-            setNewCardState(<div className={style['success']}>Karte hinzugefügt!</div>);
+            setNewCardState(<div>Karte hinzugefügt!</div>);
             setTimeout(function() {
                 setNewCardState(<button>Fertig</button>)
               }, 1500);
         } catch(error){
-            setNewCardState(<div className={style['success']}>{error.response.data.message}</div>);
+            setNewCardState(<div>{error.response.data.message}</div>);
             setTimeout(function() {
                 setNewCardState(<button>Fertig</button>)
               }, 1500);
@@ -98,19 +98,16 @@ function Karteneditor() {
 
     }
 
-    const [genderSelect, setGenderSelect] =useState("")
-
     const handleChangeGender = (e) =>{
         if(e.target.value ==="Nomen-das"){
-            setTypeColor(style.nomenDas)
+            setTypeColor("bg-green-card")
         } else if(e.target.value ==="Nomen-der"){
-            setTypeColor(style.nomenDer)
+            setTypeColor("bg-blue-card")
         } else if(e.target.value ==="Nomen-die"){
-            setTypeColor(style.nomenDie)
+            setTypeColor("bg-red-card")
         } else if(e.target.value ==="Nomen-pl"){
-            setTypeColor(style.nomenPl)
+            setTypeColor("bg-yellow-card")
         }
-        setGenderSelect(e.target.selectedOptions[0].label);
     };
 
     const verbFields = (<>
@@ -269,38 +266,38 @@ function Karteneditor() {
     </>)
 
     const [typeFields, setTypeFields] = useState(nomenFields);
-    const [typeColor, setTypeColor] = useState(style.nomenDas);
+    const [typeColor, setTypeColor] = useState("bg-green-card");
 
 
     const setNomenForm = () => {
         setTypeFields(nomenFields)
-        setTypeColor(style.nomenDas)
+        setTypeColor("bg-green-card")
     }
 
     const setAndereForm = () => {
         setTypeFields(andereFields)
-        setTypeColor(style.andere)
+        setTypeColor("bg-purple-card")
     }
 
     const setNomenMUFForm = () => {
         setTypeFields(nomenMUFFields)
-        setTypeColor(style.nomenMUF)
+        setTypeColor("bg-gradient-to-r from-blue-card to-red-card")
     }
 
     const setVerbForm = () => {
         setTypeFields(verbFields)
-        setTypeColor(style.verb)
+        setTypeColor("bg-orange-card")
     }
 
     return (
         <div className='mt-12 flex flex-col justify-center items-center'>
-            <div className={`${style.category} self-start flex flex-row ms-2`}>
+            <div className={`self-start flex flex-row ms-2`}>
                 <button onClick={setNomenForm} className={`transition duration-200 hover:scale-105`}>Nomen</button>
                 <button onClick={setVerbForm} className='transition duration-200 hover:scale-105'>Verb</button>
                 <button onClick={setNomenMUFForm} className='transition duration-200 hover:scale-105'>Gleichstellungsnomen</button>
                 <button onClick={setAndereForm} className='transition duration-200 hover:scale-105'>Andere Wort</button>
             </div>
-            <div className={`${style.editor} ${typeColor}`}>
+            <div className={`w-96 rounded-br-lg ${typeColor}`}>
                 <form onSubmit={handlePostCard} className="flex flex-col justify-normal items-center m-12">
                     {typeFields}
                     {newCardState}
