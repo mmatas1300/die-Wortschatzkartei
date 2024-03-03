@@ -56,27 +56,19 @@ function Navbar() {
         };
     }
 
-
-
-
     useEffect(() => {
-
         if(windowSize[0] === 0){
             setWindowSize([window.innerWidth, window.innerHeight]);
         }
         const menuResize = () => {
-            const window_size = window.innerWidth //|| document.body.clientWidth;
-            
+            const window_size = window.innerWidth 
             if (window_size > 719) {
                 setToggle("h-0");
                 setBurgerLinks("hidden");
             }
             setWindowSize([window.innerWidth, window.innerHeight]);  
         };
-
         window.addEventListener('resize', menuResize);
-
-
         return () => {
             window.removeEventListener('resize', menuResize);
         };
@@ -91,7 +83,7 @@ function Navbar() {
                 <div className="ml-auto md:hidden">
                     <button
                         onClick={menuToggle}
-                        className="bg-red-card m-0 flex items-center px-3 py-2 rounded"
+                        className="bg-red-card m-0 flex items-center px-3 py-2 rounded "
                         type="button"
                     >
                         {toggle !== 'h-0' ? (<svg className="h-6 w-6"

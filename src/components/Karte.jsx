@@ -1,11 +1,8 @@
 'use client'
 import ReactCardFlip from 'react-card-flip';
-import { useEffect, useState } from 'react';
-import style from '@/components/Karte.module.css'
-
+import { useState } from 'react';
 
 function Karte({karte,flip}) {
-
 
     const [showUbersetzung, setShowUbersetzung] = useState(false);
 
@@ -16,19 +13,19 @@ function Karte({karte,flip}) {
     const colorKarte = () => {
         switch (karte.type) {
             case "Nomen-das":
-                return style.karteDas;
+                return "bg-green-card";
             case "Nomen-der":
-                return style.karteDer;
+                return "bg-blue-card";
             case "Nomen-die":
-                return style.karteDie;
+                return "bg-red-card";
             case "Nomen-pl":
-                return style.kartePl;
+                return "bg-yellow-card";
             case "Nomen-MUF":
-                return style.karteMUF;
+                return "bg-gradient-to-r from-blue-card to-red-card";
             case "Verb":
-                return style.karteVerb;
+                return `bg-orange-card`;
             default:
-                return style.karteAndere;
+                return "bg-purple-card";
         }
     };
 
@@ -67,10 +64,10 @@ function Karte({karte,flip}) {
     return (
         <div className='flex flex-col justify-center items-center'>
             <ReactCardFlip isFlipped={flip} flipDirection="horizontal">
-                <div className={`${style.karte} flex  flex-col justify-center items-center text-xl ${colorKarte()}`}>
+                <div className={`w-80 min-h-80 rounded-3xl flex flex-col justify-center items-center text-xl ${colorKarte()}`}>
                     {wortKarte()}
                 </div>
-                <div className={`${style.karte} flex  flex-col justify-center items-center ${colorKarte()}`}>
+                <div className={`w-80 min-h-80 rounded-3xl flex  flex-col justify-center items-center ${colorKarte()}`}>
                     <p className="self-end me-4 mt-4">{typeKarte()}</p>
                     {karte.type === "Nomen-MUF"?(
                         <div className='grid grid-cols-2 justify-items-center'>
@@ -113,7 +110,6 @@ function Karte({karte,flip}) {
                     <p onClick={toggleUbersetzung} className='mb-4 bg-gray-900 p-1 rounded-md cursor-pointer text-sm'>{showUbersetzung ? karte.ubersetzung : "Übersetzung"}</p>
                 </div>
             </ReactCardFlip>
-
         </div>
 
     );
