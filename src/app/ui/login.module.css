@@ -10,7 +10,7 @@
 
 .container{
   background-color: var(--black-card);
-  border-radius: 25px;
+  border-radius: 24px;
   position: relative;
   overflow: hidden;
   width: 768px;
@@ -28,9 +28,6 @@
   color: var(--green-card);
   font-size: 14px;
 }
-
-
-
 
 .container form{
   background-color: var(--black-card);

@@ -81,8 +81,8 @@ function LoginPage() {
             <div className={formState}>
                 <div className={`${style["form-container"]} ${style["sign-up"]}`}>
                     <form onSubmit={handleRegistrierenSubmit}>
-                        <h1>Registrieren</h1>
-                        <p>Es geht ganz schnell und einfach.</p>
+                        <h1 className="mb-1">Registrieren</h1>
+                        <p className="mb-1">Es geht ganz schnell und einfach.</p>
                         <label htmlFor="email">Deine E-Mail-Adresse:</label>
                         <input type="email" placeholder="E-Mail-Adresse" name="email" />
                         <label htmlFor="password">Neues Passwort:</label>
@@ -95,8 +95,8 @@ function LoginPage() {
                 </div>
                 <div className={`${style["form-container"]} ${style["sign-in"]}`}>
                     <form onSubmit={handleAnmeldenSubmit}>
-                        <h1>Anmelden</h1>
-                        <p>Willkommen zurück!</p>
+                        <h1 className="mb-2">Anmelden</h1>
+                        <p className="mb-2">Willkommen zurück!</p>
                         <label htmlFor="email">Deine E-Mail-Adresse:</label>
                         <input type="email" placeholder="E-Mail-Adresse" name="email" />
                         <label htmlFor="password">Dein Passwort:</label>
@@ -108,15 +108,15 @@ function LoginPage() {
                 <div className={style["toggle-container"]}>
                     <div className={style["toggle"]}>
                         <div className={`${style["toggle-panel"]} ${style["toggle-left"]}`}>
-                            <h1>Willkommen zurück!</h1>
-                            <p>Du hast bereits ein Konto?</p>
+                            <h1 className="mb-2">Willkommen zurück!</h1>
+                            <p className="mb-2">Du hast bereits ein Konto?</p>
                             <button onClick={() => { setFormError(); setFormState(style["container"]) }}>
                                 Anmelden
                             </button>
                         </div>
                         <div className={`${style["toggle-panel"]} ${style["toggle-right"]}`}>
-                            <h1>Willkommen!</h1>
-                            <p>Du hast kein Konto?</p>
+                            <h1 className="mb-2">Willkommen!</h1>
+                            <p className="mb-2">Du hast kein Konto?</p>
                             <button onClick={() => { setFormError(); setFormState(`${style["container"]} ${style["active"]}`) }}>
                                 Registrieren
                             </button>

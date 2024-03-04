@@ -29,10 +29,12 @@ function Navbar() {
     const [toggle, setToggle] = useState('h-0');
     const [burgerLinks, setBurgerLinks] = useState("hidden")
     const [windowSize, setWindowSize] = useState([0,0]);
+    const [blockButton, setBlockButton] = useState(false);
 
     
     function menuToggle() {
         if ((toggle === "h-0")&&(windowSize[0]<720)) {
+            setBlockButton(true)
             setToggle(status === "authenticated" ? "h-48" : "h-32")
             setTimeout(() => {
                 setBurgerLinks('opacity-0');
@@ -48,6 +50,7 @@ function Navbar() {
             }, 350)
             setTimeout(() => {
                 setBurgerLinks('opacity-100');
+                setBlockButton(false)
             }, 400)
         }
         else {
@@ -78,13 +81,14 @@ function Navbar() {
         <nav className="bg-blue-card rounded-bl-2xl" role="navigation">
             <div className="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
                 <div className="mr-4 md:mr-8">
-                    <Link onClick={menuToggle} className='text-2xl' href="/">die Wortschatzkartei</Link>
+                    <Link className='text-2xl' href="/">die Wortschatzkartei</Link>
                 </div>
                 <div className="ml-auto md:hidden">
                     <button
                         onClick={menuToggle}
                         className="bg-red-card m-0 flex items-center px-3 py-2 rounded "
                         type="button"
+                        disabled = {blockButton}
                     >
                         {toggle !== 'h-0' ? (<svg className="h-6 w-6"
                             xmlns="http://www.w3.org/2000/svg"

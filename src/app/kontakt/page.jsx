@@ -1,5 +1,3 @@
-import style from '@/app/ui/kontakt.module.css'
-
 function KontaktPage() {
 
 
