@@ -3,10 +3,11 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { signOut } from 'next-auth/react';
 import { useState, useEffect} from 'react';
+import { Spinner } from "@material-tailwind/react";
 
 function Navbar() {
     const { status } = useSession();
-
+    
     const varLinks = (status) => {
         if (status === "authenticated") {
             
@@ -17,12 +18,14 @@ function Navbar() {
                 <Link onClick={menuToggle} className="block px-3 py-1" href="/kontakt">Kontakt</Link>
                 <button className="bg-transparent text-base m-0 block text-start px-3 py-1" onClick={() => { signOut(); }}>Abmelden</button>
             </>)
-        } else {
+        } else if( status==="unauthenticated" ) {
             return (<>
                 <Link onClick={menuToggle} className="block px-3 py-1" href="/worterbuch">Wörterbuch</Link>
                 <Link onClick={menuToggle} className="block px-3 py-1" href="/kontakt">Kontakt</Link>
                 <Link onClick={menuToggle} className="block px-3 py-1" href="/login">Anmelden</Link>
             </>)
+        } else {
+            return(<Spinner className="h-5 w-5" />);
         }
     }
 
