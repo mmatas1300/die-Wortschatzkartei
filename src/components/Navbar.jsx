@@ -59,6 +59,11 @@ function Navbar() {
         };
     }
 
+    const menuToggleLogo = () => {
+        setToggle("h-0")
+        setBurgerLinks("hidden");
+    };
+
     useEffect(() => {
         if(windowSize[0] === 0){
             setWindowSize([window.innerWidth, window.innerHeight]);
@@ -81,7 +86,7 @@ function Navbar() {
         <nav className="bg-blue-card rounded-bl-2xl" role="navigation">
             <div className="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
                 <div className="mr-4 md:mr-8">
-                    <Link className='text-2xl' href="/">die Wortschatzkartei</Link>
+                    <Link onClick={menuToggleLogo} className='text-2xl' href="/">die Wortschatzkartei</Link>
                 </div>
                 <div className="ml-auto md:hidden">
                     <button
