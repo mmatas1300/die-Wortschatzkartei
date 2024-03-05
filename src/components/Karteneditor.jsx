@@ -6,13 +6,13 @@ import { useSession } from 'next-auth/react'
 
 function Karteneditor() {
 
-    const [newCardState, setNewCardState] = useState(<button>Fertig</button>);
-    
+    const [newCardState, setNewCardState] = useState(<button className='bg-black-card'>Fertig</button>);
+
     const { data: session, status } = useSession();
 
 
-    const createCard = (formData) =>{ 
-        if(formData.get('wortNomen')){
+    const createCard = (formData) => {
+        if (formData.get('wortNomen')) {
             const card = {
                 type: formData.get('type'),
                 wort: formData.get('wortNomen'),
@@ -23,9 +23,9 @@ function Karteneditor() {
                 ubersetzung: formData.get('ubersetzung')
             }
             return card
-        } 
+        }
 
-        else if(formData.get('wortAndere')) {
+        else if (formData.get('wortAndere')) {
             const card = {
                 type: formData.get('type'),
                 wort: formData.get('wortAndere'),
@@ -37,7 +37,7 @@ function Karteneditor() {
             return card
         }
 
-        else if(formData.get('wortMUF')) {
+        else if (formData.get('wortMUF')) {
             const card = {
                 type: "Nomen-MUF",
                 wort: formData.get('wortMUF'),
@@ -52,68 +52,72 @@ function Karteneditor() {
             return card
         }
 
-        else if(formData.get('wortVerb')) {
+        else if (formData.get('wortVerb')) {
             const card = {
                 type: "Verb",
                 wort: formData.get('wortVerb'),
-                prasens: [formData.get('ps1'),formData.get('ps2'),formData.get('ps3'),formData.get('ps4'),formData.get('ps5'),formData.get('ps6')],
-                prateritum:[formData.get('pm1'),formData.get('pm2'),formData.get('pm3'),formData.get('pm4'),formData.get('pm5'),formData.get('pm6')],
+                prasens: [formData.get('ps1'), formData.get('ps2'), formData.get('ps3'), formData.get('ps4'), formData.get('ps5'), formData.get('ps6')],
+                prateritum: [formData.get('pm1'), formData.get('pm2'), formData.get('pm3'), formData.get('pm4'), formData.get('pm5'), formData.get('pm6')],
                 partizip2: formData.get('partizip2'),
                 bild: formData.get('bild'),
                 verwandte: formData.get('verwandte'),
                 beispiel: formData.get('beispiel'),
                 ubersetzung: formData.get('ubersetzung')
             }
-            if(formData.get('pm1')===""){
-                card.prateritum=[];
+            if (formData.get('pm1') === "") {
+                card.prateritum = [];
             }
             return card
         }
     }
 
-    const handlePostCard = async (e)=>{
+    const handlePostCard = async (e) => {
         e.preventDefault();
         setNewCardState(<Spinner className="mt-2.5 h-10 w-10" />);
         const formData = new FormData(e.currentTarget)
         const card = createCard(formData);
 
-        try{
-            if(session.user.email === "mmatas1300@gmail.com"){
+        try {
+            if (session.user.email === "mmatas1300@gmail.com") {
                 await axios.post('/api/cards', card);
-            } else{
-                card._id=card.wort+session.user.email+Date.now();
-                await axios.put('/api/user/cards', {email: session.user.email,card: card});
+            } else {
+                card._id = card.wort + session.user.email + Date.now();
+                await axios.put('/api/user/cards', { email: session.user.email, card: card });
             }
             setNewCardState(<div>Karte hinzugefügt!</div>);
-            setTimeout(function() {
+            setTimeout(function () {
                 setNewCardState(<button>Fertig</button>)
-              }, 1500);
-        } catch(error){
+            }, 1500);
+        } catch (error) {
             setNewCardState(<div>{error.response.data.message}</div>);
-            setTimeout(function() {
+            setTimeout(function () {
                 setNewCardState(<button>Fertig</button>)
-              }, 1500);
+            }, 1500);
         }
 
 
     }
 
-    const handleChangeGender = (e) =>{
-        if(e.target.value ==="Nomen-das"){
+    const handleChangeGender = (e) => {
+        if (e.target.value === "Nomen-das") {
             setTypeColor("bg-green-card")
-        } else if(e.target.value ==="Nomen-der"){
+            setTypeFields(nomenFields)
+        } else if (e.target.value === "Nomen-der") {
             setTypeColor("bg-blue-card")
-        } else if(e.target.value ==="Nomen-die"){
+            setTypeFields(nomenFields)
+        } else if (e.target.value === "Nomen-die") {
             setTypeColor("bg-red-card")
-        } else if(e.target.value ==="Nomen-pl"){
+            setTypeFields(nomenFields)
+        } else if (e.target.value === "Nomen-pl") {
             setTypeColor("bg-yellow-card")
+            setTypeFields(nomenFieldsPl)
         }
     };
 
     const verbFields = (<>
         <label htmlFor="wortVerb">Infinitiv</label>
         <input type="text" placeholder='Sein' name='wortVerb' />
-        
+
         <span className='text-sm'>Präsens</span>
         <div className='grid grid-cols-2 w-full'>
 
@@ -197,18 +201,18 @@ function Karteneditor() {
         <div className='grid grid-cols-2 w-full'>
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="wortMUF">Maskulim:</label>
-                <input className='max-w-32' type="text" placeholder='Koch' name='wortMUF'/>
+                <input className='max-w-32' type="text" placeholder='Koch' name='wortMUF' />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="frau">Feminin:</label>
-                <input className='max-w-32' type="text" placeholder='Köchin' name="frau"/>
+                <input className='max-w-32' type="text" placeholder='Köchin' name="frau" />
 
             </div>
 
             <div className='flex flex-col justify-center items-center'>
                 <label htmlFor="manner">Plural:</label>
-                <input className='max-w-32' type="text" placeholder='Köche' name="manner"/>
+                <input className='max-w-32' type="text" placeholder='Köche' name="manner" />
             </div>
 
             <div className='flex flex-col justify-center items-center'>
@@ -239,30 +243,51 @@ function Karteneditor() {
         <label htmlFor="wortNomen">Wort:</label>
         <input type="text" placeholder='Apfel' name="wortNomen" />
         <label htmlFor="plural">Plural:</label>
-        <input type="text" placeholder='Äpfel' name="plural"/>
+        <input type="text" placeholder='Äpfel' name="plural" />
         <label htmlFor="verwandte">Verwandte Wörter:</label>
         <input type="text" placeholder='das Obst' name="verwandte" />
         <label htmlFor="beispiel">Beispiel:</label>
         <input type="text" placeholder='Ich esse einen Apfel' name="beispiel" />
         <label htmlFor="bild">Bild:</label>
-        <input type="text" placeholder='https://www.example.com/bild.jpg' name="bild"/>
+        <input type="text" placeholder='https://www.example.com/bild.jpg' name="bild" />
         <label htmlFor="ubersetzung">Übersetzung:</label>
-        <input type="text" placeholder='Apple' name="ubersetzung"/>
+        <input type="text" placeholder='Apple' name="ubersetzung" />
+    </>)
+
+    const nomenFieldsPl = (<>
+        <label htmlFor="type">Typ:</label>
+        <select name="type" onChange={handleChangeGender}>
+
+            <option value="Nomen-das">Neutrum</option>
+            <option value="Nomen-der">Maskulim</option>
+            <option value="Nomen-die">Feminin</option>
+            <option value="Nomen-pl">Plural</option>
+        </select>
+        <label htmlFor="wortNomen">Wort:</label>
+        <input type="text" placeholder='Apfel' name="wortNomen" />
+        <label htmlFor="verwandte">Verwandte Wörter:</label>
+        <input type="text" placeholder='das Obst' name="verwandte" />
+        <label htmlFor="beispiel">Beispiel:</label>
+        <input type="text" placeholder='Ich esse einen Apfel' name="beispiel" />
+        <label htmlFor="bild">Bild:</label>
+        <input type="text" placeholder='https://www.example.com/bild.jpg' name="bild" />
+        <label htmlFor="ubersetzung">Übersetzung:</label>
+        <input type="text" placeholder='Apple' name="ubersetzung" />
     </>)
 
     const andereFields = (<>
         <label htmlFor="type">Typ:</label>
-        <input type="text" placeholder='Adjektiv' name='type'/>
+        <input type="text" placeholder='Adjektiv' name='type' />
         <label htmlFor="wortAndere">Wort:</label>
-        <input type="text" placeholder='Gesund' name='wortAndere'/>
+        <input type="text" placeholder='Gesund' name='wortAndere' />
         <label htmlFor="verwandte">Verwandte Wörter:</label>
-        <input type="text" placeholder='Krank' name="verwandte"/>
+        <input type="text" placeholder='Krank' name="verwandte" />
         <label htmlFor="beispiel">Beispiel:</label>
-        <input type="text" placeholder='Heute bin ich gesund.' name="beispiel"/>
+        <input type="text" placeholder='Heute bin ich gesund.' name="beispiel" />
         <label htmlFor="bild">Bild:</label>
-        <input type="text" placeholder='https://www.example.com/bild.jpg' name="bild"/>
+        <input type="text" placeholder='https://www.example.com/bild.jpg' name="bild" />
         <label htmlFor="ubersetzung">Übersetzung:</label>
-        <input type="text" placeholder='Healthy' name='ubersetzung'/>
+        <input type="text" placeholder='Healthy' name='ubersetzung' />
     </>)
 
     const [typeFields, setTypeFields] = useState(nomenFields);
@@ -292,12 +317,12 @@ function Karteneditor() {
     return (
         <div className='mt-12 flex flex-col justify-center items-center'>
             <div className={`self-start flex flex-row ms-2`}>
-                <button onClick={setNomenForm} className={`transition duration-200 hover:scale-105`}>Nomen</button>
-                <button onClick={setVerbForm} className='transition duration-200 hover:scale-105'>Verb</button>
-                <button onClick={setNomenMUFForm} className='transition duration-200 hover:scale-105'>Gleichstellungsnomen</button>
-                <button onClick={setAndereForm} className='transition duration-200 hover:scale-105'>Andere Wort</button>
+                <button onClick={setNomenForm} className={`bg-black-card p-2 z-0 rounded-none rounded-t-lg transition duration-200 hover:scale-105 hover:bg-yellow-card`}>Nomen</button>
+                <button onClick={setVerbForm} className='bg-black-card p-2 z-0 rounded-none rounded-t-lg transition duration-200 hover:scale-105 hover:bg-yellow-card'>Verb</button>
+                <button onClick={setNomenMUFForm} className='bg-black-card p-2 z-0 rounded-none rounded-t-lg transition duration-200 hover:scale-105 hover:bg-yellow-card'>Gleichstellungsnomen</button>
+                <button onClick={setAndereForm} className='bg-black-card p-2 z-0 rounded-none rounded-t-lg transition duration-200 hover:scale-105 hover:bg-yellow-card'>Andere Wort</button>
             </div>
-            <div className={`w-96 rounded-br-lg ${typeColor}`}>
+            <div className={`w-96 rounded-br-3xl rounded-bl-3xl rounded-tl-lg rounded-tr-3xl z-10 ${typeColor}`}>
                 <form onSubmit={handlePostCard} className="flex flex-col justify-normal items-center m-12">
                     {typeFields}
                     {newCardState}
