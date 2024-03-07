@@ -101,7 +101,7 @@ export default function Home() {
           <div className="flex flex-row flex-wrap justify-center items-center mt-4">
             {alphaNum.map((x) => {
               return (
-                <div className='bg-orange-card hover:bg-yellow-card w-32 h-32 m-4 cursor-pointer text-base flex justify-center items-center rounded-xl transition duration-200 hover:scale-110'>
+                <div key={x} className='bg-orange-card hover:bg-yellow-card w-32 h-32 m-4 cursor-pointer text-base flex justify-center items-center rounded-xl transition duration-200 hover:scale-110'>
                   {x}
                 </div>
               )
