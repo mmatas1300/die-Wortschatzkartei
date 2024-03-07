@@ -15,6 +15,8 @@ function KontaktPage() {
                 <label htmlFor="message">Nachricht:</label>
                 <textarea name="message" id="message" cols="30" rows="10" placeholder='Wir freuen uns über Ihre Nachricht' required></textarea>
                 <button>Nachricht senden</button>
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://die-wortschatzkartei.vercel.app/kontakt/success" />   
             </form>
         </div>
     </section>
