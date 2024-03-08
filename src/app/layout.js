@@ -14,12 +14,19 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="de">
-      <body className={baloo.className}>
-        <Providers>  
+
+      <body className={`${baloo.className}`}>
+
+
+
+        <Providers>
           <Navbar />
           {children}
         </Providers>
-        </body>
+
+
+      </body>
+
     </html>
   );
 }
