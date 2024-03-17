@@ -13,7 +13,7 @@ function Navbar() {
             
             return (<>
                 <Link onClick={menuToggle} className="block px-3 py-1" href="/konto">Mein Konto</Link>
-                <Link onClick={menuToggle} className="block px-3 py-1" href="/uben">Üben</Link>
+                <Link onClick={menuToggle} className="block px-3 py-1" href="/">Üben</Link>
                 <Link onClick={menuToggle} className="block px-3 py-1" href="/worterbuch">Wörterbuch</Link>
                 <Link onClick={menuToggle} className="block px-3 py-1" href="/kontakt">Kontakt</Link>
                 <button className="bg-transparent text-base m-0 block text-start px-3 py-1" onClick={() => { signOut(); }}>Abmelden</button>
