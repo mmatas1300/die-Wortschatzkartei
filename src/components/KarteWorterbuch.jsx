@@ -76,7 +76,7 @@ function Karte(karte) {
                         </div>
                     ):(<p className='text-xl'>{wortKarte()}</p>)}
                     
-                    <p>{karte.plural ? "die " + karte.plural : "Ohne pl"}</p>
+                    <p>{karte.plural ? "die " + karte.plural : ""}</p>
                     {karte.type === "Verb" ?(<div className='flex  flex-col justify-center items-center'>
                     <p className='mt-2'>Präsens</p>
                     <div class="grid grid-cols-2 justify-items-center">
