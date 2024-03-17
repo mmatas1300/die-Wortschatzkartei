@@ -8,7 +8,7 @@ export async function POST(request){
     try {
         await connectDB();
         const userFound = await User.findOne({email: email});
-        return NextResponse.json({progress:userFound.progress,lastPlay:userFound.lastPlay});
+        return NextResponse.json({progress:userFound.progress});
     } catch (error) {
         return NextResponse.json(error);
     }
@@ -16,7 +16,7 @@ export async function POST(request){
 
 export async function PUT(request){
 
-    const { email, progress,lastPlay} = await request.json()//Corresponde a recuperar el body
+    const { email, progress} = await request.json()//Corresponde a recuperar el body
 
     try {
         await connectDB();

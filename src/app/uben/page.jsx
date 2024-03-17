@@ -24,8 +24,8 @@ function UbenPage() {
             },
         });
         const dataStatistics = await responseStatistics.json();
-        setStatistics(dataStatistics)
-        return dataStatistics;
+        setStatistics(dataStatistics.progress)
+        return dataStatistics.progress;
     }
 
     const getCards = async () => {
@@ -62,15 +62,28 @@ function UbenPage() {
     }
 
     useEffect(() => {//Config Inicial
+        //Condiciones para jugar:
+        //
         const loadData = async () => {
             if (status === "authenticated") {
-                const stats = await getStats() //Trae stats<
-                const lastPlay = new Date(stats.lastPlay)
-                lastPlay.setDate(lastPlay.getDate()+1);
-                const now = new Date()
-                if (lastPlay < now) {
-                    setIsTimeToPlay(true)
+                const stats = await getStats(); //Trae stats
+                const now = new Date();
+                if(stats.length !== 0){
+                    const cardsToPlayToday = stats.filter((card)=>{
+                        const lastPlay = new Date(card.date)
+                        lastPlay.setDate(lastPlay.getDate()+1);
+                        return lastPlay < now
+                    })
+    
+                    console.log(cardsToPlayToday)
+                } else if(stats.length ===0){
+                    //primera vez jugando
                 }
+                
+
+                // if ( < now) {
+                //     setIsTimeToPlay(true)
+                // }
             }
         }
         loadData();
