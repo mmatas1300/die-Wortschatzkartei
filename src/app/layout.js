@@ -16,15 +16,10 @@ export default function RootLayout({ children }) {
     <html lang="de">
 
       <body className={`${baloo.className}`}>
-
-
-
         <Providers>
           <Navbar />
           {children}
         </Providers>
-
-
       </body>
 
     </html>

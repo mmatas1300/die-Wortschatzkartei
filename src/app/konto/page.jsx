@@ -138,12 +138,11 @@ function KontoPage() {
     }, [status])
 
     return (
-        <section className='mx-auto mt-12'>
-            <div className='flex flex-col justify-center items-center'>
+        <main className='mx-auto'>
+            <div className='flex flex-col justify-center items-center mt-12'>
                 {userMessages}
             </div>
-
-        </section>
+        </main>
     )
 }
 

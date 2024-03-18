@@ -77,7 +77,7 @@ function LoginPage() {
     };
 
     return (
-        <section className={style["section"]}>
+        <main className={style["section"]}>
             <div className={formState}>
                 <div className={`${style["form-container"]} ${style["sign-up"]}`}>
                     <form onSubmit={handleRegistrierenSubmit}>
@@ -124,7 +124,7 @@ function LoginPage() {
                     </div>
                 </div>
             </div>
-        </section>
+        </main>
 
     )
 }

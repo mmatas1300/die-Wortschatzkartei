@@ -56,8 +56,8 @@ function WorterbuchPage() {
   }
 
   return (
-    <>
-      <div className='flex flex-row justify-center items-center'>
+    <main>
+      <div className='flex flex-row justify-center items-center mt-8'>
         <div className='me-12 h-7 w-7'>
           {cardsSuchen?(<img onClick={()=>{setCardsSuchen(null)}} className='bg-orange-card hover:bg-yellow-card cursor-pointer ms-12 h-7 w-7 rounded-full' src={arrow.src} alt="Back" />):(<p></p>)}
         </div>
@@ -91,7 +91,7 @@ function WorterbuchPage() {
         })}
       </div>)}
 
-    </>
+    </main>
   );
 
 }
