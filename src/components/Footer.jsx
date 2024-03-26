@@ -1,6 +1,4 @@
 
-import Link from 'next/link'
-
 const Footer = () => {
     const today = new Date();
     return (
