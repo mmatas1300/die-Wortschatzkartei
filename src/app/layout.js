@@ -2,6 +2,7 @@ import { baloo } from '@/app/ui/fonts';
 import "./globals.css";
 import Providers from './Providers';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 
 
@@ -19,9 +20,9 @@ export default function RootLayout({ children }) {
         <Providers>
           <Navbar />
           {children}
+          <Footer />
         </Providers>
       </body>
-
     </html>
   );
 }

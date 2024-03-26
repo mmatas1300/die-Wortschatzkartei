@@ -1,11 +1,5 @@
 'use client'
-import Karte from "@/components/KarteWorterbuch";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
-
+import Karte from "@/components/Karte";
 
 export default function Home() {
 
@@ -64,8 +58,7 @@ export default function Home() {
         <div className="m-5 hidden lg:block"><Karte {...cardsDemo[2]} /></div>
       </div>
 
-
-      <h1 className="my-3 mx-10">Create your account by clicking on <span className="bg-blue-card p-2 text-base">Anmelden</span> and then <button className="cursor-default">Registrieren</button></h1>
+      <h1 className="my-3 mx-10">Create your account by clicking on <span className="bg-blue-card p-2 text-base cursor-default">Anmelden</span> and then <button className="cursor-default">Registrieren</button></h1>
 
       <div className="flex flex-row flex-wrap justify-center items-start">
         <div>

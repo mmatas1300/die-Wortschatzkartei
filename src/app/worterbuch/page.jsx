@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { useState } from 'react';
-import Karte from "@/components/KarteWorterbuch";
+import Karte from "@/components/Karte";
 import { Spinner } from "@material-tailwind/react";
 import arrow from '@/app/ui/arrow.png';
 

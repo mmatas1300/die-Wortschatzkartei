@@ -1,13 +1,13 @@
 'use client'
-import ReactFlipCard from 'reactjs-flip-card'
 import { useState } from 'react';
 
-function Karte({ karte }) {
+function Karte(karte) {
+
 
     const [showUbersetzung, setShowUbersetzung] = useState(false);
 
     const toggleUbersetzung = () => {
-        setShowUbersetzung(true);
+        setShowUbersetzung(!showUbersetzung);
     };
 
     const colorKarte = () => {
@@ -62,25 +62,21 @@ function Karte({ karte }) {
     };
 
     return (
-        <div className='flex flex-col justify-center items-center'>
-            <ReactFlipCard
-                frontComponent={<div className={`rounded-3xl flex flex-col justify-center items-center text-xl ${colorKarte()}`}>
-                    {wortKarte()}
-                </div>}
-                backComponent={<div className={`w-80 min-h-80 rounded-3xl flex  flex-col justify-center items-center ${colorKarte()}`}>
-                <p className="underline self-end me-4 mt-4">{typeKarte()}</p>
-                {karte.type === "Nomen-MUF" ? (
-                    <div className='grid grid-cols-2 justify-items-center'>
-                        <p className='mx-2 text-base' >{wortKarte()}</p>
-                        <p className='mx-1 text-base' >{"die " + karte.frau}</p>
-                        <p className='mx-2 text-sm' >{"die " + karte.manner}</p>
-                        <p className='mx-1 text-sm' >{"die " + karte.frauen}</p>
-                    </div>
-                ) : (<p className='text-xl'>{wortKarte()}</p>)}
-
-                <p>{karte.plural ? "die " + karte.plural : ""}</p>
-                {karte.type === "Verb" ? (<div className='flex  flex-col justify-center items-center'>
-                    <p className='mt-2 underline'>Präsens</p>
+        <div className='flex flex-col justify-center items-center transition duration-200 hover:scale-105'>
+                <div className={`w-80 min-h-80 rounded-3xl flex flex-col justify-center items-center text-xl ${colorKarte()}`}>
+                    <p className="underline self-end me-4 mt-4">{typeKarte()}</p>
+                    {karte.type === "Nomen-MUF"?(
+                        <div className='grid grid-cols-2 justify-items-center'>
+                            <p className='mx-2 text-base' >{wortKarte()}</p>
+                            <p className='mx-1 text-base' >{"die "+karte.frau}</p>
+                            <p className='mx-2 text-sm' >{"die "+karte.manner}</p>
+                            <p className='mx-1 text-sm' >{"die "+karte.frauen}</p>
+                        </div>
+                    ):(<p className='text-xl'>{wortKarte()}</p>)}
+                    
+                    <p>{karte.plural ? "die " + karte.plural : ""}</p>
+                    {karte.type === "Verb" ?(<div className='flex  flex-col justify-center items-center'>
+                    <p className='underline mt-2'>Präsens</p>
                     <div class="grid grid-cols-2 justify-items-center">
                         <p className='mx-1 text-sm'>{karte.prasens[0]}</p>
                         <p className='mx-1 text-sm'>{karte.prasens[3]}</p>
@@ -90,7 +86,7 @@ function Karte({ karte }) {
                         <p className='mx-1 text-sm'>{karte.prasens[5]}</p>
                     </div>
 
-                    <p className='mt-2 underline'>{(karte.prateritum.length !== 0) ? "Präteritum" : ""}</p>
+                    <p className='underline mt-2'>{(karte.prateritum.length !== 0) ? "Präteritum" : ""}</p>
                     <div class="grid grid-cols-2 justify-items-center">
                         <p className='mx-1 text-sm'>{karte.prateritum[0]}</p>
                         <p className='mx-1 text-sm'>{karte.prateritum[3]}</p>
@@ -100,16 +96,15 @@ function Karte({ karte }) {
                         <p className='mx-1 text-sm'>{karte.prateritum[5]}</p>
                     </div>
 
-                    <p className='mt-2 underline'>{karte.type === "Verb" ? "Partizip II" : ""}</p>
+                    <p className='underline mt-2'>{karte.type === "Verb" ? "Partizip II" : ""}</p>
                     <p className='text-sm'>{karte.partizip2}</p></div>) : ""}
+                    
 
-
-                <img src={karte.bild} alt={wortKarte()} className='w-60 rounded-2xl my-4' />
-                <p className='mb-4'>{karte.verwandte}</p>
-                <p className='mx-4 mb-4'>{karte.beispiel}</p>
-                <p onClick={toggleUbersetzung} className='mb-4 bg-black-card p-1 rounded-md cursor-pointer text-sm'>{showUbersetzung ? karte.ubersetzung : "Übersetzung"}</p>
-            </div>}
-            />
+                    <img src={karte.bild} alt={wortKarte()} className='w-60 rounded-2xl my-4' />
+                    <p className='mb-4'>{karte.verwandte}</p>
+                    <p className='mx-4 mb-4'>{karte.beispiel}</p>
+                    <p onClick={toggleUbersetzung} className='mb-4 bg-black-card p-1 rounded-md cursor-pointer text-sm'>{showUbersetzung ? karte.ubersetzung : "Übersetzung"}</p>
+                </div>
         </div>
 
     );

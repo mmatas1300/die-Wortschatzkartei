@@ -1,5 +1,5 @@
 'use client'
-import Karte from "@/components/KarteWorterbuch";
+import Karte from "@/components/Karte";
 import arrow from '@/app/ui/arrow.png';
 import Link from 'next/link'
 import { useEffect, useState } from "react";
