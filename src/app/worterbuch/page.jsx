@@ -69,7 +69,7 @@ function WorterbuchPage() {
               </svg>
             </div>
             <input type="search" name="search" id="default-search" className="block w-full p-4 ps-10 text-sm" />
-            <button type="submit" className="absolute end-2.5 bottom-2.5 bg-green-card cursor-pointer px-4 py-2">
+            <button type="submit" className="absolute end-2.5 bottom-2 bg-green-card cursor-pointer px-4 py-2">
               Suchen
             </button>
           </div>

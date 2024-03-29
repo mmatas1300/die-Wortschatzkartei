@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@flaticon/flaticon-uicons": "^3.1.0",
     "@material-tailwind/react": "^2.1.8",
     "axios": "^1.6.7",
     "bcryptjs": "^2.4.3",

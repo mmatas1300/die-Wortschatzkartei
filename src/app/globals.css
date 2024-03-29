@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~@flaticon/flaticon-uicons/css/all/all";
+
 :root {
   --blue-card: #0078A3;
   --red-card: #B72B4F;
