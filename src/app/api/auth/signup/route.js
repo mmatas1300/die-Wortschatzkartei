@@ -4,7 +4,7 @@ import {connectDB}  from "@/libs/mongodb";
 import bcrypt from 'bcryptjs'
 
 export async function POST(request) {
-    const { email, password, progress, myCards} = await request.json()//Corresponde a recuperar el body
+    const { email, password, myCards} = await request.json()//Corresponde a recuperar el body
 
     if (!password || password.length < 3) //Validación contraseña
         return NextResponse.json(
@@ -38,7 +38,6 @@ export async function POST(request) {
         const user = new User({
             email,
             password: hashedPassword,
-            progress,
             myCards,
             config:{
                 nick: "",

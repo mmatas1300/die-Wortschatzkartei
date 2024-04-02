@@ -24,7 +24,6 @@ const handler = NextAuth({
                 if(!passwordMatch)throw new Error("Ungültige Daten")
 
                 const userData={
-                    
                     email: userFound.email,
                     config: userFound.config,
                     _id: userFound._id,
