@@ -18,6 +18,7 @@
     "next-auth": "^4.24.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-pro-sidebar": "^1.1.0",
     "reactjs-flip-card": "^2.0.3",
     "swiper": "^11.0.7"
   },
