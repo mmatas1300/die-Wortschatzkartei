@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 
       <body className={`${baloo.className}`}>
         <Providers>
-          <Navbar />
+
           {children}
           <Footer />
         </Providers>
