@@ -2,7 +2,7 @@ import { baloo } from '@/app/ui/fonts';
 import "./globals.css";
 import Providers from './Providers';
 import Footer from '@/components/Footer';
-import Sidebar from '@/components/Siderbar';
+import Siderbar from '@/components/Siderbar';
 
 
 
@@ -16,10 +16,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="de">
 
-      <body className={`${baloo.className}`}>
+      <body className={`${baloo.className} flex flex-row`}>
         <Providers>
-          <Sidebar/>
-          {children}
+          <Siderbar/>
+            {children}
           <Footer />
         </Providers>
       </body>

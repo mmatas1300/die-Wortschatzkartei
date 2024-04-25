@@ -1,13 +1,18 @@
 "use client"
+import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 
-import { useState } from 'react';
-
-const Sidebar = ()=>{
+const Siderbar = () => {
 
 
     return (
-        <div></div>
+        <Sidebar backgroundColor={"rgb(0,120,163)"}>
+            <p>Die Wortschatzkartei</p>
+            <Menu closeOnClick={true}>
+                <MenuItem> Documentation </MenuItem>
+                <MenuItem> Calendar </MenuItem>
+            </Menu>
+        </Sidebar>
     );
 };
 
-export default Sidebar;
+export default Siderbar;
