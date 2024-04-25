@@ -2,7 +2,7 @@ function KontaktPage() {
 
 
     return(
-    <main className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center">
         <div className="bg-red-card rounded-3xl overflow-hidden w-96 max-w-full mt-12">
             <form action="https://formsubmit.co/fd1bcb62bc2401733e36b575bd39902c" method="POST" className="flex flex-col justify-center items-center w-80 py-7 m-auto">
                 <h1>Kontakt</h1>
@@ -18,7 +18,7 @@ function KontaktPage() {
                 <input type="hidden" name="_next" value="https://die-wortschatzkartei.vercel.app/kontakt/success" />   
             </form>
         </div>
-    </main>
+    </div>
     );
 }
 

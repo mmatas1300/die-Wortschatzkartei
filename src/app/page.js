@@ -50,7 +50,7 @@ export default function Home() {
   ]
 
   return (
-    <main className="flex  flex-col items-center justify-between mt-12">
+    <main className="flex flex-col items-center justify-between mt-12">
       <h1>Make your own flashcards and review them!</h1>
       <div className="flex flex-row flex-wrap justify-center items-center">
         <div className="m-5"><Karte {...cardsDemo[0]} /></div>
