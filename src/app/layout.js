@@ -1,8 +1,8 @@
 import { baloo } from '@/app/ui/fonts';
 import "./globals.css";
 import Providers from './Providers';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Sidebar from '@/components/Siderbar';
 
 
 
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 
       <body className={`${baloo.className}`}>
         <Providers>
-
+          <Sidebar/>
           {children}
           <Footer />
         </Providers>
