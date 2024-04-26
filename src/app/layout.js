@@ -1,7 +1,7 @@
 import { baloo } from '@/app/ui/fonts';
 import "./globals.css";
 import Providers from './Providers';
-import Siderbar from '@/components/Siderbar';
+import Navbar from '@/components/Navbar';
 
 
 
@@ -18,8 +18,7 @@ export default function RootLayout({ children }) {
 
       <body className={`${baloo.className}`}>
         <Providers>
-
-          <Siderbar />
+          <Navbar />
           <main className="lg:pl-[250px] h-full mx-auto">
             {children}
           </main>
