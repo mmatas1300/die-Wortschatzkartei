@@ -1,7 +1,7 @@
 "use client"
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import Link from 'next/link'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu as MenuIcon, NotebookText as LibraryIcon, Mailbox as MailboxIcon, LogIn as LogInIcon, X as XIcon, CircleUser as CircleUserIcon, SquarePlay as SquarePlayIcon, LogOut as LogOutIcon } from 'lucide-react';
 import Logo from "@/components/Logo"
 import { useSession } from 'next-auth/react'
@@ -11,7 +11,10 @@ import { Spinner } from "@material-tailwind/react";
 const Navbar = () => {
 
     const [toggle, setToggle] = useState(false);
-    const { status } = useSession();
+    const {status} = useSession();
+    useEffect(()=>{
+
+    })
 
     const varLinks = (status) => {
         if (status === "authenticated") {
@@ -20,7 +23,7 @@ const Navbar = () => {
                 <MenuItem onClick={() => { setToggle(false) }} icon={<SquarePlayIcon />} component={<Link href="/uben" />}> Üben</MenuItem>
                 <MenuItem onClick={() => { setToggle(false) }} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
                 <MenuItem onClick={() => { setToggle(false) }} icon={<MailboxIcon />} component={<Link href="/kontakt" />}> Kontakt</MenuItem>
-                <MenuItem onClick={() => { signOut(); }} icon={<LogOutIcon />}>Abmelden</MenuItem>
+                <MenuItem onClick={() => { signOut(); setToggle(false); }} icon={<LogOutIcon />}>Abmelden</MenuItem>
 
             </>)
         } else if (status === "unauthenticated") {
@@ -30,6 +33,7 @@ const Navbar = () => {
                 <MenuItem onClick={() => { setToggle(false) }} icon={<LogInIcon />} component={<Link href="/login" />}> Anmelden</MenuItem>
             </>)
         } else {
+            ()=>{setToggle(false)};
             return (<div className='flex justify-center items-center'><Spinner className="h-10 w-10" /></div>);
         }
     }
@@ -44,7 +48,7 @@ const Navbar = () => {
                 <div className='w-[74px]' />
             </div>
 
-            <Sidebar rootStyles={{ height: "100vh", position: "fixed", top: 0, border: 0, }} backgroundColor={"rgb(0,120,163)"} width={"250px"} toggled={toggle} customBreakPoint={"960px"} onBackdropClick={() => { setToggle(false) }} >
+            <Sidebar rootStyles={{ height: "100vh", position: "fixed", top: 0, border: 0}} backgroundColor={"rgb(0,120,163)"} width={"250px"} toggled={toggle} customBreakPoint={"960px"} onBackdropClick={() => { setToggle(false) }} >
 
                 <div className='flex flex-row justify-between'>
                     <Logo />
