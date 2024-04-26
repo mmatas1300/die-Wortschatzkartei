@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
@@ -11,26 +11,60 @@ import { Spinner } from "@material-tailwind/react";
 const Navbar = () => {
 
     const [toggle, setToggle] = useState(false);
+    const [windowSize, setWindowSize] = useState(0);
     const {status} = useSession();
-    useEffect(()=>{
 
-    })
+
+    const toggleNavbar = (width)=>{
+        if(width>960){
+            console.log("desk")
+            setToggle(true);
+        }
+        else{
+            console.log("mobile")
+            setToggle(false);
+        }
+    };
+
+    useEffect(() => {
+
+        if(windowSize === 0){
+            setWindowSize(window.innerWidth);
+            toggleNavbar(window.innerWidth);
+
+        }
+
+        const menuResize = () => {    
+            setWindowSize(window.innerWidth);
+            toggleNavbar(window.innerWidth);
+        };
+
+        window.addEventListener('resize', menuResize);
+        return () => {
+            window.removeEventListener('resize', menuResize);
+        };
+    }, []);
+
+
+
+    
+
 
     const varLinks = (status) => {
         if (status === "authenticated") {
             return (<>
-                <MenuItem onClick={() => { setToggle(false) }} icon={<CircleUserIcon />} component={<Link href="/konto" />}> Mein Konto</MenuItem>
-                <MenuItem onClick={() => { setToggle(false) }} icon={<SquarePlayIcon />} component={<Link href="/uben" />}> Üben</MenuItem>
-                <MenuItem onClick={() => { setToggle(false) }} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
-                <MenuItem onClick={() => { setToggle(false) }} icon={<MailboxIcon />} component={<Link href="/kontakt" />}> Kontakt</MenuItem>
-                <MenuItem onClick={() => { signOut(); setToggle(false); }} icon={<LogOutIcon />}>Abmelden</MenuItem>
+                <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<CircleUserIcon />} component={<Link href="/konto" />}> Mein Konto</MenuItem>
+                <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<SquarePlayIcon />} component={<Link href="/uben" />}> Üben</MenuItem>
+                <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
+                <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<MailboxIcon />} component={<Link href="/kontakt" />}> Kontakt</MenuItem>
+                <MenuItem onClick={() => { signOut(); toggleNavbar(windowSize); }} icon={<LogOutIcon />}>Abmelden</MenuItem>
 
             </>)
         } else if (status === "unauthenticated") {
             return (<>
-                <MenuItem onClick={() => { setToggle(false) }} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
-                <MenuItem onClick={() => { setToggle(false) }} icon={<MailboxIcon />} component={<Link href="/kontakt" />}> Kontakt</MenuItem>
-                <MenuItem onClick={() => { setToggle(false) }} icon={<LogInIcon />} component={<Link href="/login" />}> Anmelden</MenuItem>
+                <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
+                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<MailboxIcon />} component={<Link href="/kontakt" />}> Kontakt</MenuItem>
+                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<LogInIcon />} component={<Link href="/login" />}> Anmelden</MenuItem>
             </>)
         } else {
             ()=>{setToggle(false)};
@@ -48,7 +82,7 @@ const Navbar = () => {
                 <div className='w-[74px]' />
             </div>
 
-            <Sidebar rootStyles={{ height: "100vh", position: "fixed", top: 0, border: 0}} backgroundColor={"rgb(0,120,163)"} width={"250px"} toggled={toggle} customBreakPoint={"960px"} onBackdropClick={() => { setToggle(false) }} >
+        <Sidebar rootStyles={{ height: "100vh", position: "fixed", top: 0, border: 0}} backgroundColor={"rgb(0,120,163)"} width={"250px"} toggled={toggle} customBreakPoint={"960px"} onBackdropClick={() => { setToggle(false) }} collapsed={!toggle} collapsedWidth={!toggle?"0px":"250px"} >
 
                 <div className='flex flex-row justify-between'>
                     <Logo />
@@ -63,6 +97,7 @@ const Navbar = () => {
                     {varLinks(status)}
                 </Menu>
             </Sidebar>
+            
         </nav>
     );
 };
