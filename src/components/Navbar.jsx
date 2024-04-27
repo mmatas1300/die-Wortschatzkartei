@@ -17,11 +17,9 @@ const Navbar = () => {
 
     const toggleNavbar = (width)=>{
         if(width>960){
-            console.log("desk")
             setToggle(true);
         }
         else{
-            console.log("mobile")
             setToggle(false);
         }
     };
@@ -44,11 +42,6 @@ const Navbar = () => {
             window.removeEventListener('resize', menuResize);
         };
     }, []);
-
-
-
-    
-
 
     const varLinks = (status) => {
         if (status === "authenticated") {
