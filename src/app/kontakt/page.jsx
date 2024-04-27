@@ -14,7 +14,8 @@ function KontaktPage() {
         <section className="my-12">
             <div className="flex flex-col justify-center items-center">
                 <h1>Kontakt</h1>
-                <div className="bg-red-card rounded-3xl overflow-hidden w-[430px] max-w-full mt-4">
+                <div className="bg-orange-card mt-4 rounded-3xl lg:rotate-6">
+                <div className="bg-red-card rounded-3xl rounded-tr-[60px] overflow-hidden w-screen max-w-[430px] lg:-rotate-6">
                     <form onSubmit={toggleButton} action="https://formsubmit.co/fd1bcb62bc2401733e36b575bd39902c" method="POST" className="flex flex-col justify-center items-center w-80 py-7 m-auto">
                         <h1 className="text-lg mb-2">Sie möchten mit uns in Kontakt treten?</h1>
                         <label htmlFor="name" className="self-start">Name:</label>
@@ -27,6 +28,7 @@ function KontaktPage() {
                         <input type="hidden" name="_captcha" value="false" />
                         <input type="hidden" name="_next" value="https://die-wortschatzkartei.vercel.app/kontakt/success" />
                     </form>
+                </div>
                 </div>
             </div>
         </section>
