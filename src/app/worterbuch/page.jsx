@@ -31,7 +31,7 @@ function WorterbuchPage() {
   };
 
   const fetchAppCards = (such) => {
-    fetch('/api/cards/a')
+    fetch('/api/cards/für')
       .then((res) => res.json())
       .then((data) => mapCards(data, such))
   }
