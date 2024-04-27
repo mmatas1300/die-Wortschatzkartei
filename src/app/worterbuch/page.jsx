@@ -32,7 +32,7 @@ function WorterbuchPage() {
   };
 
   const fetchAppCards = (such) => {
-    fetch(`/api/cards/${such}`)
+    fetch(`/api/cards/search/${such}`)
       .then((res) => res.json())
       .then((data) => setCardsSuchen(data))
   }
@@ -59,7 +59,7 @@ function WorterbuchPage() {
           {cardsSuchen?(<ArrowIcon size={40} onClick={()=>{setCardsSuchen(null)}} className='bg-orange-card hover:bg-yellow-card cursor-pointer ms-12 rounded-full' />):(<p></p>)}
         </div>
 
-        <form onSubmit={handleSuchen} className="w-full max-w-md mx-12 mt-4">
+        <form onSubmit={handleSuchen} className="w-full max-w-md mx-4 mt-4">
           <div className="relative">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
               <svg className="w-4 h-4 text-red-card" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">

@@ -12,11 +12,10 @@ function WorterMitPage({ params }) {
     const [cards, setCards] = useState(null);
 
     useEffect(() => {
-
         const fetchAppCards = ()=>{
-            fetch('/api/cards')
+            fetch(`/api/cards/${params.letter}`)
             .then((res) => res.json())
-            .then((data) => mapCards(data))
+            .then((data) => setCards(data))
         }
 
         const fetchPersonalCards =()=>{
@@ -49,12 +48,12 @@ function WorterMitPage({ params }) {
     }, [status])
 
     return (
-        <section>
+        <section className='my-12'>
             <div className="flex flex-row justify-between items-center">
                 <Link href="/worterbuch" className='bg-orange-card hover:bg-yellow-card ms-12 h-10 w-10 rounded-full'>
-                    <ArrowIcon className=""  />
+                    <ArrowIcon size={40}/>
                 </Link>
-                <h1 className="text-lg text-center mx-auto">Wörter mit {params.letter}</h1>
+                <h1 className="text-xl text-center mx-auto">Wörter mit {params.letter}</h1>
                 <div className="me-12 h-10 w-10"></div>
             </div>
 
