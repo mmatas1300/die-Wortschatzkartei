@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { useState } from 'react';
 import Karte from "@/components/Karte";
-import { Spinner } from "@material-tailwind/react";
 import arrow from '@/app/ui/arrow.png';
 
 function WorterbuchPage() {
@@ -11,8 +10,8 @@ function WorterbuchPage() {
   const { data: session, status } = useSession();
   const [cardsSuchen, setCardsSuchen] = useState(null);
 
-  const alphaNum = Array.from(Array(26)).map((e, i) => i + 65);
-  alphaNum.splice(23, 2)
+  const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+  alpha.splice(23, 2)
 
   const handleSuchen = (e) => {
     e.preventDefault();
@@ -56,8 +55,9 @@ function WorterbuchPage() {
   }
 
   return (
-    <div>
-      <div className='flex flex-row justify-center items-center mt-8'>
+    <section className='mt-12'>
+      <h1 className='text-center'>Wörterbuch</h1>
+      <div className='flex flex-row justify-center items-center'>
         <div className='me-12 h-7 w-7'>
           {cardsSuchen?(<img onClick={()=>{setCardsSuchen(null)}} className='bg-orange-card hover:bg-yellow-card cursor-pointer ms-12 h-7 w-7 rounded-full' src={arrow.src} alt="Back" />):(<p></p>)}
         </div>
@@ -82,7 +82,7 @@ function WorterbuchPage() {
       {cardsSuchen ? (<div className="flex flex-row flex-wrap justify-center items-center mt-12">
         {cardsSuchen.map(karte => <div key={karte._id} className="m-5"><Karte {...karte} /></div>)}
       </div>) : (<div className="flex flex-row justify-center items-center flex-wrap mt-4">
-        {alphaNum.map((x) => {
+        {alpha.map((x) => {
           return (
             <Link key={x} href={`/worterbuch/${String.fromCharCode(x)}`} className='bg-orange-card hover:bg-yellow-card w-32 h-32 m-3 cursor-pointer text-base flex justify-center items-center rounded-xl transition duration-200 hover:scale-110'>
               {String.fromCharCode(x)}
@@ -91,7 +91,7 @@ function WorterbuchPage() {
         })}
       </div>)}
 
-    </div>
+    </section>
   );
 
 }
