@@ -10,15 +10,21 @@ function WorterbuchPage() {
 
   const { data: session, status } = useSession();
   const [cardsSuchen, setCardsSuchen] = useState(null);
+  const [suchenWarning, setSuchenWarning] = useState(null);
 
 
   const alpha = Array.from(Array(26)).map((e, i) => i + 65);
   alpha.splice(23, 2)
 
   const handleSuchen = (e) => {
+    setSuchenWarning(null)
     e.preventDefault();
     const suchen = new FormData(e.currentTarget)//extraer datos del form
     const mySuch = suchen.get("search");
+    
+    const searchRegex = /^[a-zA-ZäÄöÖüÜß\s]+$/;
+
+    if (!searchRegex.test(mySuch)) return(setSuchenWarning(<p className='text-orange-card text-center'>Bitte geben Sie nur Buchstaben ein</p>))
 
     if (status === "authenticated") {
       if (session.user.config.cardsSet === "app") {
@@ -73,6 +79,7 @@ function WorterbuchPage() {
         
         <div className="me-9 h-7 w-7" />
       </div>
+      {suchenWarning}
 
       {cardsSuchen ? (<div className="flex flex-row flex-wrap justify-center items-center mt-4">
         {cardsSuchen.map(karte => <div key={karte._id} className="m-5"><Karte {...karte} /></div>)}
@@ -87,7 +94,6 @@ function WorterbuchPage() {
       </div>)}
     </section>
   );
-
 }
 
 export default WorterbuchPage
