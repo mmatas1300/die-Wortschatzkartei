@@ -4,13 +4,7 @@ import Kontoeinstellungen from '@/components/Kontoeinstellungen';
 import { useState, useEffect } from 'react';
 import { Spinner } from "@material-tailwind/react";
 import { ThemeProvider } from "@material-tailwind/react";
-import {
-    Tabs,
-    TabsHeader,
-    TabsBody,
-    Tab,
-    TabPanel,
-} from "@material-tailwind/react";
+import {Tabs,TabsHeader,TabsBody,Tab,TabPanel,} from "@material-tailwind/react";
 import Karteneditor from '@/components/Karteneditor';
 
 function KontoPage() {
