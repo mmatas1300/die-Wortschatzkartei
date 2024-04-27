@@ -1,6 +1,6 @@
 # [Die Wortschatzkartei](https://die-wortschatzkartei.vercel.app/)
 
-Web application designed to create your own flashcards and learn German vocabulary with spaced [repetition](https://en.wikipedia.org/wiki/Spaced_repetition).
+Web application designed to create your own flashcards and learn German vocabulary with [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition).
 
 ## Features
 
