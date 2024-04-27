@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { useState } from 'react';
 import Karte from "@/components/Karte";
-import arrow from '@/app/ui/arrow.png';
+import { CircleArrowLeft as ArrowIcon } from 'lucide-react';
+
 
 function WorterbuchPage() {
 
@@ -30,7 +31,7 @@ function WorterbuchPage() {
   };
 
   const fetchAppCards = (such) => {
-    fetch('/api/cards')
+    fetch('/api/cards/a')
       .then((res) => res.json())
       .then((data) => mapCards(data, such))
   }
@@ -55,12 +56,15 @@ function WorterbuchPage() {
   }
 
   return (
-    <section className='mt-12'>
+    <section className='my-12'>
+
       <h1 className='text-center'>Wörterbuch</h1>
+
       <div className='flex flex-row justify-center items-center'>
         <div className='me-12 h-7 w-7'>
-          {cardsSuchen?(<img onClick={()=>{setCardsSuchen(null)}} className='bg-orange-card hover:bg-yellow-card cursor-pointer ms-12 h-7 w-7 rounded-full' src={arrow.src} alt="Back" />):(<p></p>)}
+          {cardsSuchen?(<ArrowIcon size={40} onClick={()=>{setCardsSuchen(null)}} className='bg-orange-card hover:bg-yellow-card cursor-pointer ms-12 rounded-full' />):(<p></p>)}
         </div>
+
         <form onSubmit={handleSuchen} className="w-full max-w-md mx-12 mt-4">
           <div className="relative">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -74,12 +78,11 @@ function WorterbuchPage() {
             </button>
           </div>
         </form>
-        <div className="me-12 h-7 w-7"></div>
+        
+        <div className="me-12 h-7 w-7" />
       </div>
 
-
-
-      {cardsSuchen ? (<div className="flex flex-row flex-wrap justify-center items-center mt-12">
+      {cardsSuchen ? (<div className="flex flex-row flex-wrap justify-center items-center mt-4">
         {cardsSuchen.map(karte => <div key={karte._id} className="m-5"><Karte {...karte} /></div>)}
       </div>) : (<div className="flex flex-row justify-center items-center flex-wrap mt-4">
         {alpha.map((x) => {

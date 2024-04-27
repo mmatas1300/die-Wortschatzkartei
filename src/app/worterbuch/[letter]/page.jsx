@@ -1,10 +1,10 @@
 'use client'
 import Karte from "@/components/Karte";
-import arrow from '@/app/ui/arrow.png';
 import Link from 'next/link'
 import { useEffect, useState } from "react";
 import { Spinner } from "@material-tailwind/react";
 import { useSession } from 'next-auth/react'
+import { CircleArrowLeft as ArrowIcon } from 'lucide-react';
 
 function WorterMitPage({ params }) {
 
@@ -52,7 +52,7 @@ function WorterMitPage({ params }) {
         <section>
             <div className="flex flex-row justify-between items-center">
                 <Link href="/worterbuch" className='bg-orange-card hover:bg-yellow-card ms-12 h-10 w-10 rounded-full'>
-                    <img className="" src={arrow.src} alt="Back" />
+                    <ArrowIcon className=""  />
                 </Link>
                 <h1 className="text-lg text-center mx-auto">Wörter mit {params.letter}</h1>
                 <div className="me-12 h-10 w-10"></div>
