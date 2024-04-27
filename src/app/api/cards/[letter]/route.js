@@ -5,7 +5,6 @@ import {AndereCard} from '@/models/card';
 export async function GET(req, { params }){
     try {
         await connectDB();        
-        console.log(params.letter)
         const allCards = await AndereCard.find({ $or:[
             {wort: { $regex: params.letter, $options: 'i' }} ,
             {type: { $regex: params.letter, $options: 'i' }} ,

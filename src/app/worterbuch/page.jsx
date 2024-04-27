@@ -31,9 +31,9 @@ function WorterbuchPage() {
   };
 
   const fetchAppCards = (such) => {
-    fetch('/api/cards/für')
+    fetch(`/api/cards/${such}`)
       .then((res) => res.json())
-      .then((data) => mapCards(data, such))
+      .then((data) => setCardsSuchen(data))
   }
 
   const fetchPersonalCards = (such) => {
@@ -44,16 +44,9 @@ function WorterbuchPage() {
         "Content-Type": "application/json",
       },
     }).then((res) => res.json())
-      .then((data) => mapCards(data, such))
+      .then((data) => mapCards(data))
   }
 
-  const mapCards = (data, such) => {
-    const regex = new RegExp(`.*${such.toLowerCase()}.*`);
-    const dataFilter = data.filter((card) => {
-      return regex.test(card.wort.toLowerCase()) || regex.test(card.type.toLowerCase()) || regex.test(card.beispiel.toLowerCase()) || regex.test(card.verwandte.toLowerCase())
-    })
-    setCardsSuchen(dataFilter);
-  }
 
   return (
     <section className='my-12'>
