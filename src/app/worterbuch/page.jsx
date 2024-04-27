@@ -34,7 +34,7 @@ function WorterbuchPage() {
   const fetchAppCards = (such) => {
     fetch(`/api/cards/search/${such}`)
       .then((res) => res.json())
-      .then((data) => setCardsSuchen(data))
+      .then((data) => {setCardsSuchen(data); console.log(data)})
   }
 
   const fetchPersonalCards = (such) => {
@@ -51,12 +51,10 @@ function WorterbuchPage() {
 
   return (
     <section className='my-12'>
-
       <h1 className='text-center'>Wörterbuch</h1>
-
       <div className='flex flex-row justify-center items-center'>
-        <div className='me-12 h-7 w-7'>
-          {cardsSuchen?(<ArrowIcon size={40} onClick={()=>{setCardsSuchen(null)}} className='bg-orange-card hover:bg-yellow-card cursor-pointer ms-12 rounded-full' />):(<p></p>)}
+        <div className='me-9 h-7 w-7'>
+          {cardsSuchen?(<ArrowIcon size={40} onClick={()=>{setCardsSuchen(null)}} className='bg-orange-card hover:bg-yellow-card cursor-pointer ms-5 rounded-full' />):(<p></p>)}
         </div>
 
         <form onSubmit={handleSuchen} className="w-full max-w-md mx-4 mt-4">
@@ -66,14 +64,14 @@ function WorterbuchPage() {
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
               </svg>
             </div>
-            <input type="search" name="search" id="default-search" className="block w-full p-4 ps-10 text-sm" />
+            <input required type="search" name="search" id="default-search" className="block w-full p-4 ps-10 text-sm" />
             <button type="submit" className="absolute end-2.5 bottom-2 bg-green-card cursor-pointer px-4 py-2">
               Suchen
             </button>
           </div>
         </form>
         
-        <div className="me-12 h-7 w-7" />
+        <div className="me-9 h-7 w-7" />
       </div>
 
       {cardsSuchen ? (<div className="flex flex-row flex-wrap justify-center items-center mt-4">
