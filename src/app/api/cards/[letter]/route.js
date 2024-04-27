@@ -7,7 +7,6 @@ export async function GET(req, { params }){
         await connectDB();        
         const allCards = await AndereCard.find({ $or:[
             {wort: { $regex: params.letter, $options: 'i' }} ,
-            {type: { $regex: params.letter, $options: 'i' }} ,
             {beispiel: { $regex: params.letter, $options: 'i' }} ,
             {verwandte: { $regex: params.letter, $options: 'i' }} ,
         ]});

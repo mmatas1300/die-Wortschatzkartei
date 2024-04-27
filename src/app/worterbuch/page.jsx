@@ -11,6 +11,7 @@ function WorterbuchPage() {
   const { data: session, status } = useSession();
   const [cardsSuchen, setCardsSuchen] = useState(null);
 
+
   const alpha = Array.from(Array(26)).map((e, i) => i + 65);
   alpha.splice(23, 2)
 
