@@ -93,3 +93,6 @@ button:active{
   transform: scale(.96);
 }
 
+.abmelden .ps-menu-button:hover {
+  background-color: #B72B4F !important;
+}

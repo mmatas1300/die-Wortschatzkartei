@@ -50,7 +50,7 @@ const Navbar = () => {
                 <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<SquarePlayIcon />} component={<Link href="/uben" />}> Üben</MenuItem>
                 <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
                 <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<MailboxIcon />} component={<Link href="/kontakt" />}> Kontakt</MenuItem>
-                <MenuItem onClick={() => { signOut(); toggleNavbar(windowSize); }} icon={<LogOutIcon />}>Abmelden</MenuItem>
+                <MenuItem className='abmelden' onClick={() => { signOut(); toggleNavbar(windowSize); }} icon={<LogOutIcon />}>Abmelden</MenuItem>
 
             </>)
         } else if (status === "unauthenticated") {
