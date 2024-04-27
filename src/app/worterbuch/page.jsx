@@ -4,43 +4,53 @@ import { useSession } from 'next-auth/react'
 import { useState } from 'react';
 import Karte from "@/components/Karte";
 import { CircleArrowLeft as ArrowIcon } from 'lucide-react';
+import { Spinner } from "@material-tailwind/react";
 
 
 function WorterbuchPage() {
 
+  const searchButton = (<button type="submit" className="absolute end-2.5 bottom-2 bg-green-card cursor-pointer px-4 py-2">
+    Suchen
+  </button>);
+
   const { data: session, status } = useSession();
   const [cardsSuchen, setCardsSuchen] = useState(null);
   const [suchenWarning, setSuchenWarning] = useState(null);
+  const [suchenButton, setSuchenButton] = useState(searchButton);
 
 
   const alpha = Array.from(Array(26)).map((e, i) => i + 65);
   alpha.splice(23, 2)
 
   const handleSuchen = (e) => {
+    setSuchenButton(<Spinner className="mt-2.5 h-10 w-10" />)
     setSuchenWarning(null)
     e.preventDefault();
     const suchen = new FormData(e.currentTarget)//extraer datos del form
     const mySuch = suchen.get("search");
-    
+
     const searchRegex = /^[a-zA-ZäÄöÖüÜß\s]+$/;
 
-    if (!searchRegex.test(mySuch)) return(setSuchenWarning(<p className='text-orange-card text-center'>Bitte geben Sie nur Buchstaben ein</p>))
-
-    if (status === "authenticated") {
-      if (session.user.config.cardsSet === "app") {
+    if (searchRegex.test(mySuch)){
+      if (status === "authenticated") {
+        if (session.user.config.cardsSet === "app") {
+          fetchAppCards(mySuch);
+        } else { //personal cards
+          fetchPersonalCards(mySuch);
+        }
+      } else if (status === "unauthenticated") {
         fetchAppCards(mySuch);
-      } else { //personal cards
-        fetchPersonalCards(mySuch);
       }
-    } else if (status === "unauthenticated") {
-      fetchAppCards(mySuch);
+    }else{
+      setSuchenWarning(<p className='text-orange-card text-center'>Bitte geben Sie nur Buchstaben ein</p>)
     }
+    setSuchenButton(searchButton);
   };
 
   const fetchAppCards = (such) => {
     fetch(`/api/cards/search/${such}`)
       .then((res) => res.json())
-      .then((data) => {setCardsSuchen(data); console.log(data)})
+      .then((data) => { setCardsSuchen(data); console.log(data) })
   }
 
   const fetchPersonalCards = (such) => {
@@ -60,7 +70,7 @@ function WorterbuchPage() {
       <h1 className='text-center'>Wörterbuch</h1>
       <div className='flex flex-row justify-center items-center'>
         <div className='me-9 h-7 w-7'>
-          {cardsSuchen?(<ArrowIcon size={40} onClick={()=>{setCardsSuchen(null)}} className='bg-orange-card hover:bg-yellow-card cursor-pointer ms-5 rounded-full' />):(<p></p>)}
+          {cardsSuchen ? (<ArrowIcon size={40} onClick={() => { setCardsSuchen(null) }} className='bg-orange-card hover:bg-yellow-card cursor-pointer ms-5 rounded-full' />) : (<p></p>)}
         </div>
 
         <form onSubmit={handleSuchen} className="w-full max-w-md mx-4 mt-4">
@@ -71,12 +81,10 @@ function WorterbuchPage() {
               </svg>
             </div>
             <input required type="search" name="search" id="default-search" className="block w-full p-4 ps-10 text-sm" />
-            <button type="submit" className="absolute end-2.5 bottom-2 bg-green-card cursor-pointer px-4 py-2">
-              Suchen
-            </button>
+            {suchenButton}
           </div>
         </form>
-        
+
         <div className="me-9 h-7 w-7" />
       </div>
       {suchenWarning}
