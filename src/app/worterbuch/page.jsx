@@ -31,7 +31,7 @@ function WorterbuchPage() {
 
     const searchRegex = /^[a-zA-ZäÄöÖüÜß\s]+$/;
 
-    if (searchRegex.test(mySuch)){
+    if (searchRegex.test(mySuch)) {
       if (status === "authenticated") {
         if (session.user.config.cardsSet === "app") {
           fetchAppCards(mySuch);
@@ -41,7 +41,7 @@ function WorterbuchPage() {
       } else if (status === "unauthenticated") {
         fetchAppCards(mySuch);
       }
-    }else{
+    } else {
       setSuchenWarning(<p className='text-orange-card text-center'>Bitte geben Sie nur Buchstaben ein</p>)
     }
     setSuchenButton(searchButton);
@@ -89,17 +89,18 @@ function WorterbuchPage() {
       </div>
       {suchenWarning}
 
-      {cardsSuchen ? 
-        (cardsSuchen.length===0?(<h1 className='text-center mt-12'>Wir konnten keine Karte finden</h1>):
-          (<div className="flex flex-row flex-wrap justify-center items-center mt-4"> {cardsSuchen.map(karte => <div key={karte._id} className="m-5"><Karte {...karte} /></div>)}</div>) 
-         ) : (<div className="flex flex-row justify-center items-center flex-wrap mt-4">
-            {alpha.map((x) => {
-              return (
-                <Link key={x} href={`/worterbuch/${String.fromCharCode(x)}`} className='bg-orange-card hover:bg-yellow-card w-32 h-32 m-3 cursor-pointer text-base flex justify-center items-center rounded-xl transition duration-200 hover:scale-110'>
-                  {String.fromCharCode(x)}
-                </Link>
-              )})
-            }</div>)
+      {cardsSuchen ?
+        (cardsSuchen.length === 0 ? (<h1 className='text-center mt-12'>Wir konnten keine Karte finden</h1>) :
+          (<div className="flex flex-row flex-wrap justify-center items-center mt-4"> {cardsSuchen.map(karte => <div key={karte._id} className="m-5"><Karte {...karte} /></div>)}</div>)
+        ) : (<div className="flex flex-row justify-center items-center flex-wrap mt-4">
+          {alpha.map((x) => {
+            return (
+              <Link key={x} href={`/worterbuch/${String.fromCharCode(x)}`} className='bg-orange-card hover:bg-yellow-card w-32 h-32 m-3 cursor-pointer text-base flex justify-center items-center rounded-xl transition duration-200 hover:scale-110'>
+                {String.fromCharCode(x)}
+              </Link>
+            )
+          })
+          }</div>)
       }
     </section>
   );
