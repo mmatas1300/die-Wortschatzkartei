@@ -76,20 +76,19 @@ const KarteneditorPage = () => {
         setNewCardState(<Spinner className="mt-2.5 h-10 w-10" />);
         const formData = new FormData(e.currentTarget)
         const card = createCard(formData);
-
         try {
             if (session.user.email === "mmatas1300@gmail.com") {
-                await axios.post('/api/cards', card);
+                await axios.post('/api/cards', {...card ,userid: session.user._id });
             } else {
                 card._id = card.wort + session.user.email + Date.now();
                 await axios.put('/api/user/cards', { email: session.user.email, card: card });
             }
-            setNewCardState(<div>Karte hinzugefügt!</div>);
+            setNewCardState(<div className="mt-2.5 h-10">Karte hinzugefügt!</div>);
             setTimeout(function () {
                 setNewCardState(<button className='bg-black-card'>Fertig</button>)
             }, 1500);
         } catch (error) {
-            setNewCardState(<div>{error.response.data.message}</div>);
+            setNewCardState(<div className="mt-2.5 h-10">{error.response.data.message}</div>);
             setTimeout(function () {
                 setNewCardState(<button className='bg-black-card'>Fertig</button>)
             }, 1500);

@@ -4,7 +4,6 @@ import User from '@/models/user';
 
 export async function PUT(request){
     const { email, card } = await request.json()//Corresponde a recuperar el body
-
     try {
         await connectDB();
         await User.findOneAndUpdate({ email: email }, { $push: { myCards: card } });
@@ -17,7 +16,6 @@ export async function PUT(request){
 
 export async function POST(request){
     const {email} = await request.json()
-
     try{
         await connectDB();
         const userFound = await User.findOne({email: email});
