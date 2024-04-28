@@ -78,7 +78,7 @@ const KarteneditorPage = () => {
         const card = createCard(formData);
         try {
             if (session.user.email === "mmatas1300@gmail.com") {
-                await axios.post('/api/cards', {...card ,userid: session.user._id });
+                await axios.post('/api/cards', { ...card, userid: session.user._id });
             } else {
                 card._id = card.wort + session.user.email + Date.now();
                 await axios.put('/api/user/cards', { email: session.user.email, card: card });
@@ -264,26 +264,37 @@ const KarteneditorPage = () => {
         </div>
     </div>)
 
-    const nomenFieldsPl = (<>
-        <label htmlFor="type">Typ:</label>
-        <select name="type" onChange={handleChangeGender}>
-
-            <option value="Nomen-das">Neutrum</option>
-            <option value="Nomen-der">Maskulim</option>
-            <option value="Nomen-die">Feminin</option>
-            <option value="Nomen-pl">Plural</option>
-        </select>
-        <label htmlFor="wortNomen">Wort:</label>
-        <input type="text" placeholder='Apfel' name="wortNomen" required />
-        <label htmlFor="verwandte">Verwandte Wörter:</label>
-        <input type="text" placeholder='das Obst' name="verwandte" />
-        <label htmlFor="beispiel">Beispiel:</label>
-        <input type="text" placeholder='Ich esse einen Apfel' name="beispiel" />
-        <label htmlFor="bild">Bild:</label>
-        <input type="text" placeholder='https://www.example.com/bild.jpg' name="bild" />
-        <label htmlFor="ubersetzung">Übersetzung:</label>
-        <input type="text" placeholder='Apple' name="ubersetzung" />
-    </>)
+    const nomenFieldsPl = (<div className='lg:grid lg:grid-cols-2 lg:w-full'>
+        <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
+            <label htmlFor="type">Typ:</label>
+            <select className='lg:max-w-56' name="type" onChange={handleChangeGender}>
+                <option value="Nomen-das">Neutrum</option>
+                <option value="Nomen-der">Maskulim</option>
+                <option value="Nomen-die">Feminin</option>
+                <option value="Nomen-pl">Plural</option>
+            </select>
+        </div>
+        <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
+            <label htmlFor="wortNomen">Wort:</label>
+            <input className='lg:max-w-56' type="text" placeholder='Apfel' name="wortNomen" required />
+        </div>
+        <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
+            <label htmlFor="verwandte">Verwandte Wörter:</label>
+            <input className='lg:max-w-56' type="text" placeholder='das Obst' name="verwandte" />
+        </div>
+        <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
+            <label htmlFor="beispiel">Beispiel:</label>
+            <input className='lg:max-w-56' type="text" placeholder='Ich esse einen Apfel' name="beispiel" />
+        </div>
+        <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
+            <label htmlFor="bild">Bild:</label>
+            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild" />
+        </div>
+        <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
+            <label htmlFor="ubersetzung">Übersetzung:</label>
+            <input className='lg:max-w-56' type="text" placeholder='Apple' name="ubersetzung" />
+        </div>
+    </div>)
 
     const andereFields = (<div className='lg:grid lg:grid-cols-2 lg:w-full'>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
