@@ -332,7 +332,7 @@ const KarteneditorPage = () => {
                     <button onClick={() => { setForm(andereFields, "bg-purple-card") }} className='bg-black-card p-2 z-0 rounded-none rounded-t-lg transition duration-200 hover:scale-105 hover:bg-yellow-card'>Andere Wort</button>
                 </div>
                 <div className={`w-96 lg:w-[640px] rounded-br-3xl rounded-bl-3xl rounded-tl-lg rounded-tr-3xl z-10 ${typeColor}`}>
-                    <form onSubmit={handlePostCard} className="flex flex-col justify-normal items-center m-12">
+                    <form onSubmit={handlePostCard} className="flex flex-col justify-normal items-center mx-12 mt-12 mb-5">
                         {typeFields}
                         {newCardState}
                     </form>
