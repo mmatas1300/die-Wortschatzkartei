@@ -20,7 +20,6 @@ function KontoPage() {
                 (<>
                     <h1 className='text-2xl mb-10'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
                     <Kontoeinstellungen />
-                    <Karteneditor/>
                 </>)}
             </div>
         </div>
