@@ -1,8 +1,5 @@
 export {default} from 'next-auth/middleware';
 
 export const config ={
-    matcher: ['/konto']
+    matcher: ['/konto','/karteneditor','/uben']
 }
-
-//con :path* se protegen todas las rutas
-
