@@ -1,7 +1,7 @@
 'use client'
 import { useSession } from 'next-auth/react'
 import Kontoeinstellungen from '@/components/Kontoeinstellungen';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Spinner } from "@material-tailwind/react";
 import { ThemeProvider } from "@material-tailwind/react";
 import {Tabs,TabsHeader,TabsBody,Tab,TabPanel,} from "@material-tailwind/react";
@@ -100,41 +100,34 @@ function KontoPage() {
 
     console.log(session, status);
 
-    useEffect(() => {
-        if (status === "loading") {
-            setUserMessages(<Spinner className="mt-2.5 h-10 w-10" />)
-        } else if (status === "authenticated") {
-            setUserMessages(<>
-                <h1 className='text-2xl mb-10'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
-                <ThemeProvider value={tabTheme}>
-                    <Tabs value="Kontoeinstellungen" className="max-w-[40rem]">
-                        <TabsHeader className='bg-yellow-card bg-opacity-100'>
-                            {data.map(({ label, value }) => (
-                                <Tab key={value} value={value}>
-                                    {label}
-                                </Tab>
-                            ))}
-                        </TabsHeader>
-                        <TabsBody>
-                            <ThemeProvider value={tabPanelTheme}>
-                                {data.map(({ value, desc }) => (
-                                    
-                                        <TabPanel key={value} value={value}>
-                                            {desc}
-                                        </TabPanel>
-                                ))}
-                            </ThemeProvider>
-                        </TabsBody>
-                    </Tabs>
-                </ThemeProvider>
-            </>)
-        }
-    }, [status])
-
     return (
         <div className='mx-auto'>
             <div className='flex flex-col justify-center items-center mt-12'>
-                {userMessages}
+                {status === "loading"? (<Spinner className="mt-2.5 h-10 w-10" />):
+                (<>
+                    <h1 className='text-2xl mb-10'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
+                    <ThemeProvider value={tabTheme}>
+                        <Tabs value="Kontoeinstellungen" className="max-w-[40rem]">
+                            <TabsHeader className='bg-yellow-card bg-opacity-100'>
+                                {data.map(({ label, value }) => (
+                                    <Tab key={value} value={value}>
+                                        {label}
+                                    </Tab>
+                                ))}
+                            </TabsHeader>
+                            <TabsBody>
+                                <ThemeProvider value={tabPanelTheme}>
+                                    {data.map(({ value, desc }) => (
+                                        
+                                            <TabPanel key={value} value={value}>
+                                                {desc}
+                                            </TabPanel>
+                                    ))}
+                                </ThemeProvider>
+                            </TabsBody>
+                        </Tabs>
+                    </ThemeProvider>
+                </>)}
             </div>
         </div>
     )
