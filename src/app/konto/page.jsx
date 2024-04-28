@@ -38,7 +38,7 @@ function KontoPage() {
         <section className='flex flex-col justify-center items-center mx-auto my-12'>
             {status === "loading" ? (<Spinner className="mt-2.5 h-10 w-10" />) :
                 (<>
-                    <h1 className='text-2xl mb-4'>Mein Konto</h1>
+                    <h1 className='text-xl mb-4'>Mein Konto</h1>
                     <h1 className='text-xl mb-4'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
                     <div className='bg-green-card rounded-3xl lg:-rotate-12 lg:mt-8'>
                         <div className='bg-blue-card rounded-3xl lg:rotate-6'>
