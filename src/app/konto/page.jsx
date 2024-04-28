@@ -41,9 +41,9 @@ function KontoPage() {
                 (<>
                     <h1 className='text-2xl mb-4'>Mein Konto</h1>
                     <h1 className='text-xl mb-4'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
-                    <div className='bg-green-card rounded-3xl lg:rotate-6'>
+                    <div className='bg-green-card rounded-3xl lg:-rotate-12'>
                         <div className='bg-blue-card rounded-3xl lg:rotate-6'>
-                            <div className={`bg-red-card w-96 rounded-3xl p-8 flex flex-col justify-center items-center lg:-rotate-12`}>
+                            <div className={`bg-red-card w-96 rounded-3xl p-8 flex flex-col justify-center items-center lg:rotate-6`}>
                                 <form className='mt-4 flex flex-col justify-center items-center' onSubmit={handleKontoeinstellungen}>
                                     <label htmlFor="nick">Spitzname:</label>
                                     <input type="text" placeholder={session.user.config.nick} name='nick' />

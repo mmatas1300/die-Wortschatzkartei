@@ -11,7 +11,7 @@ module.exports = withMT({
   theme: {
     extend: {
       rotate: {
-        '17': '17deg',
+        '20': '20deg',
       },
       colors: {
         'green-card': '#4CAB2A',
