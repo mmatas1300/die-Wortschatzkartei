@@ -1,5 +1,5 @@
 "use client"
-import CreateCardForm from "@/components/createCardForm";
+import CreateCardForm from "@/components/CreateCardForm";
 
 const KarteneditorPage = () => {
 
