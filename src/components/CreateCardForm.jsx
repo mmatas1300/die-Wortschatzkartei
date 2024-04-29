@@ -7,7 +7,7 @@ const CreateCardForm = () => {
 
     const [newCardState, setNewCardState] = useState(<button className='bg-black-card'>Fertig</button>);
 
-    const { data: session, status } = useSession();
+    const { data: session } = useSession();
 
 
     const createCard = (formData) => {
@@ -84,7 +84,8 @@ const CreateCardForm = () => {
             }
             setNewCardState(<div className="mt-2.5 h-10">Karte hinzugefügt!</div>);
             setTimeout(function () {
-                setNewCardState(<button className='bg-black-card'>Fertig</button>)
+                setNewCardState(<button className='bg-black-card'>Fertig</button>);
+                if(card.type === "Nomen-das" || card.type === "Nomen-der" || card.type === "Nomen-die" ||card.type === "Nomen-pl") setForm(nomenFields, "bg-green-card")
                 e.target.reset();
             }, 1500);
         } catch (error) {

@@ -1,5 +1,4 @@
 "use client"
-
 import CreateCardForm from "@/components/createCardForm";
 
 const KarteneditorPage = () => {
