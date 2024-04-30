@@ -1,12 +1,17 @@
 "use client"
-import CreateCardForm from "@/components/CreateCardForm";
+import { CardList } from "@/components/kartenenditor/CardsList";
+import CreateCardForm from "@/components/kartenenditor/CreateCardForm";
+
+
 
 const KarteneditorPage = () => {
 
     return (
         <section className="my-12 flex flex-col justify-center items-center">
-            <h1 className=''>Karteneditor</h1>
+            <h1>Karteneditor</h1>
             <CreateCardForm/>
+            <CardList/>
+            
         </section>
     );
 };

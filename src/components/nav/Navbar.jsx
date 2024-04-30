@@ -3,7 +3,7 @@ import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 import { Menu as MenuIcon, NotebookText as LibraryIcon, Mailbox as MailboxIcon, LogIn as LogInIcon, X as XIcon, CircleUser as CircleUserIcon, SquarePlay as SquarePlayIcon, LogOut as LogOutIcon, FilePenLine as FilePenLineIcon } from 'lucide-react';
-import Logo from "@/components/Logo"
+import Logo from "@/components/nav/Logo"
 import { useSession } from 'next-auth/react'
 import { signOut } from 'next-auth/react';
 import { Spinner } from "@material-tailwind/react";
