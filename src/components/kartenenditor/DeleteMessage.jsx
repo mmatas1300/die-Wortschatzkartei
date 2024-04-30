@@ -1,11 +1,12 @@
 import React from 'react';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
-import "@/components/kartenenditor/DeleteMessage.css"
+import "@/components/kartenenditor/DeleteMessage.css";
+import { SquareX as SquareXIcon} from 'lucide-react';
 
-const DeleteMessage = () => (
+const DeleteMessage = ({deleteCard}) => (
   <AlertDialog.Root>
     <AlertDialog.Trigger asChild>
-      <button className="Button violet">Delete account</button>
+      <SquareXIcon />
     </AlertDialog.Trigger>
     <AlertDialog.Portal>
       <AlertDialog.Overlay className="AlertDialogOverlay bg-black-card/[0.2] fixed z-50" />
@@ -19,7 +20,7 @@ const DeleteMessage = () => (
             <button className="border-2 border-green-card">Abbrechen</button>
           </AlertDialog.Cancel>
           <AlertDialog.Action asChild>
-            <button className="bg-red-card">Ja, Karte löschen</button>
+            <button onClick={deleteCard} className="bg-red-card">Ja, Karte löschen</button>
           </AlertDialog.Action>
         </div>
       </AlertDialog.Content>

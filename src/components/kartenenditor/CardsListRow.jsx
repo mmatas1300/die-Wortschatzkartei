@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { SquareX as SquareXIcon, Pencil as PencilIcon, RotateCcw as RotateCcwIcon} from 'lucide-react';
+import { Pencil as PencilIcon, RotateCcw as RotateCcwIcon} from 'lucide-react';
 import DeleteMessage from "@/components/kartenenditor/DeleteMessage";
+import axios from "axios";
+import { useSession } from 'next-auth/react';
 
 
 const CardsListRow = ({ card }) => {
 
+    const {data:session} = useSession();
 
     const selectColor = (card) => {
         let color;
@@ -40,8 +42,9 @@ const CardsListRow = ({ card }) => {
         return type
     }
 
-    const deleteCard =()=>{
-        console.log("Borrando carta con id: " + card._id)
+    const deleteCard = async ()=>{
+        await axios.delete('/api/user/cards', { data: {userId:session.user._id,cardId:card._id}})
+
     };
 
     return (
@@ -56,11 +59,9 @@ const CardsListRow = ({ card }) => {
             <div className="w-6 mx-2 active:scale-95 hover:cursor-pointer">
                 <RotateCcwIcon />
             </div>
-            <div onClick={deleteCard} className="w-6 mx-2 me-4 active:scale-95 hover:cursor-pointer">
-                <SquareXIcon />
+            <div className="w-6 mx-2 me-4 active:scale-95 hover:cursor-pointer">
+                <DeleteMessage id={card._id} deleteCard={deleteCard}  />
             </div>
-            <DeleteMessage/>
-
         </div>
     );
 }

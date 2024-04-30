@@ -14,12 +14,24 @@ export async function PUT(request){
 }
 
 
+
 export async function POST(request){
     const {email} = await request.json()
     try{
         await connectDB();
         const userFound = await User.findOne({email: email});
         return NextResponse.json(userFound.myCards)
+    } catch (error) {
+        return NextResponse.json(error);
+    }
+}
+
+export async function DELETE(request){
+    const {userId,cardId} = await request.json()
+    try{
+        await connectDB();
+        await User.updateOne({ _id: userId },{ $pull: { myCards: { _id: cardId } } });
+        return NextResponse.json({message: "Update successful"},{status: 200})
     } catch (error) {
         return NextResponse.json(error);
     }
