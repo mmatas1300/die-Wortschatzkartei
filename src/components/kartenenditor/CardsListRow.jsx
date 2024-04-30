@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { SquareX as SquareXIcon, Pencil as PencilIcon, RotateCcw as RotateCcwIcon} from 'lucide-react';
+import DeleteMessage from "@/components/kartenenditor/DeleteMessage";
+
 
 const CardsListRow = ({ card }) => {
 
@@ -38,12 +40,11 @@ const CardsListRow = ({ card }) => {
         return type
     }
 
+    const deleteCard =()=>{
+        console.log("Borrando carta con id: " + card._id)
+    };
+
     return (
-
-
-
-
-
         <div className={`${selectColor(card)} rounded-xl flex flex-row justify-center items-center w-full my-2`}>
             <div className="w-20 mx-1 text-sm text-center hidden lg:block truncate">{selectType(card.type)}</div>
             <div className="w-28 mx-1 flex-1 text-sm text-center truncate">{card.wort}</div>
@@ -55,9 +56,10 @@ const CardsListRow = ({ card }) => {
             <div className="w-6 mx-2 active:scale-95 hover:cursor-pointer">
                 <RotateCcwIcon />
             </div>
-            <div className="w-6 mx-2 me-4 active:scale-95 hover:cursor-pointer">
+            <div onClick={deleteCard} className="w-6 mx-2 me-4 active:scale-95 hover:cursor-pointer">
                 <SquareXIcon />
             </div>
+            <DeleteMessage/>
 
         </div>
     );
