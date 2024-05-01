@@ -1,6 +1,7 @@
 "use client"
 import { CardList } from "@/components/kartenenditor/CardsList";
 import CreateCardForm from "@/components/kartenenditor/CreateCardForm";
+import EditCardForm from "@/components/kartenenditor/EditCardForm";
 
 
 
@@ -11,7 +12,7 @@ const KarteneditorPage = () => {
             <h1>Karteneditor</h1>
             <CreateCardForm/>
             <CardList/>
-            
+
         </section>
     );
 };

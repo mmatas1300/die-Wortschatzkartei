@@ -4,6 +4,7 @@ import axios from "axios";
 import { useSession } from 'next-auth/react';
 import { Spinner } from "@material-tailwind/react";
 import { useState } from 'react';
+import UpdateMessage from './UpdateMessage';
 
 
 const CardsListRow = ({ card }) => {
@@ -67,7 +68,7 @@ const CardsListRow = ({ card }) => {
             <div className="w-20 mx-1 my-2 text-center me-4 lg:me-0"><img className="w-20 rounded-lg m-0" src={card.bild} alt={card.wort} /></div>
             <div className="w-28 mx-1 text-sm text-center truncate hidden lg:block">{card.ubersetzung}</div>
             <div className="w-6 mx-2 active:scale-95 hover:cursor-pointer">
-                <PencilIcon />
+                <UpdateMessage card={card} />
             </div>
             <div className="w-6 mx-2 active:scale-95 hover:cursor-pointer">
                 <RotateCcwIcon />

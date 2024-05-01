@@ -10,7 +10,7 @@ const DeleteMessage = ({deleteCard}) => (
     </AlertDialog.Trigger>
     <AlertDialog.Portal>
       <AlertDialog.Overlay className="AlertDialogOverlay bg-black-card/[0.2] fixed z-50" />
-      <AlertDialog.Content className="AlertDialogContent bg-black-card rounded-xl fixed z-50 p-7">
+      <AlertDialog.Content className="AlertDialogContent bg-black-card rounded-xl fixed border-2 border-orange-card z-50 p-7">
         <AlertDialog.Title className="text-base">Karte löschen!!!</AlertDialog.Title>
         <AlertDialog.Description className="text-sm">
           Sind Sie sicher, dass Sie die Karte löschen möchten?
