@@ -2,11 +2,14 @@ import { Pencil as PencilIcon, RotateCcw as RotateCcwIcon} from 'lucide-react';
 import DeleteMessage from "@/components/kartenenditor/DeleteMessage";
 import axios from "axios";
 import { useSession } from 'next-auth/react';
+import { Spinner } from "@material-tailwind/react";
+import { useState } from 'react';
 
 
 const CardsListRow = ({ card }) => {
 
     const {data:session} = useSession();
+    const [cardState, setCardState] = useState(true);
 
     const selectColor = (card) => {
         let color;
@@ -43,12 +46,22 @@ const CardsListRow = ({ card }) => {
     }
 
     const deleteCard = async ()=>{
-        await axios.delete('/api/user/cards', { data: {userId:session.user._id,cardId:card._id}})
+        try{
+            await axios.delete('/api/user/cards', { data: {userId:session.user._id,cardId:card._id}})
+            setCardState(false);
+        } 
+        catch(err){
+            console.log(err)
+        }
 
+        
     };
 
+    
+
     return (
-        <div className={`${selectColor(card)} rounded-xl flex flex-row justify-center items-center w-full my-2`}>
+        cardState?
+        (<div className={`${selectColor(card)} rounded-xl flex flex-row justify-center items-center w-full my-2`}>
             <div className="w-20 mx-1 text-sm text-center hidden lg:block truncate">{selectType(card.type)}</div>
             <div className="w-28 mx-1 flex-1 text-sm text-center truncate">{card.wort}</div>
             <div className="w-20 mx-1 my-2 text-center me-4 lg:me-0"><img className="w-20 rounded-lg m-0" src={card.bild} alt={card.wort} /></div>
@@ -62,7 +75,7 @@ const CardsListRow = ({ card }) => {
             <div className="w-6 mx-2 me-4 active:scale-95 hover:cursor-pointer">
                 <DeleteMessage id={card._id} deleteCard={deleteCard}  />
             </div>
-        </div>
+        </div>):(<></>)
     );
 }
 

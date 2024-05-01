@@ -79,7 +79,7 @@ const CreateCardForm = () => {
             if (session.user.email === "mmatas1300@gmail.com") {
                 await axios.post('/api/cards', { ...card, userid: session.user._id });
             } else {
-                card._id = card.wort + session.user.email + Date.now();
+                card._id = card.wort + session.user._id + Date.now();
                 await axios.put('/api/user/cards', { email: session.user.email, card: card });
             }
             setNewCardState(<div className="mt-2.5 h-10">Karte hinzugefügt!</div>);
@@ -334,6 +334,7 @@ const CreateCardForm = () => {
 
     return (
         <div className='flex flex-col justify-center items-center mt-4'>
+            <h2>Neue Karte erstellen</h2>
             <div className={`self-start flex flex-row ms-2`}>
                 <button onClick={() => { setForm(nomenFields, "bg-green-card") }} className={`bg-black-card p-2 z-0 rounded-none rounded-t-lg transition duration-200 hover:scale-105 hover:bg-yellow-card`}>Nomen</button>
                 <button onClick={() => { setForm(verbFields, "bg-orange-card") }} className='bg-black-card p-2 z-0 rounded-none rounded-t-lg transition duration-200 hover:scale-105 hover:bg-yellow-card'>Verb</button>

@@ -13,8 +13,6 @@ export async function PUT(request){
     }
 }
 
-
-
 export async function POST(request){
     const {email} = await request.json()
     try{
