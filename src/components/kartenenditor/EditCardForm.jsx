@@ -74,9 +74,8 @@ const EditCardForm = () => {
         setButtonState(<Spinner className="mt-2.5 h-10 w-10" />);
         const formData = new FormData(e.currentTarget)
         const updateCard = createCard(formData);
-        console.log({ _id: card._id, ...updateCard })
         try {
-            await axios.put('/api/user/cards', { userId: session.user._id, card: { _id: card._id, ...updateCard }, update: true });
+            await axios.put('/api/user/cards', { userId: session.user._id, card: { _id: card._id, ...updateCard, level: card.level, practiceDate: card.practiceDate }, update: true });
             setButtonState(<div className="mt-2.5 h-10">Änderungen gespeichert!</div>);
             setRefresh(!refresh)
         } catch (error) {
