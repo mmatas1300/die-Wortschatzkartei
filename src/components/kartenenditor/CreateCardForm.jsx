@@ -80,7 +80,7 @@ const CreateCardForm = () => {
                 await axios.post('/api/cards', { ...card, userId: session.user._id });
             } else {
                 card._id = card.wort + session.user._id + Date.now();
-                await axios.put('/api/user/cards', { userId: session.user._id, card: card, update: false});
+                await axios.put('/api/user/cards', { userId: session.user._id, card: {...card, level:0, practiceDate: new Date("2000")}, update: false});
             }
             setNewCardState(<div className="mt-2.5 h-10">Karte hinzugefügt!</div>);
             setTimeout(function () {
