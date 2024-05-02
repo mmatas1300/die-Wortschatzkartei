@@ -23,7 +23,7 @@ function KontoPage() {
                 method: 'put',
                 url: '/api/user/config',
                 data: {
-                    _id: session.user._id,
+                    userId: session.user._id,
                     config: config
                 }
             });

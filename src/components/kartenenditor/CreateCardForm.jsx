@@ -77,10 +77,10 @@ const CreateCardForm = () => {
         const card = createCard(formData);
         try {
             if (session.user.email === "mmatas1300@gmail.com") {
-                await axios.post('/api/cards', { ...card, userid: session.user._id });
+                await axios.post('/api/cards', { ...card, userId: session.user._id });
             } else {
                 card._id = card.wort + session.user._id + Date.now();
-                await axios.put('/api/user/cards', { email: session.user.email, card: card });
+                await axios.put('/api/user/cards', { userId: session.user._id, card: card, update: false});
             }
             setNewCardState(<div className="mt-2.5 h-10">Karte hinzugefügt!</div>);
             setTimeout(function () {

@@ -78,7 +78,7 @@ const EditCardForm = () => {
         const updateCard = createCard(formData);
         console.log({_id:card._id,...updateCard})
         try {
-            await axios.put('/api/user/cards', { email: session.user._id, card: card, update: true });
+            await axios.put('/api/user/cards', { userId: session.user._id, card: card, update: true });
         //     
         //     setNewCardState(<div className="mt-2.5 h-10">Karte hinzugefügt!</div>);
         //     setTimeout(function () {

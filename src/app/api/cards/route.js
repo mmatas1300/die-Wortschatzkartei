@@ -4,11 +4,11 @@ import {VerbCard,NomenCard,NomenMUFCard,AndereCard} from '@/models/card';
 import User from "@/models/user";
 
 export async function POST(request) {
-    const { type, wort, plural,manner,frau,frauen,prasens, prateritum, partizip2, bild, verwandte, beispiel, ubersetzung,userid } = await request.json()//Corresponde a recuperar el body
+    const { type, wort, plural,manner,frau,frauen,prasens, prateritum, partizip2, bild, verwandte, beispiel, ubersetzung,userId } = await request.json()//Corresponde a recuperar el body
 
     try {
         await connectDB() //Conecta a db
-        const userFound=await User.findById(userid);
+        const userFound=await User.findById(userId);
         if (userFound.email != "mmatas1300@gmail.com") return NextResponse.json({message: "permission denied"},{status: 400})
         
         if(type === "Verb"){
