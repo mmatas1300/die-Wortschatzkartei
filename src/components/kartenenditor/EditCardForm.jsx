@@ -71,31 +71,27 @@ const EditCardForm = () => {
         }
     }
 
-    const handlePostCard = (e) => {
+    const handlePostCard = async (e) => {
         e.preventDefault();
         setButtonState(<Spinner className="mt-2.5 h-10 w-10" />);
         const formData = new FormData(e.currentTarget)
         const updateCard = createCard(formData);
         console.log({_id:card._id,...updateCard})
-        // try {
-        //     if (session.user.email === "mmatas1300@gmail.com") {
-        //         await axios.post('/api/cards', { ...card, userid: session.user._id });
-        //     } else {
-        //         card._id = card.wort + session.user._id + Date.now();
-        //         await axios.put('/api/user/cards', { email: session.user.email, card: card });
-        //     }
+        try {
+            await axios.put('/api/user/cards', { email: session.user._id, card: card, update: true });
+        //     
         //     setNewCardState(<div className="mt-2.5 h-10">Karte hinzugefügt!</div>);
         //     setTimeout(function () {
         //         setNewCardState(<button className='bg-black-card'>Fertig</button>);
         //         if (card.type === "Nomen-das" || card.type === "Nomen-der" || card.type === "Nomen-die" || card.type === "Nomen-pl") setForm(nomenFields, "bg-green-card")
         //         e.target.reset();
         //     }, 1500);
-        // } catch (error) {
+            } catch (error) {
         //     setNewCardState(<div className="mt-2.5 h-10">{error.response.data.message}</div>);
         //     setTimeout(function () {
         //         setNewCardState(<button className='bg-black-card'>Fertig</button>)
         //     }, 1500);
-        // }
+            }
     }
 
 
@@ -298,7 +294,7 @@ const EditCardForm = () => {
 
     const submitButton = (<button className='bg-black-card'>Speichern</button>)
 
-    const [typeFields, setTypeFields] = useState(nomenFields);
+    const [typeFields, setTypeFields] = useState(null);
     const [typeColor, setTypeColor] = useState("bg-green-card");
     const [buttonState, setButtonState] = useState(submitButton);
 
@@ -321,7 +317,7 @@ const EditCardForm = () => {
                     setForm(nomenFieldsPl, "bg-yellow-card");
                     break;
                 case "Nomen-MUF":
-                    setForm(nomenMUFFields, "bg-gradient-to-r from-blue-card to-red-card");
+                    setForm(nomenMUFFields, "bg-[#694B72]");
                     break;
                 case "Verb":
                     setForm(verbFields, "bg-orange-card");
@@ -343,7 +339,7 @@ const EditCardForm = () => {
 
     return (
         <div className='flex flex-col justify-center items-center'>
-            <div className={`w-[268px] lg:w-[640px] rounded-br-3xl rounded-bl-3xl rounded-tl-lg rounded-tr-3xl z-10 ${typeColor}`}>
+            <div className={` w-[268px] lg:w-[640px] rounded-br-3xl rounded-bl-3xl rounded-tl-lg rounded-tr-3xl z-10 ${typeColor}`}>
                 <form onSubmit={handlePostCard} className="flex flex-col justify-normal items-center mx-6 lg:mx-12 mt-8 mb-5">
                     {typeFields}
                     {buttonState}
