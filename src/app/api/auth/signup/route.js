@@ -26,6 +26,7 @@ export async function POST(request) {
                 cardsSet:"app"
             },
             lastPlay: new Date('2000'),
+            progress: [],
         })
         const savedUser = await user.save();
         return NextResponse.json(savedUser);

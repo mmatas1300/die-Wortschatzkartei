@@ -27,6 +27,7 @@ const handler = NextAuth({
                     config: userFound.config,
                     _id: userFound._id,
                     lastPlay: userFound.lastPlay,
+                    progress: userFound.progress,
                 }
                 return userData;
             }

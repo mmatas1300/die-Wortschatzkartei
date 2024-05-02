@@ -5,7 +5,8 @@ const userSchema = new Schema({
     password:String,
     myCards:[Schema.Types.Mixed],
     config:{nick:String, cardsSet:String},
-    lastPlay: {type:Date}
+    lastPlay: {type:Date},
+    progress:[{cardId: Schema.Types.ObjectId, level: Number, practiceDate: Date}]
 })
 
 const User = models.User || model('User', userSchema,'users'); //Si ya existe un modelo reutilizalo
