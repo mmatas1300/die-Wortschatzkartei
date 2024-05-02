@@ -58,7 +58,7 @@ export const CardList = () => {
                 </div>
                 <div className="bg-black-card rounded-3xl w-96 lg:w-[640px] flex flex-col justify-center items-center p-4 z-10">
                     <div className="flex flex-row w-full">
-                        <div className="w-20 mx-1 text-base text-center">Niveau</div>
+                        <div className="w-20 mx-1 text-base text-center">Stufe</div>
                         <div className="w-28 mx-1 flex-1 text-base text-center">Wort</div>
                         <div className="w-20 mx-1 text-base text-center me-4 lg:me-0 hidden lg:block">Bild</div>
                         <div className="w-28 mx-1 text-base text-center hidden lg:block">Übersetzung</div>
