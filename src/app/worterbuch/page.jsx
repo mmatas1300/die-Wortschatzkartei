@@ -50,18 +50,18 @@ function WorterbuchPage() {
   const fetchAppCards = (such) => {
     fetch(`/api/cards/search/${such}`)
       .then((res) => res.json())
-      .then((data) => { setCardsSuchen(data); console.log(data) })
+      .then((data) => { setCardsSuchen(data)})
   }
 
   const fetchPersonalCards = (such) => {
-    fetch('/api/user/cards', {
+    fetch(`/api/user/cards/search/${such}`, {
       method: "POST", // 
-      body: JSON.stringify({ email: session.user.email }), // 
+      body: JSON.stringify({ userId: session.user._id}), // 
       headers: {
         "Content-Type": "application/json",
       },
     }).then((res) => res.json())
-      .then((data) => mapCards(data))
+      .then((data) => setCardsSuchen(data))
   }
 
 

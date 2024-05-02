@@ -19,14 +19,14 @@ function WorterMitPage({ params }) {
         }
 
         const fetchPersonalCards =()=>{
-            fetch('/api/user/cards', {
+            fetch(`/api/user/cards/${params.letter}`, {
                 method: "POST", // 
-                body: JSON.stringify({ email: session.user.email }), // 
+                body: JSON.stringify({ userId: session.user._id }), // 
                 headers: {
                     "Content-Type": "application/json",
                 },
             }).then((res) => res.json())
-                .then((data) => mapCards(data))
+                .then((data) => setCards(data))
         }
 
         if (status==="authenticated") {
@@ -39,12 +39,6 @@ function WorterMitPage({ params }) {
             fetchAppCards();
         }
 
-        const mapCards = (data) => {
-            const dataFilter = data.filter((card) => {
-                return card.wort.charAt(0) === params.letter
-            })
-            setCards(dataFilter);
-        }
     }, [status])
 
     return (
