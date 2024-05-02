@@ -56,7 +56,7 @@ export const CardList = () => {
                 <div className={`self-end flex flex-row me-8`}>
                     <button onClick={() => { setRefresh(!refresh) }} className={`bg-black-card p-2 z-0 rounded-none rounded-t-lg transition duration-200 hover:scale-105 hover:bg-yellow-card px-3`}><RefreshCcw /></button>
                 </div>
-                <div className="bg-black-card rounded-3xl w-96 lg:w-[640px] flex flex-col justify-center items-center p-4 z-10">
+                <div className="bg-black-card rounded-3xl w-96 lg:w-[640px] flex flex-col justify-center items-center p-4 z-10 mb-3">
                     <div className="flex flex-row w-full">
                         <div className="w-20 mx-1 text-base text-center">Stufe</div>
                         <div className="w-28 mx-1 flex-1 text-base text-center">Wort</div>
