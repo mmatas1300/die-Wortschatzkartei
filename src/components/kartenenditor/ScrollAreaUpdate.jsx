@@ -3,7 +3,7 @@ import * as ScrollArea from '@radix-ui/react-scroll-area';
 import EditCardForm from './EditCardForm';
 
 const ScrollAreaUpdate = () => (
-  <ScrollArea.Root className="min-h-60 h-[340px] lg:w-[670px] rounded overflow-hidden bg-black-card">
+  <ScrollArea.Root className="min-h-60 h-[330px] lg:w-[670px] rounded overflow-hidden bg-black-card">
     <ScrollArea.Viewport className="w-full h-full rounded">
      <EditCardForm />
     </ScrollArea.Viewport>

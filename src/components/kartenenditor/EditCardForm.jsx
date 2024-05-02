@@ -13,8 +13,8 @@ const EditCardForm = () => {
 
     const createCard = (formData) => {
         if (formData.get('wortNomen')) {
-            const card = {
-                type: formData.get('type'),
+            const updateCard = {
+                type: card.type,
                 wort: formData.get('wortNomen'),
                 plural: formData.get('plural'),
                 bild: formData.get('bild'),
@@ -22,23 +22,23 @@ const EditCardForm = () => {
                 beispiel: formData.get('beispiel'),
                 ubersetzung: formData.get('ubersetzung')
             }
-            return card
+            return updateCard
         }
 
         else if (formData.get('wortAndere')) {
-            const card = {
-                type: formData.get('type'),
+            const updateCard = {
+                type: formData.get('typeAndere'),
                 wort: formData.get('wortAndere'),
                 bild: formData.get('bild'),
                 verwandte: formData.get('verwandte'),
                 beispiel: formData.get('beispiel'),
                 ubersetzung: formData.get('ubersetzung')
             }
-            return card
+            return updateCard
         }
 
         else if (formData.get('wortMUF')) {
-            const card = {
+            const updateCard = {
                 type: "Nomen-MUF",
                 wort: formData.get('wortMUF'),
                 manner: formData.get('manner'),
@@ -49,11 +49,11 @@ const EditCardForm = () => {
                 beispiel: formData.get('beispiel'),
                 ubersetzung: formData.get('ubersetzung')
             }
-            return card
+            return updateCard
         }
 
         else if (formData.get('wortVerb')) {
-            const card = {
+            const updateCard = {
                 type: "Verb",
                 wort: formData.get('wortVerb'),
                 prasens: [formData.get('ps1'), formData.get('ps2'), formData.get('ps3'), formData.get('ps4'), formData.get('ps5'), formData.get('ps6')],
@@ -65,18 +65,18 @@ const EditCardForm = () => {
                 ubersetzung: formData.get('ubersetzung')
             }
             if (formData.get('pm1') === "") {
-                card.prateritum = [];
+                updateCard.prateritum = [];
             }
-            return card
+            return updateCard
         }
     }
 
     const handlePostCard = (e) => {
         e.preventDefault();
-        console.log("Holasss")
-        // setNewCardState(<Spinner className="mt-2.5 h-10 w-10" />);
-        // const formData = new FormData(e.currentTarget)
-        // const card = createCard(formData);
+        setButtonState(<Spinner className="mt-2.5 h-10 w-10" />);
+        const formData = new FormData(e.currentTarget)
+        const updateCard = createCard(formData);
+        console.log({_id:card._id,...updateCard})
         // try {
         //     if (session.user.email === "mmatas1300@gmail.com") {
         //         await axios.post('/api/cards', { ...card, userid: session.user._id });
@@ -271,8 +271,8 @@ const EditCardForm = () => {
 
     const andereFields = (<div className='lg:grid lg:grid-cols-2 lg:w-full'>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
-            <label htmlFor="type">Typ:</label>
-            <input className='lg:max-w-56' type="text" placeholder='Adjektiv' name='type' defaultValue={card.type} />
+            <label htmlFor="typeAndere">Typ:</label>
+            <input className='lg:max-w-56' type="text" placeholder='Adjektiv' name="typeAndere" defaultValue={card.type}/>
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="wortAndere">Wort:</label>
@@ -296,8 +296,11 @@ const EditCardForm = () => {
         </div>
     </div>)
 
+    const submitButton = (<button className='bg-black-card'>Speichern</button>)
+
     const [typeFields, setTypeFields] = useState(nomenFields);
     const [typeColor, setTypeColor] = useState("bg-green-card");
+    const [buttonState, setButtonState] = useState(submitButton);
 
 
 
@@ -343,7 +346,7 @@ const EditCardForm = () => {
             <div className={`w-[268px] lg:w-[640px] rounded-br-3xl rounded-bl-3xl rounded-tl-lg rounded-tr-3xl z-10 ${typeColor}`}>
                 <form onSubmit={handlePostCard} className="flex flex-col justify-normal items-center mx-6 lg:mx-12 mt-8 mb-5">
                     {typeFields}
-                    <button>Holas</button>
+                    {buttonState}
                 </form>
             </div>
 

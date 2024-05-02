@@ -5,7 +5,7 @@ import { Pencil as PencilIcon} from 'lucide-react';
 
 import ScrollAreaUpdate from './ScrollAreaUpdate';
 
-const UpdateMessage = () => (
+const UpdateMessage = () => (  
   <AlertDialog.Root>
     <AlertDialog.Trigger asChild>
       <PencilIcon />
@@ -17,10 +17,10 @@ const UpdateMessage = () => (
         <ScrollAreaUpdate />
         <div style={{ display: 'flex', gap: 25, justifyContent: 'flex-end' }}>
           <AlertDialog.Cancel asChild>
-            <button className="border-2 border-red-card">Abbrechen</button>
+            
           </AlertDialog.Cancel>
           <AlertDialog.Action asChild>
-            <button className="bg-green-card">Fertig</button>
+            <button className="border-2 border-orange-card">Fertig</button>
           </AlertDialog.Action>
         </div>
       </AlertDialog.Content>

@@ -3,7 +3,7 @@ import DeleteMessage from "@/components/kartenenditor/DeleteMessage";
 import axios from "axios";
 import { useSession } from 'next-auth/react';
 import { Spinner } from "@material-tailwind/react";
-import { createContext, useState } from 'react';
+import { createContext, useRef, useState } from 'react';
 import UpdateMessage from './UpdateMessage';
 
 export const cardContext = createContext();
