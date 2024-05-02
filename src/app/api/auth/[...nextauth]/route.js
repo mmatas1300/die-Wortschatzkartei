@@ -14,8 +14,7 @@ const handler = NextAuth({
             },
             async authorize(credentials,req){
                 await connectDB()
-                const userFound = await User.findOne({email: credentials.email},{ email: 1, password: 1, config: 1,_id:1});
-
+                const userFound = await User.findOne({email: credentials.email});
 
                 if(!userFound) throw new Error("Ungültige Daten")
 
@@ -27,8 +26,8 @@ const handler = NextAuth({
                     email: userFound.email,
                     config: userFound.config,
                     _id: userFound._id,
+                    lastPlay: userFound.lastPlay,
                 }
-                
                 return userData;
             }
         })
@@ -44,7 +43,7 @@ const handler = NextAuth({
             return token
         },
         session({session, token}){
-            session.user = token.user; //pasar el token a la session
+            session.user = token.user;
             return session
         }
     },
