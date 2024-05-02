@@ -44,7 +44,7 @@ export const CardList = () => {
                     <div className="w-6 mx-2 me-4" />
                 </div>
 
-                {cards.length != 0 ? (<>{cards.map((card) => <CardsListRow key={card._id} card={card} />)}</>) : (<h2 className="mt-6">Oh, es ist leer</h2>)}
+                {cards.length != 0 ? (<>{cards.map((card) => <CardsListRow key={card._id} card={card} setRefresh={setRefresh} refresh={refresh} />)}</>) : (<h2 className="mt-6">Oh, es ist leer</h2>)}
             </div>
         </div>
     );
