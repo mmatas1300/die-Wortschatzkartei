@@ -6,13 +6,9 @@ import PlayScreen from "@/components/PlayScreen";
 
 function UbenPage() {
 
-    const { data: session, status } = useSession();
-    const [statistics, setStatistics] = useState();
+    const { data: session, status, update } = useSession();
     const [cards, setCards] = useState();
-    const [startPlay, setStartPlay] = useState(false);
-    const [isTimeToPlay, setIsTimeToPlay] = useState(false);
-    const [buttonState, setButtonState] = useState(false);
-    const [isGameFinish, setIsGameFinish] = useState(false);
+
 
 
     const getStats = async () => {
@@ -50,62 +46,37 @@ function UbenPage() {
     }
 
 
-    const gameStart = async () => {
-        setButtonState(true)
-        await getCards()
-        setStartPlay(true)
-    }
+    useEffect(() => {
 
 
-    const finishGame = () => {
-        setIsGameFinish(true)
-    }
 
-    useEffect(() => {//Config Inicial
-        //Condiciones para jugar:
-        //
-        const loadData = async () => {
-            if (status === "authenticated") {
-                const stats = await getStats(); //Trae stats
-                const now = new Date();
-                if(stats.length !== 0){
-                    const cardsToPlayToday = stats.filter((card)=>{
-                        const lastPlay = new Date(card.date)
-                        lastPlay.setDate(lastPlay.getDate()+1);
-                        return lastPlay < now
-                    })
+
     
-                    console.log(cardsToPlayToday)
-                } else if(stats.length ===0){
-                    //primera vez jugando
-                }
-                
 
-                // if ( < now) {
-                //     setIsTimeToPlay(true)
-                // }
-            }
+        const initPractice = async ()=>{
+            console.log(session.user)
+            // if (status === "authenticated" ){
+            //     const allowToPlayDate  =  new Date(session.user.lastPlay);
+            //     allowToPlayDate.setDate(allowToPlayDate.getDate() + 1);
+            //     const today= new Date();
+            //     console.log(allowToPlayDate)
+                
+            //     //if(allowToPlayDate.getTime()<today.getTime()){
+            //         //loadData();
+            //     //}
+    
+            // }
         }
-        loadData();
-    }, [status])
+
+        if (status === "authenticated" )
+            initPractice();
+
+
+    }, [])
 
     return (
-        <div className="flex flex-col justify-center items-center mt-12">
-            {!isGameFinish ? (statistics ?
-                (startPlay ?
-                    (<PlayScreen stats={statistics} cards={cards} finishGame={finishGame} />) :
-                    (isTimeToPlay ?
-                        (<>
-
-                            <div className="text-xl">Es ist Zeit zu üben!</div>
-                            {buttonState ? (<Spinner className="mt-2.5 h-10 w-10" />) :
-                            (<button className="bg-green-card rounded-lg py-2 px-6 text-sm mt-4" onClick={() => { gameStart() }}>Weiter</button>)}
-
-                        </>) :
-                        (<div>Für heute reicht das Üben!</div>)
-                    )
-                )
-                : (<Spinner className="mt-2.5 h-10 w-10" />)) : (<div>Herzlichen Glückwunsch, gute Übung!</div>)}
+        <div className="flex flex-col justify-center items-center min-h-screen">
+            Hola
         </div>
     );
 }
