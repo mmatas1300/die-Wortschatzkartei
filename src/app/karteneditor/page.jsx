@@ -11,6 +11,7 @@ const KarteneditorPage = () => {
         <section className="my-12 flex flex-col justify-center items-center">
             <h1>Karteneditor</h1>
             <CreateCardForm/>
+
             <CardList/>
 
         </section>

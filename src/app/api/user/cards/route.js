@@ -26,10 +26,10 @@ export async function PUT(request){
 }
 
 export async function POST(request){
-    const {email} = await request.json()
+    const {userId} = await request.json()
     try{
         await connectDB();
-        const userFound = await User.findOne({email: email});
+        const userFound = await User.findOne({_id: userId});
         return NextResponse.json(userFound.myCards)
     } catch (error) {
         return NextResponse.json(error);
