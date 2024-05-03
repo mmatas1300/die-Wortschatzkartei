@@ -75,7 +75,7 @@ const EditCardForm = () => {
         const formData = new FormData(e.currentTarget)
         const updateCard = createCard(formData);
         try {
-            await axios.put('/api/user/cards', { userId: session.user._id, card: { _id: card._id, ...updateCard, level: card.level, practiceDate: card.practiceDate }, update: true });
+            await axios.put('/api/user/cards', { userId: session.user._id, card: { _id: card._id, ...updateCard, level: card.level, practiceDate: card.practiceDate }, update: "edit" });
             setButtonState(<div className="mt-2.5 h-10">Änderungen gespeichert!</div>);
             setRefresh(!refresh)
         } catch (error) {

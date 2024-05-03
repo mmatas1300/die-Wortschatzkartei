@@ -3,8 +3,9 @@ import {connectDB}  from "@/libs/mongodb";
 import User from '@/models/user';
 
 export async function PUT(request){
-    const { userId, card, update } = await request.json()//Corresponde a recuperar el body
-    if(update){
+    const { userId, card, cards, update } = await request.json()//Corresponde a recuperar el body
+    console.log(update)
+    if(update==="edit"){
         try {
             await connectDB();
             await User.updateOne({ _id: userId },{ $pull: { myCards: { _id: card._id } } });
@@ -13,7 +14,7 @@ export async function PUT(request){
         } catch (error) {
             return NextResponse.json(error);
         }
-    } else{
+    } else if(update==="add"){
         try {
             await connectDB();
             await User.findOneAndUpdate({ _id: userId }, { $push: { myCards: card } });
@@ -21,6 +22,8 @@ export async function PUT(request){
         } catch (error) {
             return NextResponse.json(error);
         }
+    } else if(update==="play"){
+        console.log(cards)
     }
 
 }

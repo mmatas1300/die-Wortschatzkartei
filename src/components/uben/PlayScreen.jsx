@@ -3,12 +3,18 @@ import { useEffect, useState } from "react";
 import { Spinner } from "@material-tailwind/react";
 import Karte from "../Karte";
 import FlipCard from "./FlipCard";
+import axios from "axios";
 
 const PlayScreen = ({ cards, progress }) => {
 
     const { data: session } = useSession();
     const [selectedCards, setSelectedCards] = useState([]);
-    const [startGame, setStartGame] = useState();
+    const [reviewedCardNum, setReviewedCardNum] = useState(0);
+    const [studiedCards, setStudiedCards] = useState([]);
+    const [gameStart, setGameStart] = useState(false);
+    const [flipCard, setFlipCard] = useState(false);
+    const [vanish, setVanish] = useState(false);
+
 
     useEffect(() => {
 
@@ -19,6 +25,7 @@ const PlayScreen = ({ cards, progress }) => {
             }
             return array;
         };
+
 
         if (session.user.config.cardsSet === "app") {
             //Obtener las tarjetas a estudiar
@@ -45,16 +52,78 @@ const PlayScreen = ({ cards, progress }) => {
         }
     }, [])
 
+    const postMyCards = async () => {
+        try {
+            await axios.put('/api/user/cards', { userId: session.user._id, cards: [...studiedCards, selectedCards[reviewedCardNum]], update: "play" });
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    const richtigButton = () => {
+        if (session.user.config.cardsSet === "app") {
+
+        } else if (session.user.config.cardsSet === "meine") {
+            if (selectedCards[reviewedCardNum].level < 7)
+                selectedCards[reviewedCardNum].level++; //Aumenta nivel
+            let nextPracticeDate;
+            switch (selectedCards[reviewedCardNum].level) {
+                case 1:
+                    nextPracticeDate = 86_400_000;
+                    break;
+                case 2:
+                    nextPracticeDate = 86_400_000 * 3;
+                    break;
+                case 3:
+                    nextPracticeDate = 86_400_000 * 6;
+                    break;
+                case 4:
+                    nextPracticeDate = 86_400_000 * 12;
+                    break;
+                case 5:
+                    nextPracticeDate = 86_400_000 * 24;
+                    break;
+                case 6:
+                    nextPracticeDate = 86_400_000 * 48;
+                    break;
+                case 7:
+                    nextPracticeDate = 86_400_000 * 72;
+                    break;
+                default:
+                    break;
+            }
+            selectedCards[reviewedCardNum].practiceDate = new Date(Date.now() + nextPracticeDate);
+            setStudiedCards((studiedCards) => studiedCards.concat([selectedCards[reviewedCardNum]]))
+        }
+        setFlipCard(false);
+        setVanish(true);
+
+        if (reviewedCardNum < selectedCards.length - 1) {
+            setTimeout(() => {
+                setReviewedCardNum(reviewedCardNum + 1);
+                setVanish(false);
+            }, 200);
+        } else {
+            console.log("terminado por hoy")
+            postMyCards();
+        }
+
+    };
 
     return (
         selectedCards.length === 0 ? (<Spinner className="mt-2.5 h-10 w-10" />) :
             (
                 <div className="flex flex-col justify-center items-center">
-                    <h2>Es gibt heute {selectedCards.length} drei Karten zu studieren</h2>
-                    <button onClick={() => setStartGame()}>Los geht&apos;s!</button>
-                    <FlipCard card={selectedCards[0]}/> 
-                </div>
-
+                    {gameStart ? (<><FlipCard card={selectedCards[reviewedCardNum]} setFlipCard={setFlipCard} flipCard={flipCard} vanish={vanish} richtigButton={richtigButton} /></>) :
+                        (
+                            <>
+                                <h2>Es gibt heute {selectedCards.length} Karten zu studieren</h2>
+                                <button onClick={() => setGameStart(true)}>Los geht&apos;s!</button>
+                            </>
+                        )
+                    }
+                </div >
 
             )
     );
