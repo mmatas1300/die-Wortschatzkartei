@@ -1,7 +1,7 @@
 import ReactFlipCard from 'reactjs-flip-card'
 import Karte from '../Karte';
 
-const FlipCard = ({ card , flipCard, vanish, richtigButton, setFlipCard}) => {
+const FlipCard = ({ card , flipCard, setFlipCard, vanish, richtigButton, falschButton }) => {
 
     const frontCardColor =()=>{
         switch (card.type) {
@@ -37,7 +37,7 @@ const FlipCard = ({ card , flipCard, vanish, richtigButton, setFlipCard}) => {
                     <>
                         <Karte {...card} />
                         <div className={`flex flex-row justify-center items-center space-x-8 mt-3 ${vanish?"opacity-0 invisible":"opacity-100 visible"}`}>
-                            <button className="bg-black-card border-2 border-red-card">Falsch</button>
+                            <button onClick={falschButton} className="bg-black-card border-2 border-red-card">Falsch</button>
                             <button onClick={richtigButton} className="bg-black-card border-2 border-green-card">Richtig</button>
                         </div>
                     </>

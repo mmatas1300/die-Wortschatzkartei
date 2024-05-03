@@ -62,38 +62,43 @@ const PlayScreen = ({ cards, progress }) => {
         }
     }
 
+    const calcNextPracticeDate = () => {
+        let nextPracticeDate;
+        switch (selectedCards[reviewedCardNum].level) {
+            case 1:
+                nextPracticeDate = 86_400_000;
+                break;
+            case 2:
+                nextPracticeDate = 86_400_000 * 3;
+                break;
+            case 3:
+                nextPracticeDate = 86_400_000 * 6;
+                break;
+            case 4:
+                nextPracticeDate = 86_400_000 * 12;
+                break;
+            case 5:
+                nextPracticeDate = 86_400_000 * 24;
+                break;
+            case 6:
+                nextPracticeDate = 86_400_000 * 48;
+                break;
+            case 7:
+                nextPracticeDate = 86_400_000 * 72;
+                break;
+            default:
+                break;
+        }
+        return nextPracticeDate
+    };
+
     const richtigButton = () => {
         if (session.user.config.cardsSet === "app") {
 
         } else if (session.user.config.cardsSet === "meine") {
             if (selectedCards[reviewedCardNum].level < 7)
                 selectedCards[reviewedCardNum].level++; //Aumenta nivel
-            let nextPracticeDate;
-            switch (selectedCards[reviewedCardNum].level) {
-                case 1:
-                    nextPracticeDate = 86_400_000;
-                    break;
-                case 2:
-                    nextPracticeDate = 86_400_000 * 3;
-                    break;
-                case 3:
-                    nextPracticeDate = 86_400_000 * 6;
-                    break;
-                case 4:
-                    nextPracticeDate = 86_400_000 * 12;
-                    break;
-                case 5:
-                    nextPracticeDate = 86_400_000 * 24;
-                    break;
-                case 6:
-                    nextPracticeDate = 86_400_000 * 48;
-                    break;
-                case 7:
-                    nextPracticeDate = 86_400_000 * 72;
-                    break;
-                default:
-                    break;
-            }
+            const nextPracticeDate = calcNextPracticeDate();
             selectedCards[reviewedCardNum].practiceDate = new Date(Date.now() + nextPracticeDate);
             setStudiedCards((studiedCards) => studiedCards.concat([selectedCards[reviewedCardNum]]))
         }
@@ -112,20 +117,36 @@ const PlayScreen = ({ cards, progress }) => {
 
     };
 
+    const falschButton = () => {
+        if (session.user.config.cardsSet === "app") {
+
+        } else if (session.user.config.cardsSet === "meine") {
+            if (0 < selectedCards[reviewedCardNum].level)
+                selectedCards[reviewedCardNum].level--; //Disminuir nivel
+            setSelectedCards(selectedCards.concat([selectedCards[reviewedCardNum]]));
+        }
+        setFlipCard(false);
+        setVanish(true);
+        setTimeout(() => {
+            setReviewedCardNum(reviewedCardNum + 1);
+            setVanish(false);
+        }, 200);
+    };
+
     return (
         selectedCards.length === 0 ? (<Spinner className="mt-2.5 h-10 w-10" />) :
             (
                 <div className="flex flex-col justify-center items-center">
-                    {gameStart ? (!gameFinish ?(<><FlipCard card={selectedCards[reviewedCardNum]} setFlipCard={setFlipCard} flipCard={flipCard} vanish={vanish} richtigButton={richtigButton} /></>):
-                                    (<UbenMessages message={"Herzlichen Glückwunsch, genug für heute"}/>)
-                                ):
-                        (   
+                    {gameStart ? (!gameFinish ? (<><FlipCard card={selectedCards[reviewedCardNum]} setFlipCard={setFlipCard} flipCard={flipCard} vanish={vanish} richtigButton={richtigButton} falschButton={falschButton} /></>) :
+                        (<UbenMessages message={"Herzlichen Glückwunsch, genug für heute"} />)
+                    ) :
+                        (
                             <UbenMessages message={
                                 <div className="flex flex-col justify-center items-center">
                                     <h2>Es gibt heute {selectedCards.length} Karten zu studieren</h2>
                                     <button onClick={() => setGameStart(true)}>Los geht&apos;s!</button>
                                 </div>
-                            }/>
+                            } />
                         )
                     }
                 </div >
