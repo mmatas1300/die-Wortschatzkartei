@@ -2,6 +2,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { Spinner } from "@material-tailwind/react";
 import Karte from "../Karte";
+import FlipCard from "./FlipCard";
 
 const PlayScreen = ({ cards, progress }) => {
 
@@ -46,13 +47,16 @@ const PlayScreen = ({ cards, progress }) => {
 
 
     return (
-        selectedCards.length===0 ? (<Spinner className="mt-2.5 h-10 w-10" />) : 
-        (
-            <div className="flex flex-col justify-center items-center">
-                <h2>Es gibt heute {selectedCards.length} drei Karten zu studieren</h2>
-                <button onClick={()=>setStartGame()}>Los geht's!</button>
-            </div>
-        )
+        selectedCards.length === 0 ? (<Spinner className="mt-2.5 h-10 w-10" />) :
+            (
+                <div className="flex flex-col justify-center items-center">
+                    <h2>Es gibt heute {selectedCards.length} drei Karten zu studieren</h2>
+                    <button onClick={() => setStartGame()}>Los geht's!</button>
+                    <FlipCard card={selectedCards[0]}/> 
+                </div>
+
+
+            )
     );
 }
 
