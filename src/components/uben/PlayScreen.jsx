@@ -4,6 +4,7 @@ import { Spinner } from "@material-tailwind/react";
 import Karte from "../Karte";
 import FlipCard from "./FlipCard";
 import axios from "axios";
+import UbenMessages from "./UbenMessages";
 
 const PlayScreen = ({ cards, progress }) => {
 
@@ -12,6 +13,7 @@ const PlayScreen = ({ cards, progress }) => {
     const [reviewedCardNum, setReviewedCardNum] = useState(0);
     const [studiedCards, setStudiedCards] = useState([]);
     const [gameStart, setGameStart] = useState(false);
+    const [gameFinish, setGameFinish] = useState(false);
     const [flipCard, setFlipCard] = useState(false);
     const [vanish, setVanish] = useState(false);
 
@@ -58,7 +60,6 @@ const PlayScreen = ({ cards, progress }) => {
         } catch (error) {
             console.log(error)
         }
-
     }
 
     const richtigButton = () => {
@@ -105,8 +106,8 @@ const PlayScreen = ({ cards, progress }) => {
                 setVanish(false);
             }, 200);
         } else {
-            console.log("terminado por hoy")
             postMyCards();
+            setGameFinish(true);
         }
 
     };
@@ -115,12 +116,16 @@ const PlayScreen = ({ cards, progress }) => {
         selectedCards.length === 0 ? (<Spinner className="mt-2.5 h-10 w-10" />) :
             (
                 <div className="flex flex-col justify-center items-center">
-                    {gameStart ? (<><FlipCard card={selectedCards[reviewedCardNum]} setFlipCard={setFlipCard} flipCard={flipCard} vanish={vanish} richtigButton={richtigButton} /></>) :
-                        (
-                            <>
-                                <h2>Es gibt heute {selectedCards.length} Karten zu studieren</h2>
-                                <button onClick={() => setGameStart(true)}>Los geht&apos;s!</button>
-                            </>
+                    {gameStart ? (!gameFinish ?(<><FlipCard card={selectedCards[reviewedCardNum]} setFlipCard={setFlipCard} flipCard={flipCard} vanish={vanish} richtigButton={richtigButton} /></>):
+                                    (<UbenMessages message={"Herzlichen Glückwunsch, genug für heute"}/>)
+                                ):
+                        (   
+                            <UbenMessages message={
+                                <div className="flex flex-col justify-center items-center">
+                                    <h2>Es gibt heute {selectedCards.length} Karten zu studieren</h2>
+                                    <button onClick={() => setGameStart(true)}>Los geht&apos;s!</button>
+                                </div>
+                            }/>
                         )
                     }
                 </div >

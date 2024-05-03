@@ -16,3 +16,15 @@ export async function POST(request){
         return NextResponse.json(error);
     }
 }
+
+export async function PUT(request){
+    const {userId, data} = request.json();
+    try {
+        await connectDB();
+        const userFound = await User.findOneAndUpdate({_id: userId }, {lastPlay: data.lastPlay, progress: data.progress});
+        return NextResponse.json({message: "Update successful"},{status: 200});
+    } catch (error) {
+        return NextResponse.json(error);
+    }
+
+}

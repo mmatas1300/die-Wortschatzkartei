@@ -4,7 +4,6 @@ import User from '@/models/user';
 
 export async function PUT(request){
     const { userId, card, cards, update } = await request.json()//Corresponde a recuperar el body
-    console.log(update)
     if(update==="edit"){
         try {
             await connectDB();
@@ -23,7 +22,16 @@ export async function PUT(request){
             return NextResponse.json(error);
         }
     } else if(update==="play"){
-        console.log(cards)
+        const cardIds = cards.map((card)=>{return card._id})
+        try {
+            await connectDB();
+            await User.updateOne({ _id: userId },{ $pull: { myCards: { _id: { $in: cardIds } } } });
+            await User.findOneAndUpdate({ _id: userId }, { $push: { myCards: { $each: cards } } });
+            await User.findOneAndUpdate({ _id: userId }, { lastPlay: new Date() });
+            return NextResponse.json({message: "Update successful"},{status: 200});
+        } catch (error) {
+            return NextResponse.json(error);
+        }
     }
 
 }
