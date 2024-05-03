@@ -150,7 +150,6 @@ const PlayScreen = ({ cards, progress }) => {
                         )
                     }
                 </div >
-
             )
     );
 }

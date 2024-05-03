@@ -1,4 +1,4 @@
-import { RotateCcw as RotateCcwIcon } from 'lucide-react';
+
 import DeleteMessage from "@/components/kartenenditor/DeleteMessage";
 import axios from "axios";
 import { useSession } from 'next-auth/react';
@@ -6,6 +6,7 @@ import { createContext } from 'react';
 import UpdateMessage from './UpdateMessage';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import ResetMessage from './ResetMessage';
 
 export const cardListContext = createContext();
 
@@ -51,6 +52,18 @@ const CardsListRow = ({ card, setRefresh, refresh }) => {
         }
     };
 
+    const resetLevel = async () => {
+        card.level=0;
+        card.practiceDate = new Date("2000");
+        try {
+            await axios.put('/api/user/cards', { userId: session.user._id, card: card, update: "edit" })
+            setRefresh(!refresh);
+        }
+        catch (err) {
+            console.log(err)
+        }
+    };
+
 
 
     return (
@@ -66,10 +79,10 @@ const CardsListRow = ({ card, setRefresh, refresh }) => {
 
             </div>
             <div className="w-6 mx-2 active:scale-95 hover:cursor-pointer">
-                <RotateCcwIcon />
+                <ResetMessage resetLevel={resetLevel}/>
             </div>
             <div className="w-6 mx-2 me-4 active:scale-95 hover:cursor-pointer">
-                <DeleteMessage id={card._id} deleteCard={deleteCard} />
+                <DeleteMessage deleteCard={deleteCard} />
             </div>
         </div>
     );
