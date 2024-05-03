@@ -3,10 +3,11 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { Spinner } from "@material-tailwind/react";
 import axios from "axios";
+import EnoughToday from "@/components/uben/EnoughToday";
 
 function UbenPage() {
 
-    const { data: session, status, update } = useSession();
+    const { data: session, status } = useSession();
     const [cards, setCards] = useState(null);
     const [progress, setProgress] = useState(null);
     const [mainMessage, setMainMessage] = useState(<Spinner className="mt-2.5 h-10 w-10" />);
@@ -46,7 +47,7 @@ function UbenPage() {
                 if (allowToPlayDate.getTime() < today.getTime()) {
                     await loadData();
                 } else {
-                    setMainMessage("Für heute reicht das Üben!")
+                    setMainMessage(<EnoughToday/>)
                 }
             } catch (error) {
                 console.log(error)
