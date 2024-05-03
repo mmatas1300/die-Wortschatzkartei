@@ -51,7 +51,7 @@ const PlayScreen = ({ cards, progress }) => {
             (
                 <div className="flex flex-col justify-center items-center">
                     <h2>Es gibt heute {selectedCards.length} drei Karten zu studieren</h2>
-                    <button onClick={() => setStartGame()}>Los geht's!</button>
+                    <button onClick={() => setStartGame()}>Los geht&apos;s!</button>
                     <FlipCard card={selectedCards[0]}/> 
                 </div>
 
