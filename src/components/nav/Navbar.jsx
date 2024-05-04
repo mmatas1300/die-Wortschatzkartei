@@ -60,7 +60,7 @@ const Navbar = () => {
             </>)
         } else {
             () => { setToggle(false) };
-            return (<div className='flex justify-center items-center'><Spinner className="h-10 w-10" /></div>);
+            return (<div className='flex justify-center items-center'><Spinner className="mt-[calc(15vh)] h-10 w-10" /></div>);
         }
     }
 

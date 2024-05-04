@@ -23,7 +23,7 @@ function WorterbuchPage() {
     alpha.splice(23, 2)
 
     const handleSuchen = (e) => {
-        setSuchenButton(<Spinner className="mt-2.5 h-10 w-10" />)
+        setSuchenButton(<Spinner className="mt-[calc(30vh)] h-10 w-10" />)
         setSuchenWarning(null)
         e.preventDefault();
         const suchen = new FormData(e.currentTarget)
@@ -88,7 +88,7 @@ function WorterbuchPage() {
             {suchenWarning}
 
             {cardsSuchen ?
-                (cardsSuchen.length === 0 ? (<h1 className='text-center mt-12'>Wir konnten keine Karte finden</h1>) :
+                (cardsSuchen.length === 0 ? (<h1 className='mt-[calc(30vh)] text-center'>Wir konnten keine Karte finden</h1>) :
                     (<div className="flex flex-row flex-wrap justify-center items-center mt-4"> {cardsSuchen.map(karte => <div key={karte._id} className="m-5"><Karte {...karte} /></div>)}</div>)
                 ) : (<div className="flex flex-row justify-center items-center flex-wrap mt-4">
                     {alpha.map((x) => {
