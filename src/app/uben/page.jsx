@@ -12,7 +12,6 @@ function UbenPage() {
     const [mainMessage, setMainMessage] = useState(<Spinner className="mt-2.5 h-10 w-10" />);
 
     useEffect(() => {
-
         const loadData = async () => {
             if (session.user.config.cardsSet === "app") {
                 try {
