@@ -35,11 +35,10 @@ function LoginPage() {
 
         if (dataValidation(formData)) {
             try {
-                const res = await axios.post('/api/auth/signup', {
+                await axios.post('/api/auth/signup', {
                     email: formData.get("email"),
                     password: formData.get("password")
                 })
-                console.log(res)
                 setFormError()
                 setButtonState(<div className={style['success']}>Erfolgreiche Registrierung!</div>);
                 setTimeout(function () {
@@ -48,7 +47,8 @@ function LoginPage() {
                 }, 1500);
 
             } catch (error) {
-                setFormError(error.response.data.message)
+                setFormError(error.response.data.message);
+                setButtonState(<button>Weiter</button>);
             }
         } else {
             setButtonState(<button>Weiter</button>);
@@ -67,7 +67,6 @@ function LoginPage() {
             });
             if (res.ok) return router.push("/konto")
             setFormError(res.error)
-
         } catch (error) {
             console.log(error)
         }
@@ -82,7 +81,7 @@ function LoginPage() {
                     <div className={`${style["form-container"]} ${style["sign-up"]}`}>
                         <form onSubmit={handleRegistrierenSubmit}>
                             <h1 className="mb-1">Registrieren</h1>
-                            <p className="mb-1">Es geht ganz schnell und einfach.</p>
+                            <p className="mb-1 text-center">Es geht ganz schnell und einfach.</p>
                             <label htmlFor="email">Deine E-Mail-Adresse:</label>
                             <input type="email" placeholder="E-Mail-Adresse" name="email" />
                             <label htmlFor="password">Neues Passwort:</label>

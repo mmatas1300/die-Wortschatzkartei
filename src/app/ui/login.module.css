@@ -20,11 +20,15 @@
 .container .error{
   color: var(--yellow-card);
   font-size: 14px;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .container .success{
   color: var(--green-card);
   font-size: 14px;
+  margin-top: 30px;
 }
 
 .container form{
