@@ -6,8 +6,8 @@ const HilfePage = () => {
         <section className="my-12">
             <div className="flex flex-col justify-center items-center">
                 <h1>Hilfe</h1>
-                <Kontakt />
                 <FAQ/>
+                <Kontakt />
             </div>
         </section>
     );
