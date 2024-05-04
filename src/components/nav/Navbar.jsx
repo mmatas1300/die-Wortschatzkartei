@@ -83,7 +83,7 @@ const Navbar = () => {
 
                 <Menu menuItemStyles={{
                     button: {
-                        ":hover": { backgroundColor: "#4CAB2A", borderRadius: "16px", margin: "0px 20px" },
+                        ":hover": { backgroundColor: "#4CAB2A", borderRadius: "16px", margin: "0px 20px", transitionProperty: "all", transitionDuration: "150ms"},
                     }
                 }}>
                     {varLinks(status)}
