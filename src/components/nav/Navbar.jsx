@@ -2,7 +2,7 @@
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
-import { Menu as MenuIcon, NotebookText as LibraryIcon, Mailbox as MailboxIcon, LogIn as LogInIcon, X as XIcon, CircleUser as CircleUserIcon, SquarePlay as SquarePlayIcon, LogOut as LogOutIcon, FilePenLine as FilePenLineIcon } from 'lucide-react';
+import { Menu as MenuIcon, NotebookText as LibraryIcon, CircleHelp as CircleHelpIcon, LogIn as LogInIcon, X as XIcon, CircleUser as CircleUserIcon, SquarePlay as SquarePlayIcon, LogOut as LogOutIcon, FilePenLine as FilePenLineIcon } from 'lucide-react';
 import Logo from "@/components/nav/Logo"
 import { useSession } from 'next-auth/react'
 import { signOut } from 'next-auth/react';
@@ -49,13 +49,13 @@ const Navbar = () => {
                 <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<FilePenLineIcon />} component={<Link href="/karteneditor" />}> Karteneditor</MenuItem>
                 <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<SquarePlayIcon />} component={<Link href="/uben" />}> Üben</MenuItem>
                 <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
-                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<MailboxIcon />} component={<Link href="/kontakt" />}> Kontakt</MenuItem>
+                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<CircleHelpIcon />} component={<Link href="/hilfe" />}> Hilfe</MenuItem>
                 <MenuItem className='abmelden' onClick={() => { signOut(); toggleNavbar(windowSize); }} icon={<LogOutIcon />}>Abmelden</MenuItem>
             </>)
         } else if (status === "unauthenticated") {
             return (<>
                 <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
-                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<MailboxIcon />} component={<Link href="/kontakt" />}> Kontakt</MenuItem>
+                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<CircleHelpIcon />} component={<Link href="/hilfe" />}> Hilfe</MenuItem>
                 <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<LogInIcon />} component={<Link href="/login" />}> Anmelden</MenuItem>
             </>)
         } else {
