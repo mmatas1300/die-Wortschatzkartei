@@ -331,7 +331,6 @@ const CreateCardForm = () => {
         setTypeColor(color);
     };
 
-
     return (
         <div className='flex flex-col justify-center items-center mt-4'>
             <h2>Neue Karte erstellen</h2>

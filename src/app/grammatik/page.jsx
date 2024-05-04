@@ -1,5 +1,5 @@
 const GrammatikPage = () =>{
-    return(<div>Hola</div>);
+    return(<div>Grammatik</div>);
 };
 
 export default GrammatikPage;

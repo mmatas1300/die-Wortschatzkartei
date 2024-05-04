@@ -12,7 +12,7 @@ const UbenMessages = ({message}) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default UbenMessages;

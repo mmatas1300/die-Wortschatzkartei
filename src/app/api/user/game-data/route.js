@@ -3,7 +3,7 @@ import {connectDB}  from "@/libs/mongodb";
 import User from '@/models/user';
 
 export async function POST(request){
-    const { userId, query } = await request.json()
+    const { userId, query } = await request.json();
     try {
         await connectDB();
         const userFound = await User.findById(userId);
@@ -29,5 +29,4 @@ export async function PUT(request){
     } catch (error) {
         return NextResponse.json(error);
     }
-
 }

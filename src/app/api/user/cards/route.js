@@ -3,7 +3,7 @@ import {connectDB}  from "@/libs/mongodb";
 import User from '@/models/user';
 
 export async function PUT(request){
-    const { userId, card, cards, update } = await request.json()//Corresponde a recuperar el body
+    const { userId, card, cards, update } = await request.json()
     if(update==="edit"){
         try {
             await connectDB();
@@ -33,7 +33,6 @@ export async function PUT(request){
             return NextResponse.json(error);
         }
     }
-
 }
 
 export async function POST(request){

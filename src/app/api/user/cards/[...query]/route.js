@@ -16,7 +16,7 @@ export async function POST(request, { params }) {
         } else {
             const regExpFirstLetter = new RegExp("^" + params.query[0].toLowerCase());
             const filterCards = userFound.myCards.filter((card) => {
-                return regExpFirstLetter.test(card.wort.toLowerCase())
+                return regExpFirstLetter.test(card.wort.toLowerCase());
             });
             return NextResponse.json(filterCards);
         }

@@ -9,6 +9,6 @@ const userSchema = new Schema({
     progress:[{cardId: Schema.Types.ObjectId, level: Number, practiceDate: Date}]
 })
 
-const User = models.User || model('User', userSchema,'users'); //Si ya existe un modelo reutilizalo
+const User = models.User || model('User', userSchema,'users');
 
-export default User
+export default User;

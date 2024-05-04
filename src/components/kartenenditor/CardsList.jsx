@@ -11,7 +11,7 @@ export const CardList = () => {
 
     const handleSuchen = (e) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget)//extraer datos del form
+        const formData = new FormData(e.currentTarget)
         const mySearch = formData.get("search");
         const regExp = new RegExp(`.*${mySearch.toLowerCase()}.*`);
         const filterCards = cards.filter((card) => { return regExp.test(card.wort.toLowerCase()) })
@@ -32,7 +32,6 @@ export const CardList = () => {
         }
         if (status === "authenticated")
             getMycards();
-
     }, [status, refresh])
 
     return (

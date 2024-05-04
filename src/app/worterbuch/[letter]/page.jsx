@@ -38,7 +38,6 @@ function WorterMitPage({ params }) {
         } else if(status==="unauthenticated"){
             fetchAppCards();
         }
-
     }, [status])
 
     return (
@@ -59,9 +58,7 @@ function WorterMitPage({ params }) {
             ) : (<Spinner className="mt-2.5 h-10 w-10" />)}
             </div>
         </section>
-
     )
-
 }
 
-export default WorterMitPage
+export default WorterMitPage;

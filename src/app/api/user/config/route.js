@@ -3,7 +3,7 @@ import {connectDB}  from "@/libs/mongodb";
 import User from '@/models/user';
 
 export async function PUT(request){
-    const { userId, config } = await request.json()//Corresponde a recuperar el body
+    const { userId, config } = await request.json();
 
     try {
         await connectDB();

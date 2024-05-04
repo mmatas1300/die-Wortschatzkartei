@@ -4,7 +4,7 @@ import {AndereCard} from '@/models/card';
 
 export async function GET(req, { params }){
 
-    if(params.query[0]==="search"){
+    if(params.query[0] === "search"){
         try {
             await connectDB();        
             const searchCards = await AndereCard.find({ $or:[

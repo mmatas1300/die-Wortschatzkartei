@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 function Karte(karte) {
 
-
     const [showUbersetzung, setShowUbersetzung] = useState(false);
 
     const toggleUbersetzung = () => {
@@ -62,7 +61,7 @@ function Karte(karte) {
     };
 
     return (
-        <div className='flex flex-col justify-center items-center transition duration-200 hover:scale-105'>
+        <div className='flex flex-col justify-center items-center transition duration-200'>
                 <div className={`w-80 min-h-80 rounded-3xl flex flex-col justify-center items-center text-xl ${colorKarte()}`}>
                     <p className="underline self-end me-4 mt-4">{typeKarte()}</p>
                     {karte.type === "Nomen-MUF"?(
@@ -106,8 +105,7 @@ function Karte(karte) {
                     <p onClick={toggleUbersetzung} className='mb-4 bg-black-card p-1 rounded-md cursor-pointer text-sm'>{showUbersetzung ? karte.ubersetzung : "Übersetzung"}</p>
                 </div>
         </div>
-
     );
 }
 
-export default Karte
+export default Karte;

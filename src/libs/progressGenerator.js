@@ -1,5 +1,5 @@
-import {connectDB}  from "@/libs/mongodb";
 import {AndereCard} from '@/models/card';
+import {connectDB}  from "@/libs/mongodb";
 
 export const progressGenerator = async ()=>{
     try {

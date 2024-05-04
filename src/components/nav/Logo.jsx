@@ -8,6 +8,6 @@ const Logo = () => {
                 </h1>
         </Link>
     );
-}
+};
 
 export default Logo;

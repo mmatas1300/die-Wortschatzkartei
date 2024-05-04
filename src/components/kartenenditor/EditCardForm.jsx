@@ -83,7 +83,6 @@ const EditCardForm = () => {
         }
     }
 
-
     const verbFields = (<>
         <label htmlFor="wortVerb">Infinitiv</label>
         <input type="text" placeholder='Sein' name='wortVerb' required defaultValue={card.wort} />
@@ -330,7 +329,6 @@ const EditCardForm = () => {
                     {buttonState}
                 </form>
             </div>
-
         </div>
     );
 };

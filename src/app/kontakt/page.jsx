@@ -4,9 +4,9 @@ import { Spinner } from "@material-tailwind/react";
 
 function KontaktPage() {
 
-    const [buttonState, setButtonstate]=useState(<button>Nachricht senden</button>)
+    const [buttonState, setButtonstate]=useState(<button>Nachricht senden</button>);
 
-    const toggleButton = ()=>{
+    const toggleButton = () =>{
         setButtonstate(<Spinner className="mt-2.5 h-10 w-10" />)
     }
 

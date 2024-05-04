@@ -5,18 +5,18 @@ import bcrypt from 'bcryptjs'
 import { progressGenerator } from "@/libs/progressGenerator";
 
 export async function POST(request) {
-    const { email, password} = await request.json()//Corresponde a recuperar el body
+    const { email, password} = await request.json()
 
-    if (!password || password.length < 3) //Validación contraseña
+    if (!password || password.length < 3)
         return NextResponse.json({message: "Passwörter müssen mindestens 3 Zeichen lang sein"},{status: 400});
         
     try {
         await connectDB()
-        const userFound = await User.findOne({ email })//Validación cuenta ya existente
+        const userFound = await User.findOne({ email })
         if (userFound)
             return NextResponse.json({message: "Diese E-Mail Adresse existiert bereits"},{status: 400});
 
-        const hashedPassword = await bcrypt.hash(password, 10);//Encriptación de contraseña
+        const hashedPassword = await bcrypt.hash(password, 10);
 
         const user = new User({
             email,

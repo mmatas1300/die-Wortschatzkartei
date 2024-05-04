@@ -22,7 +22,6 @@ const FlipCard = ({ card , flipCard, setFlipCard, vanish, richtigButton, falschB
         }
     }
 
-
     return (
         <div className={`flex flex-col justify-center items-center ${vanish?"opacity-0 invisible":"opacity-100 visible"} transition ease-in-out delay-75 -mt-[450px]`}>
             <ReactFlipCard flipTrigger={'disabled'} flipByProp={flipCard}
@@ -32,7 +31,6 @@ const FlipCard = ({ card , flipCard, setFlipCard, vanish, richtigButton, falschB
                         <button onClick={setFlipCard} className={`bg-black-card border-2 border-green-card  ${flipCard?"opacity-0 invisible":"opacity-100 visible"}`}>Wenden</button>
                     </div>
                 }
-
                 backComponent={
                     <>
                         <Karte {...card} />
@@ -43,9 +41,6 @@ const FlipCard = ({ card , flipCard, setFlipCard, vanish, richtigButton, falschB
                     </>
                 }
             />
-
-
-
         </div>
     )
 }

@@ -37,7 +37,6 @@ const handler = NextAuth({
                 token.user = session.user
                 return token
             }
-
             if(user) token.user = user;
             return token
         },

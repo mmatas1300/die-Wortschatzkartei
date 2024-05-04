@@ -49,7 +49,7 @@ const NomenMUFCard = models.NomenMUFCard || model('NomenMUFCard', nomenMUFCardSc
 
 const NomenCard = models.NomenCard || model('NomenCard', nomenCardSchema,'cards'); 
 
-const VerbCard = models.VerbCard || model('VerbCard', verbCardSchema,'cards'); //Si ya existe un modelo reutilizalo
+const VerbCard = models.VerbCard || model('VerbCard', verbCardSchema,'cards');
 
-export {NomenCard,VerbCard,NomenMUFCard,AndereCard}
+export {NomenCard,VerbCard,NomenMUFCard,AndereCard};
 

@@ -17,7 +17,6 @@ const PlayScreen = ({ cards, progress }) => {
     const [flipCard, setFlipCard] = useState(false);
     const [vanish, setVanish] = useState(false);
 
-
     useEffect(() => {
 
         const shuffleArray = (array) => {

@@ -12,27 +12,26 @@ const Navbar = () => {
 
     const [toggle, setToggle] = useState(false);
     const [windowSize, setWindowSize] = useState(0);
-    const {status} = useSession();
+    const { status } = useSession();
 
-
-    const toggleNavbar = (width)=>{
-        if(width>960){
+    const toggleNavbar = (width) => {
+        if (width > 960) {
             setToggle(true);
         }
-        else{
+        else {
             setToggle(false);
         }
     };
 
     useEffect(() => {
 
-        if(windowSize === 0){
+        if (windowSize === 0) {
             setWindowSize(window.innerWidth);
             toggleNavbar(window.innerWidth);
 
         }
 
-        const menuResize = () => {    
+        const menuResize = () => {
             setWindowSize(window.innerWidth);
             toggleNavbar(window.innerWidth);
         };
@@ -46,22 +45,21 @@ const Navbar = () => {
     const varLinks = (status) => {
         if (status === "authenticated") {
             return (<>
-                <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<CircleUserIcon />} component={<Link href="/konto" />}> Mein Konto</MenuItem>
-                <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<FilePenLineIcon />} component={<Link href="/karteneditor" />}> Karteneditor</MenuItem>
-                <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<SquarePlayIcon />} component={<Link href="/uben" />}> Üben</MenuItem>
-                <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
-                <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<MailboxIcon />} component={<Link href="/kontakt" />}> Kontakt</MenuItem>
+                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<CircleUserIcon />} component={<Link href="/konto" />}> Mein Konto</MenuItem>
+                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<FilePenLineIcon />} component={<Link href="/karteneditor" />}> Karteneditor</MenuItem>
+                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<SquarePlayIcon />} component={<Link href="/uben" />}> Üben</MenuItem>
+                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
+                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<MailboxIcon />} component={<Link href="/kontakt" />}> Kontakt</MenuItem>
                 <MenuItem className='abmelden' onClick={() => { signOut(); toggleNavbar(windowSize); }} icon={<LogOutIcon />}>Abmelden</MenuItem>
-
             </>)
         } else if (status === "unauthenticated") {
             return (<>
-                <MenuItem onClick={()=>{toggleNavbar(windowSize)}} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
+                <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
                 <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<MailboxIcon />} component={<Link href="/kontakt" />}> Kontakt</MenuItem>
                 <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<LogInIcon />} component={<Link href="/login" />}> Anmelden</MenuItem>
             </>)
         } else {
-            ()=>{setToggle(false)};
+            () => { setToggle(false) };
             return (<div className='flex justify-center items-center'><Spinner className="h-10 w-10" /></div>);
         }
     }
@@ -76,7 +74,7 @@ const Navbar = () => {
                 <div className='w-[74px]' />
             </div>
 
-        <Sidebar rootStyles={{ height: "100vh", position: "fixed", top: 0, border: 0}} backgroundColor={"rgb(0,120,163)"} width={"250px"} toggled={toggle} customBreakPoint={"960px"} onBackdropClick={() => { setToggle(false) }} collapsed={!toggle} collapsedWidth={!toggle?"0px":"250px"} >
+            <Sidebar rootStyles={{ height: "100vh", position: "fixed", top: 0, border: 0 }} backgroundColor={"rgb(0,120,163)"} width={"250px"} toggled={toggle} customBreakPoint={"960px"} onBackdropClick={() => { setToggle(false) }} collapsed={!toggle} collapsedWidth={!toggle ? "0px" : "250px"} >
 
                 <div className='flex flex-row justify-between'>
                     <Logo />
@@ -91,7 +89,6 @@ const Navbar = () => {
                     {varLinks(status)}
                 </Menu>
             </Sidebar>
-            
         </nav>
     );
 };

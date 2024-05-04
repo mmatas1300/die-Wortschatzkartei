@@ -1,4 +1,3 @@
-
 import DeleteMessage from "@/components/kartenenditor/DeleteMessage";
 import axios from "axios";
 import { useSession } from 'next-auth/react';
@@ -63,8 +62,6 @@ const CardsListRow = ({ card, setRefresh, refresh }) => {
             console.log(err)
         }
     };
-
-
 
     return (
         <div className={`${selectColor(card)} rounded-xl flex flex-row justify-center items-center w-full my-2`}>

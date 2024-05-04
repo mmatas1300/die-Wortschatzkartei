@@ -6,7 +6,6 @@ import axios from 'axios';
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
-
 function LoginPage() {
 
     const [formState, setFormState] = useState(style["container"]);
@@ -32,7 +31,7 @@ function LoginPage() {
     const handleRegistrierenSubmit = async (e) => {
         e.preventDefault();
         setButtonState(<Spinner className="mt-2.5 h-10 w-10" />);
-        const formData = new FormData(e.currentTarget)//extraer datos del form
+        const formData = new FormData(e.currentTarget)
 
         if (dataValidation(formData)) {
             try {
@@ -54,13 +53,12 @@ function LoginPage() {
         } else {
             setButtonState(<button>Weiter</button>);
         }
-
     };
 
     const handleAnmeldenSubmit = async (e) => {
         e.preventDefault();
         setButtonState(<Spinner className="mt-2.5 h-10 w-10" />);
-        const formData = new FormData(e.currentTarget)//extraer datos del form
+        const formData = new FormData(e.currentTarget)
         try {
             const res = await signIn("credentials", {
                 email: formData.get("email"),
@@ -128,8 +126,6 @@ function LoginPage() {
                 </div>
             </div>
         </section>
-
-
     )
 }
 

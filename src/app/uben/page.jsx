@@ -54,8 +54,6 @@ function UbenPage() {
 
         if (status === "authenticated")
             initPractice();
-
-
     }, [status])
 
     return (

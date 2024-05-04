@@ -27,7 +27,7 @@ function KontoPage() {
                     config: config
                 }
             });
-            await update({ user: { ...session.user, config: config } })//Actualizar la session
+            await update({ user: { ...session.user, config: config } })
             setStateButton(fertigButton);
         } catch (error) {
             console.log(error)
@@ -59,7 +59,6 @@ function KontoPage() {
                         </div>
 
                     </div>
-
                 </>)}
         </section>
     )
