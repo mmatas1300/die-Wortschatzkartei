@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import User from '@/models/user'
 import {connectDB}  from "@/libs/mongodb";
 import bcrypt from 'bcryptjs'
+import { progressGenerator } from "@/libs/progressGenerator";
 
 export async function POST(request) {
     const { email, password} = await request.json()//Corresponde a recuperar el body
@@ -26,8 +27,9 @@ export async function POST(request) {
                 cardsSet:"app"
             },
             lastPlay: new Date('2000'),
-            progress: [],
+            progress: await progressGenerator(),
         })
+        
         const savedUser = await user.save();
         return NextResponse.json(savedUser);
     } catch (error) {
