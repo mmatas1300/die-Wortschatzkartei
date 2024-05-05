@@ -17,13 +17,13 @@ const UbenMessages = ({ message }) => {
     }, []);
 
     return (
-        <div className="mt-[calc(25vh)]">
+        <div className="mt-[calc(25vh)] w-44 lg:w-[300px]">
             <div className={`bg-yellow-card ${rotation.rotate35} rounded-2xl transition-all`}>
                 <div className={`bg-orange-card ${rotation.rotate5} rounded-2xl transition-all`}>
                     <div className={`bg-green-card ${rotation.rotate10} rounded-2xl transition-all`}>
                         <div className={`bg-blue-card ${rotation.rotate10} rounded-2xl transition-all`}>
                             <div className={`bg-red-card px-4 py-16 rounded-2xl ${rotation.rotate10} transition-all`}>
-                                <div className="text-base">{message}</div>
+                                <div className="text-base text-center">{message}</div>
                             </div>
                         </div>
                     </div>
