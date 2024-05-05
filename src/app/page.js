@@ -1,9 +1,10 @@
 'use client'
 import Karte from "@/components/Karte";
+import FAQ from "@/components/hilfe/FAQ";
+import Link from "next/link";
 
 export default function Home() {
 
-    const alphaNum = ["A", "B", "C"]
     const cardsDemo = [
         {
             "_id": {
@@ -49,58 +50,18 @@ export default function Home() {
     ]
 
     return (
-        <main className="flex flex-col items-center justify-between mt-12">
-            <h1>Make your own flashcards and review them!</h1>
+        <section className="flex flex-col items-center justify-between my-12 mx-4">
+            <h1 className="p-5 rounded-2xl my-3 mx-10 text-center">Make your own flashcards and review them!</h1>
             <div className="flex flex-row flex-wrap justify-center items-center">
-                <div className="m-5"><Karte {...cardsDemo[0]} /></div>
-                <div className="m-5 hidden lg:block"><Karte {...cardsDemo[1]} /></div>
-                <div className="m-5 hidden lg:block"><Karte {...cardsDemo[2]} /></div>
+                <div className="m-5 hover:scale-105 transition-all "><Karte {...cardsDemo[0]} /></div>
+                <div className="m-5 hidden lg:block hover:scale-105 transition-all "><Karte {...cardsDemo[1]} /></div>
+                <div className="m-5 hidden lg:block hover:scale-105 transition-all "><Karte {...cardsDemo[2]} /></div>
             </div>
 
-            <h1 className="my-3 mx-10">Create your account by clicking on <span className="bg-blue-card p-2 text-base cursor-default">Anmelden</span> and then <button className="cursor-default">Registrieren</button></h1>
+            <div className="p-5 rounded-2xl my-3 mx-10 text-center text-xl">Ready to learn? <Link href="/login"><button className="bg-red-card mx-1 text-xl">Register</button></Link> now and get started!</div>
 
-            <div className="flex flex-row flex-wrap justify-center items-start">
-                <div>
-                    <h1 className="mt-3">Create your own cards in der Karteneditor</h1>
-                    <div className="w-96 rounded-br-3xl rounded-bl-3xl rounded-tl-lg rounded-tr-3xl bg-red-card">
-                        <form className="flex flex-col justify-normal items-center mx-12  ">
-                            <label htmlFor="type" className="pt-8">Typ:</label>
-                            <select name="type">
-                                <option value="Nomen-die">Feminin</option>
-                                <option value="Nomen-das">Neutrum</option>
-                                <option value="Nomen-der">Maskulim</option>
-                                <option value="Nomen-pl">Plural</option>
-                            </select>
-                            <label htmlFor="wortNomen">Wort:</label>
-                            <input type="text" placeholder='Mango' name="wortNomen" />
-                            <label htmlFor="plural">Plural:</label>
-                            <input type="text" placeholder='Mangos' name="plural" />
-                            <label htmlFor="verwandte">Verwandte Wörter:</label>
-                            <input type="text" placeholder='das Obst' name="verwandte" />
-                            <label htmlFor="beispiel">Beispiel:</label>
-                            <input type="text" placeholder='Ich esse eine Mango' name="beispiel" />
-                            <label htmlFor="bild">Bild:</label>
-                            <input type="text" placeholder='https://www.example.com/mango.png' name="bild" />
-                            <label htmlFor="ubersetzung">Übersetzung:</label>
-                            <input type="text" placeholder='Mango' name="ubersetzung" />
-                            <button className="bg-black-card mb-8" disabled>Fertig</button>
-                        </form>
-                    </div>
-                </div>
+            <FAQ />
 
-                <div className="mx-5">
-                    <h1 className="mt-3 text-center">See your flashcards to review</h1>
-                    <div className="flex flex-row flex-wrap justify-center items-center mt-4">
-                        {alphaNum.map((x) => {
-                            return (
-                                <div key={x} className='bg-orange-card hover:bg-yellow-card w-32 h-32 m-4 cursor-pointer text-base flex justify-center items-center rounded-xl transition duration-200 hover:scale-110'>
-                                    {x}
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
-            </div>
-        </main>
+        </section>
     );
 }
