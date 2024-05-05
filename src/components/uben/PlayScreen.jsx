@@ -203,7 +203,7 @@ const PlayScreen = ({ cards, progress }) => {
     return (
         selectedCards.length === 0 ? (<Spinner className="mt-2.5 h-10 w-10" />) :
             (
-                <div className="flex flex-col justify-center items-center">
+                <>
                     {gameStart ? (!gameFinish ? (<><FlipCard card={selectedCards[reviewedCardNum]} setFlipCard={setFlipCard} flipCard={flipCard} vanish={vanish} richtigButton={richtigButton} falschButton={falschButton} /></>) :
                         (<UbenMessages message={"Herzlichen Glückwunsch, genug für heute"} />)
                     ) :
@@ -216,7 +216,7 @@ const PlayScreen = ({ cards, progress }) => {
                             } />
                         )
                     }
-                </div >
+                </>
             )
     );
 }

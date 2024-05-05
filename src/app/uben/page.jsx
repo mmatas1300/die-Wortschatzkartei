@@ -9,7 +9,7 @@ import PlayScreen from "@/components/uben/PlayScreen";
 function UbenPage() {
 
     const { data: session, status } = useSession();
-    const [mainMessage, setMainMessage] = useState(<Spinner className="mt-2.5 h-10 w-10" />);
+    const [mainMessage, setMainMessage] = useState(<Spinner className="mt-[calc(35vh)] h-10 w-10" />);
 
     useEffect(() => {
         const loadData = async () => {
@@ -57,7 +57,7 @@ function UbenPage() {
     }, [status])
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen">
+        <div className="flex flex-col justify-center items-center my-12">
             {mainMessage}
         </div>
     );
