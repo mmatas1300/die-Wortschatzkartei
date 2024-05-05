@@ -34,7 +34,7 @@ const FlipCard = ({ card , flipCard, setFlipCard, vanish, richtigButton, falschB
     }
 
     return (
-            <ReactFlipCard flipTrigger={'disabled'} flipByProp={flipCard} containerCss={`flex flex-col justify-center items-center ${vanish?"opacity-0 invisible":"opacity-100 visible"} transition ease-in-out delay-75 mt-12 basis-1/2`}
+            <ReactFlipCard flipTrigger={'disabled'} flipByProp={flipCard} containerCss={`flex flex-col justify-center items-center ${vanish?"opacity-0 invisible":"opacity-100 visible"} transition ease-in-out delay-75 basis-1/2`}
                 frontComponent={
                     <div className='flex flex-col justify-center items-center'>
                         <div className={`${frontCardColor()} p-32 rounded-3xl text-nowrap`}>{getCardWort()}</div>

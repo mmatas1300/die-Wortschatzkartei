@@ -210,7 +210,7 @@ const PlayScreen = ({ cards, progress }) => {
                         (
                             <UbenMessages message={
                                 <div className="flex flex-col justify-center items-center">
-                                    <h2>Es gibt heute {selectedCards.length} Karten zu studieren</h2>
+                                    <div className="text-base">Es gibt heute {selectedCards.length} Karten zu studieren</div>
                                     <button onClick={() => setGameStart(true)}>Los geht&apos;s!</button>
                                 </div>
                             } />
