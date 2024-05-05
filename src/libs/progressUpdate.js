@@ -4,8 +4,11 @@ const progressUpdate = (cards,userProgress)=>{
         const newCard = cards.filter((card)=>{
             return card._id != element.cardId;
         });
-        const newProgress = {cardId: newCard._id, level:0, practiceDate: new Date("2000")};
-        newUserProgress.push(newProgress);
+        console.log(newCard[0])
+        if(newCard[0]){
+            const newProgress = {cardId: newCard[0]._id, level:0, practiceDate: new Date("2000")};
+            newUserProgress.push(newProgress);
+        }
     });
     
     return userProgress.concat(newUserProgress);

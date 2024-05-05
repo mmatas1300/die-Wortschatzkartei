@@ -5,6 +5,7 @@ import { Spinner } from "@material-tailwind/react";
 import axios from "axios";
 import UbenMessages from "@/components/uben/UbenMessages";
 import PlayScreen from "@/components/uben/PlayScreen";
+import progressUpdate from "@/libs/progressUpdate";
 
 function UbenPage() {
 
@@ -18,7 +19,8 @@ function UbenPage() {
                     const responseCards = await fetch('/api/cards');
                     const cards = await responseCards.json();
                     const responseProgress = await axios.post("api/user/game-data", { userId: session.user._id, query: "progress" });
-                    setMainMessage(<PlayScreen cards={cards} progress={responseProgress.data.progress}/>);
+                    const progress = progressUpdate(cards,responseProgress.data.progress);
+                    setMainMessage(<PlayScreen cards={cards} progress={progress}/>);
                 } catch (err) {
                     console.log(err)
                 }
