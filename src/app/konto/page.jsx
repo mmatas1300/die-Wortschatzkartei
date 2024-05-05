@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/react'
 import { Spinner } from "@material-tailwind/react";
 import axios from 'axios';
 import { useState } from 'react';
+import { Fade } from 'react-awesome-reveal';
 
 function KontoPage() {
 
@@ -35,32 +36,35 @@ function KontoPage() {
     }
 
     return (
-        <section className='flex flex-col justify-center items-center mx-auto my-12'>
-            {status === "loading" ? (<Spinner className="mt-[calc(35vh)] h-10 w-10" />) :
-                (<>
-                    <h1 className='text-xl mb-4'>Mein Konto</h1>
-                    <h1 className='text-xl mb-4'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
-                    <div className='bg-green-card rounded-3xl lg:-rotate-12 lg:mt-8'>
-                        <div className='bg-blue-card rounded-3xl lg:rotate-6'>
-                            <div className={`bg-red-card w-96 rounded-3xl p-8 flex flex-col justify-center items-center lg:rotate-6`}>
-                                <h1>Kontoeinstellungen</h1>
-                                <form className='mt-4 flex flex-col justify-center items-center' onSubmit={handleKontoeinstellungen}>
-                                    <label htmlFor="nick">Spitzname:</label>
-                                    <input type="text" placeholder={session.user.config.nick} name='nick' />
-                                    <label className='mt-2' htmlFor="cardsSet">Möchtest du lieber deine eigenen Karten verwenden oder die der App?</label>
-                                    <select name="cardsSet">
-                                        {session.user.config.cardsSet === "app" ? (<><option value="app">App-Karten</option>
-                                            <option value="meine">Meine Karten</option></>) : (<><option value="meine">Meine Karten</option><option value="app">App-Karten</option>
-                                            </>)}
-                                    </select>
-                                    {stateButton}
-                                </form>
+        <Fade triggerOnce>
+            <section className='flex flex-col justify-center items-center mx-auto my-12'>
+                {status === "loading" ? (<Spinner className="mt-[calc(35vh)] h-10 w-10" />) :
+                    (<>
+                        <h1 className='text-xl mb-4'>Mein Konto</h1>
+                        <h1 className='text-xl mb-4'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
+                        <div className='bg-green-card rounded-3xl lg:-rotate-12 lg:mt-8'>
+                            <div className='bg-blue-card rounded-3xl lg:rotate-6'>
+                                <div className={`bg-red-card w-96 rounded-3xl p-8 flex flex-col justify-center items-center lg:rotate-6`}>
+                                    <h1>Kontoeinstellungen</h1>
+                                    <form className='mt-4 flex flex-col justify-center items-center' onSubmit={handleKontoeinstellungen}>
+                                        <label htmlFor="nick">Spitzname:</label>
+                                        <input type="text" placeholder={session.user.config.nick} name='nick' />
+                                        <label className='mt-2' htmlFor="cardsSet">Möchtest du lieber deine eigenen Karten verwenden oder die der App?</label>
+                                        <select name="cardsSet">
+                                            {session.user.config.cardsSet === "app" ? (<><option value="app">App-Karten</option>
+                                                <option value="meine">Meine Karten</option></>) : (<><option value="meine">Meine Karten</option><option value="app">App-Karten</option>
+                                                </>)}
+                                        </select>
+                                        {stateButton}
+                                    </form>
+                                </div>
                             </div>
-                        </div>
 
-                    </div>
-                </>)}
-        </section>
+                        </div>
+                    </>)}
+
+            </section>
+        </Fade>
     )
 }
 

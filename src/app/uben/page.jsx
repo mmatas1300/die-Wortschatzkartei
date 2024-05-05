@@ -6,6 +6,7 @@ import axios from "axios";
 import UbenMessages from "@/components/uben/UbenMessages";
 import PlayScreen from "@/components/uben/PlayScreen";
 import progressUpdate from "@/libs/progressUpdate";
+import { Fade } from "react-awesome-reveal";
 
 function UbenPage() {
 
@@ -19,17 +20,17 @@ function UbenPage() {
                     const responseCards = await fetch('/api/cards');
                     const cards = await responseCards.json();
                     const responseProgress = await axios.post("api/user/game-data", { userId: session.user._id, query: "progress" });
-                    const progress = progressUpdate(cards,responseProgress.data.progress);
-                    setMainMessage(<PlayScreen cards={cards} progress={progress}/>);
+                    const progress = progressUpdate(cards, responseProgress.data.progress);
+                    setMainMessage(<PlayScreen cards={cards} progress={progress} />);
                 } catch (err) {
                     console.log(err)
                 }
             } else if (session.user.config.cardsSet === "meine") {
                 try {
                     const responseCards = await axios.post("api/user/cards", { userId: session.user._id });
-                    if(responseCards.data.length===0){
-                        setMainMessage(<UbenMessages message={"Du hast keine Karten zum Üben!!!"}/>);
-                    } else{
+                    if (responseCards.data.length === 0) {
+                        setMainMessage(<UbenMessages message={"Du hast keine Karten zum Üben!!!"} />);
+                    } else {
                         setMainMessage(<PlayScreen cards={responseCards.data} />);
                     }
                 } catch (error) {
@@ -47,7 +48,7 @@ function UbenPage() {
                 if (allowToPlayDate.getTime() < today.getTime()) {
                     await loadData();
                 } else {
-                    setMainMessage(<UbenMessages message={"Für heute reicht das Üben!"}/>)
+                    setMainMessage(<UbenMessages message={"Für heute reicht das Üben!"} />)
                 }
             } catch (error) {
                 console.log(error)
@@ -59,9 +60,11 @@ function UbenPage() {
     }, [status])
 
     return (
-        <div className="flex flex-col justify-center items-center my-12">
-            {mainMessage}
-        </div>
+        <Fade triggerOnce>
+            <div className="flex flex-col justify-center items-center my-12">
+                {mainMessage}
+            </div>
+        </Fade>
     );
 }
 

@@ -5,6 +5,7 @@ import { useState } from "react"
 import axios from 'axios';
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
+import { Fade } from "react-awesome-reveal";
 
 function LoginPage() {
 
@@ -75,55 +76,57 @@ function LoginPage() {
 
     return (
         <section className="my-12">
-            <h1 className="text-center">Anmelden/Registrieren</h1>
-            <div className={style["section"]}>
-                <div className={formState}>
-                    <div className={`${style["form-container"]} ${style["sign-up"]}`}>
-                        <form onSubmit={handleRegistrierenSubmit}>
-                            <h1 className="mb-1">Registrieren</h1>
-                            <p className="mb-1 text-center">Es geht ganz schnell und einfach.</p>
-                            <label htmlFor="email">Deine E-Mail-Adresse:</label>
-                            <input type="email" placeholder="E-Mail-Adresse" name="email" />
-                            <label htmlFor="password">Neues Passwort:</label>
-                            <input type="password" placeholder="Neues Passwort" name="password" />
-                            <label htmlFor="confirmPassword">Passwort nochmals eingeben:</label>
-                            <input type="password" placeholder="Passwort nochmals eingeben" name="confirmPassword" />
-                            {formError && <div className={style['error']}>{formError}</div>}
-                            {buttonState}
-                        </form>
-                    </div>
-                    <div className={`${style["form-container"]} ${style["sign-in"]}`}>
-                        <form onSubmit={handleAnmeldenSubmit}>
-                            <h1 className="mb-2">Anmelden</h1>
-                            <p className="mb-2">Willkommen zurück!</p>
-                            <label htmlFor="email">Deine E-Mail-Adresse:</label>
-                            <input type="email" placeholder="E-Mail-Adresse" name="email" required/>
-                            <label htmlFor="password">Dein Passwort:</label>
-                            <input type="password" placeholder="Passwort" name="password" required/>
-                            {formError && <div className={style['error']}>{formError}</div>}
-                            {buttonState}
-                        </form>
-                    </div>
-                    <div className={style["toggle-container"]}>
-                        <div className={style["toggle"]}>
-                            <div className={`${style["toggle-panel"]} ${style["toggle-left"]}`}>
-                                <h1 className="mb-2">Willkommen zurück!</h1>
-                                <p className="mb-2">Du hast bereits ein Konto?</p>
-                                <button onClick={() => { setFormError(); setFormState(style["container"]) }}>
-                                    Anmelden
-                                </button>
-                            </div>
-                            <div className={`${style["toggle-panel"]} ${style["toggle-right"]}`}>
-                                <h1 className="mb-2">Willkommen!</h1>
-                                <p className="mb-2">Du hast kein Konto?</p>
-                                <button onClick={() => { setFormError(); setFormState(`${style["container"]} ${style["active"]}`) }}>
-                                    Registrieren
-                                </button>
+            <Fade triggerOnce>
+                <h1 className="text-center">Anmelden/Registrieren</h1>
+                <div className={style["section"]}>
+                    <div className={formState}>
+                        <div className={`${style["form-container"]} ${style["sign-up"]}`}>
+                            <form onSubmit={handleRegistrierenSubmit}>
+                                <h1 className="mb-1">Registrieren</h1>
+                                <p className="mb-1 text-center">Es geht ganz schnell und einfach.</p>
+                                <label htmlFor="email">Deine E-Mail-Adresse:</label>
+                                <input type="email" placeholder="E-Mail-Adresse" name="email" />
+                                <label htmlFor="password">Neues Passwort:</label>
+                                <input type="password" placeholder="Neues Passwort" name="password" />
+                                <label htmlFor="confirmPassword">Passwort nochmals eingeben:</label>
+                                <input type="password" placeholder="Passwort nochmals eingeben" name="confirmPassword" />
+                                {formError && <div className={style['error']}>{formError}</div>}
+                                {buttonState}
+                            </form>
+                        </div>
+                        <div className={`${style["form-container"]} ${style["sign-in"]}`}>
+                            <form onSubmit={handleAnmeldenSubmit}>
+                                <h1 className="mb-2">Anmelden</h1>
+                                <p className="mb-2">Willkommen zurück!</p>
+                                <label htmlFor="email">Deine E-Mail-Adresse:</label>
+                                <input type="email" placeholder="E-Mail-Adresse" name="email" required />
+                                <label htmlFor="password">Dein Passwort:</label>
+                                <input type="password" placeholder="Passwort" name="password" required />
+                                {formError && <div className={style['error']}>{formError}</div>}
+                                {buttonState}
+                            </form>
+                        </div>
+                        <div className={style["toggle-container"]}>
+                            <div className={style["toggle"]}>
+                                <div className={`${style["toggle-panel"]} ${style["toggle-left"]}`}>
+                                    <h1 className="mb-2">Willkommen zurück!</h1>
+                                    <p className="mb-2">Du hast bereits ein Konto?</p>
+                                    <button onClick={() => { setFormError(); setFormState(style["container"]) }}>
+                                        Anmelden
+                                    </button>
+                                </div>
+                                <div className={`${style["toggle-panel"]} ${style["toggle-right"]}`}>
+                                    <h1 className="mb-2">Willkommen!</h1>
+                                    <p className="mb-2">Du hast kein Konto?</p>
+                                    <button onClick={() => { setFormError(); setFormState(`${style["container"]} ${style["active"]}`) }}>
+                                        Registrieren
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Fade>
         </section>
     )
 }

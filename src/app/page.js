@@ -2,6 +2,7 @@
 import Karte from "@/components/Karte";
 import FAQ from "@/components/hilfe/FAQ";
 import Link from "next/link";
+import { Fade } from "react-awesome-reveal";
 
 export default function Home() {
 
@@ -50,18 +51,20 @@ export default function Home() {
     ]
 
     return (
+
         <section className="flex flex-col items-center justify-between my-12 mx-4">
-            <h1 className="p-5 rounded-2xl my-3 mx-10 text-center">Make your own flashcards and review them!</h1>
-            <div className="flex flex-row flex-wrap justify-center items-center">
-                <div className="m-5 hover:scale-105 transition-all "><Karte {...cardsDemo[0]} /></div>
-                <div className="m-5 hidden lg:block hover:scale-105 transition-all "><Karte {...cardsDemo[1]} /></div>
-                <div className="m-5 hidden lg:block hover:scale-105 transition-all "><Karte {...cardsDemo[2]} /></div>
-            </div>
+            <Fade triggerOnce>
+                <h1 className="p-5 rounded-2xl my-3 mx-10 text-center">Make your own flashcards and review them!</h1>
+                <div className="flex flex-row flex-wrap justify-center items-center">
+                    <div className="m-5 hover:scale-105 transition-all "><Karte {...cardsDemo[0]} /></div>
+                    <div className="m-5 hidden lg:block hover:scale-105 transition-all "><Karte {...cardsDemo[1]} /></div>
+                    <div className="m-5 hidden lg:block hover:scale-105 transition-all "><Karte {...cardsDemo[2]} /></div>
+                </div>
 
-            <div className="p-5 rounded-2xl my-3 mx-10 text-center text-xl">Ready to learn? <Link href="/login"><button className="bg-red-card mx-1 text-xl">Register</button></Link> now and get started!</div>
+                <div className="p-5 rounded-2xl my-3 mx-10 text-center text-xl">Ready to learn? <Link href="/login"><button className="bg-red-card mx-1 text-xl">Register</button></Link> now and get started!</div>
 
-            <FAQ />
-
+                <FAQ />
+            </Fade>
         </section>
     );
 }
