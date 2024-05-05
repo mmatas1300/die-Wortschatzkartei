@@ -1,9 +1,17 @@
+'use client'
+import UbenMessages from "@/components/uben/UbenMessages";
+import { Fade } from "react-awesome-reveal";
+
 function KontaktSuccessPage() {
-    return(
-        <section className="flex justify-center items-center my-12">
+    return (
+
+        <section className="flex flex-col justify-center items-center my-12">
             <h1>Hilfe</h1>
-            <h1 className="mt-12">Nachricht gesendet</h1>
+            <Fade triggerOnce>
+                <UbenMessages message={"Nachricht gesendet"} />
+            </Fade>
         </section>
+
     );
 }
 
