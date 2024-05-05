@@ -61,7 +61,7 @@ export default function Home() {
                     <div className="m-5 hidden lg:block hover:scale-105 transition-all "><Karte {...cardsDemo[2]} /></div>
                 </div>
 
-                <div className="p-5 rounded-2xl my-3 mx-10 text-center text-xl">Ready to learn? <Link href="/login"><button className="bg-red-card mx-1 text-xl">Register</button></Link> now and get started!</div>
+                <div className="p-5 rounded-2xl my-3 mx-10 text-center text-base lg:text-xl">Ready to learn? <Link href="/login"><button className="bg-red-card mx-1 text-base lg:text-xl">Register</button></Link> now and get started!</div>
 
                 <FAQ />
             </Fade>

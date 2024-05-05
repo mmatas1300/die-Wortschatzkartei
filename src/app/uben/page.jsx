@@ -61,11 +61,11 @@ function UbenPage() {
 
     return (
         <Fade triggerOnce>
-            <div className="flex flex-col justify-center items-center my-12">
+            <section className="flex flex-col justify-center items-center my-12">
                 {mainMessage}
-            </div>
+            </section>
         </Fade>
     );
 }
 
-export default UbenPage
+export default UbenPage;

@@ -201,7 +201,7 @@ const PlayScreen = ({ cards, progress }) => {
     };
 
     return (
-        selectedCards.length === 0 ? (<Spinner className="mt-2.5 h-10 w-10" />) :
+        selectedCards.length === 0 ? (<UbenMessages message={"Wir haben heute keine Karten zum Lernen gefunden"} />) :
             (
                 <>
                     {gameStart ? (!gameFinish ? (<><FlipCard card={selectedCards[reviewedCardNum]} setFlipCard={setFlipCard} flipCard={flipCard} vanish={vanish} richtigButton={richtigButton} falschButton={falschButton} /></>) :
