@@ -24,7 +24,7 @@ export async function PUT(request){
         await connectDB();
         await User.updateOne({_id: userId}, {$pull: { progress: { cardId: { $in: cardIds } } }});
         await User.updateOne({_id: userId}, {$push: {progress: {$each: progress}}});
-        await User.updateOne({_id: userId}, {lastPlay: new Date()});
+        await User.updateOne({_id: userId}, {lastPlay: new Date().setHours(0,0,0)});
         return NextResponse.json({message: "Update successful"},{status: 200});
     } catch (error) {
         return NextResponse.json(error);

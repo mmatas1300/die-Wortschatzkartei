@@ -21,7 +21,6 @@ function UbenPage() {
                     const cards = await responseCards.json();
                     const responseProgress = await axios.post("api/user/game-data", { userId: session.user._id, query: "progress" });
                     const progress = progressUpdate(cards, responseProgress.data.progress);
-                    console.log(progress)
                     setMainMessage(<PlayScreen cards={cards} progress={progress} />);
                 } catch (err) {
                     console.log(err)
@@ -45,7 +44,6 @@ function UbenPage() {
                 const response = await axios.post("api/user/game-data", { userId: session.user._id, query: "lastPlay" });
                 const allowToPlayDate = new Date(response.data.lastPlay);
                 allowToPlayDate.setDate(allowToPlayDate.getDate() + 1);
-                allowToPlayDate.setHours(0, 0, 0);
                 const today = new Date();
                 if (allowToPlayDate.getTime() < today.getTime()) {
                     await loadData();

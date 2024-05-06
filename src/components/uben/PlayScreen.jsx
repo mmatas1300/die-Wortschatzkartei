@@ -155,12 +155,14 @@ const PlayScreen = ({ cards, progress }) => {
                     break;
             }
             selectedProgress[reviewedCardNum].practiceDate = new Date(Date.now() + nextPracticeDate);
+            selectedProgress[reviewedCardNum].practiceDate.setHours(0,0,0);
             setStudiedCards((studiedCards) => studiedCards.concat([selectedProgress[reviewedCardNum]]))
         } else if (session.user.config.cardsSet === "meine") {
             if (selectedCards[reviewedCardNum].level < 7)
                 selectedCards[reviewedCardNum].level++; //Aumenta nivel
             const nextPracticeDate = calcNextPracticeDate();
             selectedCards[reviewedCardNum].practiceDate = new Date(Date.now() + nextPracticeDate);
+            selectedCards[reviewedCardNum].practiceDate.setHours(0,0,0);
             setStudiedCards((studiedCards) => studiedCards.concat([selectedCards[reviewedCardNum]]))
         }
         setFlipCard(false);
