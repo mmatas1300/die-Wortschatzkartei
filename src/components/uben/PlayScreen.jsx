@@ -66,9 +66,8 @@ const PlayScreen = ({ cards, progress }) => {
 
             const toStudyCards = cards.filter((card) => {
                 const cardPracticeDate = new Date(card.practiceDate);
-                cardPracticeDate.setDate(cardPracticeDate.getDate() + 1);
                 const today = new Date();
-                const newCardsDate = new Date("2000-01-02");
+                const newCardsDate = new Date("2000");
                 return (cardPracticeDate.getTime() < today.getTime()) && (cardPracticeDate.getTime() != newCardsDate.getTime());
             })
 
