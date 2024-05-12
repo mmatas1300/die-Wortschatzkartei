@@ -36,14 +36,13 @@ export const getLetterAppCards = async (letter) => {
 
 export const getLetterMyCards = async (letter, userId) => {
 	try {
-		const res = fetch(`/api/user/cards/${letter}`, {
+		const res = await fetch(`/api/user/cards/${letter}`, {
 			method: "POST",
 			body: JSON.stringify({ userId: userId }),
 			headers: { "Content-type": "application/json" },
 		});
 		const cards = await res.json();
 		return cards;
-		
 	} catch (error) {
 		console.log(error);
 	}

@@ -6,6 +6,7 @@ import { Spinner } from "@material-tailwind/react";
 import { useSession } from 'next-auth/react'
 import { CircleArrowLeft as ArrowIcon } from 'lucide-react';
 import { Fade } from "react-awesome-reveal";
+import { getLetterAppCards, getLetterMyCards } from "@/libs/data";
 
 function WorterMitPage({ params }) {
 
@@ -13,32 +14,20 @@ function WorterMitPage({ params }) {
     const [cards, setCards] = useState(null);
 
     useEffect(() => {
-        const fetchAppCards = () => {
-            fetch(`/api/cards/${params.letter}`)
-                .then((res) => res.json())
-                .then((data) => setCards(data))
-        }
 
-        const fetchPersonalCards = () => {
-            fetch(`/api/user/cards/${params.letter}`, {
-                method: "POST", // 
-                body: JSON.stringify({ userId: session.user._id }), // 
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            }).then((res) => res.json())
-                .then((data) => setCards(data))
-        }
-
-        if (status === "authenticated") {
-            if (session.user.config.cardsSet === "app") {
-                fetchAppCards();
-            } else { //personal cards
-                fetchPersonalCards();
+        const getData = async ()=>{
+            if(status === "unauthenticated" || session?.user.config.cardsSet === "app"){
+                const appCards = await getLetterAppCards(params.letter);
+                setCards(appCards);
+            } else if(session?.user.config.cardsSet === "meine"){
+                const myCards = await getLetterMyCards(params.letter,session.user._id);
+                setCards(myCards);
             }
-        } else if (status === "unauthenticated") {
-            fetchAppCards();
-        }
+        };
+
+        if(status !== "loading")
+            getData();
+
     }, [status])
 
     return (
