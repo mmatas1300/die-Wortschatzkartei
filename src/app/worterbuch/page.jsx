@@ -86,11 +86,7 @@ function WorterbuchPage() {
                     <div className="flex flex-row justify-center items-center flex-wrap mt-4">
                         {alpha.map((x) => {
                             return (
-                                <Link
-                                    key={x}
-                                    href={`/worterbuch/${String.fromCharCode(x)}`}
-                                    className="bg-orange-card hover:bg-yellow-card w-32 h-32 m-3 cursor-pointer text-base flex justify-center items-center rounded-xl transition duration-200 hover:scale-110"
-                                >
+                                <Link key={x} href={`/worterbuch/${String.fromCharCode(x)}`} className="bg-orange-card hover:bg-yellow-card w-32 h-32 m-3 cursor-pointer text-base flex justify-center items-center rounded-xl transition duration-200 hover:scale-110">
                                     {String.fromCharCode(x)}
                                 </Link>
                             );
