@@ -1,39 +1,33 @@
 'use client'
 import { useSession } from 'next-auth/react'
 import { Spinner } from "@material-tailwind/react";
-import axios from 'axios';
 import { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
+import { updateMyAccount } from '@/libs/data';
 
 function KontoPage() {
 
-    const fertigButton = (<button className='mb-3'>Fertig</button>)
-    const { data: session, status, update } = useSession();
-    const [stateButton, setStateButton] = useState(fertigButton);
+    const submitButton = (<button className='mb-3'>Fertig</button>);
 
-    const handleKontoeinstellungen = async (e) => {
-        e.preventDefault()
-        setStateButton(<Spinner className="mt-2.5 mb-4 h-8 w-8" />)
+    const { data: session, status, update } = useSession();
+    const [stateButton, setStateButton] = useState(submitButton);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStateButton(<Spinner className="mt-2.5 mb-4 h-9 w-9" />);
         const formData = new FormData(e.currentTarget)
         const config = {
             nick: formData.get('nick') ? formData.get('nick') : session.user.config.nick,
             cardsSet: formData.get('cardsSet')
         }
         try {
-            await axios({
-                method: 'put',
-                url: '/api/user/config',
-                data: {
-                    userId: session.user._id,
-                    config: config
-                }
-            });
+            await updateMyAccount(config,session.user._id);
             await update({ user: { ...session.user, config: config } })
-            setStateButton(fertigButton);
         } catch (error) {
             console.log(error)
         }
-    }
+        setStateButton(submitButton);
+    };
 
     return (
         <Fade triggerOnce>
@@ -42,11 +36,11 @@ function KontoPage() {
                     (<>
                         <h1 className='text-xl mb-4'>Mein Konto</h1>
                         <h1 className='text-xl mb-4'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
-                        <div className='bg-green-card rounded-3xl lg:-rotate-12 lg:mt-8'>
-                            <div className='bg-blue-card rounded-3xl lg:rotate-6'>
-                                <div className={`bg-red-card w-96 rounded-3xl p-8 flex flex-col justify-center items-center lg:rotate-6`}>
+                        <div className='bg-green-card rounded-3xl lg:-rotate-12 lg:mt-8 h-[345px]'>
+                            <div className='bg-blue-card rounded-3xl lg:rotate-6 h-[345px]'>
+                                <div className={`bg-red-card w-96 rounded-3xl p-8 flex flex-col justify-center items-center lg:rotate-6 h-[345px]`}>
                                     <h1>Kontoeinstellungen</h1>
-                                    <form className='mt-4 flex flex-col justify-center items-center' onSubmit={handleKontoeinstellungen}>
+                                    <form className='mt-4 flex flex-col justify-center items-center' onSubmit={handleSubmit}>
                                         <label htmlFor="nick">Spitzname:</label>
                                         <input type="text" placeholder={session.user.config.nick} name='nick' />
                                         <label className='mt-2' htmlFor="cardsSet">Möchtest du lieber deine eigenen Karten verwenden oder die der App?</label>
