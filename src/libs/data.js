@@ -57,10 +57,7 @@ export const updateMyAccount = async (config, userId)=> {
 	try {
 		await fetch('/api/user/config',{
 			method: "PUT",
-			body: {
-				userId: userId,
-				config: config,
-			},
+			body: JSON.stringify({userId: userId, config: config,}),
 			headers:{"Content-type": "application/json"}
 		});
 	} catch (error) {
