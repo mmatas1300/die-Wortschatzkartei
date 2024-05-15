@@ -43,7 +43,7 @@ function WorterMitPage({ params }) {
 
                 <div className="flex flex-row flex-wrap justify-center items-center mt-12">
                     {cards ? (cards.length != 0 ?
-                        (cards.map(karte => <div key={karte._id} className="m-5"><Karte {...karte} /></div>)) : (
+                        (cards.map(karte => <div key={karte._id} className="m-5 hover:scale-105 transition-all"><Karte {...karte} /></div>)) : (
                             <h1 className="mt-[calc(30vh)]">Oh, es ist leer</h1>
                         )
                     ) : (<Spinner className="mt-[calc(30vh)] h-10 w-10" />)}

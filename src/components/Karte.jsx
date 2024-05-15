@@ -101,7 +101,7 @@ function Karte(karte) {
 
             <img src={karte.bild} alt={wortKarte()} className='w-60 rounded-2xl my-4' />
             <p className='mb-4'>{karte.verwandte}</p>
-            <p className='mx-4 mb-4'>{karte.beispiel}</p>
+            <p className='mx-4 mb-4 text-center'>{karte.beispiel}</p>
             <p onClick={toggleUbersetzung} className='mb-4 bg-black-card p-1 rounded-md cursor-pointer text-sm'>{showUbersetzung ? karte.ubersetzung : "Übersetzung"}</p>
 
         </div>
