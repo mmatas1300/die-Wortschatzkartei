@@ -76,22 +76,22 @@ function Karte(karte) {
             <p>{karte.plural ? "die " + karte.plural : ""}</p>
             {karte.type === "Verb" ? (<div className='flex  flex-col justify-center items-center'>
                 <p className='underline mt-2'>Präsens</p>
-                <div class="grid grid-cols-2 justify-items-center">
+                <div class="grid grid-cols-3 justify-items-center">
                     <p className='mx-1 text-sm'>{karte.prasens[0]}</p>
-                    <p className='mx-1 text-sm'>{karte.prasens[3]}</p>
                     <p className='mx-1 text-sm'>{karte.prasens[1]}</p>
-                    <p className='mx-1 text-sm'>{karte.prasens[4]}</p>
                     <p className='mx-1 text-sm'>{karte.prasens[2]}</p>
+                    <p className='mx-1 text-sm'>{karte.prasens[3]}</p>
+                    <p className='mx-1 text-sm'>{karte.prasens[4]}</p>
                     <p className='mx-1 text-sm'>{karte.prasens[5]}</p>
                 </div>
 
                 <p className='underline mt-2'>{(karte.prateritum.length !== 0) ? "Präteritum" : ""}</p>
-                <div class="grid grid-cols-2 justify-items-center">
+                <div class="grid grid-cols-3 justify-items-center">
                     <p className='mx-1 text-sm'>{karte.prateritum[0]}</p>
-                    <p className='mx-1 text-sm'>{karte.prateritum[3]}</p>
                     <p className='mx-1 text-sm'>{karte.prateritum[1]}</p>
-                    <p className='mx-1 text-sm'>{karte.prateritum[4]}</p>
                     <p className='mx-1 text-sm'>{karte.prateritum[2]}</p>
+                    <p className='mx-1 text-sm'>{karte.prateritum[3]}</p>
+                    <p className='mx-1 text-sm'>{karte.prateritum[4]}</p>
                     <p className='mx-1 text-sm'>{karte.prateritum[5]}</p>
                 </div>
 
