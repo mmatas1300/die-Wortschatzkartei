@@ -1,12 +1,12 @@
 'use client'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Karte(karte) {
 
     const [showUbersetzung, setShowUbersetzung] = useState(false);
 
     const toggleUbersetzung = () => {
-        setShowUbersetzung(!showUbersetzung);
+        setShowUbersetzung(true);
     };
 
     const colorKarte = () => {
@@ -60,6 +60,10 @@ function Karte(karte) {
         }
     };
 
+    useEffect(()=>{
+        setShowUbersetzung(false);
+    },[karte]);
+
     return (
         <div className={`flex flex-col justify-center items-center w-80  rounded-3xl text-xl ${colorKarte()}`}>
 
@@ -103,7 +107,6 @@ function Karte(karte) {
             <p className='mb-4'>{karte.verwandte}</p>
             <p className='mx-4 mb-4 text-center'>{karte.beispiel}</p>
             <p onClick={toggleUbersetzung} className='mb-4 bg-black-card p-1 rounded-md cursor-pointer text-sm'>{showUbersetzung ? karte.ubersetzung : "Übersetzung"}</p>
-
         </div>
     );
 }
