@@ -127,7 +127,7 @@ export const createMyCard = async (userId, card)=>{
 	}
 };
 
-//verwalten
+//verwalten und uben
 export const getMyCards = async (userId)=>{
 	try {
 		const res = await fetch('/api/user/cards',{
@@ -177,5 +177,30 @@ export const editMyCard = async (userId, card)=>{
 		})
 	} catch (error) {
 		console.log(error)
+	}
+};
+
+//Uben
+export const getAppCards = async ()=>{
+	try {
+		const res = await fetch('/api/cards');
+		const data = await res.json();
+		return data;
+	} catch (error) {
+		console.log(error)
+	}
+};
+
+export const getGameData = async (userId, query)=>{
+	try {
+		const res = await fetch('api/user/game-data',{
+			method: "POST",
+			body: JSON.stringify({userId: userId, query: query}),
+			headers: {"Content-type": "application/json"}
+		});
+		const data = await res.json();
+		return data;
+	} catch (error) {
+		console.log(error);
 	}
 };
