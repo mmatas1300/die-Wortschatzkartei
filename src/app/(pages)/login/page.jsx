@@ -1,6 +1,6 @@
 'use client'
 import { Fade } from "react-awesome-reveal";
-import Form from "../ui/login/Form";
+import Form from "@/app/ui/login/Form";
 
 function LoginPage() {
 
@@ -14,4 +14,4 @@ function LoginPage() {
     )
 }
 
-export default LoginPage
+export default LoginPage;
