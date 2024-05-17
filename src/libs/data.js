@@ -1,8 +1,5 @@
 import { signIn } from "next-auth/react";
-
-const sortAlphaCards = (cards) => {
-	return cards.sort((a, b) => a.wort.localeCompare(b.wort));
-}
+import { sortAlphaCards } from "@/libs/sortAlphaCards";
 
 //Worterbuch
 export const getSearchAppCards = async (query) => {
@@ -96,4 +93,36 @@ export const anmelden = async (email, password)=>{
     } catch (error) {
         console.log(error)
     }
+};
+
+//Karteneditor
+export const createAppCard = async (card, userId)=>{
+	try {
+		const res = await fetch('/api/cards',{
+			method: "POST",
+			body: JSON.stringify({...card, userId: userId}),
+			headers: {"Content-type": "application/json"}
+		});
+		const data = await res.json();
+		if(!res.ok) return data;
+		return null; 
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+export const createMyCard = async (userId, card)=>{
+	card._id = card.wort + userId + Date.now();
+	try {
+		const res = await fetch('/api/user/cards',{
+			method: "PUT",
+			body: JSON.stringify({userId: userId, card:{ ...card, level: 0, practiceDate: new Date("2000") }, update: "add"}),
+			headers: {"Content-type": "application/json"}
+		});
+		const data = await res.json();
+		if(!res.ok) return data;
+		return null; 
+	} catch (error) {
+		console.log(error);
+	}
 };
