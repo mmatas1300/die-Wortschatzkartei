@@ -1,12 +1,11 @@
 'use client'
-import Karte from "@/components/Karte";
 import Link from 'next/link'
 import { useEffect, useState } from "react";
-import { Spinner } from "@material-tailwind/react";
 import { useSession } from 'next-auth/react'
 import { CircleArrowLeft as ArrowIcon } from 'lucide-react';
 import { Fade } from "react-awesome-reveal";
 import { getLetterAppCards, getLetterMyCards } from "@/libs/data";
+import CardsGrid from '@/app/ui/worterbuch/letter/CardsGrid';
 
 function WorterMitPage({ params }) {
 
@@ -14,7 +13,6 @@ function WorterMitPage({ params }) {
     const [cards, setCards] = useState(null);
 
     useEffect(() => {
-
         const getData = async ()=>{
             if(status === "unauthenticated" || session?.user.config.cardsSet === "app"){
                 const appCards = await getLetterAppCards(params.letter);
@@ -40,14 +38,7 @@ function WorterMitPage({ params }) {
                     <h1 className="text-xl text-center mx-auto">Wörter mit {params.letter}</h1>
                     <div className="me-12 h-10 w-10"></div>
                 </div>
-
-                <div className="flex flex-row flex-wrap justify-center items-center mt-12">
-                    {cards ? (cards.length != 0 ?
-                        (cards.map(karte => <div key={karte._id} className="m-5 hover:scale-105 transition-all"><Karte {...karte} /></div>)) : (
-                            <h1 className="mt-[calc(30vh)]">Oh, es ist leer</h1>
-                        )
-                    ) : (<Spinner className="mt-[calc(30vh)] h-10 w-10" />)}
-                </div>
+                <CardsGrid cards={cards} />
             </Fade>
         </section>
     )
