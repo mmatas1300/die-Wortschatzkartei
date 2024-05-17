@@ -1,7 +1,7 @@
 export const verbFields = (card) => {
     return (<>
         <label htmlFor="wortVerb">Infinitiv</label>
-        <input type="text" placeholder='Sein' name='wortVerb' required defaultValue={card.wort} />
+        <input type="text" placeholder='Sein' name='wortVerb' required defaultValue={card.wort}  />
         <span className='text-sm underline mt-1'>Präsens</span>
         <div className='grid grid-cols-2 lg:grid-cols-3 w-full bg-black-card/[0.1] rounded-2xl lg:rounded-3xl ps-2 lg:ps-4 py-2'>
             <div className='flex flex-col justify-center items-center lg:order-1'>
@@ -71,7 +71,7 @@ export const verbFields = (card) => {
             </div>
             <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
                 <label htmlFor="bild">Bild:</label>
-                <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name='bild' defaultValue={card.bild} />
+                <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name='bild' defaultValue={card.bild} required />
             </div>
             <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
                 <label htmlFor="ubersetzung">Übersetzung:</label>
@@ -112,7 +112,7 @@ export const nomenMUFFields = (card) => {
             </div>
             <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
                 <label htmlFor="bild">Bild:</label>
-                <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name='bild' defaultValue={card.bild} />
+                <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name='bild' defaultValue={card.bild} required />
             </div>
             <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
                 <label htmlFor="ubersetzung">Übersetzung:</label>
@@ -142,7 +142,7 @@ export const nomenFields = (card) => {
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="bild">Bild:</label>
-            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild" defaultValue={card.bild} />
+            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild" defaultValue={card.bild} required/>
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="ubersetzung">Übersetzung:</label>
@@ -167,7 +167,7 @@ export const nomenFieldsPl = (card) => {
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="bild">Bild:</label>
-            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild" defaultValue={card.bild} />
+            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild" defaultValue={card.bild} required />
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="ubersetzung">Übersetzung:</label>
@@ -180,7 +180,7 @@ export const andereFields = (card) => {
     return (<div className='lg:grid lg:grid-cols-2 lg:w-full'>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="typeAndere">Typ:</label>
-            <input className='lg:max-w-56' type="text" placeholder='Adjektiv' name="typeAndere" defaultValue={card.type} />
+            <input className='lg:max-w-56' type="text" placeholder='Adjektiv' name="typeAndere" defaultValue={card.type} required />
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="wortAndere">Wort:</label>
@@ -196,7 +196,7 @@ export const andereFields = (card) => {
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="bild">Bild:</label>
-            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild" defaultValue={card.bild} />
+            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild" defaultValue={card.bild} required />
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="ubersetzung">Übersetzung:</label>
