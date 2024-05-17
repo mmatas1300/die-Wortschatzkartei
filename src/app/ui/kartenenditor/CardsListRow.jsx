@@ -1,4 +1,4 @@
-import DeleteMessage from "@/components/kartenenditor/DeleteMessage";
+import DeleteMessage from "@/app/ui/kartenenditor/DeleteMessage";
 import axios from "axios";
 import { useSession } from 'next-auth/react';
 import { createContext } from 'react';

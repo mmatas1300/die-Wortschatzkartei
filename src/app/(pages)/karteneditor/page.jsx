@@ -1,6 +1,6 @@
 "use client"
-import { CardList } from "@/components/kartenenditor/CardsList";
-import CreateCardForm from "@/components/kartenenditor/CreateCardForm";
+import { CardList } from "@/app/ui/kartenenditor/CardsList";
+import CreateCardForm from "@/app/ui/kartenenditor/create/CreateCardForm";
 import { Fade } from "react-awesome-reveal";
 
 const KarteneditorPage = () => {
