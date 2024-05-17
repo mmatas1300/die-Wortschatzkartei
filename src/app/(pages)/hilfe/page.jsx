@@ -1,6 +1,6 @@
 'use client'
-import FAQ from "@/components/hilfe/FAQ";
-import Kontakt from "@/components/hilfe/Kontakt";
+import FAQ from "@/app/ui/hilfe/FAQ";
+import Kontakt from "@/app/ui/hilfe/Kontakt";
 import { Fade } from "react-awesome-reveal";
 
 const HilfePage = () => {

@@ -1,6 +1,6 @@
 'use client'
 import Karte from "@/components/Karte";
-import FAQ from "@/components/hilfe/FAQ";
+import FAQ from "@/app/ui/hilfe/FAQ";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
