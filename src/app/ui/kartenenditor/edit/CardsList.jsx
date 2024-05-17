@@ -32,7 +32,7 @@ export const CardList = () => {
 
     return (
         <div className="my-12">
-            <h2 className="text-center my-2">Karten verwalten</h2>
+            <h2 className="text-center my-2">Meine Karten verwalten</h2>
             <div className="flex flex-col justify-center items-center bg-red-card p-1 rounded-3xl">
                 
                 <SearchForm handleSubmit={handleSubmit} buttonState={false} style={"w-60 lg:w-full max-w-md -ms-10 mt-4 -mb-16 p-4 rounded-xl bg-black-card"}/>
