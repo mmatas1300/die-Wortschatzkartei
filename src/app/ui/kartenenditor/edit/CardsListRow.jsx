@@ -1,4 +1,4 @@
-import DeleteMessage from "@/app/ui/kartenenditor/DeleteMessage";
+import DeleteMessage from "@/app/ui/kartenenditor/edit/DeleteMessage";
 import axios from "axios";
 import { useSession } from 'next-auth/react';
 import { createContext } from 'react';
@@ -6,6 +6,7 @@ import UpdateMessage from './UpdateMessage';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import ResetMessage from './ResetMessage';
+import { deleteMyCard, resetMyCardLevel } from "@/libs/data";
 
 export const cardListContext = createContext();
 
@@ -42,30 +43,18 @@ const CardsListRow = ({ card, setRefresh, refresh }) => {
     }
 
     const deleteCard = async () => {
-        try {
-            await axios.delete('/api/user/cards', { data: { userId: session.user._id, cardId: card._id } })
-            setRefresh(!refresh);
-        }
-        catch (err) {
-            console.log(err)
-        }
+        await deleteMyCard(session.user._id, card._id);
+        setRefresh(!refresh);
     };
 
     const resetLevel = async () => {
-        card.level=0;
-        card.practiceDate = new Date("2000");
-        try {
-            await axios.put('/api/user/cards', { userId: session.user._id, card: card, update: "edit" })
-            setRefresh(!refresh);
-        }
-        catch (err) {
-            console.log(err)
-        }
+        await resetMyCardLevel(session.user._id, card);
+        setRefresh(!refresh);
     };
 
     return (
         <div className={`${selectColor(card)} rounded-xl flex flex-row justify-center items-center w-full my-2`}>
-            <div className="w-14 h-14 mx-4 text-sm flex flex-row justify-center items-center my-2 lg:my-0">{<CircularProgressbar value={100*card.level/7} text={`${(100*card.level/7).toFixed()}%`} styles={buildStyles({textColor: "#fff",pathColor: "#fff", trailColor: "transparent", textSize: '24px'})}/>}</div>
+            <div className="w-14 h-14 mx-4 text-sm flex flex-row justify-center items-center my-2 lg:my-0">{<CircularProgressbar value={100 * card.level / 7} text={`${(100 * card.level / 7).toFixed()}%`} styles={buildStyles({ textColor: "#fff", pathColor: "#fff", trailColor: "transparent", textSize: '24px' })} />}</div>
             <div className="w-28 mx-1 flex-1 text-sm text-center truncate">{card.wort}</div>
             <div className="w-20 mx-1 my-2 text-center me-4 lg:me-0 hidden lg:block"><img className="w-20 rounded-lg m-0" src={card.bild} alt={card.wort} /></div>
             <div className="w-28 mx-1 text-sm text-center truncate hidden lg:block">{card.ubersetzung}</div>
@@ -73,10 +62,9 @@ const CardsListRow = ({ card, setRefresh, refresh }) => {
                 <cardListContext.Provider value={{ card, setRefresh, refresh }}>
                     <UpdateMessage />
                 </cardListContext.Provider>
-
             </div>
             <div className="w-6 mx-2 active:scale-95 hover:cursor-pointer">
-                <ResetMessage resetLevel={resetLevel}/>
+                <ResetMessage resetLevel={resetLevel} />
             </div>
             <div className="w-6 mx-2 me-4 active:scale-95 hover:cursor-pointer">
                 <DeleteMessage deleteCard={deleteCard} />

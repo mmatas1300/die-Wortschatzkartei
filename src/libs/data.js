@@ -126,3 +126,56 @@ export const createMyCard = async (userId, card)=>{
 		console.log(error);
 	}
 };
+
+//verwalten
+export const getMyCards = async (userId)=>{
+	try {
+		const res = await fetch('/api/user/cards',{
+			method: "POST",
+			body: JSON.stringify({userId: userId}),
+			headers: {"Content-type": "application/json"}
+		});
+		const data = await res.json();
+		return data;
+	} catch (error) {
+		console.log(error)
+	}
+};
+
+export const deleteMyCard = async (userId,cardId)=>{
+	try {
+		await fetch('/api/user/cards',{
+			method: "DELETE",
+			body: JSON.stringify({userId: userId, cardId: cardId}),
+			headers: {"Content-type": "application/json"}
+		});
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+export const resetMyCardLevel = async (userId,card)=>{
+	card.level=0;
+	card.practiceDate = new Date("2000");
+	try {
+		await fetch('/api/user/cards',{
+			method: "PUT",
+			body: JSON.stringify({userId: userId, card: card, update: "edit"}),
+			headers: {"Content-type": "application/json"}
+		})
+	} catch (error) {
+		console.log(error)
+	}
+};
+
+export const editMyCard = async (userId, card)=>{
+	try {
+		await fetch('/api/user/cards',{
+			method: "PUT",
+			body: JSON.stringify({userId: userId, card: card, update: "edit"}),
+			headers: {"Content-type": "application/json"}
+		})
+	} catch (error) {
+		console.log(error)
+	}
+};

@@ -2,6 +2,8 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import CardsListRow from "./CardsListRow";
 import { RefreshCcw } from 'lucide-react';
+import { getMyCards } from "@/libs/data";
+import SearchForm from '@/components/SearchForm';
 
 export const CardList = () => {
 
@@ -9,48 +11,31 @@ export const CardList = () => {
     const [cards, setCards] = useState([]);
     const [refresh, setRefresh] = useState(false);
 
-    const handleSuchen = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
-        const mySearch = formData.get("search");
-        const regExp = new RegExp(`.*${mySearch.toLowerCase()}.*`);
+        const search = formData.get("search");
+        const regExp = new RegExp(`.*${search.toLowerCase()}.*`);
         const filterCards = cards.filter((card) => { return regExp.test(card.wort.toLowerCase()) })
         setCards(filterCards);
     };
 
     useEffect(() => {
-        const getMycards = async () => {
-            const response = await fetch('/api/user/cards', {
-                method: "POST", // 
-                body: JSON.stringify({ userId: session.user._id }),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            })
-            const myCards = await response.json()
+        const init = async ()=>{
+            const myCards = await getMyCards(session.user._id); 
             setCards(myCards);
         }
-        if (status === "authenticated")
-            getMycards();
+        if (status === "authenticated"){
+            init();
+        }
     }, [status, refresh])
 
     return (
         <div className="my-12">
             <h2 className="text-center my-2">Karten verwalten</h2>
             <div className="flex flex-col justify-center items-center bg-red-card p-1 rounded-3xl">
-                <form onSubmit={handleSuchen} className="w-60 lg:w-full max-w-md -ms-10 mt-4 -mb-16 p-4 rounded-xl bg-black-card">
-                    <div className="relative">
-                        <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg className="w-4 h-4 text-red-card" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                            </svg>
-                        </div>
-                        <input required type="search" name="search" id="default-search" className="block w-full p-4 ps-10 text-sm" />
-                        <button type="submit" className="absolute end-2.5 bottom-2 bg-green-card cursor-pointer px-4 py-2">
-                            Suchen
-                        </button>
-                    </div>
-                </form>
+                
+                <SearchForm handleSubmit={handleSubmit} buttonState={false} style={"w-60 lg:w-full max-w-md -ms-10 mt-4 -mb-16 p-4 rounded-xl bg-black-card"}/>
 
                 <div className={`self-end flex flex-row me-8`}>
                     <button onClick={() => { setRefresh(!refresh) }} className={`bg-black-card p-2 z-0 rounded-none rounded-t-lg transition duration-200 hover:scale-105 hover:bg-yellow-card px-3`}><RefreshCcw /></button>

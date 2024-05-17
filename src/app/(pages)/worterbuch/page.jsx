@@ -4,7 +4,7 @@ import { useState } from "react";
 import { CircleArrowLeft as ArrowIcon } from "lucide-react";
 import { Fade } from "react-awesome-reveal";
 import { getSearchAppCards, getSearchMyCards } from "@/libs/data";
-import SearchForm from "@/app/ui/worterbuch/SearchForm";
+import SearchForm from "@/components/SearchForm";
 import LettersGrid from "@/app/ui/worterbuch/LettersGrid";
 import SearchCardsGrid from "@/app/ui/worterbuch/SearchCardsGrid";
 
@@ -46,7 +46,7 @@ function WorterbuchPage() {
                             <p />
                         )}
                     </div>
-                    <SearchForm handleSubmit={handleSubmit} buttonState={buttonState} />
+                    <SearchForm handleSubmit={handleSubmit} buttonState={buttonState} style={"w-full max-w-md mx-4 mt-4"}/>
                     <div className="me-9 h-7 w-7" />
                 </div>
                 {warningMessage}

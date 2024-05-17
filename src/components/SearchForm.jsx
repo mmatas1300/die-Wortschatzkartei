@@ -1,6 +1,6 @@
-const SearchForm = ({handleSubmit, buttonState}) => {
+const SearchForm = ({handleSubmit, buttonState, style}) => {
     return (
-        <form onSubmit={handleSubmit} className="w-full max-w-md mx-4 mt-4">
+        <form onSubmit={handleSubmit} className={style}>
             <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                     <svg className="w-4 h-4 text-red-card" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">

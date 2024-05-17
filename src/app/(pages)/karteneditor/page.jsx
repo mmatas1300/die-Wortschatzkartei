@@ -1,5 +1,5 @@
 "use client"
-import { CardList } from "@/app/ui/kartenenditor/CardsList";
+import { CardList } from "@/app/ui/kartenenditor/edit/CardsList";
 import CreateCardForm from "@/app/ui/kartenenditor/create/CreateCardForm";
 import { Fade } from "react-awesome-reveal";
 
