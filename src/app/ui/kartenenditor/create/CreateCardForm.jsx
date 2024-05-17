@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { useState } from 'react'
 import { Spinner } from "@material-tailwind/react";
 import { useSession } from 'next-auth/react'
@@ -49,7 +48,6 @@ const CreateCardForm = () => {
                     if (card.type === "Nomen-das" || card.type === "Nomen-der" || card.type === "Nomen-die" || card.type === "Nomen-pl") setForm(nomenFields((handleGender)), "bg-green-card")
                     e.target.reset();
                 }, 1500);
-
             }
         }
     }
