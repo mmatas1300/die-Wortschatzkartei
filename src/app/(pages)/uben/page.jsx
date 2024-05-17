@@ -2,8 +2,8 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { Spinner } from "@material-tailwind/react";
-import UbenMessages from "@/components/uben/UbenMessages";
-import PlayScreen from "@/components/uben/PlayScreen";
+import UbenMessages from "@/app/ui/uben/UbenMessages";
+import PlayScreen from "@/app/ui/uben/PlayScreen";
 import progressUpdate from "@/libs/progressUpdate";
 import { Fade } from "react-awesome-reveal";
 import { getAppCards, getGameData, getMyCards } from "@/libs/data";

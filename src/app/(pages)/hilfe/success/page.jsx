@@ -1,5 +1,5 @@
 'use client'
-import UbenMessages from "@/components/uben/UbenMessages";
+import UbenMessages from "@/app/ui/uben/UbenMessages";
 import { Fade } from "react-awesome-reveal";
 
 function KontaktSuccessPage() {

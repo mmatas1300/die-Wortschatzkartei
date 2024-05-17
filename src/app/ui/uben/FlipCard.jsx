@@ -1,5 +1,5 @@
 import ReactFlipCard from 'reactjs-flip-card'
-import Karte from '../Karte';
+import Karte from '@/components/Karte';
 
 const FlipCard = ({ card , flipCard, setFlipCard, vanish, richtigButton, falschButton }) => {
 

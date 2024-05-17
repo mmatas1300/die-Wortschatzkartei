@@ -1,9 +1,10 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import { Spinner } from "@material-tailwind/react";
 import FlipCard from "./FlipCard";
-import axios from "axios";
 import UbenMessages from "./UbenMessages";
+import { shuffleArray } from "@/libs/shuffleArray";
+import { calcNextPracticeDate } from "@/libs/calcNextPracticeDate";
+import { saveAppProgress, saveMyProgress } from "@/libs/data";
 
 const PlayScreen = ({ cards, progress }) => {
 
@@ -18,15 +19,6 @@ const PlayScreen = ({ cards, progress }) => {
     const [vanish, setVanish] = useState(false);
 
     useEffect(() => {
-
-        const shuffleArray = (array) => {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        };
-
         if (session.user.config.cardsSet === "app") {
             //5 tarjetas nuevas + las que hay que estudiar
             const newCardsIds = progress.filter((card) => {
@@ -56,7 +48,6 @@ const PlayScreen = ({ cards, progress }) => {
 
         } else if (session.user.config.cardsSet === "meine") {
             //5 tarjetas nuevas + las que hay que estudiar
-
             const newCards = cards.filter((card) => {
                 const cardPracticeDate = new Date(card.practiceDate);
                 const newCardsDate = new Date("2000");
@@ -76,91 +67,28 @@ const PlayScreen = ({ cards, progress }) => {
         }
     }, [])
 
-    const postMyCards = async () => {
-        try {
-            await axios.put('/api/user/cards', { userId: session.user._id, cards: [...studiedCards, selectedCards[reviewedCardNum]], update: "play" });
-        } catch (error) {
-            console.log(error)
-        }
-    }
 
-    const postAppCards = async () => {
-        try {
-            await axios.put('/api/user/game-data', { userId: session.user._id, progress: [...studiedCards, selectedProgress[reviewedCardNum]]})
-        } catch (error) {
-            console.log(error)
-        }
-    };
-
-    const calcNextPracticeDate = () => {
-        let nextPracticeDate;
-        switch (selectedCards[reviewedCardNum].level) {
-            case 1:
-                nextPracticeDate = 86_400_000;
-                break;
-            case 2:
-                nextPracticeDate = 86_400_000 * 3;
-                break;
-            case 3:
-                nextPracticeDate = 86_400_000 * 6;
-                break;
-            case 4:
-                nextPracticeDate = 86_400_000 * 12;
-                break;
-            case 5:
-                nextPracticeDate = 86_400_000 * 24;
-                break;
-            case 6:
-                nextPracticeDate = 86_400_000 * 48;
-                break;
-            case 7:
-                nextPracticeDate = 86_400_000 * 72;
-                break;
-            default:
-                break;
-        }
-        return nextPracticeDate
+    const saveProgress = async ()=>{
+        if (session.user.config.cardsSet === "app")
+            await saveAppProgress(session.user._id, [...studiedCards, selectedProgress[reviewedCardNum]]);
+        else if (session.user.config.cardsSet === "meine")
+            await saveMyProgress(session.user._id, [...studiedCards, selectedCards[reviewedCardNum]]);
     };
 
     const richtigButton = () => {
         if (session.user.config.cardsSet === "app") {
             if (selectedProgress[reviewedCardNum].level < 7)
                 selectedProgress[reviewedCardNum].level++; //Aumenta nivel
-            let nextPracticeDate;
-            switch (selectedProgress[reviewedCardNum].level) {
-                case 1:
-                    nextPracticeDate = 86_400_000;
-                    break;
-                case 2:
-                    nextPracticeDate = 86_400_000 * 3;
-                    break;
-                case 3:
-                    nextPracticeDate = 86_400_000 * 6;
-                    break;
-                case 4:
-                    nextPracticeDate = 86_400_000 * 12;
-                    break;
-                case 5:
-                    nextPracticeDate = 86_400_000 * 24;
-                    break;
-                case 6:
-                    nextPracticeDate = 86_400_000 * 48;
-                    break;
-                case 7:
-                    nextPracticeDate = 86_400_000 * 72;
-                    break;
-                default:
-                    break;
-            }
+            const nextPracticeDate = calcNextPracticeDate(selectedProgress[reviewedCardNum].level);
             selectedProgress[reviewedCardNum].practiceDate = new Date(Date.now() + nextPracticeDate);
-            selectedProgress[reviewedCardNum].practiceDate.setHours(0,0,0);
+            selectedProgress[reviewedCardNum].practiceDate.setHours(0, 0, 0);
             setStudiedCards((studiedCards) => studiedCards.concat([selectedProgress[reviewedCardNum]]))
         } else if (session.user.config.cardsSet === "meine") {
             if (selectedCards[reviewedCardNum].level < 7)
                 selectedCards[reviewedCardNum].level++; //Aumenta nivel
-            const nextPracticeDate = calcNextPracticeDate();
+            const nextPracticeDate = calcNextPracticeDate(selectedCards[reviewedCardNum].level);
             selectedCards[reviewedCardNum].practiceDate = new Date(Date.now() + nextPracticeDate);
-            selectedCards[reviewedCardNum].practiceDate.setHours(0,0,0);
+            selectedCards[reviewedCardNum].practiceDate.setHours(0, 0, 0);
             setStudiedCards((studiedCards) => studiedCards.concat([selectedCards[reviewedCardNum]]))
         }
         setFlipCard(false);
@@ -172,11 +100,7 @@ const PlayScreen = ({ cards, progress }) => {
                 setVanish(false);
             }, 200);
         } else {
-            if (session.user.config.cardsSet === "app")
-                postAppCards();
-            else if (session.user.config.cardsSet === "meine")
-                postMyCards();
-
+            saveProgress();
             setGameFinish(true);
         }
     };
@@ -185,8 +109,8 @@ const PlayScreen = ({ cards, progress }) => {
         if (session.user.config.cardsSet === "app") {
             if (0 < selectedProgress[reviewedCardNum].level)
                 selectedProgress[reviewedCardNum].level--; //Disminuir nivel
-                setSelectedCards(selectedCards.concat([selectedCards[reviewedCardNum]]));
-                setSelectedProgress(selectedProgress.concat([selectedProgress[reviewedCardNum]]));
+            setSelectedCards(selectedCards.concat([selectedCards[reviewedCardNum]]));
+            setSelectedProgress(selectedProgress.concat([selectedProgress[reviewedCardNum]]));
         } else if (session.user.config.cardsSet === "meine") {
             if (0 < selectedCards[reviewedCardNum].level)
                 selectedCards[reviewedCardNum].level--; //Disminuir nivel
