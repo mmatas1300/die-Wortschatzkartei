@@ -30,8 +30,8 @@ export async function POST(request) {
             progress: await progressGenerator(),
         })
         
-        const savedUser = await user.save();
-        return NextResponse.json(savedUser);
+        await user.save();
+        return NextResponse.json({status: 200});
     } catch (error) {
         console.log(error)
     }

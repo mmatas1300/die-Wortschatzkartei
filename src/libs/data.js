@@ -1,5 +1,7 @@
-const sortAlphaCards = (cards)=>{
-	return cards.sort((a,b)=>a.wort.localeCompare(b.wort));
+import { signIn } from "next-auth/react";
+
+const sortAlphaCards = (cards) => {
+	return cards.sort((a, b) => a.wort.localeCompare(b.wort));
 }
 
 //Worterbuch
@@ -53,14 +55,45 @@ export const getLetterMyCards = async (letter, userId) => {
 };
 
 //Konto
-export const updateMyAccount = async (config, userId)=> {
+export const updateMyAccount = async (config, userId) => {
 	try {
-		await fetch('/api/user/config',{
+		await fetch('/api/user/config', {
 			method: "PUT",
-			body: JSON.stringify({userId: userId, config: config,}),
-			headers:{"Content-type": "application/json"}
+			body: JSON.stringify({ userId: userId, config: config, }),
+			headers: { "Content-type": "application/json" }
 		});
 	} catch (error) {
 		console.log(error);
 	}
+};
+
+
+//login
+export const registrieren = async (email, password) => {
+	try {
+		const response = await fetch('/api/auth/signup', {
+			method: "POST",
+			body: JSON.stringify({ email: email, password: password }),
+			headers: { "Content-type": "application/json" }
+		});
+		const data = await response.json();
+		if(!response.ok) return data;
+		return null; 
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+//signIn
+export const anmelden = async (email, password)=>{
+	try {
+        const res = await signIn("credentials", {
+            email: email,
+            password: password,
+            redirect: false
+        });
+		return res;
+    } catch (error) {
+        console.log(error)
+    }
 };
