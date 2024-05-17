@@ -2,7 +2,7 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { Spinner } from "@material-tailwind/react";
-import UbenMessages from "@/app/ui/uben/UbenMessages";
+import CardMessage from "@/components/CardMessage";
 import PlayScreen from "@/app/ui/uben/PlayScreen";
 import progressUpdate from "@/libs/progressUpdate";
 import { Fade } from "react-awesome-reveal";
@@ -23,7 +23,7 @@ function UbenPage() {
             } else if (session.user.config.cardsSet === "meine") {
                 const cards = await getMyCards(session.user._id);
                 if (cards.length === 0) {
-                    setMainMessage(<UbenMessages message={"Du hast keine Karten zum Üben!!!"} />);
+                    setMainMessage(<CardMessage message={"Du hast keine Karten zum Üben!!!"} />);
                 } else {
                     setMainMessage(<PlayScreen cards={cards} />);
                 }
@@ -38,7 +38,7 @@ function UbenPage() {
             if (allowToPlayDate.getTime() < today.getTime()) {
                 await loadData();
             } else {
-                setMainMessage(<UbenMessages message={"Für heute reicht das Üben!"} />)
+                setMainMessage(<CardMessage message={"Für heute reicht das Üben!"} />)
             }
         }
 

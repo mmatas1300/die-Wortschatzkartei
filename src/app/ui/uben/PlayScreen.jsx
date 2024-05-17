@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import FlipCard from "./FlipCard";
-import UbenMessages from "./UbenMessages";
+import CardMessage from "@/components/CardMessage";
 import { shuffleArray } from "@/libs/shuffleArray";
 import { calcNextPracticeDate } from "@/libs/calcNextPracticeDate";
 import { saveAppProgress, saveMyProgress } from "@/libs/data";
@@ -125,14 +125,14 @@ const PlayScreen = ({ cards, progress }) => {
     };
 
     return (
-        selectedCards.length === 0 ? (<UbenMessages message={"Wir haben heute keine Karten zum Lernen gefunden"} />) :
+        selectedCards.length === 0 ? (<CardMessage message={"Wir haben heute keine Karten zum Lernen gefunden"} />) :
             (
                 <>
                     {gameStart ? (!gameFinish ? (<><FlipCard card={selectedCards[reviewedCardNum]} setFlipCard={setFlipCard} flipCard={flipCard} vanish={vanish} richtigButton={richtigButton} falschButton={falschButton} /></>) :
-                        (<UbenMessages message={"Herzlichen Glückwunsch, genug für heute"} />)
+                        (<CardMessage message={"Herzlichen Glückwunsch, genug für heute"} />)
                     ) :
                         (
-                            <UbenMessages message={
+                            <CardMessage message={
                                 <div className="flex flex-col justify-center items-center">
                                     <div className="text-base">Es gibt heute {selectedCards.length} Karten zu studieren</div>
                                     <button onClick={() => setGameStart(true)}>Los geht&apos;s!</button>

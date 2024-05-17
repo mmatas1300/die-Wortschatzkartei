@@ -1,7 +1,7 @@
 import ReactFlipCard from 'reactjs-flip-card'
 import Karte from '@/components/Karte';
 
-const FlipCard = ({ card , flipCard, setFlipCard, vanish, richtigButton, falschButton }) => {
+const FlipCard = ({ card, flipCard, setFlipCard, vanish, richtigButton, falschButton }) => {
 
     const frontCardColor =()=>{
         switch (card.type) {

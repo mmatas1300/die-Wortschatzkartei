@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 
-const UbenMessages = ({ message }) => {
+const CardMessage = ({ message }) => {
 
     const [rotation, setRotation] = useState({ rotate20: "", rotate5: "", rotate10: "" });
 
@@ -32,4 +32,4 @@ const UbenMessages = ({ message }) => {
     );
 };
 
-export default UbenMessages;
+export default CardMessage;
