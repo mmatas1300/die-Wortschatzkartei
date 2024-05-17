@@ -1,5 +1,4 @@
 import DeleteMessage from "@/app/ui/kartenenditor/edit/DeleteMessage";
-import axios from "axios";
 import { useSession } from 'next-auth/react';
 import { createContext } from 'react';
 import UpdateMessage from './UpdateMessage';
@@ -53,7 +52,7 @@ const CardsListRow = ({ card, setRefresh, refresh }) => {
     };
 
     return (
-        <div className={`${selectColor(card)} rounded-xl flex flex-row justify-center items-center w-full my-2`}>
+        <div className={`${selectColor(card)} rounded-xl flex flex-row justify-center items-center w-full my-2 py-1`}>
             <div className="w-14 h-14 mx-4 text-sm flex flex-row justify-center items-center my-2 lg:my-0">{<CircularProgressbar value={100 * card.level / 7} text={`${(100 * card.level / 7).toFixed()}%`} styles={buildStyles({ textColor: "#fff", pathColor: "#fff", trailColor: "transparent", textSize: '24px' })} />}</div>
             <div className="w-28 mx-1 flex-1 text-sm text-center truncate">{card.wort}</div>
             <div className="w-20 mx-1 my-2 text-center me-4 lg:me-0 hidden lg:block"><img className="w-20 rounded-lg m-0" src={card.bild} alt={card.wort} /></div>
