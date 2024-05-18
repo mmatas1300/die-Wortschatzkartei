@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { Spinner } from "@material-tailwind/react";
 import { useSession } from 'next-auth/react'
 import { cardListContext } from '@/app/ui/kartenenditor/meineKarte/CardsListRow';
-import { updateCard } from '@/libs/updateCard';
+import { updateCard } from '@/libs/getFormCardData';
 import { nomenFields, nomenFieldsPl, verbFields, nomenMUFFields, andereFields } from '@/app/ui/kartenenditor/meineKarte/fields';
 import { editMyCard } from '@/libs/data';
 

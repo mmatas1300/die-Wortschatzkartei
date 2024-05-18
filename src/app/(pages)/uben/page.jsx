@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Spinner } from "@material-tailwind/react";
 import CardMessage from "@/components/CardMessage";
 import PlayScreen from "@/app/ui/uben/PlayScreen";
-import progressUpdate from "@/libs/progressUpdate";
+import {progressUpdate} from "@/libs/progressManage";
 import { Fade } from "react-awesome-reveal";
 import { getAppCards, getGameData, getMyCards } from "@/libs/data";
 

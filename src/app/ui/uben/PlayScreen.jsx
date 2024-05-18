@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import FlipCard from "./FlipCard";
 import CardMessage from "@/components/CardMessage";
-import { shuffleArray } from "@/libs/shuffleArray";
+import { shuffleArray } from "@/libs/sortArrays";
 import { calcNextPracticeDate } from "@/libs/calcNextPracticeDate";
 import { saveAppProgress, saveMyProgress } from "@/libs/data";
 import ProgressBar from "@ramonak/react-progress-bar";

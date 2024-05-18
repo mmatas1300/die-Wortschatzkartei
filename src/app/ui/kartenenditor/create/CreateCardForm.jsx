@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Spinner } from "@material-tailwind/react";
 import { useSession } from 'next-auth/react'
-import { createCard } from '@/libs/createCard';
+import { createCard } from '@/libs/getFormCardData';
 import { verbFields, nomenMUFFields, nomenFields, nomenFieldsPl, andereFields } from '@/app/ui/kartenenditor/create/fields';
 import { createAppCard, createMyCard } from '@/libs/data';
 

@@ -1,5 +1,5 @@
 import { signIn } from "next-auth/react";
-import { sortAlphaCards } from "@/libs/sortAlphaCards";
+import { sortAlphaCards } from "@/libs/sortArrays";
 
 //Worterbuch
 export const getSearchAppCards = async (query) => {
