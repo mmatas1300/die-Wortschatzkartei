@@ -1,11 +1,11 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import CardsListRow from "./CardsListRow";
-import { Car, RefreshCcw } from 'lucide-react';
-import { getAppCards, getGameData, getMyCards } from "@/libs/data";
+import CardsListRow from "@/app/ui/kartenenditor/appKarte/CardsListRow";
+import { RefreshCcw } from 'lucide-react';
+import { getAppCards, getGameData} from "@/libs/data";
 import SearchForm from '@/components/SearchForm';
 
-export const CardList = () => {
+export const AppCardList = () => {
 
     const { data: session, status } = useSession();
     const [cards, setCards] = useState([]);
@@ -39,7 +39,7 @@ export const CardList = () => {
     }, [status, refresh])
 
     return (
-        <div className="mt-16 mb-12">
+        <div className="mb-12 mt-4">
             <h2 className="text-center my-2">App-Karten verwalten</h2>
             <div className="flex flex-col justify-center items-center bg-red-card p-1 rounded-3xl">
                 

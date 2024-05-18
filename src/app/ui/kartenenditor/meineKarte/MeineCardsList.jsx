@@ -1,11 +1,11 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import CardsListRow from "./CardsListRow";
+import CardsListRow from "@/app/ui/kartenenditor/meineKarte/CardsListRow";
 import { RefreshCcw } from 'lucide-react';
 import { getMyCards } from "@/libs/data";
 import SearchForm from '@/components/SearchForm';
 
-export const CardList = () => {
+export const MeineCardList = () => {
 
     const { data: session, status } = useSession();
     const [cards, setCards] = useState([]);
