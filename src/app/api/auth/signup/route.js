@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import User from '@/models/user'
 import {connectDB}  from "@/libs/mongodb";
 import bcrypt from 'bcryptjs'
-import { progressGenerator } from "@/libs/progressManage";
+import { progressGenerator } from "@/libs/progressGenerator";
 
 export async function POST(request) {
     const { email, password} = await request.json()
