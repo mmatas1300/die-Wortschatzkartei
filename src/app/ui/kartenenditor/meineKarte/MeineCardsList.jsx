@@ -5,11 +5,13 @@ import { RefreshCcw } from 'lucide-react';
 import { getMyCards } from "@/libs/data";
 import SearchForm from '@/components/SearchForm';
 import { sortCardsByLevel } from "@/libs/sortArrays";
+import { Spinner } from "@material-tailwind/react";
+
 
 export const MeineCardList = () => {
 
     const { data: session, status } = useSession();
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState(null);
     const [cardsBackup, setCardsBackup] = useState([]);
     const [refresh, setRefresh] = useState(false);
 
@@ -54,8 +56,13 @@ export const MeineCardList = () => {
                         <div className="w-6 mx-2" />
                         <div className="w-6 mx-2 me-4" />
                     </div>
-
-                    {cards.length != 0 ? (<>{cards.map((card) => <CardsListRow key={card._id} card={card} setRefresh={setRefresh} refresh={refresh} />)}</>) : (<h2 className="mt-6">Oh, es ist leer</h2>)}
+                    {cards===null?
+                        (<Spinner className="mt-2.5 mb-4 h-9 w-9" />):
+                        (cards.length != 0 ? 
+                            (<>{cards.map((card) => <CardsListRow key={card._id} card={card} setRefresh={setRefresh} refresh={refresh} />)}</>) : 
+                            (<h2 className="mt-6">Oh, es ist leer</h2>)
+                        )
+                    }
                 </div>
             </div>
         </div>
