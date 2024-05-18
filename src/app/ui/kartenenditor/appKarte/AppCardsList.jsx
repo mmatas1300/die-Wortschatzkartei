@@ -4,6 +4,7 @@ import CardsListRow from "@/app/ui/kartenenditor/appKarte/CardsListRow";
 import { RefreshCcw } from 'lucide-react';
 import { getAppCards, getGameData} from "@/libs/data";
 import SearchForm from '@/components/SearchForm';
+import { sortCardsByLevel } from "@/libs/sortArrays";
 
 export const AppCardList = () => {
 
@@ -31,7 +32,8 @@ export const AppCardList = () => {
                 })
                 cardsToShow.push({...cardFound[0],level: element.level, practiceDate: element.practiceDate});
             });
-            setCards(cardsToShow);
+            const sortCards = sortCardsByLevel(cardsToShow)
+            setCards(sortCards);
         }
         if (status === "authenticated"){
             init();

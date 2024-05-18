@@ -4,6 +4,7 @@ import CardsListRow from "@/app/ui/kartenenditor/meineKarte/CardsListRow";
 import { RefreshCcw } from 'lucide-react';
 import { getMyCards } from "@/libs/data";
 import SearchForm from '@/components/SearchForm';
+import { sortCardsByLevel } from "@/libs/sortArrays";
 
 export const MeineCardList = () => {
 
@@ -22,8 +23,9 @@ export const MeineCardList = () => {
 
     useEffect(() => {
         const init = async ()=>{
-            const myCards = await getMyCards(session.user._id); 
-            setCards(myCards);
+            const myCards = await getMyCards(session.user._id);
+            const sortCards = sortCardsByLevel(myCards); 
+            setCards(sortCards);
         }
         if (status === "authenticated"){
             init();
