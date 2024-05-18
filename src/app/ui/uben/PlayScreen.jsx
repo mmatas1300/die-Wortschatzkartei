@@ -6,6 +6,9 @@ import { shuffleArray } from "@/libs/shuffleArray";
 import { calcNextPracticeDate } from "@/libs/calcNextPracticeDate";
 import { saveAppProgress, saveMyProgress } from "@/libs/data";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { useSoundEffect } from "./useSoundEffect";
+
+
 
 const PlayScreen = ({ cards, progress }) => {
 
@@ -18,6 +21,7 @@ const PlayScreen = ({ cards, progress }) => {
     const [gameFinish, setGameFinish] = useState(false);
     const [flipCard, setFlipCard] = useState(false);
     const [vanish, setVanish] = useState(false);
+    const {winPlay, richtigPlay, falschPlay} = useSoundEffect();
 
     useEffect(() => {
         if (session.user.config.cardsSet === "app") {
@@ -92,9 +96,9 @@ const PlayScreen = ({ cards, progress }) => {
             selectedCards[reviewedCardNum].practiceDate.setHours(0, 0, 0);
             setStudiedCards((studiedCards) => studiedCards.concat([selectedCards[reviewedCardNum]]))
         }
+        richtigPlay();
         setFlipCard(false);
         setVanish(true);
-
         if (reviewedCardNum < selectedCards.length - 1) {
             setTimeout(() => {
                 setReviewedCardNum(reviewedCardNum + 1);
@@ -102,6 +106,7 @@ const PlayScreen = ({ cards, progress }) => {
             }, 200);
         } else {
             saveProgress();
+            winPlay();
             setGameFinish(true);
         }
     };
@@ -117,6 +122,7 @@ const PlayScreen = ({ cards, progress }) => {
                 selectedCards[reviewedCardNum].level--; //Disminuir nivel
             setSelectedCards(selectedCards.concat([selectedCards[reviewedCardNum]]));
         }
+        falschPlay();
         setFlipCard(false);
         setVanish(true);
         setTimeout(() => {
