@@ -18,13 +18,13 @@ export async function POST(request){
 }
 
 export async function PUT(request){
-    const {userId, progress} = await request.json();
+    const {userId, progress, update} = await request.json();
     const cardIds = progress.map((elemento)=>{return elemento.cardId});
     try {
         await connectDB();
         await User.updateOne({_id: userId}, {$pull: { progress: { cardId: { $in: cardIds } } }});
         await User.updateOne({_id: userId}, {$push: {progress: {$each: progress}}});
-        await User.updateOne({_id: userId}, {lastPlay: new Date().setHours(0,0,0)});
+        if(update === "play") await User.updateOne({_id: userId}, {lastPlay: new Date().setHours(0,0,0)});
         return NextResponse.json({message: "Update successful"},{status: 200});
     } catch (error) {
         return NextResponse.json(error);

@@ -39,7 +39,7 @@ export const CardList = () => {
     }, [status, refresh])
 
     return (
-        <div className="my-12">
+        <div className="mt-16 mb-12">
             <h2 className="text-center my-2">App-Karten verwalten</h2>
             <div className="flex flex-col justify-center items-center bg-red-card p-1 rounded-3xl">
                 
@@ -53,7 +53,7 @@ export const CardList = () => {
                         <div className="w-20 mx-1 text-base text-center">Stufe</div>
                         <div className="w-28 mx-1 flex-1 text-base text-center">Wort</div>
                         <div className="w-20 mx-1 text-base text-center me-4 lg:me-0 hidden lg:block">Bild</div>
-                        <div className="w-28 mx-1 text-base text-center hidden lg:block">Übersetzung</div>
+                        <div className="w-36 mx-1 text-base text-center hidden lg:block">Übersetzung</div>
                         <div className="w-6 mx-2 mr-10" />
                     </div>
 

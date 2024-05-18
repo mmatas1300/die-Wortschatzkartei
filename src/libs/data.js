@@ -221,10 +221,22 @@ export const saveAppProgress = async (userId, progress)=>{
 	try {
 		await fetch('/api/user/game-data',{
 			method: "PUT",
-			body: JSON.stringify({userId: userId, progress: progress}),
+			body: JSON.stringify({userId: userId, progress: progress, update: "play"}),
 			headers: {"Content-type": "application/json"}
 		});
 	} catch (error) {
 		console.log(error);
 	}
 };
+
+export const resetAppProgress = async (userId, cardId)=>{
+	try {
+		await fetch('/api/user/game-data',{
+			method: "PUT",
+			body: JSON.stringify({userId: userId, progress: [{cardId: cardId, level:0, practiceDate: new Date("2000")}], update: "reset"}),
+			headers: {"Content-type": "application/json"}
+		});
+	} catch (error) {
+		console.log(error)
+	}
+} 
