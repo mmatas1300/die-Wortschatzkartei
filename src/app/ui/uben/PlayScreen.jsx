@@ -5,6 +5,7 @@ import CardMessage from "@/components/CardMessage";
 import { shuffleArray } from "@/libs/shuffleArray";
 import { calcNextPracticeDate } from "@/libs/calcNextPracticeDate";
 import { saveAppProgress, saveMyProgress } from "@/libs/data";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 const PlayScreen = ({ cards, progress }) => {
 
@@ -128,7 +129,13 @@ const PlayScreen = ({ cards, progress }) => {
         selectedCards.length === 0 ? (<CardMessage message={"Wir haben heute keine Karten zum Lernen gefunden"} />) :
             (
                 <>
-                    {gameStart ? (!gameFinish ? (<><FlipCard card={selectedCards[reviewedCardNum]} setFlipCard={setFlipCard} flipCard={flipCard} vanish={vanish} richtigButton={richtigButton} falschButton={falschButton} /></>) :
+                    {gameStart ? (!gameFinish ? (<>
+                                                    <div className="mt-4 mb-6 w-80 mx-14">
+                                                        <ProgressBar completed={reviewedCardNum}  maxCompleted={selectedCards.length-1}  baseBgColor="#F8F9FA" bgColor="#4CAB2A" isLabelVisible={false} />
+                                                    </div>
+                                                   
+                                                    <FlipCard card={selectedCards[reviewedCardNum]} setFlipCard={setFlipCard} flipCard={flipCard} vanish={vanish} richtigButton={richtigButton} falschButton={falschButton} />
+                                                </>) :
                         (<CardMessage message={"Herzlichen Glückwunsch, genug für heute"} />)
                     ) :
                         (
