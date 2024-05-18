@@ -10,6 +10,7 @@ export const AppCardList = () => {
 
     const { data: session, status } = useSession();
     const [cards, setCards] = useState([]);
+    const [cardsBackup, setCardsBackup] = useState([]);
     const [refresh, setRefresh] = useState(false);
 
     const handleSubmit = (e) => {
@@ -17,7 +18,7 @@ export const AppCardList = () => {
         const formData = new FormData(e.currentTarget)
         const search = formData.get("search");
         const regExp = new RegExp(`.*${search.toLowerCase()}.*`);
-        const filterCards = cards.filter((card) => { return regExp.test(card.wort.toLowerCase()) })
+        const filterCards = cardsBackup.filter((card) => { return regExp.test(card.wort.toLowerCase()) })
         setCards(filterCards);
     };
 
@@ -34,6 +35,7 @@ export const AppCardList = () => {
             });
             const sortCards = sortCardsByLevel(cardsToShow)
             setCards(sortCards);
+            setCardsBackup(sortCards);
         }
         if (status === "authenticated"){
             init();
@@ -58,7 +60,7 @@ export const AppCardList = () => {
                         <div className="w-36 mx-1 text-base text-center hidden lg:block">Übersetzung</div>
                         <div className="w-6 mx-2 mr-10" />
                     </div>
-
+    
                     {cards.length != 0 ? (<>{cards.map((card) => <CardsListRow key={card._id} card={card} setRefresh={setRefresh} refresh={refresh} />)}</>) : (<h2 className="mt-6">Oh, es ist leer</h2>)}
                 </div>
             </div>

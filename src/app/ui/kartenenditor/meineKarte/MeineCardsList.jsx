@@ -10,6 +10,7 @@ export const MeineCardList = () => {
 
     const { data: session, status } = useSession();
     const [cards, setCards] = useState([]);
+    const [cardsBackup, setCardsBackup] = useState([]);
     const [refresh, setRefresh] = useState(false);
 
     const handleSubmit = (e) => {
@@ -17,7 +18,7 @@ export const MeineCardList = () => {
         const formData = new FormData(e.currentTarget)
         const search = formData.get("search");
         const regExp = new RegExp(`.*${search.toLowerCase()}.*`);
-        const filterCards = cards.filter((card) => { return regExp.test(card.wort.toLowerCase()) })
+        const filterCards = cardsBackup.filter((card) => { return regExp.test(card.wort.toLowerCase()) })
         setCards(filterCards);
     };
 
@@ -26,6 +27,7 @@ export const MeineCardList = () => {
             const myCards = await getMyCards(session.user._id);
             const sortCards = sortCardsByLevel(myCards); 
             setCards(sortCards);
+            setCardsBackup(sortCards);
         }
         if (status === "authenticated"){
             init();
