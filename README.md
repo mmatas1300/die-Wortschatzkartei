@@ -5,7 +5,7 @@ Web application designed to create your own flashcards and learn German vocabula
 #### Study with our cards or with the ones you create
 
 Review the cards once a day using spaced repetition to memorize the vocabulary.
-![Uben](/public/imgs/Uben.gif)
+<img src="/public/imgs/Uben.gif" width="40"/>
 
 #### Create your own cards
 Use the card editor to create your own cards. You can create cards with nouns, verbs, words that have variations for men and women, and any other category.
