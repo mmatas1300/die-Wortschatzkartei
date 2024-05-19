@@ -15,14 +15,14 @@ Review the cards once a day using spaced repetition to memorize the vocabulary.
 Use the card editor to create your own cards. You can create cards with nouns, verbs, words that have variations for men and women, and any other category.
 
 <p align="center">
-  <img src="/public/imgs/Karteneditor.jpg" width="360"/>
+  <img src="/public/imgs/Karteneditor.jpg" width="450"/>
 </p>
 
 #### Manage your cards
 You can review or reset your progress, and edit or delete your cards.
 
 <p align="center">
-  <img src="/public/imgs/KarteneditorVerwalten.jpg" width="360"/>
+  <img src="/public/imgs/KarteneditorVerwalten.jpg" width="450"/>
 </p>
 
 #### Review your cards in alphabetical order
