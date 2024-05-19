@@ -52,7 +52,7 @@ export default function Home() {
                 </div>
 
                 {status==="unauthenticated"?(<div className="p-5 rounded-2xl my-3 mx-10 text-center text-base lg:text-xl">Ready to learn? <Link href="/login"><button className="bg-red-card mx-1 text-base lg:text-xl">Register</button></Link> now and get started!</div>):
-                    (<div className="p-5 rounded-2xl my-3 mx-10 text-center text-base lg:text-xl">Ready to learn? <Link href="/uben"><button className="bg-red-card mx-1 text-base lg:text-xl">Let's practice</button></Link></div>)}
+                    (<div className="p-5 rounded-2xl my-3 mx-10 text-center text-base lg:text-xl">Ready to learn? <Link href="/uben"><button className="bg-red-card mx-1 text-base lg:text-xl">Let&apos;s practice</button></Link></div>)}
                 
                 <FAQ />
             </Fade>
