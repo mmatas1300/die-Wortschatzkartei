@@ -41,7 +41,7 @@ const FlipCard = ({ card, flipCard, setFlipCard, vanish, richtigButton, falschBu
             <ReactFlipCard flipTrigger={'disabled'} flipByProp={flipCard} containerCss={`flex flex-col justify-center items-center ${vanish?"opacity-0 invisible":"opacity-100 visible"} transition ease-in-out delay-75 basis-1/2`}
                 frontComponent={
                     <div className='flex flex-col justify-center items-center'>
-                        <div className={`${frontCardColor()} p-32 rounded-3xl text-nowrap`}>{getCardWort()}</div>
+                        <div className={`${frontCardColor()} w-80 h-72 rounded-3xl flex justify-center items-center`}>{getCardWort()}</div>
                         <button onClick={()=>{setFlipCard(true); flipCardPlay();}} className={`bg-black-card border-2 border-green-card  ${flipCard?"opacity-0 invisible":"opacity-100 visible"}`}>Wenden</button>
                     </div>
                 }
