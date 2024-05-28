@@ -7,9 +7,5 @@ export const sortCardsByLevel = (cards) =>{
 } 
 
 export const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+    return array.sort((a, b) => Math.random() - 0.5)
 };
