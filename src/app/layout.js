@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="de">
-      <body className={`${baloo.className}`}>
+      <body className={`${baloo.className} bg-left-top bg-fixed bg-img-card`}>
         <Providers>
           <Navbar />
           <main className="lg:pl-[250px] h-full mx-auto">

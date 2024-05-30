@@ -24,6 +24,9 @@ module.exports = withMT({
         'orange-card': '#FE7413',
         'purple-card': '#CC348D',
         'white-card': '#F8F9FA',
+      },
+      backgroundImage: {
+        'img-card': "url('/imgs/back.svg')"
       }
     },
   },
