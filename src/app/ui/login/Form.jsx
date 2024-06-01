@@ -7,7 +7,7 @@ import { anmelden, registrieren } from "@/libs/data";
 const Form = () => {
 
     const weiterButton = (<button>Weiter</button>);
-    const spinner = (<Spinner className="mt-2.5 h-10 w-10" />);
+    const spinner = (<Spinner className="mt-2.5 h-[41px] w-[41px]" />);
 
     const [formState, setFormState] = useState(style["container"]);
     const [buttonState, setButtonState] = useState(weiterButton);

@@ -6,7 +6,7 @@ const Kontakt = () => {
     const [buttonState, setButtonstate] = useState(<button>Nachricht senden</button>);
 
     const toggleButton = () => {
-        setButtonstate(<Spinner className="mt-2.5 h-10 w-10" />)
+        setButtonstate(<Spinner className="mt-2.5 h-[41px] w-[41px]" />)
     }
     return (
         <div className="flex flex-col justify-center items-center mt-16">

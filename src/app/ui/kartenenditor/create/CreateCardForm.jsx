@@ -14,19 +14,19 @@ const CreateCardForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setButtonState(<Spinner className="mt-2.5 h-10 w-10" />);
+        setButtonState(<Spinner className="mt-2.5 h-[41px] w-[41px]" />);
         const formData = new FormData(e.currentTarget)
         const card = createCard(formData);
 
         if (session.user.email === "mmatas1300@gmail.com") {
             const data = await createAppCard(card, session.user._id);
             if (data) {
-                setButtonState(<div className="mt-2.5 h-10">{data.message}</div>);
+                setButtonState(<div className="mt-2.5 h-[41px]">{data.message}</div>);
                 setTimeout(function () {
                     setButtonState(fertigButton)
                 }, 1500);
             } else {
-                setButtonState(<div className="mt-2.5 h-10">Karte hinzugefügt!</div>);
+                setButtonState(<div className="mt-2.5 h-[41px]">Karte hinzugefügt!</div>);
                 setTimeout(function () {
                     setButtonState(fertigButton);
                     if (card.type === "Nomen-das" || card.type === "Nomen-der" || card.type === "Nomen-die" || card.type === "Nomen-pl") setForm(nomenFields((handleGender)), "bg-green-card")
@@ -37,12 +37,12 @@ const CreateCardForm = () => {
         else{
             const data = await createMyCard(session.user._id, card);
             if (data) {
-                setButtonState(<div className="mt-2.5 h-10">{data.message}</div>);
+                setButtonState(<div className="mt-2.5 h-[41px]">{data.message}</div>);
                 setTimeout(function () {
-                    setButtonState(fertigButton)
+                    setButtonState(fertigButton);
                 }, 1500);
             } else {
-                setButtonState(<div className="mt-2.5 h-10">Karte hinzugefügt!</div>);
+                setButtonState(<div className="mt-2.5 h-[41px]">Karte hinzugefügt!</div>);
                 setTimeout(function () {
                     setButtonState(fertigButton);
                     if (card.type === "Nomen-das" || card.type === "Nomen-der" || card.type === "Nomen-die" || card.type === "Nomen-pl") setForm(nomenFields((handleGender)), "bg-green-card")

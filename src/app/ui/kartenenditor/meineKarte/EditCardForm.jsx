@@ -13,11 +13,11 @@ const EditCardForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setButtonState(<Spinner className="mt-2.5 h-10 w-10" />);
+        setButtonState(<Spinner className="mt-2.5 h-[41px] w-[41px]" />);
         const formData = new FormData(e.currentTarget)
         const newCard = updateCard(formData, card.type);
         await editMyCard(session.user._id, { _id: card._id, ...newCard, level: card.level, practiceDate: card.practiceDate });
-        setButtonState(<div className="mt-2.5 h-10">Änderungen gespeichert!</div>);
+        setButtonState(<div className="mt-2.5 h-[41px]">Änderungen gespeichert!</div>);
         setRefresh(!refresh)
     }
 

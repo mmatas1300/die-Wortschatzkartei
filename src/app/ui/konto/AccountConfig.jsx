@@ -12,7 +12,7 @@ const AccountConfig = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setStateButton(<Spinner className="mt-2.5 mb-4 h-9 w-9" />);
+        setStateButton(<Spinner className="mt-2.5 mb-4 h-[37px] w-[37px]" />);
         const formData = new FormData(e.currentTarget)
         const config = {
             nick: formData.get('nick') ? formData.get('nick') : session.user.config.nick,
