@@ -23,9 +23,32 @@ export async function GET(req, { params }){
             const initialLetterCards = await AndereCard.find({ 
                 wort: { $regex: regExpFirstLetter, $options: 'i' }
             });
+            if(params.query[0]==="A" || params.query[0]==="O" || params.query[0]==="U"){
+                const initialLetterCardsUmlaut = await findCardUmlaut(params.query[0]);
+                return NextResponse.json(initialLetterCards.concat(initialLetterCardsUmlaut));
+            }
             return NextResponse.json(initialLetterCards);
         } catch (error) {
             return NextResponse.json(error);
         }
     }
 }
+
+const findCardUmlaut = async (letter)=>{
+    if(letter === "A"){
+        const umlautCards = await AndereCard.find({ 
+            wort: { $regex: new RegExp("^ä"), $options: 'i' }
+        });
+        return umlautCards;
+    } else if (letter === "O"){
+        const umlautCards = await AndereCard.find({ 
+            wort: { $regex: new RegExp("^ö"), $options: 'i' }
+        });
+        return umlautCards;
+    } else if (letter === "U"){
+        const umlautCards = await AndereCard.find({ 
+            wort: { $regex: new RegExp("^ü"), $options: 'i' }
+        });
+        return umlautCards;
+    }
+};
