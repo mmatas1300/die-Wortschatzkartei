@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~@flaticon/flaticon-uicons/css/all/all";
+
+:root {
+  --blue-card: #0078A3;
+  --red-card: #B72B4F;
+  --green-card: #4CAB2A;
+  --purple-card: #CC348D;
+  --white-card: #F8F9FA;
+  --black-card: #1E1E1E;
+  --orange-card: #FE7413;
+  --yellow-card: #E89E00;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  background-color: #212529;
+  color: var(--white-card);
+}
+
+h1{
+  font-size: 20px;
+}
+
+p{
+  font-size: 14px;
+  line-height: 20px;
+}
+
+label{
+  align-self: flex-start;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+input{
+  background-color: var(--white-card);
+  color: var(--black-card);
+  border: none;
+  margin: 0 0 8px 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+textarea{
+  background-color: var(--white-card);
+  color: var(--black-card);
+  border: none;
+  margin: 0 0 8px 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+select{
+  background-color: var(--white-card);
+  color: var(--black-card);
+  border: none;
+  margin: 0 0 8px 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+button{
+  transition: all .2s ease;
+  background-color: var(--green-card);
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 10px 25px;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button:active{
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  transform: scale(.96);
+}
+
+.abmelden .ps-menu-button:hover {
+  background-color: var(--red-card) !important;
+}

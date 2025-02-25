@@ -1,0 +1,12 @@
+"use client"
+import AccordionFAQ from "./AccordionFAQ";
+
+const FAQ = ()=>{
+    return(
+        <div className="flex flex-col justify-center items-center mt-4 w-screen max-w-[430px]">
+            <AccordionFAQ/>
+        </div>
+    );
+};
+
+export default FAQ;
