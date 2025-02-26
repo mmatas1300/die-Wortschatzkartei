@@ -8,7 +8,7 @@ export async function POST(request){
         await connectDB();
         const userFound = await User.findById(userId);
         if(query==="lastPlay"){
-            return NextResponse.json({lastPlay: userFound.lastPlay});
+            return NextResponse.json({lastPlay: userFound.streak[userFound.streak.length-1]});
         } else if(query==="progress"){
             return NextResponse.json({progress: userFound.progress});
         }

@@ -32,7 +32,7 @@ function UbenPage() {
 
         const initPractice = async () => {
             const data = await getGameData(session.user._id, "lastPlay");
-            const allowToPlayDate = new Date(data.lastPlay);
+            const allowToPlayDate = new Date(data.lastPlay.dayPlayed);
             allowToPlayDate.setDate(allowToPlayDate.getDate() + 1);
             const today = new Date();
             if (allowToPlayDate.getTime() < today.getTime()) {

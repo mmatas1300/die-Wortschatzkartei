@@ -5,7 +5,6 @@ const userSchema = new Schema({
     password:String,
     myCards:[Schema.Types.Mixed],
     config:{nick:String, cardsSet:String, cardsPerDay: Number},
-    lastPlay: {type:Date},
     streak: [{dayPlayed: Date, cardsPlayed: Number }],
     progress:[{cardId: Schema.Types.ObjectId, level: Number, practiceDate: Date}],
 })
