@@ -24,10 +24,12 @@ export async function POST(request) {
             myCards: [],
             config:{
                 nick: "",
-                cardsSet:"app"
+                cardsSet:"app", 
+                cardsPerDay: 10,
             },
-            lastPlay: new Date('2000'),
+            streak: [{dayPlayed: new Date('2000'), cardsPlayed: 0}],
             progress: await progressGenerator(),
+            
         })
         
         await user.save();

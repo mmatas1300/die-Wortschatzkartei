@@ -103,9 +103,13 @@ function Karte(karte) {
                 <p className='underline mt-2'>{karte.type === "Verb" ? "Partizip II" : ""}</p>
                 <p className='text-sm'>{karte.partizip2}</p></div>) : ""}
 
-            <div className='w-60 h-auto my-4'>
-                <Image src={karte.bild} alt={wortKarte()} width={240} height={240} className='rounded-2xl' />
-            </div>
+            {karte.bild && (karte.bild[0] === "/" | karte.bild[0].toLowerCase() === "h") ? (
+                                <>
+                                    <div className='w-60 h-auto my-4'>
+                                        <Image src={karte.bild} alt={wortKarte()} width={240} height={240} className='rounded-2xl' />
+                                    </div>
+                                </>
+            ) : (<div className='my-3' />)}
             <p className='mb-4'>{karte.verwandte}</p>
             <p className='mx-4 mb-4 text-center'>{karte.beispiel}</p>
             <p onClick={toggleUbersetzung} className='mb-4 bg-black-card p-1 rounded-md cursor-pointer text-sm'>{showUbersetzung ? karte.ubersetzung : "Übersetzung"}</p>

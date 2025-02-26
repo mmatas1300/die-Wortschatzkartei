@@ -16,21 +16,22 @@ const AccountConfig = () => {
         const formData = new FormData(e.currentTarget)
         const config = {
             nick: formData.get('nick') ? formData.get('nick') : session.user.config.nick,
-            cardsSet: formData.get('cardsSet')
+            cardsSet: formData.get('cardsSet'),
+            cardsPerDay: formData.get('cardsPerDay')>0 & formData.get('cardsPerDay')<=50 ? Math.round(formData.get('cardsPerDay')) : session.user.config.cardsPerDay,
         }
         try {
             await updateMyAccount(config,session.user._id);
             await update({ user: { ...session.user, config: config } })
         } catch (error) {
-            console.log(error)
+            //console.log(error)
         }
         setStateButton(submitButton);
     };
-
+    //Add fields card number
     return (
-        <div className='bg-green-card rounded-3xl lg:-rotate-12 lg:mt-8 h-[345px]'>
-            <div className='bg-blue-card rounded-3xl lg:rotate-6 h-[345px]'>
-                <div className={`bg-red-card w-96 rounded-3xl p-8 flex flex-col justify-center items-center lg:rotate-6 h-[345px]`}>
+        <div className='bg-green-card rounded-3xl lg:-rotate-12 lg:mt-8 h-[400px]'>
+            <div className='bg-blue-card rounded-3xl lg:rotate-6 h-[400px]'>
+                <div className={`bg-red-card w-96 rounded-3xl p-8 flex flex-col justify-center items-center lg:rotate-6 h-[400px]`}>
                     <h1>Kontoeinstellungen</h1>
                     <form className='mt-4 flex flex-col justify-center items-center' onSubmit={handleSubmit}>
                         <label htmlFor="nick">Spitzname:</label>
@@ -39,8 +40,10 @@ const AccountConfig = () => {
                         <select name="cardsSet">
                             {session.user.config.cardsSet === "app" ? (<><option value="app">App-Karten</option>
                                 <option value="meine">Meine Karten</option></>) : (<><option value="meine">Meine Karten</option><option value="app">App-Karten</option>
-                                </>)}
+                                </>)} 
                         </select>
+                        <label className='mt-2' htmlFor="cardsPerDay">Tageshöchstwert für neue Karten:</label>
+                        <input type="text" placeholder={session.user.config.cardsPerDay} name='cardsPerDay' />
                         {stateButton}
                     </form>
                 </div>

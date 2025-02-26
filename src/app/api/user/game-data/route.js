@@ -8,7 +8,7 @@ export async function POST(request){
         await connectDB();
         const userFound = await User.findById(userId);
         if(query==="lastPlay"){
-            return NextResponse.json({lastPlay: userFound.lastPlay});
+            return NextResponse.json({lastPlay: userFound.streak[userFound.streak.length-1]});
         } else if(query==="progress"){
             return NextResponse.json({progress: userFound.progress});
         }
@@ -24,7 +24,7 @@ export async function PUT(request){
         await connectDB();
         await User.updateOne({_id: userId}, {$pull: { progress: { cardId: { $in: cardIds } } }});
         await User.updateOne({_id: userId}, {$push: {progress: {$each: progress}}});
-        if(update === "play") await User.updateOne({_id: userId}, {lastPlay: new Date().setHours(0,0,0)});
+        if(update === "play") await User.updateOne({_id: userId}, {$push: {streak: {dayPlayed: new Date().setHours(0,0,0), cardsPlayed: progress.length}} });
         return NextResponse.json({message: "Update successful"},{status: 200});
     } catch (error) {
         return NextResponse.json(error);

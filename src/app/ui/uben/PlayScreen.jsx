@@ -25,13 +25,13 @@ const PlayScreen = ({ cards, progress }) => {
 
     useEffect(() => {
         if (session.user.config.cardsSet === "app") {
-            //5 tarjetas nuevas + las que hay que estudiar
+            //tarjetas nuevas + las que hay que estudiar
             const newCardsIds = progress.filter((card) => {
                 const cardPracticeDate = new Date(card.practiceDate);
                 const newCardsDate = new Date("2000");
                 return cardPracticeDate.getTime() === newCardsDate.getTime();
             });
-            const fiveNewCardsIds = shuffleArray(newCardsIds).slice(0, 5);
+            const numberNewCardsIds = shuffleArray(newCardsIds).slice(0, session.user.config.cardsPerDay); //Selección de cartas
 
             const toStudyCardsIds = progress.filter((card) => {
                 const cardPracticeDate = new Date(card.practiceDate);
@@ -40,7 +40,7 @@ const PlayScreen = ({ cards, progress }) => {
                 return (cardPracticeDate.getTime() < today.getTime()) && (cardPracticeDate.getTime() != newCardsDate.getTime());
             })
 
-            const todayProgress = shuffleArray(toStudyCardsIds.concat(fiveNewCardsIds));
+            const todayProgress = shuffleArray(toStudyCardsIds.concat(numberNewCardsIds));
             const todayCards = [];
             todayProgress.forEach((element) => {
                 const cardFound = cards.find((card) => {
@@ -58,7 +58,7 @@ const PlayScreen = ({ cards, progress }) => {
                 const newCardsDate = new Date("2000");
                 return cardPracticeDate.getTime() === newCardsDate.getTime();
             });
-            const fiveNewCards = shuffleArray(newCards).slice(0, 5);
+            const numberNewCards = shuffleArray(newCards).slice(0, session.user.config.cardsPerDay); //Selección de cartas
 
             const toStudyCards = cards.filter((card) => {
                 const cardPracticeDate = new Date(card.practiceDate);
@@ -67,7 +67,7 @@ const PlayScreen = ({ cards, progress }) => {
                 return (cardPracticeDate.getTime() < today.getTime()) && (cardPracticeDate.getTime() != newCardsDate.getTime());
             })
 
-            const todayCards = shuffleArray(toStudyCards.concat(fiveNewCards));
+            const todayCards = shuffleArray(toStudyCards.concat(numberNewCards));
             setSelectedCards(todayCards);
         }
     }, [])
@@ -114,12 +114,12 @@ const PlayScreen = ({ cards, progress }) => {
     const falschButton = () => {
         if (session.user.config.cardsSet === "app") {
             if (0 < selectedProgress[reviewedCardNum].level)
-                selectedProgress[reviewedCardNum].level--; //Disminuir nivel
+                selectedProgress[reviewedCardNum].level = 0; //Disminuir nivel
             setSelectedCards(selectedCards.concat([selectedCards[reviewedCardNum]]));
             setSelectedProgress(selectedProgress.concat([selectedProgress[reviewedCardNum]]));
         } else if (session.user.config.cardsSet === "meine") {
             if (0 < selectedCards[reviewedCardNum].level)
-                selectedCards[reviewedCardNum].level--; //Disminuir nivel
+                selectedCards[reviewedCardNum].level = 0; //Disminuir nivel
             setSelectedCards(selectedCards.concat([selectedCards[reviewedCardNum]]));
         }
         falschPlay();
