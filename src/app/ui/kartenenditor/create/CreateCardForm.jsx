@@ -3,7 +3,7 @@ import { Spinner } from "@material-tailwind/react";
 import { useSession } from 'next-auth/react'
 import { createCard } from '@/libs/getFormCardData';
 import { verbFields, nomenMUFFields, nomenFields, nomenFieldsPl, andereFields } from '@/app/ui/kartenenditor/create/fields';
-import { createAppCard, createMyCard } from '@/libs/data';
+import { createMyCard } from '@/libs/data';
 
 const CreateCardForm = () => {
 
@@ -17,39 +17,21 @@ const CreateCardForm = () => {
         setButtonState(<Spinner className="mt-2.5 h-[41px] w-[41px]" />);
         const formData = new FormData(e.currentTarget)
         const card = createCard(formData);
+        const data = await createMyCard(session.user._id, card);
+        if (data) {
+            setButtonState(<div className="mt-2.5 h-[41px]">{data.message}</div>);
+            setTimeout(function () {
+                setButtonState(fertigButton);
+            }, 1500);
+        } else {
+            setButtonState(<div className="mt-2.5 h-[41px]">Karte hinzugefügt!</div>);
+            setTimeout(function () {
+                setButtonState(fertigButton);
+                if (card.type === "Nomen-das" || card.type === "Nomen-der" || card.type === "Nomen-die" || card.type === "Nomen-pl") setForm(nomenFields((handleGender)), "bg-green-card")
+                e.target.reset();
+            }, 1500);
+        }
 
-        if (session.user.email === "mmatas1300@gmail.com") {
-            const data = await createAppCard(card, session.user._id);
-            if (data) {
-                setButtonState(<div className="mt-2.5 h-[41px]">{data.message}</div>);
-                setTimeout(function () {
-                    setButtonState(fertigButton)
-                }, 1500);
-            } else {
-                setButtonState(<div className="mt-2.5 h-[41px]">Karte hinzugefügt!</div>);
-                setTimeout(function () {
-                    setButtonState(fertigButton);
-                    if (card.type === "Nomen-das" || card.type === "Nomen-der" || card.type === "Nomen-die" || card.type === "Nomen-pl") setForm(nomenFields((handleGender)), "bg-green-card")
-                    e.target.reset();
-                }, 1500);
-            }
-        }
-        else{
-            const data = await createMyCard(session.user._id, card);
-            if (data) {
-                setButtonState(<div className="mt-2.5 h-[41px]">{data.message}</div>);
-                setTimeout(function () {
-                    setButtonState(fertigButton);
-                }, 1500);
-            } else {
-                setButtonState(<div className="mt-2.5 h-[41px]">Karte hinzugefügt!</div>);
-                setTimeout(function () {
-                    setButtonState(fertigButton);
-                    if (card.type === "Nomen-das" || card.type === "Nomen-der" || card.type === "Nomen-die" || card.type === "Nomen-pl") setForm(nomenFields((handleGender)), "bg-green-card")
-                    e.target.reset();
-                }, 1500);
-            }
-        }
     }
 
     const handleGender = (e) => {
