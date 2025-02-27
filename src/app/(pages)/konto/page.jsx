@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/react'
 import { Spinner } from "@material-tailwind/react";
 import { Fade } from 'react-awesome-reveal';
 import AccountConfig from '@/app/ui/konto/AccountConfig';
+import Tracker from '@/components/tracker/Tracker';
 
 
 function KontoPage() {
@@ -16,6 +17,7 @@ function KontoPage() {
                     (<>
                         <h1 className='text-xl mb-4'>Mein Konto</h1>
                         <h1 className='text-xl mb-4'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
+                        <Tracker />
                         <AccountConfig />
                     </>)}
 

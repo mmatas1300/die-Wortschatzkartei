@@ -9,6 +9,8 @@ export async function POST(request){
         const userFound = await User.findById(userId);
         if(query==="lastPlay"){
             return NextResponse.json({lastPlay: userFound.streak[userFound.streak.length-1]});
+        } else if(query==="streak"){
+            return NextResponse.json({progress: userFound.streak});
         } else if(query==="progress"){
             return NextResponse.json({progress: userFound.progress});
         }

@@ -26,7 +26,6 @@ const handler = NextAuth({
                     email: userFound.email,
                     config: userFound.config,
                     _id: userFound._id,
-                    streak: userFound.streak,
                 }
                 return userData;
             }
