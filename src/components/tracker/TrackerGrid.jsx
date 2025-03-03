@@ -12,12 +12,12 @@ const TrackerGrid = ({ streak }) => {
 
     return (
 
-        <div className="bg-green-card p-3 rounded-lg grid grid-flow-col grid-rows-7 gap-1">
+        <div className="bg-orange-card p-3 rounded-lg grid grid-flow-col grid-rows-7 gap-1">
             
             {   
                 streak.toReversed().map((day) => {
                     return (
-                        <TrackerDay day={day} mostPlayed={mostPlayed}/>
+                        <TrackerDay key={day.date} day={day} mostPlayed={mostPlayed}/>
                     )
                 })
             }
