@@ -3,11 +3,15 @@ import TrackerGrid from "./TrackerGrid";
 import { getGameData } from "@/libs/data";
 import { useSession } from "next-auth/react";
 import { Spinner } from "@material-tailwind/react";
+import TrackerData from "./TrackerData";
+
 
 const Tracker = () => {
 
     const {data:session} = useSession();
     const [streak, setStreak]  = useState(null);
+    const [streakFull, setStreakFull]  = useState(null);
+
 
 
     useEffect(()=>{
@@ -16,6 +20,8 @@ const Tracker = () => {
 
             const gridDays = new Array(119);
             const streakReverse = data.progress.toReversed();
+            streakReverse.pop();
+            setStreakFull(streakReverse);
 
             for (let i = 0; i < gridDays.length; i++) {
                 gridDays[i] = { date: new Date(), cardsPlayed: 0 };
@@ -44,12 +50,10 @@ const Tracker = () => {
         loadData()
         
     },[])
-
-    
     
     return(
         <div>
-            {streak ? <TrackerGrid streak={streak}/> : <Spinner className="mt-[calc(35vh)] h-10 w-10" />} 
+            {streak ? <> <TrackerGrid streak={streak}/> <TrackerData streakFull={streakFull} streak ={streak}/> </>: <Spinner className="mt-[calc(35vh)] h-10 w-10" />} 
         </div>
     );
 }
