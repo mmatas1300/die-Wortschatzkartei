@@ -52,9 +52,9 @@ const Tracker = () => {
     },[])
     
     return(
-        <div>
-            {streak ? <> <TrackerGrid streak={streak}/> <TrackerData streakFull={streakFull} streak ={streak}/> </>: <Spinner className="mt-[calc(35vh)] h-10 w-10" />} 
-        </div>
+        <>
+            {streak ? <> <TrackerGrid streak={streak}/> <TrackerData streakFull={streakFull} streak ={streak}/> </>: <Spinner className="h-10 w-10" />} 
+        </>
     );
 }
 

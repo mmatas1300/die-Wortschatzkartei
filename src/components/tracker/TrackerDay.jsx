@@ -15,10 +15,10 @@ const TrackerDay = ({ day, mostPlayed }) => {
     }
 
     const getMonthName = (monthIndex, locale) => {
-    const date = new Date();
-    date.setMonth(monthIndex);
-    const formatter = new Intl.DateTimeFormat(locale, { month: 'long' });
-    return formatter.format(date);
+        const date = new Date();
+        date.setMonth(monthIndex);
+        const formatter = new Intl.DateTimeFormat(locale, { month: 'long' });
+        return formatter.format(date);
     }
 
     return (

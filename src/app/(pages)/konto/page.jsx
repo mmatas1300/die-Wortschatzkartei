@@ -17,8 +17,9 @@ function KontoPage() {
                     (<>
                         <h1 className='text-xl mb-4'>Mein Konto</h1>
                         <h1 className='text-xl mb-4'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
-                        <Tracker />
-                        <AccountConfig />
+                        {session.user.config.nick ?
+                           <><div className='mb-4'><Tracker /></div><AccountConfig /></> : <><AccountConfig /><div className='mt-14'><Tracker /></div></> 
+                        }
                     </>)}
 
             </section>

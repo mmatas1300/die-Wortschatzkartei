@@ -27,7 +27,7 @@ const AccountConfig = () => {
         }
         setStateButton(submitButton);
     };
-    //Add fields card number
+
     return (
         <div className='bg-green-card rounded-3xl lg:-rotate-12 lg:mt-8 h-[400px]'>
             <div className='bg-blue-card rounded-3xl lg:rotate-6 h-[400px]'>

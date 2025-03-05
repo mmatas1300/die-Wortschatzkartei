@@ -2,9 +2,12 @@ import TrackerDay from "./TrackerDay";
 
 const TrackerGrid = ({ streak }) => {
 
-    let mostPlayed = 0;
-    for (let i = 0; i<streak.length ; i++ ){
-        mostPlayed = streak[i].cardsPlayed > mostPlayed ? streak[i].cardsPlayed : mostPlayed;
+    const mostPlayed = ()=>{
+        let mostPlayed = 0;
+        for (let i = 0; i<streak.length ; i++ ){
+            mostPlayed = streak[i].cardsPlayed > mostPlayed ? streak[i].cardsPlayed : mostPlayed;
+        }
+        return mostPlayed;
     }
 
     return (
@@ -14,7 +17,7 @@ const TrackerGrid = ({ streak }) => {
             {   
                 streak.toReversed().map((day) => {
                     return (
-                        <TrackerDay key={day.date} day={day} mostPlayed={mostPlayed}/>
+                        <TrackerDay key={day.date} day={day} mostPlayed={mostPlayed()}/>
                     )
                 })
             }
