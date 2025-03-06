@@ -12,6 +12,8 @@ export async function POST(request) {
             subject: 'die Wortschatzkartei',
             html: message,
           });
+
+        console.log(error)
           
         if (error)
             return NextResponse.json({message: error},{status: 400});
