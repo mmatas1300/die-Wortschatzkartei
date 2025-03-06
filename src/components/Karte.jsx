@@ -71,10 +71,10 @@ function Karte(karte) {
             <p className="underline self-end me-4 mt-4">{typeKarte()}</p>
             {karte.type === "Nomen-MUF" ? (
                 <div className='grid grid-cols-2 justify-items-center'>
-                    <p className='mx-2 text-base' >{wortKarte()}</p>
-                    <p className='mx-1 text-base' >{"die " + karte.frau}</p>
-                    <p className='mx-2 text-sm' >{"die " + karte.manner}</p>
-                    <p className='mx-1 text-sm' >{"die " + karte.frauen}</p>
+                    <p className='mx-2 text-sm' >{wortKarte()}</p>
+                    <p className='mx-1 text-sm' >{"die " + karte.frau}</p>
+                    <p className='mx-2 text-xs' >{"die " + karte.manner}</p>
+                    <p className='mx-1 text-xs' >{"die " + karte.frauen}</p>
                 </div>
             ) : (<p className='text-xl'>{wortKarte()}</p>)}
 
