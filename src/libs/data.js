@@ -239,4 +239,4 @@ export const resetAppProgress = async (userId, cardId)=>{
 	} catch (error) {
 		console.log(error)
 	}
-} 
+}

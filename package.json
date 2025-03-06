@@ -29,6 +29,7 @@
     "react-dom": "^18",
     "react-pro-sidebar": "^1.1.0",
     "reactjs-flip-card": "^2.0.3",
+    "resend": "^4.1.2",
     "swiper": "^11.0.7",
     "use-sound": "^4.0.1"
   },
