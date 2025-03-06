@@ -50,7 +50,6 @@ export const MeineCardList = () => {
                     <div className="flex flex-row w-full">
                         <div className="w-20 mx-1 text-base text-center">Stufe</div>
                         <div className="w-28 mx-1 flex-1 text-base text-center">Wort</div>
-                        <div className="w-20 mx-1 text-base text-center me-4 lg:me-0 hidden lg:block">Bild</div>
                         <div className="w-28 mx-1 text-base text-center hidden lg:block">Übersetzung</div>
                         <div className="w-6 mx-2" />
                         <div className="w-6 mx-2" />
