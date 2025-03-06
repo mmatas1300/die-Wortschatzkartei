@@ -1,10 +1,10 @@
-import DeleteMessage from "@/app/ui/kartenenditor/meineKarte/DeleteMessage";
+import DeleteMessage from "@/app/ui/karteneditor/meineKarte/DeleteMessage";
 import { useSession } from 'next-auth/react';
 import { createContext } from 'react';
-import UpdateMessage from '@/app/ui/kartenenditor/meineKarte/UpdateMessage';
+import UpdateMessage from '@/app/ui/karteneditor/meineKarte/UpdateMessage';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import ResetMessage from '@/app/ui/kartenenditor/ResetMessage';
+import ResetMessage from '@/app/ui/karteneditor/ResetMessage';
 import { deleteMyCard, resetMyCardLevel } from "@/libs/data";
 
 export const cardListContext = createContext();

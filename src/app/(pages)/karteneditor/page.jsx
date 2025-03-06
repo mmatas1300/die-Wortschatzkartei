@@ -1,8 +1,8 @@
 "use client"
-import { MeineCardList } from "@/app/ui/kartenenditor/meineKarte/MeineCardsList";
-import CreateCardForm from "@/app/ui/kartenenditor/create/CreateCardForm";
+import { MeineCardList } from "@/app/ui/karteneditor/meineKarte/MeineCardsList";
+import CreateCardForm from "@/app/ui/karteneditor/create/CreateCardForm";
 import { Fade } from "react-awesome-reveal";
-import { AppCardList } from "@/app/ui/kartenenditor/appKarte/AppCardsList";
+import { AppCardList } from "@/app/ui/karteneditor/appKarte/AppCardsList";
 import { useSession } from "next-auth/react";
 import { Spinner } from "@material-tailwind/react";
 

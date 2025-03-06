@@ -2,7 +2,7 @@ import { useSession } from 'next-auth/react';
 import { createContext } from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import ResetMessage from '@/app/ui/kartenenditor/ResetMessage';
+import ResetMessage from '@/app/ui/karteneditor/ResetMessage';
 import {resetAppProgress} from "@/libs/data";
 
 export const cardListContext = createContext();

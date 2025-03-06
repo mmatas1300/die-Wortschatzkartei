@@ -1,6 +1,6 @@
 import React from 'react';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
-import EditCardForm from '@/app/ui/kartenenditor/meineKarte/EditCardForm';
+import EditCardForm from '@/app/ui/karteneditor/meineKarte/EditCardForm';
 
 const ScrollAreaUpdate = () => (
     <ScrollArea.Root className="h-[330px] lg:w-[670px] rounded overflow-hidden bg-black-card">
