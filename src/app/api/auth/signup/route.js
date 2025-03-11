@@ -26,6 +26,7 @@ export async function POST(request) {
                 nick: "",
                 cardsSet:"app", 
                 cardsPerDay: 10,
+                ponsSecret: "",
             },
             streak: [{dayPlayed: new Date('2000'), cardsPlayed: 0}],
             progress: await progressGenerator(),
