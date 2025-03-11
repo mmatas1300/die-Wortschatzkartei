@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import { getPons } from '@/libs/data';
 import parse from 'html-react-parser';
 import { Spinner } from "@material-tailwind/react";
+import { useSession } from 'next-auth/react';
 
 const PonsCard = ({ wort }) => {
+
+    const { data: session} = useSession();
 
     const [wordData, setWordData] = useState(null)
 
     useEffect(() => {
         const findWord = async () => {
-            const data = await getPons(wort);
+            const data = await getPons(session.user._id,wort);
             setWordData(data[0].hits[0].roms[0])
             console.log("Componente:", data[0].hits[0].roms[0])
         }

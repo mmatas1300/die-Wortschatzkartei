@@ -242,11 +242,11 @@ export const resetAppProgress = async (userId, cardId)=>{
 }
 
 //KartePons
-export const getPons = async (wort)=>{
+export const getPons = async (userId,wort)=>{
 	try {
 		const resp = await fetch('/api/pons',{
 			method: "POST",
-			body: JSON.stringify({query: wort}),
+			body: JSON.stringify({userId: userId, query: wort}),
 			headers: {"Content-type": "application/json"}
 		});
 		const data = await resp.json();
