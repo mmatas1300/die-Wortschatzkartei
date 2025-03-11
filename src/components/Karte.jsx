@@ -3,9 +3,11 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import PonsCard from './PonsCard';
 import { BookText } from 'lucide-react';
+import { useSession } from 'next-auth/react';
 
 function Karte(karte) {
 
+    const { data: session, status } = useSession();
     const [showUbersetzung, setShowUbersetzung] = useState(false);
     const [showPonsCard, setShowPonsCard] = useState(false);
 
@@ -13,7 +15,7 @@ function Karte(karte) {
         setShowUbersetzung(true);
     };
 
-    const togglePonsCard = ()=>{
+    const togglePonsCard = () => {
         setShowPonsCard(!showPonsCard)
     };
 
@@ -68,19 +70,23 @@ function Karte(karte) {
         }
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         setShowUbersetzung(false);
-    },[karte]);
+    }, [karte]);
 
     return (
         <div className={`flex flex-col justify-center items-center w-80  rounded-3xl text-xl ${colorKarte()}`}>
             <div className='flex flex-row justify-between items-center  mt-4 w-64'>
-                <button onClick={togglePonsCard} className='bg-black-card p-1 rounded-md'>
-                    <BookText size={20} />   
-                </button>
-                {showPonsCard ? <PonsCard wort={karte.wort} />  : <></>}
+                {status == "authenticated" && session.user.config.ponsSecret ?
+                    <>
+                        <button onClick={togglePonsCard} className='bg-black-card p-1 rounded-md'>
+                            <BookText size={20} />
+                        </button>
+                        {showPonsCard ? <PonsCard wort={karte.wort} /> : <></>}
+                    </>
+                    : <></>}
                 <p className="underline">{typeKarte()}</p>
-                
+
             </div>
 
             {karte.type === "Nomen-MUF" ? (
@@ -118,11 +124,11 @@ function Karte(karte) {
                 <p className='text-sm'>{karte.partizip2}</p></div>) : ""}
 
             {karte.bild && (karte.bild[0] === "/" | karte.bild[0].toLowerCase() === "h") ? (
-                                <>
-                                    <div className='w-60 h-auto my-4'>
-                                        <Image src={karte.bild} alt={wortKarte()} width={240} height={240} className='rounded-2xl' />
-                                    </div>
-                                </>
+                <>
+                    <div className='w-60 h-auto my-4'>
+                        <Image src={karte.bild} alt={wortKarte()} width={240} height={240} className='rounded-2xl' />
+                    </div>
+                </>
             ) : (<div className='my-3' />)}
             <p className='mb-4'>{karte.verwandte}</p>
             <p className='mx-4 mb-4 text-center'>{karte.beispiel}</p>
