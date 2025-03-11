@@ -1,0 +1,141 @@
+{
+    "headword": "Haut",
+    "headword_full": "Haut <span class=\"flexion\">&lt;-, Häute&gt;</span> <span class=\"phonetics\">[haut, <span class=\"info\"><acronym title=\"plural\">pl</acronym></span> ˈhɔytə]</span> <span class=\"wordclass\"><acronym title=\"noun\">N</acronym></span> <span class=\"genus\"><acronym title=\"feminine\">f</acronym></span>",
+    "wordclass": "noun",
+    "arabs": [
+        {
+            "header": "1. Haut <span class=\"topic\"><acronym title=\"anatomy\">ANAT</acronym></span>:",
+            "translations": [
+                {
+                    "source": "<strong class=\"headword\">Haut</strong>",
+                    "target": "skin"
+                },
+                {
+                    "source": "<span class=\"full_collocation\">nass bis auf die <strong class=\"tilde\">Haut\n</strong> </span>",
+                    "target": "soaked to the skin"
+                },
+                {
+                    "source": "<span class=\"full_collocation\">viel <strong class=\"tilde\">Haut</strong> zeigen</span> <span class=\"rhetoric\"><acronym title=\"humorous\">hum</acronym></span>",
+                    "target": "to reveal a lot <span class=\"rhetoric\"><acronym title=\"humorous\">hum</acronym></span>"
+                }
+            ]
+        },
+        {
+            "header": "2. Haut <span class=\"sense\">(gegerbtes Fell)</span>:",
+            "translations": [
+                {
+                    "source": "<strong class=\"headword\">Haut</strong>",
+                    "target": "hide"
+                }
+            ]
+        },
+        {
+            "header": "3. Haut <span class=\"topic\"><acronym title=\"botany\">BOT</acronym>, <acronym title=\"gardening\">HORT</acronym></span> <span class=\"sense\">(dünne Schale)</span>:",
+            "translations": [
+                {
+                    "source": "<strong class=\"headword\">Haut</strong>",
+                    "target": "peel"
+                },
+                {
+                    "source": "<strong class=\"headword\">Haut</strong>",
+                    "target": "skin"
+                }
+            ]
+        },
+        {
+            "header": "4. Haut <span class=\"sense\">(Außenhaut)</span>:",
+            "translations": [
+                {
+                    "source": "<strong class=\"headword\">Haut</strong>",
+                    "target": "skin"
+                }
+            ]
+        },
+        {
+            "header": "5. Haut <span class=\"sense\">(erstarrte Schicht)</span>:",
+            "translations": [
+                {
+                    "source": "<strong class=\"headword\">Haut</strong>",
+                    "target": "skin"
+                }
+            ]
+        },
+        {
+            "header": "Phrases:",
+            "translations": [
+                {
+                    "source": "<span class=\"idiom_proverb\">eine ehrliche <strong class=\"tilde\">Haut</strong> sein</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "to be an honest sort"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">aus der <strong class=\"tilde\">Haut</strong> fahren</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "to hit the roof <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">sich <span class=\"case\"><acronym title=\"accusative\">acc</acronym></span> auf die faule <strong class=\"tilde\">Haut</strong> legen</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>, <span class=\"idiom_proverb\">auf der faulen <strong class=\"tilde\">Haut</strong> liegen</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "to laze around <span class=\"target\">[<span class=\"or\"><acronym title=\"or\">or</acronym></span> <span class=\"region\"><acronym title=\"British English\" class=\"Brit\">Brit</acronym></span> about]</span>"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">sich <span class=\"case\"><acronym title=\"accusative\">acc</acronym></span> auf die faule <strong class=\"tilde\">Haut</strong> legen</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>, <span class=\"idiom_proverb\">auf der faulen <strong class=\"tilde\">Haut</strong> liegen</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "to take it <span class=\"target\">[<span class=\"or\"><acronym title=\"or\">or</acronym></span> things]</span> easy"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\"><acronym title=\"etwas\">etw</acronym> geht [<acronym title=\"jemandem\">jdm</acronym>] unter die <strong class=\"tilde\">Haut\n</strong> </span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "<acronym title=\"something\">sth</acronym> gets under one&#39;s skin <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">mit <strong class=\"tilde\">Haut</strong> und Haar[en]</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "completely"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">mit <strong class=\"tilde\">Haut</strong> und Haar[en]</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "totally"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">mit heiler <strong class=\"tilde\">Haut</strong> davonkommen</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "to escape unscathed"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\"><acronym title=\"jemand\">jd</acronym> kann nicht aus seiner <strong class=\"tilde\">Haut</strong> heraus</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "a leopard cannot change its spots <span class=\"rhetoric\"><acronym title=\"proverb\">prov</acronym></span>"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">nur <strong class=\"tilde\">Haut</strong> und Knochen sein</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>, <span class=\"idiom_proverb\">nur noch aus <strong class=\"tilde\">Haut</strong> und Knochen bestehen</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "to be nothing but skin and bone"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">[für <acronym title=\"jemanden\">jdn</acronym>/<acronym title=\"etwas\">etw</acronym>] seine <strong class=\"tilde\">Haut</strong> zu Markte tragen</span>",
+                    "target": "to risk one&#39;s neck [for <acronym title=\"somebody\">sb</acronym>/<acronym title=\"something\">sth</acronym>]"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">seine [eigene] <strong class=\"tilde\">Haut</strong> retten</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "to save one&#39;s own skin"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\"><acronym title=\"jemand\">jd</acronym> möchte nicht in <acronym title=\"jemandes\">jds</acronym> <strong class=\"tilde\">Haut</strong> stecken</span>",
+                    "target": "<acronym title=\"somebody\">sb</acronym> would not like to be in <acronym title=\"somebody's\">sb's</acronym> shoes"
+                },
+                {
+                    "source": "<span class=\"example\">ich möchte nicht in seiner <strong class=\"tilde\">Haut</strong> stecken</span>",
+                    "target": "I wouldn&#39;t like to be in his shoes"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">seine <strong class=\"tilde\">Haut</strong> so teuer wie möglich verkaufen</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "to make things as difficult as possible"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">sich <span class=\"case\"><acronym title=\"accusative\">acc</acronym></span> seiner <strong class=\"tilde\">Haut</strong> wehren</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "to stick up for oneself <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\">sich <span class=\"case\"><acronym title=\"accusative\">acc</acronym></span> nicht wohl in seiner <strong class=\"tilde\">Haut</strong> fühlen</span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "not to feel too good"
+                },
+                {
+                    "source": "<span class=\"idiom_proverb\"><acronym title=\"jemandem\">jdm</acronym> ist nicht wohl in seiner <strong class=\"tilde\">Haut\n</strong> </span> <span class=\"style\"><acronym title=\"informal\">inf</acronym></span>",
+                    "target": "<acronym title=\"somebody\">sb</acronym> is not feeling too good"
+                }
+            ]
+        }
+    ]
+}

@@ -4,6 +4,7 @@ import { Spinner } from "@material-tailwind/react";
 import { Fade } from 'react-awesome-reveal';
 import AccountConfig from '@/app/ui/konto/AccountConfig';
 import Tracker from '@/components/tracker/Tracker';
+import PonsCard from '@/components/PonsCard';
 
 
 function KontoPage() {

@@ -96,3 +96,24 @@ button:active{
 .abmelden .ps-menu-button:hover {
   background-color: var(--red-card) !important;
 }
+
+.flexion{
+  color: rgb(154, 155, 156);
+  font-style: italic;
+  font-weight: normal;
+}
+
+.phonetics{
+  color: rgb(154, 155, 156);
+  font-style: normal;
+  font-weight: normal;
+}
+
+.pons{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: small;
+}
+
+.headword, .sense, .idiom_proverb,.style, sup, .full_collocation{
+  margin-right: 3px;
+}

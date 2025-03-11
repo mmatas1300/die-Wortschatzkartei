@@ -240,3 +240,18 @@ export const resetAppProgress = async (userId, cardId)=>{
 		console.log(error)
 	}
 }
+
+//KartePons
+export const getPons = async (wort)=>{
+	try {
+		const resp = await fetch('/api/pons',{
+			method: "POST",
+			body: JSON.stringify({query: wort}),
+			headers: {"Content-type": "application/json"}
+		});
+		const data = await resp.json();
+		return data;
+	} catch (error) {
+		console.log(error)
+	}
+}

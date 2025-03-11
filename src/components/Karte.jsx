@@ -1,13 +1,20 @@
 'use client'
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import PonsCard from './PonsCard';
+import { BookText } from 'lucide-react';
 
 function Karte(karte) {
 
     const [showUbersetzung, setShowUbersetzung] = useState(false);
+    const [showPonsCard, setShowPonsCard] = useState(false);
 
     const toggleUbersetzung = () => {
         setShowUbersetzung(true);
+    };
+
+    const togglePonsCard = ()=>{
+        setShowPonsCard(!showPonsCard)
     };
 
     const colorKarte = () => {
@@ -67,8 +74,15 @@ function Karte(karte) {
 
     return (
         <div className={`flex flex-col justify-center items-center w-80  rounded-3xl text-xl ${colorKarte()}`}>
+            <div className='flex flex-row justify-between items-center  mt-4 w-64'>
+                <button onClick={togglePonsCard} className='bg-black-card p-1 rounded-md'>
+                    <BookText size={20} />   
+                </button>
+                {showPonsCard ? <PonsCard wort={karte.wort} />  : <></>}
+                <p className="underline">{typeKarte()}</p>
+                
+            </div>
 
-            <p className="underline self-end me-4 mt-4">{typeKarte()}</p>
             {karte.type === "Nomen-MUF" ? (
                 <div className='grid grid-cols-2 justify-items-center'>
                     <p className='mx-2 text-sm' >{wortKarte()}</p>
@@ -112,7 +126,7 @@ function Karte(karte) {
             ) : (<div className='my-3' />)}
             <p className='mb-4'>{karte.verwandte}</p>
             <p className='mx-4 mb-4 text-center'>{karte.beispiel}</p>
-            <p onClick={toggleUbersetzung} className='mb-4 bg-black-card p-1 rounded-md cursor-pointer text-sm'>{showUbersetzung ? karte.ubersetzung : "Übersetzung"}</p>
+            <p onClick={toggleUbersetzung} className='mb-5 bg-black-card p-1 rounded-md cursor-pointer text-sm'>{showUbersetzung ? karte.ubersetzung : "Übersetzung"}</p>
         </div>
     );
 }
