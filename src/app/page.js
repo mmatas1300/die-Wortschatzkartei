@@ -28,7 +28,7 @@ export default function Home() {
                     <div>
                         <h1 className="p-5 rounded-2xl mx-10 text-center">Translate your card with PONS</h1>
                         <p className="mx-10 text-center">Connect your PONS account and look up translations directly from the dictionary</p>
-                        <p className="mx-10 text-center">For more information, check the 'hilfe' section</p>
+                        <p className="mx-10 text-center">For more information, check the &apos;hilfe&apos; section</p>
                     </div>
                     <img src="/imgs/PONS.gif" alt="PONS demo" width={250} className="rounded-2xl mt-4  shadow-md  shadow-blue-card" />
                 </div>

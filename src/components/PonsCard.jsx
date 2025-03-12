@@ -30,16 +30,16 @@ const PonsCard = ({ wort }) => {
                         <div className="pons">
                             <div className="">
                                 {parse(wordData.headword_full)}
-                                {wordData.arabs.slice(0, 2).map(element => {
+                                {wordData.arabs.slice(0, 2).map((element,index) => {
                                     return (
-                                        <div className="flex flex-col mt-4">
+                                        <div key={index} className="flex flex-col mt-4">
                                             <div>
                                                 {parse(element.header)}
                                             </div>
 
-                                            {element.translations.slice(0, 2).map((traslation) => {
+                                            {element.translations.slice(0, 2).map((traslation,index) => {
                                                 return (
-                                                    <div className="">
+                                                    <div key={index}>
                                                         {parse(traslation.source)}
                                                         {parse(traslation.target)}
                                                     </div>

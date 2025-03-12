@@ -66,16 +66,16 @@ const AccordionFAQ = () => (
                         Create a PONS account: Go to <a className='text-green-card underline' target="_blank" href='https://en.pons.com/translate'>PONS</a> and sign up.
                     </li>
                     <li>
-                        Access the PONS API: Navigate to <a className='text-green-card underline' target="_blank" href='https://en.pons.com/p/online-dictionary/developers/api'>PONS API</a> and select 'API registration form'.
+                        Access the PONS API: Navigate to <a className='text-green-card underline' target="_blank" href='https://en.pons.com/p/online-dictionary/developers/api'>PONS API</a> and select &apos;API registration form&apos;.
                     </li>
                     <li>
-                        Complete the registration: Click on 'Create your account' and fill out the form.
+                        Complete the registration: Click on &apos;Create your account&apos; and fill out the form.
                     </li>
                     <li>
-                        Get your secret key: Once your account is created, select 'Show secret' and copy the key displayed in 'secret'.
+                        Get your secret key: Once your account is created, select &apos;Show secret&apos; and copy the key displayed in &apos;secret&apos;.
                     </li>
                     <li>
-                        Configure your account: In your account (Mein Konto), go to 'Kontoeinstellungen' and paste the copied key into the 'Pons Secret' field. Press the 'Fertig' button to update your data.
+                        Configure your account: In your account (Mein Konto), go to &apos;Kontoeinstellungen&apos; and paste the copied key into the &apos;Pons Secret&apos; field. Press the &apos;Fertig&apos; button to update your data.
                     </li>
                 </ol>
             </AccordionContent>
