@@ -57,6 +57,29 @@ const AccordionFAQ = () => (
             In the &apos;Üben&apos; section, you can start your daily practice. When a card is presented to you, you should remember its meaning and additional information. If you were able to recall it, click the &apos;Richtig&apos; button; otherwise, click &apos;Falsch&apos;. Remember that the cards you practice with depend on the settings established in the &apos;Mein Konto&apos; section.
             </AccordionContent>
         </AccordionItem>
+
+        <AccordionItem value="item-8">
+            <AccordionTrigger>How can I enable integration with PONS?</AccordionTrigger>
+            <AccordionContent>
+                <ol className='list-decimal'>
+                    <li>
+                        Create a PONS account: Go to <a className='text-green-card underline' target="_blank" href='https://en.pons.com/translate'>PONS</a> and sign up.
+                    </li>
+                    <li>
+                        Access the PONS API: Navigate to <a className='text-green-card underline' target="_blank" href='https://en.pons.com/p/online-dictionary/developers/api'>PONS API</a> and select 'API registration form'.
+                    </li>
+                    <li>
+                        Complete the registration: Click on 'Create your account' and fill out the form.
+                    </li>
+                    <li>
+                        Get your secret key: Once your account is created, select 'Show secret' and copy the key displayed in 'secret'.
+                    </li>
+                    <li>
+                        Configure your account: In your account (Mein Konto), go to 'Kontoeinstellungen' and paste the copied key into the 'Pons Secret' field. Press the 'Fertig' button to update your data.
+                    </li>
+                </ol>
+            </AccordionContent>
+        </AccordionItem>
     </Accordion.Root>
 );
 

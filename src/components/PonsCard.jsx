@@ -13,8 +13,11 @@ const PonsCard = ({ wort }) => {
     useEffect(() => {
         const findWord = async () => {
             const data = await getPons(session.user._id,wort);
-            setWordData(data[0].hits[0].roms[0])
-            console.log("Componente:", data[0].hits[0].roms[0])
+            if(data)
+                setWordData(data[0].hits[0].roms[0]);
+            else
+                setWordData({headword_full: "Error, please verify your PONS secret.",arabs:[]})
+
         }
         findWord()
     }, [])
@@ -23,7 +26,7 @@ const PonsCard = ({ wort }) => {
         <>
             {
                 wordData ?
-                    <div className={`bg-black-card p-3 rounded-xl max-w-64 absolute z-10 translate-x-7`}>
+                    <div className={`bg-black-card p-3 rounded-xl w-64 absolute top-full z-10 left-0 -translate-y-1`}>
                         <div className="pons">
                             <div className="">
                                 {parse(wordData.headword_full)}
@@ -49,7 +52,7 @@ const PonsCard = ({ wort }) => {
                         </div>
                     </div>
                     : 
-                    <div className={`bg-black-card p-3 rounded-xl max-w-64 absolute z-10 translate-x-7`}>
+                    <div className={`bg-black-card p-3 rounded-xl max-w-64 absolute top-full z-10 left-0 -translate-y-1`}>
                         <Spinner className="h-6 w-6" />
                     </div>}
         </>

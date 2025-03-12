@@ -114,6 +114,6 @@ button:active{
   font-size: small;
 }
 
-.headword, .sense, .idiom_proverb,.style, sup, .full_collocation{
+.headword, .sense, .idiom_proverb,.style, sup, .full_collocation, .feminine{
   margin-right: 3px;
 }

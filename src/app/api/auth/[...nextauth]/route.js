@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { connectDB } from "@/libs/mongodb";
 import User from '@/models/user'
 import bcrypt from 'bcryptjs'
+import CryptoJS from "crypto-js";
 
 const handler = NextAuth({
     providers: [
@@ -22,6 +23,8 @@ const handler = NextAuth({
 
                 if(!passwordMatch)throw new Error("Ungültige Daten")
 
+                userFound.config.ponsSecret = CryptoJS.AES.decrypt(userFound.config.ponsSecret, process.env.CRYPTO_KEY).toString(CryptoJS.enc.Utf8);
+                
                 const userData={
                     email: userFound.email,
                     config: userFound.config,

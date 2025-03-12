@@ -18,7 +18,7 @@ const AccountConfig = () => {
             nick: formData.get('nick') ? formData.get('nick') : session.user.config.nick,
             cardsSet: formData.get('cardsSet'),
             cardsPerDay: formData.get('cardsPerDay')>0 & formData.get('cardsPerDay')<=50 ? Math.round(formData.get('cardsPerDay')) : session.user.config.cardsPerDay,
-            ponsSecret: formData.get('ponsSecret'),
+            ponsSecret: formData.get('ponsSecret') ? formData.get('ponsSecret') : session.user.config.ponsSecret,
         }
         try {
             await updateMyAccount(config,session.user._id);
@@ -45,7 +45,7 @@ const AccountConfig = () => {
                         </select>
                         <label className='mt-2' htmlFor="cardsPerDay">Tageshöchstwert für neue Karten:</label>
                         <input type="text" placeholder={session.user.config.cardsPerDay} name='cardsPerDay' />
-                        <label className='mt-2' htmlFor="ponsSecret">Pons secret:</label>
+                        <label className='mt-2' htmlFor="ponsSecret">PONS secret:</label>
                         <input type="password" placeholder={session.user.config.ponsSecret} name='ponsSecret' />
                         {stateButton}
                     </form>

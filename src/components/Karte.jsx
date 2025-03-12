@@ -72,21 +72,21 @@ function Karte(karte) {
 
     useEffect(() => {
         setShowUbersetzung(false);
+        setShowPonsCard(false);
     }, [karte]);
 
     return (
         <div className={`flex flex-col justify-center items-center w-80  rounded-3xl text-xl ${colorKarte()}`}>
             <div className='flex flex-row justify-between items-center  mt-4 w-64'>
                 {status == "authenticated" && session.user.config.ponsSecret ?
-                    <>
+                    <div className='relative inline-block'>
                         <button onClick={togglePonsCard} className='bg-black-card p-1 rounded-md'>
                             <BookText size={20} />
                         </button>
                         {showPonsCard ? <PonsCard wort={karte.wort} /> : <></>}
-                    </>
+                    </div>
                     : <></>}
                 <p className="underline">{typeKarte()}</p>
-
             </div>
 
             {karte.type === "Nomen-MUF" ? (
