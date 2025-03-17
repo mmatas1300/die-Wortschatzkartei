@@ -9,7 +9,7 @@ export async function POST(request) {
     try {
         await connectDB()
         const userFound=await User.findById(userId);
-        if (userFound.email != "mmatas1300@gmail.com") return NextResponse.json({message: "permission denied"},{status: 400})
+        if (userFound.email != process.env.RESEND_API_KEY) return NextResponse.json({message: "permission denied"},{status: 400})
         
         if(type === "Verb"){
             const wortFound = await VerbCard.findOne({ wort })

@@ -3,7 +3,7 @@ import {connectDB}  from "@/libs/mongodb";
 import User from '@/models/user';
 
 export async function PUT(request){
-    const { userId, card, cards, update } = await request.json()
+    const { userId, card, cards, update, date } = await request.json()
     if(update==="edit"){
         try {
             await connectDB();
@@ -27,7 +27,7 @@ export async function PUT(request){
             await connectDB();
             await User.updateOne({ _id: userId },{ $pull: { myCards: { _id: { $in: cardIds } } } });
             await User.updateOne({ _id: userId }, { $push: { myCards: { $each: cards } } });
-            await User.updateOne({_id: userId}, {$push: {streak: {dayPlayed: new Date().setHours(0,0,0), cardsPlayed: cards.length}} });
+            await User.updateOne({_id: userId}, {$push: {streak: {dayPlayed: date, cardsPlayed: cards.length}} });
             return NextResponse.json({message: "Update successful"},{status: 200});
         } catch (error) {
             return NextResponse.json(error);
