@@ -136,7 +136,7 @@ const PlayScreen = ({ cards, progress }) => {
             (
                 <>
                     {gameStart ? (!gameFinish ? (<>
-                                                    <div className="mt-4 mb-6 w-80 mx-14">
+                                                    <div className="mb-6 w-80 mx-14">
                                                         <ProgressBar completed={reviewedCardNum}  maxCompleted={selectedCards.length-1}  baseBgColor="#F8F9FA" bgColor="#4CAB2A" isLabelVisible={false} />
                                                     </div>
                                                    

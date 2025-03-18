@@ -48,7 +48,7 @@ function UbenPage() {
 
     return (
         <Fade triggerOnce>
-            <section className="flex flex-col justify-center items-center my-12">
+            <section className="flex flex-col justify-center items-center mt-6  mb-12">
                 {mainMessage}
             </section>
         </Fade>
