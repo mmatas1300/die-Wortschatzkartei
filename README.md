@@ -12,6 +12,14 @@ Review the cards once a day using spaced repetition to memorize the vocabulary.
   </kbd>
 </p>
 
+#### Translate your card with PONS
+Connect your PONS account and look up translations directly from the dictionary.
+
+<p align="center">
+  <kbd>
+  <img src="/public/imgs/PONS.gif" width="320"/>
+  </kbd>
+</p>
 
 #### Create your own cards
 Use the card editor to create your own cards. You can create cards with nouns, verbs, words that have variations for men and women, and any other category.
@@ -39,11 +47,6 @@ If you want to study your cards without affecting your progress, review the dict
   <img src="/public/imgs/Worterbuch.jpg" width="320"/>
   </kbd>
 </p>
-
-
-## Features
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Authors
 
