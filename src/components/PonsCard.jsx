@@ -16,7 +16,7 @@ const PonsCard = ({ wort }) => {
             if(data)
                 setWordData(data[0].hits[0].roms[0]);
             else
-                setWordData({headword_full: "Error, please verify your PONS secret.",arabs:[]})
+                setWordData({headword_full: "Error, please verify your word or PONS secret.",arabs:[]})
 
         }
         findWord()
