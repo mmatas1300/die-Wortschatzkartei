@@ -100,7 +100,7 @@ function Karte(karte) {
 
             <p>{karte.plural ? "die " + karte.plural : ""}</p>
             {karte.type === "Verb" ? (<div className='flex  flex-col justify-center items-center'>
-                <p className='underline mt-2'>Präsens</p>
+                <p className='underline mt-2'>{(karte.prasens[0] !== "" || karte.prasens[1] !== "" || karte.prasens[2] !== "" || karte.prasens[3] !== "" || karte.prasens[4] !== "" || karte.prasens[5] !== "" ) ? "Präsens" : ""}</p>
                 <div class="grid grid-cols-3 justify-items-center">
                     <p className='mx-1 text-sm'>{karte.prasens[0]}</p>
                     <p className='mx-1 text-sm'>{karte.prasens[1]}</p>
@@ -120,7 +120,9 @@ function Karte(karte) {
                     <p className='mx-1 text-sm'>{karte.prateritum[5]}</p>
                 </div>
 
-                <p className='underline mt-2'>{karte.type === "Verb" ? "Partizip II" : ""}</p>
+                {karte.partizip2 ? 
+                    (<p className='underline mt-2'>Partizip II</p>):("")
+                }
                 <p className='text-sm'>{karte.partizip2}</p></div>) : ""}
 
             {karte.bild && (karte.bild[0] === "/" | karte.bild[0].toLowerCase() === "h") ? (
