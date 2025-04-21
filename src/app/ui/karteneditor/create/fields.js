@@ -70,7 +70,7 @@ export const verbFields = (<>
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="bild">Bild:</label>
-            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name='bild' required />
+            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name='bild' />
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="ubersetzung">Übersetzung:</label>
@@ -109,7 +109,7 @@ export const nomenMUFFields = (<>
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="bild">Bild:</label>
-            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name='bild' required />
+            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name='bild'/>
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="ubersetzung">Übersetzung:</label>
@@ -147,7 +147,7 @@ export const nomenFields = (handleGender) => {
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="bild">Bild:</label>
-            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild" required />
+            <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild" />
         </div>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
             <label htmlFor="ubersetzung">Übersetzung:</label>
@@ -182,7 +182,7 @@ export const nomenFieldsPl = (handleGender) => {
             </div>
             <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
                 <label htmlFor="bild">Bild:</label>
-                <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild" required/>
+                <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild"/>
             </div>
             <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
                 <label htmlFor="ubersetzung">Übersetzung:</label>
@@ -211,7 +211,7 @@ export const andereFields = (<div className='lg:grid lg:grid-cols-2 lg:w-full'>
     </div>
     <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
         <label htmlFor="bild">Bild:</label>
-        <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild" required/>
+        <input className='lg:max-w-56' type="text" placeholder='https://www.example.com/bild.jpg' name="bild"/>
     </div>
     <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
         <label htmlFor="ubersetzung">Übersetzung:</label>
