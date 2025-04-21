@@ -27,7 +27,42 @@ module.exports = withMT({
       },
       backgroundImage: {
         'img-card': "url('/imgs/back.svg')"
-      }
+      },
+      animation: {
+        glowLvl34: 'glow34 7s ease-in-out infinite',
+        glowLvl56: 'glow56 5s ease-in-out infinite',
+        glowLvl7: 'glow7 2s ease-in-out infinite'
+
+      },
+      keyframes: {
+        glow34: {
+          '0%, 100%': {
+            boxShadow: '0 0 0px rgba(233, 180, 21, 0.4)',
+          },
+          '50%': {
+            boxShadow: '0 0 20px rgba(233, 180, 21, 0.6)',
+          },
+        },
+
+        glow56: {
+          '0%, 100%': {
+            boxShadow: '0 0 10px rgba(233, 180, 21, 0.4)',
+          },
+          '50%': {
+            boxShadow: '0 0 20px rgba(233, 180, 21, 0.8)',
+          },
+        },
+
+        glow7: {
+          '0%, 100%': {
+            boxShadow: '0 0 20px rgba(233, 180, 21, 1)',
+          },
+          '50%': {
+            boxShadow: '0 0 20px rgba(233, 180, 21, 1)',
+          },
+        },
+
+      },
     },
   },
   plugins: [],
