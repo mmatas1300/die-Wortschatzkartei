@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import PonsCard from './PonsCard';
+import PonsContainerKarte from '@/components/Pons/PonsContainerKarte';
 import { BookText } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 
@@ -83,7 +83,7 @@ function Karte(karte) {
                         <button onClick={togglePonsCard} className='bg-black-card p-1 rounded-md'>
                             <BookText size={20} />
                         </button>
-                        {showPonsCard ? <PonsCard wort={karte.wort} /> : <></>}
+                        {showPonsCard ? <PonsContainerKarte wort={karte.wort} /> : <></>}
                     </div>
                     : <></>}
                 <p className="underline">{typeKarte()}</p>

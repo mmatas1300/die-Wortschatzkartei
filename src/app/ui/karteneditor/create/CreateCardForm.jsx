@@ -4,13 +4,15 @@ import { useSession } from 'next-auth/react'
 import { createCard } from '@/libs/getFormCardData';
 import { verbFields, nomenMUFFields, nomenFields, nomenFieldsPl, andereFields } from '@/app/ui/karteneditor/create/fields';
 import { createMyCard } from '@/libs/data';
+import PonsContainerKarteneditor from '@/components/Pons/PonsContainerKarteneditor';
 
 const CreateCardForm = () => {
 
     const fertigButton = (<button className='bg-black-card'>Fertig</button>);
     const [buttonState, setButtonState] = useState(fertigButton);
 
-    const { data: session } = useSession();
+
+    const { data: session} = useSession();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -46,6 +48,8 @@ const CreateCardForm = () => {
         }
     };
 
+
+
     const [typeFields, setTypeFields] = useState(nomenFields(handleGender));
     const [typeColor, setTypeColor] = useState("bg-green-card");
 
@@ -64,7 +68,8 @@ const CreateCardForm = () => {
                 <button onClick={() => { setForm(andereFields, "bg-purple-card") }} className='bg-black-card p-2 z-0 rounded-none rounded-t-lg transition duration-200 hover:scale-105 hover:bg-yellow-card'>Andere Wort</button>
             </div>
             <div className={`w-96 lg:w-[640px] rounded-br-3xl rounded-bl-3xl rounded-tl-lg rounded-tr-3xl z-10 ${typeColor}`}>
-                <form onSubmit={handleSubmit} className="flex flex-col justify-normal items-center mx-12 mt-12 mb-5">
+                    <PonsContainerKarteneditor/>
+                <form onSubmit={handleSubmit} className="flex flex-col justify-normal items-center mx-12 mt-6 mb-5">
                     {typeFields}
                     {buttonState}
                 </form>
