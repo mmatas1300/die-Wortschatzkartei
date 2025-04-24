@@ -10,7 +10,6 @@ import { SquareX as SquareXIcon } from 'lucide-react';
 const PonsContainerKarteneditor = () => {
 
     const { data: session } = useSession();
-
     const [buttonState, setButtonState] = useState(false);
     const [wordData, setWordData] = useState(null)
 
@@ -24,8 +23,6 @@ const PonsContainerKarteneditor = () => {
         console.log(wordData)
         setButtonState(false);
     }
-
-
 
     return (
         <div className="flex flex-col justify-normal items-center mx-12 mt-12">
@@ -41,6 +38,9 @@ const PonsContainerKarteneditor = () => {
                             <Spinner className="h-6 w-6" />
                         </div> :
                         <div className="flex">
+                            <div onClick={()=>setWordData(null)} className="hover:cursor-pointer">
+                                <SquareXIcon/>
+                            </div>
                             <div className={`bg-black-card p-3 rounded-xl rounded-tr-md rounded-br-3xl w-64 lg:w-80`}>
                                 <PonsCard wordData={wordData} />
                             </div>
