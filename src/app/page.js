@@ -34,7 +34,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col lg:flex-row justify-center items-center my-12 lg:mx-32">
-                    <img src="/imgs/Karteneditor.jpg" alt="Kartenenditor" className="rounded-2xl mt-4 mx-auto shadow-md  shadow-green-card w-96" />
+                    <img src="/imgs/Karteneditor.gif" alt="Kartenenditor" className="rounded-2xl mt-4 mx-auto shadow-md  shadow-green-card w-96" />
                     <div>
                         <h1 className="p-5 rounded-2xl mx-10 text-center">Create your own cards</h1>
                         <p className="mx-10 text-center text-base">Use the card editor to create your own cards. You can create cards with nouns, verbs, words that have variations for men and women, and any other category</p>

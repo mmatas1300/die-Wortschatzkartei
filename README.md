@@ -26,7 +26,7 @@ Use the card editor to create your own cards. You can create cards with nouns, v
 
 <p align="center">
   <kbd>
-  <img src="/public/imgs/Karteneditor.jpg" width="450"/>
+  <img src="/public/imgs/Karteneditor.gif" width="450"/>
   </kbd>
 </p>
 

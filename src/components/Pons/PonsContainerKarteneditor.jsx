@@ -27,7 +27,7 @@ const PonsContainerKarteneditor = () => {
     return (
         <div className="flex flex-col justify-normal items-center mx-12 mt-12">
             
-                <Image src={"/imgs/PonsLogo.png"} alt={"Pons Logo"} width={50} height={50} className='mb-1' />
+                <Image src={"/imgs/PonsLogo.png"} alt={"Pons Logo"} width={50} height={19} className='mb-1' />
                 <SearchForm handleSubmit={searchPons} buttonState={buttonState} style={"w-full max-w-md mx-4 mt-4"}/>
             
 
