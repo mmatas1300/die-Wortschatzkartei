@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import PonsContainerKarte from '@/components/Pons/PonsContainerKarte';
 import { BookText } from 'lucide-react';
 import { useSession } from 'next-auth/react';
+import {selectColorCard} from '@/libs/selectColorCards'
 
 function Karte(karte) {
 
@@ -17,25 +18,6 @@ function Karte(karte) {
 
     const togglePonsCard = () => {
         setShowPonsCard(!showPonsCard)
-    };
-
-    const colorKarte = () => {
-        switch (karte.type) {
-            case "Nomen-das":
-                return "bg-green-card";
-            case "Nomen-der":
-                return "bg-blue-card";
-            case "Nomen-die":
-                return "bg-red-card";
-            case "Nomen-pl":
-                return "bg-yellow-card";
-            case "Nomen-MUF":
-                return "bg-gradient-to-r from-blue-card to-red-card";
-            case "Verb":
-                return `bg-orange-card`;
-            default:
-                return "bg-purple-card";
-        }
     };
 
     const typeKarte = () => {
@@ -76,7 +58,7 @@ function Karte(karte) {
     }, [karte]);
 
     return (
-        <div className={`flex flex-col justify-center items-center w-80  rounded-3xl text-xl ${colorKarte()}`}>
+        <div className={`flex flex-col justify-center items-center w-80  rounded-3xl text-xl ${selectColorCard(karte.type)}`}>
             <div className='flex flex-row justify-between items-center  mt-4 w-64'>
                 {status == "authenticated" && session.user.config.ponsSecret ?
                     <div className='relative inline-block'>
