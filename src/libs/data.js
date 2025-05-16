@@ -205,11 +205,11 @@ export const getGameData = async (userId, query)=>{
 	}
 };
 
-export const saveMyProgress = async (userId, cards)=>{
+export const saveUserCardsProgress = async (userId, cards)=>{
 	try {
-		await fetch('/api/user/cards',{
+		await fetch('/api/user/cards/progress',{
 			method: "PUT",
-			body: JSON.stringify({userId: userId, cards: cards, update: "play", date: new Date().setHours(0,0,0)}),
+			body: JSON.stringify({userId: userId, cards: cards, date: new Date().setHours(0,0,0)}),
 			headers: {"Content-type": "application/json"}
 		});
 	} catch (error) {

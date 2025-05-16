@@ -1,57 +1,31 @@
 import { NextResponse } from "next/server";
-import {connectDB}  from "@/libs/mongodb";
-import User from '@/models/user';
+import { deleteUserCard, getUserCards, updateUserCard } from "../../_services/userService";
 
-export async function PUT(request){
-    const { userId, card, cards, update, date } = await request.json()
-    if(update==="edit"){
-        try {
-            await connectDB();
-            await User.updateOne({ _id: userId },{ $pull: { myCards: { _id: card._id } } });
-            await User.findOneAndUpdate({ _id: userId }, { $push: { myCards: card } });
-            return NextResponse.json({message: "Update successful"},{status: 200});
-        } catch (error) {
-            return NextResponse.json(error);
-        }
-    } else if(update==="add"){
-        try {
-            await connectDB();
-            await User.findOneAndUpdate({ _id: userId }, { $push: { myCards: card } });
-            return NextResponse.json({message: "Creation successful"},{status: 200});
-        } catch (error) {
-            return NextResponse.json(error);
-        }
-    } else if(update==="play"){
-        const cardIds = cards.map((card)=>{return card._id})
-        try {
-            await connectDB();
-            await User.updateOne({ _id: userId },{ $pull: { myCards: { _id: { $in: cardIds } } } });
-            await User.updateOne({ _id: userId }, { $push: { myCards: { $each: cards } } });
-            await User.updateOne({_id: userId}, {$push: {streak: {dayPlayed: date, cardsPlayed: cards.length}} });
-            return NextResponse.json({message: "Update successful"},{status: 200});
-        } catch (error) {
-            return NextResponse.json(error);
-        }
-    }
-}
-
-export async function POST(request){
-    const {userId} = await request.json()
-    try{
-        await connectDB();
-        const userFound = await User.findOne({_id: userId});
-        return NextResponse.json(userFound.myCards)
+export async function PUT(request) {
+    const { userId, card } = await request.json()
+    try {
+        await updateUserCard(userId, card)
+        return NextResponse.json({ message: "Update successful" }, { status: 204 });
     } catch (error) {
         return NextResponse.json(error);
     }
 }
 
-export async function DELETE(request){
-    const {userId,cardId} = await request.json()
-    try{
-        await connectDB();
-        await User.updateOne({ _id: userId },{ $pull: { myCards: { _id: cardId } } });
-        return NextResponse.json({message: "Update successful"},{status: 200})
+export async function POST(request) {
+    const { userId } = await request.json()
+    try {
+        const userCards = await getUserCards(userId);
+        return NextResponse.json(userCards);
+    } catch (error) {
+        return NextResponse.json(error);
+    }
+}
+
+export async function DELETE(request) {
+    const { userId, cardId } = await request.json()
+    try {
+        await deleteUserCard(userId, cardId);
+        return NextResponse.json({ message: "Delete successful" }, { status: 204 })
     } catch (error) {
         return NextResponse.json(error);
     }

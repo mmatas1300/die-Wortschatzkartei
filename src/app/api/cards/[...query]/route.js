@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import {connectDB}  from "@/libs/mongodb";
-import {AndereCard} from '@/models/card';
+import {AndereCard} from '@/app/api/_models/card';
 
 export async function GET(req, { params }){
 

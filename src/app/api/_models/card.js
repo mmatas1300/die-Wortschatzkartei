@@ -52,4 +52,3 @@ const NomenCard = models.NomenCard || model('NomenCard', nomenCardSchema,'cards'
 const VerbCard = models.VerbCard || model('VerbCard', verbCardSchema,'cards');
 
 export {NomenCard,VerbCard,NomenMUFCard,AndereCard};
-

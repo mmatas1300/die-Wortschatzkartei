@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import {connectDB}  from "@/libs/mongodb";
-import User from '@/models/user';
+import User from '@/app/api/_models/user';
 import CryptoJS from "crypto-js";
 
 export async function PUT(request){

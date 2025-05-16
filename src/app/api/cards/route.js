@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import {connectDB}  from "@/libs/mongodb";
-import {VerbCard,NomenCard,NomenMUFCard,AndereCard} from '@/models/card';
-import User from "@/models/user";
+import {VerbCard,NomenCard,NomenMUFCard,AndereCard} from '@/app/api/_models/card';
+import User from "@/app/api/_models/user";
 
 export async function POST(request) {
     const { type, wort, plural,manner,frau,frauen,prasens, prateritum, partizip2, bild, verwandte, beispiel, ubersetzung,userId } = await request.json()//Corresponde a recuperar el body

@@ -1,4 +1,4 @@
-import {AndereCard} from '@/models/card';
+import {AndereCard} from '@/app/api/_models/card';
 import {connectDB}  from "@/libs/mongodb";
 
 export const progressGenerator = async ()=>{

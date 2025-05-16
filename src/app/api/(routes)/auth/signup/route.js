@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import User from '@/models/user'
+import User from '@/app/api/_models/user'
 import {connectDB}  from "@/libs/mongodb";
 import bcrypt from 'bcryptjs'
 import { progressGenerator } from "@/libs/progressGenerator";
