@@ -4,7 +4,7 @@ import { Spinner } from "@material-tailwind/react";
 import { Fade } from 'react-awesome-reveal';
 import AccountConfig from '@/app/ui/konto/AccountConfig';
 import Tracker from '@/components/tracker/Tracker';
-import PonsCard from '@/components/Pons/PonsContainerKarte';
+import CardsProgress from './CardsProgress';
 
 
 function KontoPage() {
@@ -19,7 +19,7 @@ function KontoPage() {
                         <h1 className='text-xl mb-4'>Mein Konto</h1>
                         <h1 className='text-xl mb-4'>{session.user.config.nick ? "Willkommen " + session.user.config.nick + "!" : "Willkommen, richten Sie bitte Ihr Konto ein!"}</h1>
                         {session.user.config.nick ?
-                           <><div className='mb-4'><Tracker /></div><AccountConfig /></> : <><AccountConfig /><div className='mt-14'><Tracker /></div></> 
+                           <><div className='mb-4'><Tracker /></div> <CardsProgress /> <AccountConfig /></> : <><AccountConfig /><div className='mt-14'><Tracker /></div> <CardsProgress /></> 
                         }
                     </>)}
 
