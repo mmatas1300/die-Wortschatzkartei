@@ -1,4 +1,4 @@
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react';
 import { getGameData, getMyCards } from "@/libs/data";
@@ -38,14 +38,16 @@ const CardsProgress = () => {
     }, [])
 
     return (
-        <div className='h-28 mt-2 flex items-center justify-center gap-2'>
+        <div className='h-28 mb-10'>
             {percentage != null ? 
-                <>
+                <div className='bg-green-card flex flex-row items-center justify-center gap-2 rounded-3xl rounded-tr-md py-2 px-4'>
                     <div className='w-28'>
-                        <CircularProgressbar value={percentage} text={`${percentage.toFixed(2)}%`} background backgroundPadding={6} styles={buildStyles({ backgroundColor: cardColorOrange, textColor: "#fff", pathColor: "#fff", trailColor: "transparent" , strokeLinecap: 'round'})} /> 
+                        <CircularProgressbarWithChildren value={percentage} background backgroundPadding={6} styles={buildStyles({backgroundColor: cardColorOrange, textColor: "#000", pathColor: "#fff", trailColor: "transparent" , strokeLinecap: 'round'})}>
+                            {`${percentage.toFixed(0)}%`}
+                        </CircularProgressbarWithChildren> 
                     </div>
                     <p>Gesamtfortschritt</p>
-                </>
+                </div>
                 : <Spinner className="h-10 w-10" />}
         </div>
 
