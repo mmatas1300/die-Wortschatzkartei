@@ -1,6 +1,7 @@
 import ReactFlipCard from 'reactjs-flip-card'
 import Karte from '@/components/Karte';
 import { useSoundEffect } from "./useSoundEffect";
+import CircularChart from '@/components/karteneditor/CircularChart';
 
 const FlipCard = ({ card, flipCard, setFlipCard, vanish, richtigButton, falschButton }) => {
 
@@ -53,7 +54,12 @@ const FlipCard = ({ card, flipCard, setFlipCard, vanish, richtigButton, falschBu
         <ReactFlipCard flipTrigger={'disabled'} flipByProp={flipCard} containerCss={`flex flex-col justify-center items-center ${vanish ? "opacity-0 invisible" : "opacity-100 visible"} transition ease-in-out delay-75 basis-1/2`}
             frontComponent={
                 <div className='flex flex-col justify-center items-center'>
-                    <div className={`${frontCardColor()} w-80 h-72 rounded-3xl flex justify-center items-center relative ${getBorder()} `}>{getCardWort()}</div>
+                    <div className={`${frontCardColor()} w-80 h-72 rounded-3xl flex flex-col justify-center items-center relative ${getBorder()} `}>
+                        <div className='absolute w-10 -translate-y-28 translate-x-32'>
+                            <CircularChart level={card.level} type={card.type}/>
+                        </div>
+                        {getCardWort()}
+                    </div>
                     <button onClick={() => { setFlipCard(true); flipCardPlay(); }} className={`bg-black-card border-2 border-green-card  ${flipCard ? "opacity-0 invisible" : "opacity-100 visible"}`}>Wenden</button>
                 </div>
             }
