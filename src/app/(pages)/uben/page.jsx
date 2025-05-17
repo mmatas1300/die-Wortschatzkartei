@@ -6,7 +6,7 @@ import CardMessage from "@/components/CardMessage";
 import PlayScreen from "@/app/ui/uben/PlayScreen";
 import {progressUpdate} from "@/libs/progressUpdate";
 import { Fade } from "react-awesome-reveal";
-import { getAppCards, getGameData, getLastGame, getUserCards } from "@/libs/data";
+import { getAppCards, getGameData, getUserLastGame, getUserCards } from "@/libs/data";
 
 function UbenPage() {
 
@@ -31,8 +31,8 @@ function UbenPage() {
         }
 
         const initPractice = async () => {
-            const data = await getLastGame(session.user._id);
-            const allowToPlayDate = new Date(data.lastPlay.dayPlayed);
+            const data = await getUserLastGame(session.user._id);
+            const allowToPlayDate = new Date(data.lastGame.dayPlayed);
             allowToPlayDate.setDate(allowToPlayDate.getDate() + 1);
             const today = new Date();
             if (allowToPlayDate.getTime() < today.getTime()) {

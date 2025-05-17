@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import TrackerGrid from "./TrackerGrid";
-import { getGameData } from "@/libs/data";
+import { getUserStreak } from "@/libs/data";
 import { useSession } from "next-auth/react";
 import { Spinner } from "@material-tailwind/react";
 import TrackerData from "./TrackerData";
@@ -16,7 +16,7 @@ const Tracker = () => {
 
     useEffect(()=>{
         const loadData = async ()=>{
-            const data = await getGameData(session.user._id, "streak");
+            const data = await getUserStreak(session.user._id);
 
             const gridDays = new Array(119);
             const streakReverse = data.progress.toReversed();

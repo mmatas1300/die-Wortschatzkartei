@@ -164,9 +164,23 @@ export const getAppCards = async ()=>{
 	}
 };
 
-export const getLastGame = async (userId)=>{
+export const getUserLastGame = async (userId)=>{
 	try {
 		const res = await fetch('api/user/last-game',{
+			method: "POST",
+			body: JSON.stringify({userId: userId}),
+			headers: {"Content-type": "application/json"}
+		});
+		const data = await res.json();
+		return data;
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+export const getUserStreak = async (userId)=>{
+	try {
+		const res = await fetch('api/user/streak',{
 			method: "POST",
 			body: JSON.stringify({userId: userId}),
 			headers: {"Content-type": "application/json"}

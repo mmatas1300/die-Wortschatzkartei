@@ -61,10 +61,18 @@ export const updateUserConfig = async (userId, config)=>{
         await userConfigUpdate(userId,config);
 };
 
-export const getUserLastGame = async (userId)=>{
-        const streak = await userStreakFindById(userId);
-        return ({lastGame: streak[streak.length-1]});
+export const getUserStreak = async (userId)=>{
+        const userStreak = await userStreakFindById(userId);
+        return userStreak;
 };
+
+export const getUserLastGame = async (userId)=>{
+        const userStreak = await userStreakFindById(userId);
+        return userStreak[userStreak.length-1];
+
+};
+
+
 
 
 
