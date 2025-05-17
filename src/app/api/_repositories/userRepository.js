@@ -60,6 +60,11 @@ export const userConfigUpdate = async (userId,config)=>{
     await User.findByIdAndUpdate(userId, {config: config});
 };
 
+export const userStreakFindById = async (userId)=>{
+    const userFound = await userFindById(userId);
+    return userFound.streak;
+};
+
 
 
 

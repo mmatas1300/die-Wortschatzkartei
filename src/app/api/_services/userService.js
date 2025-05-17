@@ -1,4 +1,4 @@
-import { userCardCreate, userCardDeleteById, userCardFindAll, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userStreakUpdate } from "@/app/api/_repositories/userRepository";
+import { userCardCreate, userCardDeleteById, userCardFindAll, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userStreakFindById, userStreakUpdate } from "@/app/api/_repositories/userRepository";
 import { encrypt } from "@/libs/encrypt";
 
 
@@ -60,6 +60,14 @@ export const updateUserConfig = async (userId, config)=>{
         config.ponsSecret = encrypt(config.ponsSecret, process.env.CRYPTO_KEY);
         await userConfigUpdate(userId,config);
 };
+
+export const getUserLastGame = async (userId)=>{
+        const streak = await userStreakFindById(userId);
+        return ({lastGame: streak[streak.length-1]});
+};
+
+
+
 
 
 
