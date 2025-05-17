@@ -1,6 +1,6 @@
 import { userCardCreate, userCardDeleteById, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userCreate, userFindByEmail, userProgressCreate, userProgressDeleteByIds, userStreakUpdate } from "@/app/api/_repositories/userRepository";
-import { bcryptHash } from "@/libs/bcrypt";
-import { encrypt } from "@/libs/encrypt";
+import { bcryptCompare, bcryptHash } from "@/libs/bcrypt";
+import { decrypt, encrypt } from "@/libs/crypto";
 import { filterCardsByFirstLetter } from "@/utils/filterCardsByFirstLetter";
 import User from '@/app/api/_models/user';
 import { progressGenerator } from "@/libs/progressGenerator";
@@ -39,71 +39,85 @@ export const getUserCardsByQuery = async (userId, query) => {
 export const getUserCardsByFirstLetter = async (userId, firstLetter) => {
         const regExpFirstLetter = new RegExp("^" + firstLetter.toLowerCase());
         const userCards = await getUserCards(userId);
-        const filterCards = filterCardsByFirstLetter(regExpFirstLetter,userCards);
+        const filterCards = filterCardsByFirstLetter(regExpFirstLetter, userCards);
         switch (firstLetter.toLowerCase()) {
                 case "a":
-                        return filterCards.concat(filterCardsByFirstLetter(new RegExp("^ä"),userCards))
+                        return filterCards.concat(filterCardsByFirstLetter(new RegExp("^ä"), userCards))
                 case "o":
-                        return filterCards.concat(filterCardsByFirstLetter(new RegExp("^ö"),userCards))
+                        return filterCards.concat(filterCardsByFirstLetter(new RegExp("^ö"), userCards))
                 case "u":
-                        return filterCards.concat(filterCardsByFirstLetter(new RegExp("^ü"),userCards))
+                        return filterCards.concat(filterCardsByFirstLetter(new RegExp("^ü"), userCards))
         }
         return filterCards;
 };
 
-export const updateUserConfig = async (userId, config)=>{
+export const updateUserConfig = async (userId, config) => {
         config.ponsSecret = encrypt(config.ponsSecret, process.env.CRYPTO_KEY);
-        await userConfigUpdate(userId,config);
+        await userConfigUpdate(userId, config);
 };
 
-export const getUserStreak = async (userId)=>{
+export const getUserStreak = async (userId) => {
         const userFound = await userFindById(userId);
         return userFound.streak;
 };
 
-export const getUserLastGame = async (userId)=>{
+export const getUserLastGame = async (userId) => {
         const userStreak = await getUserStreak(userId);
-        return userStreak[userStreak.length-1];
+        return userStreak[userStreak.length - 1];
 
 };
 
-export const getUserProgress = async (userId)=>{
+export const getUserProgress = async (userId) => {
         const userFound = await userFindById(userId);
         return userFound.progress;
 };
 
-export const updateUserProgress = async (userId, progress)=>{
-        const cardsIds = progress.map((elemento)=>{return elemento.cardId});
-        await userProgressDeleteByIds(userId,cardsIds);
-        await userProgressCreate(userId,progress);
+export const updateUserProgress = async (userId, progress) => {
+        const cardsIds = progress.map((elemento) => { return elemento.cardId });
+        await userProgressDeleteByIds(userId, cardsIds);
+        await userProgressCreate(userId, progress);
 };
 
-export const updateAppCardsProgress = async (userId,progress,date)=>{
+export const updateAppCardsProgress = async (userId, progress, date) => {
         await updateUserProgress(userId, progress);
-        await userStreakUpdate(userId,date,progress.length);
+        await userStreakUpdate(userId, date, progress.length);
 };
 
-export const signup = async (email, password)=>{
+export const signup = async (email, password) => {
         if (!password || password.length < 3)
-                return {message: "Passwörter müssen mindestens 3 Zeichen lang sein"},{status: 400};
+                return { message: "Passwörter müssen mindestens 3 Zeichen lang sein" }, { status: 400 };
         const userFound = userFindByEmail(email);
         if (userFound)
-                return {message: "Diese E-Mail Adresse existiert bereits"},{status: 400};
+                return { message: "Diese E-Mail Adresse existiert bereits" }, { status: 400 };
         const hashedPassword = bcryptHash(password);
 
         const user = new User({
-            email,
-            password: hashedPassword,
-            myCards: [],
-            config:{
-                nick: "",
-                cardsSet:"app", 
-                cardsPerDay: 10,
-                ponsSecret: "",
-            },
-            streak: [{dayPlayed: new Date('2000'), cardsPlayed: 0}],
-            progress: await progressGenerator(),
+                email,
+                password: hashedPassword,
+                myCards: [],
+                config: {
+                        nick: "",
+                        cardsSet: "app",
+                        cardsPerDay: 10,
+                        ponsSecret: "",
+                },
+                streak: [{ dayPlayed: new Date('2000'), cardsPlayed: 0 }],
+                progress: await progressGenerator(),
         });
         await userCreate(user);
-        return {status: 204};
+        return { status: 204 };
+};
+
+export const authorize = async (email, password) => {
+        const userFound = userFindByEmail(email);
+        if (!userFound) throw new Error("Ungültige Daten");
+        const passwordMatch = bcryptCompare(password, userFound.password)
+        if (!passwordMatch) throw new Error("Ungültige Daten");
+        userFound.config.ponsSecret = decrypt(userFound.config.ponsSecret, process.env.CRYPTO_KEY);
+        const userData = {
+                email: userFound.email,
+                config: userFound.config,
+                _id: userFound._id,
+        }
+        return userData;
 };
