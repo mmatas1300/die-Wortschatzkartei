@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { deleteUserCard, getUserCards, updateUserCard } from "../../_services/userService";
+import { deleteUserCard, getUserCards, updateUserCard } from "@/app/api/_services/userService";
 
 export async function PUT(request) {
     const { userId, card } = await request.json()

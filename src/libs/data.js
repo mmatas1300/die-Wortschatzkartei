@@ -66,7 +66,7 @@ export const updateUserConfig = async (userId, config) => {
 
 
 //login
-export const registrieren = async (email, password) => {
+export const signup = async (email, password) => {
 	try {
 		const response = await fetch('/api/auth/signup', {
 			method: "POST",

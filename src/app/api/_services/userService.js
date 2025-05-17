@@ -1,6 +1,9 @@
-import { userCardCreate, userCardDeleteById, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userProgressCreate, userProgressDeleteByIds, userStreakUpdate } from "@/app/api/_repositories/userRepository";
+import { userCardCreate, userCardDeleteById, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userCreate, userFindByEmail, userProgressCreate, userProgressDeleteByIds, userStreakUpdate } from "@/app/api/_repositories/userRepository";
+import { bcryptHash } from "@/libs/bcrypt";
 import { encrypt } from "@/libs/encrypt";
 import { filterCardsByFirstLetter } from "@/utils/filterCardsByFirstLetter";
+import User from '@/app/api/_models/user';
+import { progressGenerator } from "@/libs/progressGenerator";
 
 
 export const deleteUserCard = async (userId, cardId) => {
@@ -78,4 +81,29 @@ export const updateUserProgress = async (userId, progress)=>{
 export const updateAppCardsProgress = async (userId,progress,date)=>{
         await updateUserProgress(userId, progress);
         await userStreakUpdate(userId,date,progress.length);
+};
+
+export const signup = async (email, password)=>{
+        if (!password || password.length < 3)
+                return {message: "Passwörter müssen mindestens 3 Zeichen lang sein"},{status: 400};
+        const userFound = userFindByEmail(email);
+        if (userFound)
+                return {message: "Diese E-Mail Adresse existiert bereits"},{status: 400};
+        const hashedPassword = bcryptHash(password);
+
+        const user = new User({
+            email,
+            password: hashedPassword,
+            myCards: [],
+            config:{
+                nick: "",
+                cardsSet:"app", 
+                cardsPerDay: 10,
+                ponsSecret: "",
+            },
+            streak: [{dayPlayed: new Date('2000'), cardsPlayed: 0}],
+            progress: await progressGenerator(),
+        });
+        await userCreate(user);
+        return {status: 204};
 };

@@ -13,6 +13,17 @@ export const userFindById = async (userId)=>{
     return userFound;
 }
 
+export const userFindByEmail = async (email)=>{
+    await connectDB();
+    const userFound = await User.findOne({ email });
+    return userFound;
+};
+
+export const userCreate = async (user) =>{
+    await connectDB();
+    await user.save();
+};
+
 /**
  * Delete a user card by its ID
  * @param {string} userId 

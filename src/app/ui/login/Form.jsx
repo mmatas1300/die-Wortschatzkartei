@@ -2,7 +2,7 @@ import { Spinner } from "@material-tailwind/react";
 import { useState } from "react"
 import style from '@/app/ui/login/login.module.css'
 import { useRouter } from "next/navigation";
-import { anmelden, registrieren } from "@/libs/data";
+import { anmelden, signup } from "@/libs/data";
 
 const Form = () => {
 
@@ -36,7 +36,7 @@ const Form = () => {
         const formData = new FormData(e.currentTarget);
         if (!dataValidation(formData)) setButtonState(weiterButton);
         else {
-            const res = await registrieren(formData.get("email"), formData.get("password"));
+            const res = await signup(formData.get("email"), formData.get("password"));
             if (res) {
                 setFormError(res.message);
                 setButtonState(weiterButton);
