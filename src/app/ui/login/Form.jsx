@@ -2,7 +2,7 @@ import { Spinner } from "@material-tailwind/react";
 import { useState } from "react"
 import style from '@/app/ui/login/login.module.css'
 import { useRouter } from "next/navigation";
-import { anmelden, signup } from "@/libs/data";
+import { signin, signup } from "@/libs/data";
 
 const Form = () => {
 
@@ -54,7 +54,7 @@ const Form = () => {
         e.preventDefault();
         setButtonState(spinner);
         const formData = new FormData(e.currentTarget)
-        const res = await anmelden(formData.get("email"), formData.get("password"));
+        const res = await signin(formData.get("email"), formData.get("password"));
         if (res.ok) return router.push("/konto");
         setFormError(res.error);
         setButtonState(weiterButton);

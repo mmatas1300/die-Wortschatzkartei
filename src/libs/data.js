@@ -82,7 +82,7 @@ export const signup = async (email, password) => {
 };
 
 //signIn
-export const anmelden = async (email, password)=>{
+export const signin = async (email, password)=>{
 	try {
         const res = await signIn("credentials", {
             email: email,
