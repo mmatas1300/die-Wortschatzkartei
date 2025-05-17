@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react'
 import { cardListContext } from '@/app/ui/karteneditor/meineKarte/CardsListRow';
 import { updateCard } from '@/libs/getFormCardData';
 import { nomenFields, nomenFieldsPl, verbFields, nomenMUFFields, andereFields } from '@/app/ui/karteneditor/meineKarte/fields';
-import { editMyCard } from '@/libs/data';
+import { updateUserCard } from '@/libs/data';
 
 const EditCardForm = () => {
 
@@ -16,7 +16,7 @@ const EditCardForm = () => {
         setButtonState(<Spinner className="mt-2.5 h-[41px] w-[41px]" />);
         const formData = new FormData(e.currentTarget)
         const newCard = updateCard(formData, card.type);
-        await editMyCard(session.user._id, { _id: card._id, ...newCard, level: card.level, practiceDate: card.practiceDate });
+        await updateUserCard(session.user._id, { _id: card._id, ...newCard, level: card.level, practiceDate: card.practiceDate });
         setButtonState(<div className="mt-2.5 h-[41px]">Änderungen gespeichert!</div>);
         setRefresh(!refresh)
     }

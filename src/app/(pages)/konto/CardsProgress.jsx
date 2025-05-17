@@ -1,7 +1,7 @@
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react';
-import { getGameData, getMyCards } from "@/libs/data";
+import { getGameData, getUserCards } from "@/libs/data";
 import { Spinner } from "@material-tailwind/react";
 
 
@@ -21,7 +21,7 @@ const CardsProgress = () => {
                 }
                 setPercentage(100 * acc / (7 * progressData.progress.length))
             } else {
-                const cards = await getMyCards(session.user._id);
+                const cards = await getUserCards(session.user._id);
                 if (cards.length === 0) {
                     setPercentage(0);
                 } else {

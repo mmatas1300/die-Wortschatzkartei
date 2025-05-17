@@ -6,7 +6,7 @@ import CardMessage from "@/components/CardMessage";
 import PlayScreen from "@/app/ui/uben/PlayScreen";
 import {progressUpdate} from "@/libs/progressUpdate";
 import { Fade } from "react-awesome-reveal";
-import { getAppCards, getGameData, getMyCards } from "@/libs/data";
+import { getAppCards, getGameData, getUserCards } from "@/libs/data";
 
 function UbenPage() {
 
@@ -21,7 +21,7 @@ function UbenPage() {
                 const progress = progressUpdate(cards, progressData.progress);
                 setMainMessage(<PlayScreen cards={cards} progress={progress} />);
             } else if (session.user.config.cardsSet === "meine") {
-                const cards = await getMyCards(session.user._id);
+                const cards = await getUserCards(session.user._id);
                 if (cards.length === 0) {
                     setMainMessage(<CardMessage message={"Du hast keine Karten zum Üben!!!"} />);
                 } else {

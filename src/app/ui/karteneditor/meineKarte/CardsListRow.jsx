@@ -4,7 +4,7 @@ import { createContext } from 'react';
 import UpdateMessage from '@/app/ui/karteneditor/meineKarte/UpdateMessage';
 import 'react-circular-progressbar/dist/styles.css';
 import ResetMessage from '@/app/ui/karteneditor/ResetMessage';
-import { deleteMyCard, resetMyCardLevel } from "@/libs/data";
+import { deleteUserCard, updateUserCard } from "@/libs/data";
 import { selectColorCard } from "@/libs/selectColorCards";
 import CircularChart from "@/components/karteneditor/CircularChart";
 
@@ -15,12 +15,12 @@ const CardsListRow = ({ card, setRefresh, refresh }) => {
     const { data: session } = useSession();
 
     const deleteCard = async () => {
-        await deleteMyCard(session.user._id, card._id);
+        await deleteUserCard(session.user._id, card._id);
         setRefresh(!refresh);
     };
 
     const resetLevel = async () => {
-        await resetMyCardLevel(session.user._id, card);
+        await updateUserCard(session.user._id, {...card,level: 0, practiceDate: new Date("2000")});
         setRefresh(!refresh);
     };
 

@@ -3,7 +3,7 @@ import { Spinner } from "@material-tailwind/react";
 import { useSession } from 'next-auth/react'
 import { createCard } from '@/libs/getFormCardData';
 import { verbFields, nomenMUFFields, nomenFields, nomenFieldsPl, andereFields } from '@/app/ui/karteneditor/create/fields';
-import { createMyCard } from '@/libs/data';
+import { updateUserCard } from '@/libs/data';
 import PonsContainerKarteneditor from '@/components/Pons/PonsContainerKarteneditor';
 
 const CreateCardForm = () => {
@@ -19,7 +19,7 @@ const CreateCardForm = () => {
         setButtonState(<Spinner className="mt-2.5 h-[41px] w-[41px]" />);
         const formData = new FormData(e.currentTarget)
         const card = createCard(formData);
-        const data = await createMyCard(session.user._id, card);
+        const data = await updateUserCard(session.user._id, { ...card, level: 0, practiceDate: new Date("2000"), _id: card.wort + session.user._id + Date.now()});
         if (data) {
             setButtonState(<div className="mt-2.5 h-[41px]">{data.message}</div>);
             setTimeout(function () {

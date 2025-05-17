@@ -111,24 +111,23 @@ export const createAppCard = async (card, userId)=>{
 	}
 };
 
-export const createMyCard = async (userId, card)=>{
-	card._id = card.wort + userId + Date.now();
+//verwalten und uben
+export const updateUserCard = async (userId, card)=>{
 	try {
 		const res = await fetch('/api/user/cards',{
 			method: "PUT",
-			body: JSON.stringify({userId: userId, card:{ ...card, level: 0, practiceDate: new Date("2000") }, update: "add"}),
+			body: JSON.stringify({userId: userId, card: card}),
 			headers: {"Content-type": "application/json"}
 		});
 		const data = await res.json();
 		if(!res.ok) return data;
-		return null; 
+		return null;
 	} catch (error) {
-		console.log(error);
+		console.log(error)
 	}
 };
 
-//verwalten und uben
-export const getMyCards = async (userId)=>{
+export const getUserCards = async (userId)=>{
 	try {
 		const res = await fetch('/api/user/cards',{
 			method: "POST",
@@ -142,7 +141,7 @@ export const getMyCards = async (userId)=>{
 	}
 };
 
-export const deleteMyCard = async (userId,cardId)=>{
+export const deleteUserCard = async (userId,cardId)=>{
 	try {
 		await fetch('/api/user/cards',{
 			method: "DELETE",
@@ -151,32 +150,6 @@ export const deleteMyCard = async (userId,cardId)=>{
 		});
 	} catch (error) {
 		console.log(error);
-	}
-};
-
-export const resetMyCardLevel = async (userId,card)=>{
-	card.level=0;
-	card.practiceDate = new Date("2000");
-	try {
-		await fetch('/api/user/cards',{
-			method: "PUT",
-			body: JSON.stringify({userId: userId, card: card, update: "edit"}),
-			headers: {"Content-type": "application/json"}
-		})
-	} catch (error) {
-		console.log(error)
-	}
-};
-
-export const editMyCard = async (userId, card)=>{
-	try {
-		await fetch('/api/user/cards',{
-			method: "PUT",
-			body: JSON.stringify({userId: userId, card: card, update: "edit"}),
-			headers: {"Content-type": "application/json"}
-		})
-	} catch (error) {
-		console.log(error)
 	}
 };
 

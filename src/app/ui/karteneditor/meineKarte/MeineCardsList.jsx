@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import CardsListRow from "@/app/ui/karteneditor/meineKarte/CardsListRow";
 import { RefreshCcw } from 'lucide-react';
-import { getMyCards } from "@/libs/data";
+import { getUserCards } from "@/libs/data";
 import SearchForm from '@/components/SearchForm';
 import { sortCardsByLevel } from "@/libs/sortArrays";
 import { Spinner } from "@material-tailwind/react";
@@ -26,7 +26,7 @@ export const MeineCardList = () => {
 
     useEffect(() => {
         const init = async ()=>{
-            const myCards = await getMyCards(session.user._id);
+            const myCards = await getUserCards(session.user._id);
             const sortCards = sortCardsByLevel(myCards); 
             setCards(sortCards);
             setCardsBackup(sortCards);
