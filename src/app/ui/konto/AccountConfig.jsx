@@ -1,4 +1,4 @@
-import { updateMyAccount } from '@/libs/data';
+import { updateUserConfig } from '@/libs/data';
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { Spinner } from "@material-tailwind/react";
@@ -21,7 +21,7 @@ const AccountConfig = () => {
             ponsSecret: formData.get('ponsSecret') ? formData.get('ponsSecret') : session.user.config.ponsSecret,
         }
         try {
-            await updateMyAccount(config,session.user._id);
+            await updateUserConfig(session.user._id,config);
             await update({ user: { ...session.user, config: config } })
         } catch (error) {
             //console.log(error)

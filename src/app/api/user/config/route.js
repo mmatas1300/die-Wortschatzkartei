@@ -1,17 +1,11 @@
 import { NextResponse } from "next/server";
-import {connectDB}  from "@/libs/mongodb";
-import User from '@/app/api/_models/user';
-import CryptoJS from "crypto-js";
+import { updateUserConfig } from "@/app/api/_services/userService";
 
 export async function PUT(request){
     const { userId, config } = await request.json();
-    const ponsKey = config.ponsSecret;
-    config.ponsSecret = CryptoJS.AES.encrypt(ponsKey,process.env.CRYPTO_KEY).toString();
-
     try {
-        await connectDB();
-        await User.findByIdAndUpdate(userId, {config: config});
-        return NextResponse.json({message: "Update successful"},{status: 200});
+        await updateUserConfig(userId, config);
+        return NextResponse.json({message: "Update successful"},{status: 204});
     } catch (error) {
         return NextResponse.json(error);
     }

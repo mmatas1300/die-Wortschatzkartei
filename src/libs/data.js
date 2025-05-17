@@ -52,7 +52,7 @@ export const getUserCardsByFirstLetter = async (userId, firstLetter) => {
 };
 
 //Konto
-export const updateMyAccount = async (config, userId) => {
+export const updateUserConfig = async (userId, config) => {
 	try {
 		await fetch('/api/user/config', {
 			method: "PUT",

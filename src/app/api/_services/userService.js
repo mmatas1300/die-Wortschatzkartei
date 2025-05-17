@@ -1,4 +1,6 @@
-import { userCardCreate, userCardDeleteById, userCardFindAll, userCardsCreate, userCardsDeleteByIds, userStreakUpdate } from "@/app/api/_repositories/userRepository";
+import { userCardCreate, userCardDeleteById, userCardFindAll, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userStreakUpdate } from "@/app/api/_repositories/userRepository";
+import { encrypt } from "@/libs/encrypt";
+
 
 export const deleteUserCard = async (userId, cardId) => {
         await userCardDeleteById(userId, cardId);
@@ -47,12 +49,18 @@ export const getUserCardsByFirstLetter = async (userId, firstLetter) => {
 };
 
 
-///????????
+///TO-DO ??????? DONDE VA
 const filterCardsByFirstLetter = (expRegFirstLetter, cards)=>{
         return cards.filter((card) => {
                 return expRegFirstLetter.test(card.wort.toLowerCase());
         });
 }
+
+export const updateUserConfig = async (userId, config)=>{
+        config.ponsSecret = encrypt(config.ponsSecret, process.env.CRYPTO_KEY);
+        await userConfigUpdate(userId,config);
+};
+
 
 
 

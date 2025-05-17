@@ -55,6 +55,10 @@ export const userStreakUpdate = async (userId, date, cardsPlayed)=>{
     await User.updateOne({_id: userId}, {$push: {streak: {dayPlayed: date, cardsPlayed: cardsPlayed}} });
 }
 
+export const userConfigUpdate = async (userId,config)=>{
+    await connectDB();
+    await User.findByIdAndUpdate(userId, {config: config});
+};
 
 
 
