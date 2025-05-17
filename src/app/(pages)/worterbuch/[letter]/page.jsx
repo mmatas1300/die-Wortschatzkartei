@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import { useSession } from 'next-auth/react'
 import { CircleArrowLeft as ArrowIcon } from 'lucide-react';
 import { Fade } from "react-awesome-reveal";
-import { getLetterAppCards, getLetterMyCards } from "@/libs/data";
+import { getLetterAppCards, getUserCardsByFirstLetter } from "@/libs/data";
 import CardsGrid from '@/app/ui/worterbuch/letter/CardsGrid';
+import { sortAlphaCards } from '@/libs/sortArrays';
 
 function WorterMitPage({ params }) {
 
@@ -18,8 +19,8 @@ function WorterMitPage({ params }) {
                 const appCards = await getLetterAppCards(params.letter);
                 setCards(appCards);
             } else if(session?.user.config.cardsSet === "meine"){
-                const myCards = await getLetterMyCards(params.letter,session.user._id);
-                setCards(myCards);
+                const myCards = await getUserCardsByFirstLetter(session.user._id,params.letter);
+                setCards(sortAlphaCards(myCards));
             }
         };
 

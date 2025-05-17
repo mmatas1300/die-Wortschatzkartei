@@ -37,15 +37,15 @@ export const getLetterAppCards = async (letter) => {
 	}
 };
 
-export const getLetterMyCards = async (letter, userId) => {
+export const getUserCardsByFirstLetter = async (userId, firstLetter) => {
 	try {
-		const res = await fetch(`/api/user/cards/${letter}`, {
+		const res = await fetch(`/api/user/cards/${firstLetter}`, {
 			method: "POST",
 			body: JSON.stringify({ userId: userId }),
 			headers: { "Content-type": "application/json" },
 		});
 		const cards = await res.json();
-		return sortAlphaCards(cards);
+		return cards;
 	} catch (error) {
 		console.log(error);
 	}
