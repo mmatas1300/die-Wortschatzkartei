@@ -1,5 +1,6 @@
-import { userCardCreate, userCardDeleteById, userCardFindAll, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userProgressCreate, userProgressDeleteByIds, userProgressFindById, userStreakFindById, userStreakUpdate } from "@/app/api/_repositories/userRepository";
+import { userCardCreate, userCardDeleteById, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userProgressCreate, userProgressDeleteByIds, userStreakUpdate } from "@/app/api/_repositories/userRepository";
 import { encrypt } from "@/libs/encrypt";
+import { filterCardsByFirstLetter } from "@/utils/filterCardsByFirstLetter";
 
 
 export const deleteUserCard = async (userId, cardId) => {
@@ -7,8 +8,8 @@ export const deleteUserCard = async (userId, cardId) => {
 };
 
 export const getUserCards = async (userId) => {
-        const userCards = await userCardFindAll(userId);
-        return userCards;
+        const userFound = await userFindById(userId);
+        return userFound.myCards;
 };
 
 export const updateUserCard = async (userId, card) => {
@@ -47,33 +48,25 @@ export const getUserCardsByFirstLetter = async (userId, firstLetter) => {
         return filterCards;
 };
 
-
-///TO-DO ??????? DONDE VA
-const filterCardsByFirstLetter = (expRegFirstLetter, cards)=>{
-        return cards.filter((card) => {
-                return expRegFirstLetter.test(card.wort.toLowerCase());
-        });
-}
-
 export const updateUserConfig = async (userId, config)=>{
         config.ponsSecret = encrypt(config.ponsSecret, process.env.CRYPTO_KEY);
         await userConfigUpdate(userId,config);
 };
 
 export const getUserStreak = async (userId)=>{
-        const userStreak = await userStreakFindById(userId);
-        return userStreak;
+        const userFound = await userFindById(userId);
+        return userFound.streak;
 };
 
 export const getUserLastGame = async (userId)=>{
-        const userStreak = await userStreakFindById(userId);
+        const userStreak = await getUserStreak(userId);
         return userStreak[userStreak.length-1];
 
 };
 
 export const getUserProgress = async (userId)=>{
-        const userProgress = await userProgressFindById(userId);
-        return userProgress;
+        const userFound = await userFindById(userId);
+        return userFound.progress;
 };
 
 export const updateUserProgress = async (userId, progress)=>{
@@ -82,17 +75,7 @@ export const updateUserProgress = async (userId, progress)=>{
         await userProgressCreate(userId,progress);
 };
 
-
 export const updateAppCardsProgress = async (userId,progress,date)=>{
         await updateUserProgress(userId, progress);
         await userStreakUpdate(userId,date,progress.length);
-};
-
-
-
-
-
-//Revisión futura
-export const createUserCard = async (userId, card) => {
-        await userCardCreate(userId, card);
 };

@@ -35,11 +35,6 @@ export const userCardCreate = async (userId,card)=>{
     await User.findOneAndUpdate({ _id: userId }, { $push: { myCards: card } });
 }
 
-export const userCardFindAll = async (userId)=>{
-    const userFound = await userFindById(userId);
-    return userFound.myCards;
-}
-
 export const userCardsDeleteByIds = async (userId,cardsIds)=>{
     await connectDB();
     await User.updateOne({ _id: userId },{ $pull: { myCards: { _id: { $in: cardsIds } } } });
@@ -60,16 +55,6 @@ export const userConfigUpdate = async (userId,config)=>{
     await User.findByIdAndUpdate(userId, {config: config});
 };
 
-export const userStreakFindById = async (userId)=>{
-    const userFound = await userFindById(userId);
-    return userFound.streak;
-};
-
-export const userProgressFindById = async (userId) =>{
-    const userFound = await userFindById(userId);
-    return userFound.progress;
-};
-
 export const userProgressDeleteByIds = async (userId,cardIds)=>{
     await connectDB();
     await User.updateOne({_id: userId}, {$pull: { progress: { cardId: { $in: cardIds } } }});
@@ -79,19 +64,3 @@ export const userProgressCreate = async (userId, progress)=>{
     await connectDB();
     await User.updateOne({_id: userId}, {$push: {progress: {$each: progress}}});
 };
-
-
-
-
-        
-        
-
-
-
-
-
-
-
-
-
-
