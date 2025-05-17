@@ -3,7 +3,7 @@ import { createContext } from 'react';
 import CircularChart from "@/components/karteneditor/CircularChart";
 import 'react-circular-progressbar/dist/styles.css';
 import ResetMessage from '@/app/ui/karteneditor/ResetMessage';
-import {resetAppProgress} from "@/libs/data";
+import {resetAppCardProgress} from "@/libs/data";
 import { selectColorCard } from "@/libs/selectColorCards";
 
 export const cardListContext = createContext();
@@ -14,7 +14,7 @@ const CardsListRow = ({ card, setRefresh, refresh }) => {
 
 
     const resetLevel = async () => {
-        await resetAppProgress(session.user._id, card._id)
+        await resetAppCardProgress(session.user._id, card._id)
         setRefresh(!refresh);
     };
 

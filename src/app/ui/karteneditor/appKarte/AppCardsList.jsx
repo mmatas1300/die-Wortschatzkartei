@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import CardsListRow from "@/app/ui/karteneditor/appKarte/CardsListRow";
 import { RefreshCcw } from 'lucide-react';
-import { getAppCards, getGameData} from "@/libs/data";
+import { getAppCards, getUserProgress} from "@/libs/data";
 import SearchForm from '@/components/SearchForm';
 import { sortCardsByLevel } from "@/libs/sortArrays";
 import { Spinner } from "@material-tailwind/react";
@@ -26,7 +26,7 @@ export const AppCardList = () => {
     useEffect(() => {
         const init = async ()=>{
             const cards = await getAppCards(); 
-            const data = await getGameData(session.user._id, "progress");
+            const data = await getUserProgress(session.user._id);
             const cardsToShow =[];
             data.progress.forEach(element => {
                 const cardFound = cards.filter((card)=>{

@@ -4,7 +4,7 @@ import FlipCard from "./FlipCard";
 import CardMessage from "@/components/CardMessage";
 import { shuffleArray } from "@/libs/sortArrays";
 import { calcNextPracticeDate } from "@/libs/calcNextPracticeDate";
-import { saveAppProgress, saveUserCardsProgress } from "@/libs/data";
+import { saveAppCardsProgress, saveUserCardsProgress } from "@/libs/data";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useSoundEffect } from "./useSoundEffect";
 
@@ -75,7 +75,7 @@ const PlayScreen = ({ cards, progress }) => {
 
     const saveProgress = async ()=>{
         if (session.user.config.cardsSet === "app")
-            await saveAppProgress(session.user._id, [...studiedCards, selectedProgress[reviewedCardNum]]);
+            await saveAppCardsProgress(session.user._id, [...studiedCards, selectedProgress[reviewedCardNum]]);
         else if (session.user.config.cardsSet === "meine")
             await saveUserCardsProgress(session.user._id, [...studiedCards, selectedCards[reviewedCardNum]]);
     };

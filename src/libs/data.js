@@ -193,11 +193,11 @@ export const getUserStreak = async (userId)=>{
 };
 
 
-export const getGameData = async (userId, query)=>{
+export const getUserProgress = async (userId)=>{
 	try {
-		const res = await fetch('api/user/game-data',{
+		const res = await fetch('/api/user/progress',{
 			method: "POST",
-			body: JSON.stringify({userId: userId, query: query}),
+			body: JSON.stringify({userId: userId}),
 			headers: {"Content-type": "application/json"}
 		});
 		const data = await res.json();
@@ -219,11 +219,11 @@ export const saveUserCardsProgress = async (userId, cards)=>{
 	}
 };
 
-export const saveAppProgress = async (userId, progress)=>{
+export const saveAppCardsProgress = async (userId, progress)=>{
 	try {
-		await fetch('/api/user/game-data',{
+		await fetch('/api/user/progress/save',{
 			method: "PUT",
-			body: JSON.stringify({userId: userId, progress: progress, update: "play", date: new Date().setHours(0,0,0)}),
+			body: JSON.stringify({userId: userId, progress: progress, date: new Date().setHours(0,0,0)}),
 			headers: {"Content-type": "application/json"}
 		});
 	} catch (error) {
@@ -231,11 +231,11 @@ export const saveAppProgress = async (userId, progress)=>{
 	}
 };
 
-export const resetAppProgress = async (userId, cardId)=>{
+export const resetAppCardProgress = async (userId, cardId)=>{
 	try {
-		await fetch('/api/user/game-data',{
+		await fetch('/api/user/progress',{
 			method: "PUT",
-			body: JSON.stringify({userId: userId, progress: [{cardId: cardId, level:0, practiceDate: new Date("2000")}], update: "reset"}),
+			body: JSON.stringify({userId: userId, progress: [{cardId: cardId, level:0, practiceDate: new Date("2000")}]}),
 			headers: {"Content-type": "application/json"}
 		});
 	} catch (error) {

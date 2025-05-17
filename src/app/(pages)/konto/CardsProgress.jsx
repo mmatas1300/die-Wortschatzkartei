@@ -1,7 +1,7 @@
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react';
-import { getGameData, getUserCards } from "@/libs/data";
+import { getUserProgress, getUserCards } from "@/libs/data";
 import { Spinner } from "@material-tailwind/react";
 
 
@@ -14,7 +14,7 @@ const CardsProgress = () => {
     useEffect(() => {
         const loadData = async () => {
             if (session.user.config.cardsSet === "app") {
-                const progressData = await getGameData(session.user._id, "progress");
+                const progressData = await getUserProgress(session.user._id);
                 let acc = 0;
                 for (const card of progressData.progress) {
                     acc = acc + card.level

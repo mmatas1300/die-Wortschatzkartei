@@ -1,4 +1,4 @@
-import { userCardCreate, userCardDeleteById, userCardFindAll, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userStreakFindById, userStreakUpdate } from "@/app/api/_repositories/userRepository";
+import { userCardCreate, userCardDeleteById, userCardFindAll, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userProgressCreate, userProgressDeleteByIds, userProgressFindById, userStreakFindById, userStreakUpdate } from "@/app/api/_repositories/userRepository";
 import { encrypt } from "@/libs/encrypt";
 
 
@@ -22,7 +22,6 @@ export const updateUserCardsProgress = async (userId, cards, date) => {
         await userCardsCreate(userId, cards);
         await userStreakUpdate(userId, date, cards.length);
 };
-
 
 export const getUserCardsByQuery = async (userId, query) => {
         const regExp = new RegExp(`.*${query.toLowerCase()}.*`);
@@ -72,9 +71,22 @@ export const getUserLastGame = async (userId)=>{
 
 };
 
+export const getUserProgress = async (userId)=>{
+        const userProgress = await userProgressFindById(userId);
+        return userProgress;
+};
+
+export const updateUserProgress = async (userId, progress)=>{
+        const cardsIds = progress.map((elemento)=>{return elemento.cardId});
+        await userProgressDeleteByIds(userId,cardsIds);
+        await userProgressCreate(userId,progress);
+};
 
 
-
+export const updateAppCardsProgress = async (userId,progress,date)=>{
+        await updateUserProgress(userId, progress);
+        await userStreakUpdate(userId,date,progress.length);
+};
 
 
 
