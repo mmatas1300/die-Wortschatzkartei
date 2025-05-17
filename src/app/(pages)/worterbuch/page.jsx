@@ -3,10 +3,11 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { CircleArrowLeft as ArrowIcon } from "lucide-react";
 import { Fade } from "react-awesome-reveal";
-import { getSearchAppCards, getSearchMyCards } from "@/libs/data";
+import { getSearchAppCards, getUserCardsByQuery } from "@/libs/data";
 import SearchForm from "@/components/SearchForm";
 import LettersGrid from "@/app/ui/worterbuch/LettersGrid";
 import SearchCardsGrid from "@/app/ui/worterbuch/SearchCardsGrid";
+import { sortAlphaCards } from "@/libs/sortArrays";
 
 function WorterbuchPage() {
 
@@ -29,8 +30,9 @@ function WorterbuchPage() {
                 const appCards = await getSearchAppCards(query);
                 setCards(appCards);
             } else if (session.user.config.cardsSet === "meine") {
-                const myCards = await getSearchMyCards(query, session.user._id);
-                setCards(myCards);
+                const myCards = await getUserCardsByQuery(query, session.user._id);
+                
+                setCards(sortAlphaCards(myCards));
             }
         }
         setButtonState(false);

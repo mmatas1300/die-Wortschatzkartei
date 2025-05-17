@@ -1,5 +1,5 @@
 import { signIn } from "next-auth/react";
-import { sortAlphaCards } from "@/libs/sortArrays";
+
 
 //Worterbuch
 export const getSearchAppCards = async (query) => {
@@ -12,7 +12,7 @@ export const getSearchAppCards = async (query) => {
 	}
 };
 
-export const getSearchMyCards = async (query, userId) => {
+export const getUserCardsByQuery = async (query, userId) => {
 	try {
 		const res = await fetch(`/api/user/cards/search/${query}`, {
 			method: "POST",
@@ -20,7 +20,7 @@ export const getSearchMyCards = async (query, userId) => {
 			headers: { "Content-type": "application/json" },
 		});
 		const cards = await res.json();
-		return sortAlphaCards(cards);
+		return cards;
 	} catch (error) {
 		console.log(error);
 	}

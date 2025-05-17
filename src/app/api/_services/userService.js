@@ -19,10 +19,17 @@ export const updateUserCardsProgress = async (userId,cards,date)=>{
         await userCardsDeleteByIds(userId,cardsIds);
         await userCardsCreate(userId,cards);
         await userStreakUpdate(userId,date,cards.length);
-}
+};
 
 
-
+export const getUserCardsByQuery = async (userId, query)=>{
+        const regExp = new RegExp(`.*${query.toLowerCase()}.*`);
+        const userCards = getUserCards(userId);
+        const filterCards = userCards.filter((card) => {
+                return regExp.test(card.wort.toLowerCase()) || regExp.test(card.beispiel.toLowerCase()) || regExp.test(card.verwandte.toLowerCase())
+        });
+        return filterCards;
+};
 
 
 
