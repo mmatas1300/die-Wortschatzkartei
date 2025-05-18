@@ -6,6 +6,6 @@ export async function GET(req, { params }) {
         const searchCards = await getAppCardsByQuery(params.query[0]);
         return NextResponse.json({data: searchCards, ok: true});
     } catch (error) {
-        return NextResponse.json(error);
+        return NextResponse.json({message: error, ok: false});
     }
 }

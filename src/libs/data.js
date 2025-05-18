@@ -67,7 +67,7 @@ export const getAppCardsByFirstLetter = async (firstLetter) => {
 
 export const getUserCardsByFirstLetter = async (userId, firstLetter) => {
 	try {
-		const res = await fetch(`/api/user/cards/${firstLetter}`, {
+		const res = await fetch(`/api/user/cards/starts-with/${firstLetter}`, {
 			method: "POST",
 			body: JSON.stringify({ userId: userId }),
 			headers: { "Content-type": "application/json" },
@@ -174,9 +174,9 @@ export const getUserStreak = async (userId) => {
 };
 
 
-export const getUserProgress = async (userId) => {
+export const getUserProgressAppCards = async (userId) => {
 	try {
-		const res = await fetch('/api/user/progress', {
+		const res = await fetch('/api/user/progress-app-cards', {
 			method: "POST",
 			body: JSON.stringify({ userId: userId }),
 			headers: { "Content-type": "application/json" }
@@ -202,7 +202,7 @@ export const saveUserCardsProgress = async (userId, cards) => {
 
 export const saveAppCardsProgress = async (userId, progress) => {
 	try {
-		await fetch('/api/user/progress/save', {
+		await fetch('/api/user/progress-app-cards/save', {
 			method: "PUT",
 			body: JSON.stringify({ userId: userId, progress: progress, date: new Date().setHours(0, 0, 0) }),
 			headers: { "Content-type": "application/json" }
@@ -214,7 +214,7 @@ export const saveAppCardsProgress = async (userId, progress) => {
 
 export const resetAppCardProgress = async (userId, cardId) => {
 	try {
-		await fetch('/api/user/progress', {
+		await fetch('/api/user/progress-app-cards', {
 			method: "PUT",
 			body: JSON.stringify({ userId: userId, progress: [{ cardId: cardId, level: 0, practiceDate: new Date("2000") }] }),
 			headers: { "Content-type": "application/json" }

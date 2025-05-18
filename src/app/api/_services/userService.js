@@ -67,9 +67,9 @@ export const getUserLastGame = async (userId) => {
 
 };
 
-export const getUserProgress = async (userId) => {
+export const getUserProgressAppCards = async (userId) => {
         const userFound = await userFindById(userId);
-        return userFound.progress;
+        return userFound.progressAppCards;
 };
 
 export const updateUserProgress = async (userId, progress) => {
@@ -93,10 +93,10 @@ export const createUserProgress = async ()=>{
 
 export const signup = async (email, password) => {
         if (!password || password.length < 3)
-                return {message: "Passwörter müssen mindestens 3 Zeichen lang sein" , ok: false };
+                return {message: "Illegal password size" , ok: false };
         const userFound = await userFindByEmail(email);
         if (userFound)
-                return { message: "Diese E-Mail Adresse existiert bereits", ok: false };
+                return { message: "This Email already exists", ok: false };
         const hashedPassword = await bcryptHash(password);
         const user = new User({
                 email,
@@ -113,7 +113,7 @@ export const signup = async (email, password) => {
         });
         /////////////////////////////////////////////////////TODO PG
         await userCreate(user);
-        return {message: "Erfolgreiche Registrierung!", ok: true };
+        return {message: "Successful registration", ok: true };
 };
 
 export const authorize = async (email, password) => {

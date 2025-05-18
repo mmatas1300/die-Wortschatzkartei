@@ -5,8 +5,8 @@ export async function POST(request) {
     const { userId } = await request.json();
     try {
         const lastGame = await getUserLastGame(userId);
-        return NextResponse.json({lastGame: lastGame});
+        return NextResponse.json({data: lastGame, ok: true});
     } catch (error) {
-        return NextResponse.json(error);
+        return NextResponse.json({message: error, ok: false});
     }
 }

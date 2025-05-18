@@ -6,7 +6,7 @@ import CardMessage from "@/components/CardMessage";
 import PlayScreen from "@/app/ui/uben/PlayScreen";
 import {progressUpdate} from "@/libs/progressUpdate";
 import { Fade } from "react-awesome-reveal";
-import { getAppCards, getUserProgress, getUserLastGame, getUserCards } from "@/libs/data";
+import { getAppCards, getUserProgressAppCards, getUserLastGame, getUserCards } from "@/libs/data";
 
 function UbenPage() {
 
@@ -17,7 +17,7 @@ function UbenPage() {
         const loadData = async () => {
             if (session.user.config.cardsSet === "app") {
                 const cards = await getAppCards();
-                const progressData = await getUserProgress(session.user._id);
+                const progressData = await getUserProgressAppCards(session.user._id);
                 const progress = progressUpdate(cards, progressData.progress);
                 setMainMessage(<PlayScreen cards={cards} progress={progress} />);
             } else if (session.user.config.cardsSet === "meine") {
