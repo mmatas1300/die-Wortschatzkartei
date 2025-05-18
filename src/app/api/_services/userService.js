@@ -122,3 +122,8 @@ export const authorize = async (email, password) => {
         }
         return userData;
 };
+
+export const getUserConfig = async (userId)=>{
+        const userFound = await userFindById(userId);
+        return userFound.config;
+};

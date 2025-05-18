@@ -1,7 +1,7 @@
-import { getPons } from '@/libs/data';
+import { getPonsInfo } from '@/libs/data';
 
 const findWord = async (id,word) => {
-    const data = await getPons(id, word);
+    const data = await getPonsInfo(id, word);
     if (data)
         return(data[0].hits[0].roms[0]);
         
