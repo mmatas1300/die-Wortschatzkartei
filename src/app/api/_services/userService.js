@@ -1,4 +1,4 @@
-import { userCardCreate, userCardDeleteById, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userCreate, userFindByEmail, userProgressCreate, userProgressDeleteByIds, userStreakUpdate } from "@/app/api/_repositories/userRepository";
+import { userCardCreate, userCardDeleteById, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userCreate, userFindByEmail, userFindById, userProgressCreate, userProgressDeleteByIds, userStreakUpdate } from "@/app/api/_repositories/userRepository";
 import { bcryptCompare, bcryptHash } from "@/libs/bcrypt";
 import { decrypt, encrypt } from "@/libs/crypto";
 import { filterCardsByFirstLetter } from "@/utils/filterCardsByFirstLetter";
@@ -12,7 +12,7 @@ export const deleteUserCard = async (userId, cardId) => {
 
 export const getUserCards = async (userId) => {
         const userFound = await userFindById(userId);
-        return userFound.myCards;
+        return userFound.userCards;
 };
 
 export const updateUserCard = async (userId, card) => {
