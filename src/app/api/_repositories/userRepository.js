@@ -32,7 +32,7 @@ export const userCreate = async (user) =>{
  */
 export const userCardDeleteById = async (userId, cardId) =>{
     await connectDB();
-    await User.updateOne({ _id: userId },{ $pull: { myCards: { _id: cardId } } });
+    await User.updateOne({ _id: userId },{ $pull: { userCards: { _id: cardId } } });
 }
 
 /**
@@ -43,17 +43,17 @@ export const userCardDeleteById = async (userId, cardId) =>{
  */
 export const userCardCreate = async (userId,card)=>{
     await connectDB();
-    await User.findOneAndUpdate({ _id: userId }, { $push: { myCards: card } });
+    await User.findOneAndUpdate({ _id: userId }, { $push: { userCards: card } });
 }
 
 export const userCardsDeleteByIds = async (userId,cardsIds)=>{
     await connectDB();
-    await User.updateOne({ _id: userId },{ $pull: { myCards: { _id: { $in: cardsIds } } } });
+    await User.updateOne({ _id: userId },{ $pull: { userCards: { _id: { $in: cardsIds } } } });
 }
 
 export const userCardsCreate = async (userId,cards)=>{
     await connectDB();
-    await User.updateOne({ _id: userId }, { $push: { myCards: { $each: cards } } });
+    await User.updateOne({ _id: userId }, { $push: { userCards: { $each: cards } } });
 }
 
 export const userStreakUpdate = async (userId, date, cardsPlayed)=>{
@@ -68,10 +68,10 @@ export const userConfigUpdate = async (userId,config)=>{
 
 export const userProgressDeleteByIds = async (userId,cardIds)=>{
     await connectDB();
-    await User.updateOne({_id: userId}, {$pull: { progress: { cardId: { $in: cardIds } } }});
+    await User.updateOne({_id: userId}, {$pull: { progressAppCards: { cardId: { $in: cardIds } } }});
 };
 
 export const userProgressCreate = async (userId, progress)=>{
     await connectDB();
-    await User.updateOne({_id: userId}, {$push: {progress: {$each: progress}}});
+    await User.updateOne({_id: userId}, {$push: {progressAppCards: {$each: progress}}});
 };

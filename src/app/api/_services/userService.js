@@ -85,16 +85,15 @@ export const updateAppCardsProgress = async (userId, progress, date) => {
 
 export const signup = async (email, password) => {
         if (!password || password.length < 3)
-                return { message: "Passwörter müssen mindestens 3 Zeichen lang sein" }, { status: 400 };
-        const userFound = userFindByEmail(email);
+                return {message: "Passwörter müssen mindestens 3 Zeichen lang sein" , ok: false };
+        const userFound = await userFindByEmail(email);
         if (userFound)
-                return { message: "Diese E-Mail Adresse existiert bereits" }, { status: 400 };
-        const hashedPassword = bcryptHash(password);
-
+                return { message: "Diese E-Mail Adresse existiert bereits", ok: false };
+        const hashedPassword = await bcryptHash(password);
         const user = new User({
                 email,
                 password: hashedPassword,
-                myCards: [],
+                userCards: [],
                 config: {
                         nick: "",
                         cardsSet: "app",
@@ -102,18 +101,20 @@ export const signup = async (email, password) => {
                         ponsSecret: "",
                 },
                 streak: [{ dayPlayed: new Date('2000'), cardsPlayed: 0 }],
-                progress: await progressGenerator(),
+                progressAppCards: await progressGenerator(),
         });
+        /////////////////////////////////////////////////////TODO PG
         await userCreate(user);
-        return { status: 204 };
+        return {message: "Erfolgreiche Registrierung!", ok: true };
 };
 
 export const authorize = async (email, password) => {
-        const userFound = userFindByEmail(email);
+        const userFound = await userFindByEmail(email);
         if (!userFound) throw new Error("Ungültige Daten");
-        const passwordMatch = bcryptCompare(password, userFound.password)
+        const passwordMatch = await bcryptCompare(password, userFound.password)
         if (!passwordMatch) throw new Error("Ungültige Daten");
-        userFound.config.ponsSecret = decrypt(userFound.config.ponsSecret, process.env.CRYPTO_KEY);
+        if(userFound.config.ponsSecret != "")
+                userFound.config.ponsSecret = decrypt(userFound.config.ponsSecret, process.env.CRYPTO_KEY);
         const userData = {
                 email: userFound.email,
                 config: userFound.config,

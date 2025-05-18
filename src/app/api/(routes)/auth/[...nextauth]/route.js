@@ -11,7 +11,7 @@ const handler = NextAuth({
                 password: {label: "Password", type:"password"}
             },
             async authorize(credentials,req){
-                authorize(credentials.email,credentials.password);
+                return await authorize(credentials.email,credentials.password);
             }
         })
     ],
@@ -25,7 +25,7 @@ const handler = NextAuth({
             return token
         },
         session({session, token}){
-            session.user = token.user;
+        session.user = token.user;
             return session
         }
     },

@@ -1,5 +1,33 @@
 import { signIn } from "next-auth/react";
 
+export const signup = async (email, password) => {
+	try {
+		const response = await fetch('/api/auth/signup', {
+			method: "POST",
+			body: JSON.stringify({ email: email, password: password }),
+			headers: { "Content-type": "application/json" }
+		});
+		const data = await response.json();
+		if(!response.ok) return data;
+		return null; 
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+//signIn
+export const signin = async (email, password)=>{
+	try {
+        const res = await signIn("credentials", {
+            email: email,
+            password: password,
+            redirect: false
+        });
+		return res;
+    } catch (error) {
+        console.log(error)
+    }
+};
 
 //Worterbuch
 export const getSearchAppCards = async (query) => {
@@ -59,53 +87,6 @@ export const updateUserConfig = async (userId, config) => {
 			body: JSON.stringify({ userId: userId, config: config, }),
 			headers: { "Content-type": "application/json" }
 		});
-	} catch (error) {
-		console.log(error);
-	}
-};
-
-
-//login
-export const signup = async (email, password) => {
-	try {
-		const response = await fetch('/api/auth/signup', {
-			method: "POST",
-			body: JSON.stringify({ email: email, password: password }),
-			headers: { "Content-type": "application/json" }
-		});
-		const data = await response.json();
-		if(!response.ok) return data;
-		return null; 
-	} catch (error) {
-		console.log(error);
-	}
-};
-
-//signIn
-export const signin = async (email, password)=>{
-	try {
-        const res = await signIn("credentials", {
-            email: email,
-            password: password,
-            redirect: false
-        });
-		return res;
-    } catch (error) {
-        console.log(error)
-    }
-};
-
-//Karteneditor
-export const createAppCard = async (card, userId)=>{
-	try {
-		const res = await fetch('/api/cards',{
-			method: "POST",
-			body: JSON.stringify({...card, userId: userId}),
-			headers: {"Content-type": "application/json"}
-		});
-		const data = await res.json();
-		if(!res.ok) return data;
-		return null; 
 	} catch (error) {
 		console.log(error);
 	}
