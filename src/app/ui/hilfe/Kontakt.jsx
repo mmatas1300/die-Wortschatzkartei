@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Spinner } from "@material-tailwind/react";
 import EmailTemplate from "./EmailTemplate";
+import { sendEmail } from "@/libs/data";
 
 
 const Kontakt = () => {
@@ -13,19 +14,11 @@ const Kontakt = () => {
         setButtonstate(<Spinner className="mt-2.5 h-[41px] w-[41px]" />)
         const formData = new FormData(e.currentTarget)
         const email = EmailTemplate(formData.get('name'),formData.get('email'),formData.get('message'))
-        try {
-            const res = await fetch('/api/kontakt',{
-                method: "POST",
-                body: JSON.stringify({message: email}),
-                headers: {"Content-type": "application/json"}
-            });
-            if(res.ok)
-                setButtonstate(<p className="mt-2.5 h-[41px]">Nachricht gesendet!</p>)
-            else
-                setButtonstate(<p className="mt-2.5 h-[41px]">Fehler, versuchen Sie es später nochmal!</p>)
-        } catch (error) {
-            console.log(error);
-        }
+        const res = sendEmail(email);
+        if (res)
+			setButtonstate(<p className="mt-2.5 h-[41px]">Nachricht gesendet!</p>)
+		else
+			setButtonstate(<p className="mt-2.5 h-[41px]">Fehler, versuchen Sie es später nochmal!</p>)
     }
 
     return (

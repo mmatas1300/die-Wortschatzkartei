@@ -8,33 +8,33 @@ export const signup = async (email, password) => {
 			headers: { "Content-type": "application/json" }
 		});
 		const data = await response.json();
-		if(!response.ok) return data;
-		return null; 
+		if (!response.ok) return data;
+		return null;
 	} catch (error) {
 		console.log(error);
 	}
 };
 
 //signIn
-export const signin = async (email, password)=>{
+export const signin = async (email, password) => {
 	try {
-        const res = await signIn("credentials", {
-            email: email,
-            password: password,
-            redirect: false
-        });
+		const res = await signIn("credentials", {
+			email: email,
+			password: password,
+			redirect: false
+		});
 		return res;
-    } catch (error) {
-        console.log(error)
-    }
+	} catch (error) {
+		console.log(error)
+	}
 };
 
 //Worterbuch
-export const getSearchAppCards = async (query) => {
+export const getAppCardsByQuery = async (query) => {
 	try {
 		const res = await fetch(`/api/cards/search/${query}`);
 		const cards = await res.json();
-		return sortAlphaCards(cards);
+		return cards;
 	} catch (error) {
 		console.log(error);
 	}
@@ -55,11 +55,11 @@ export const getUserCardsByQuery = async (query, userId) => {
 };
 
 //Woterbuch letter page
-export const getLetterAppCards = async (letter) => {
+export const getAppCardsByFirstLetter = async (firstLetter) => {
 	try {
-		const res = await fetch(`/api/cards/${letter}`);
+		const res = await fetch(`/api/cards/${firstLetter}`);
 		const cards = await res.json();
-		return sortAlphaCards(cards);
+		return cards;
 	} catch (error) {
 		console.log(error);
 	}
@@ -93,27 +93,27 @@ export const updateUserConfig = async (userId, config) => {
 };
 
 //verwalten und uben
-export const updateUserCard = async (userId, card)=>{
+export const updateUserCard = async (userId, card) => {
 	try {
-		const res = await fetch('/api/user/cards',{
+		const res = await fetch('/api/user/cards', {
 			method: "PUT",
-			body: JSON.stringify({userId: userId, card: card}),
-			headers: {"Content-type": "application/json"}
+			body: JSON.stringify({ userId: userId, card: card }),
+			headers: { "Content-type": "application/json" }
 		});
 		const data = await res.json();
-		if(!res.ok) return data;
+		if (!res.ok) return data;
 		return null;
 	} catch (error) {
 		console.log(error)
 	}
 };
 
-export const getUserCards = async (userId)=>{
+export const getUserCards = async (userId) => {
 	try {
-		const res = await fetch('/api/user/cards',{
+		const res = await fetch('/api/user/cards', {
 			method: "POST",
-			body: JSON.stringify({userId: userId}),
-			headers: {"Content-type": "application/json"}
+			body: JSON.stringify({ userId: userId }),
+			headers: { "Content-type": "application/json" }
 		});
 		const data = await res.json();
 		return data;
@@ -122,12 +122,12 @@ export const getUserCards = async (userId)=>{
 	}
 };
 
-export const deleteUserCard = async (userId,cardId)=>{
+export const deleteUserCard = async (userId, cardId) => {
 	try {
-		await fetch('/api/user/cards',{
+		await fetch('/api/user/cards', {
 			method: "DELETE",
-			body: JSON.stringify({userId: userId, cardId: cardId}),
-			headers: {"Content-type": "application/json"}
+			body: JSON.stringify({ userId: userId, cardId: cardId }),
+			headers: { "Content-type": "application/json" }
 		});
 	} catch (error) {
 		console.log(error);
@@ -135,7 +135,7 @@ export const deleteUserCard = async (userId,cardId)=>{
 };
 
 //Uben
-export const getAppCards = async ()=>{
+export const getAppCards = async () => {
 	try {
 		const res = await fetch('/api/cards');
 		const data = await res.json();
@@ -145,12 +145,12 @@ export const getAppCards = async ()=>{
 	}
 };
 
-export const getUserLastGame = async (userId)=>{
+export const getUserLastGame = async (userId) => {
 	try {
-		const res = await fetch('api/user/last-game',{
+		const res = await fetch('api/user/last-game', {
 			method: "POST",
-			body: JSON.stringify({userId: userId}),
-			headers: {"Content-type": "application/json"}
+			body: JSON.stringify({ userId: userId }),
+			headers: { "Content-type": "application/json" }
 		});
 		const data = await res.json();
 		return data;
@@ -159,12 +159,12 @@ export const getUserLastGame = async (userId)=>{
 	}
 };
 
-export const getUserStreak = async (userId)=>{
+export const getUserStreak = async (userId) => {
 	try {
-		const res = await fetch('api/user/streak',{
+		const res = await fetch('api/user/streak', {
 			method: "POST",
-			body: JSON.stringify({userId: userId}),
-			headers: {"Content-type": "application/json"}
+			body: JSON.stringify({ userId: userId }),
+			headers: { "Content-type": "application/json" }
 		});
 		const data = await res.json();
 		return data;
@@ -174,12 +174,12 @@ export const getUserStreak = async (userId)=>{
 };
 
 
-export const getUserProgress = async (userId)=>{
+export const getUserProgress = async (userId) => {
 	try {
-		const res = await fetch('/api/user/progress',{
+		const res = await fetch('/api/user/progress', {
 			method: "POST",
-			body: JSON.stringify({userId: userId}),
-			headers: {"Content-type": "application/json"}
+			body: JSON.stringify({ userId: userId }),
+			headers: { "Content-type": "application/json" }
 		});
 		const data = await res.json();
 		return data;
@@ -188,36 +188,36 @@ export const getUserProgress = async (userId)=>{
 	}
 };
 
-export const saveUserCardsProgress = async (userId, cards)=>{
+export const saveUserCardsProgress = async (userId, cards) => {
 	try {
-		await fetch('/api/user/cards/progress',{
+		await fetch('/api/user/cards/progress', {
 			method: "PUT",
-			body: JSON.stringify({userId: userId, cards: cards, date: new Date().setHours(0,0,0)}),
-			headers: {"Content-type": "application/json"}
+			body: JSON.stringify({ userId: userId, cards: cards, date: new Date().setHours(0, 0, 0) }),
+			headers: { "Content-type": "application/json" }
 		});
 	} catch (error) {
 		console.log(error);
 	}
 };
 
-export const saveAppCardsProgress = async (userId, progress)=>{
+export const saveAppCardsProgress = async (userId, progress) => {
 	try {
-		await fetch('/api/user/progress/save',{
+		await fetch('/api/user/progress/save', {
 			method: "PUT",
-			body: JSON.stringify({userId: userId, progress: progress, date: new Date().setHours(0,0,0)}),
-			headers: {"Content-type": "application/json"}
+			body: JSON.stringify({ userId: userId, progress: progress, date: new Date().setHours(0, 0, 0) }),
+			headers: { "Content-type": "application/json" }
 		});
 	} catch (error) {
 		console.log(error);
 	}
 };
 
-export const resetAppCardProgress = async (userId, cardId)=>{
+export const resetAppCardProgress = async (userId, cardId) => {
 	try {
-		await fetch('/api/user/progress',{
+		await fetch('/api/user/progress', {
 			method: "PUT",
-			body: JSON.stringify({userId: userId, progress: [{cardId: cardId, level:0, practiceDate: new Date("2000")}]}),
-			headers: {"Content-type": "application/json"}
+			body: JSON.stringify({ userId: userId, progress: [{ cardId: cardId, level: 0, practiceDate: new Date("2000") }] }),
+			headers: { "Content-type": "application/json" }
 		});
 	} catch (error) {
 		console.log(error)
@@ -225,16 +225,33 @@ export const resetAppCardProgress = async (userId, cardId)=>{
 }
 
 //KartePons
-export const getPons = async (userId,wort)=>{
+export const getPons = async (userId, wort) => {
 	try {
-		const resp = await fetch('/api/pons',{
+		const resp = await fetch('/api/pons', {
 			method: "POST",
-			body: JSON.stringify({userId: userId, query: wort}),
-			headers: {"Content-type": "application/json"}
+			body: JSON.stringify({ userId: userId, query: wort }),
+			headers: { "Content-type": "application/json" }
 		});
 		const data = await resp.json();
 		return data;
 	} catch (error) {
 		console.log(error)
+	}
+}
+
+//Kontakt
+export const sendEmail = async (email) => {
+	try {
+		const res = await fetch('/api/contact', {
+			method: "POST",
+			body: JSON.stringify({ message: email }),
+			headers: { "Content-type": "application/json" }
+		});
+		if (res.ok)
+			return true;
+		else
+			return false;
+	} catch (error) {
+		console.log(error);
 	}
 }

@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { CircleArrowLeft as ArrowIcon } from "lucide-react";
 import { Fade } from "react-awesome-reveal";
-import { getSearchAppCards, getUserCardsByQuery } from "@/libs/data";
+import { getAppCardsByQuery, getUserCardsByQuery } from "@/libs/data";
 import SearchForm from "@/components/SearchForm";
 import LettersGrid from "@/app/ui/worterbuch/LettersGrid";
 import SearchCardsGrid from "@/app/ui/worterbuch/SearchCardsGrid";
@@ -27,8 +27,8 @@ function WorterbuchPage() {
         if (!searchRegex.test(query)) setWarningMessage(<p className="text-orange-card text-center">Bitte geben Sie nur Buchstaben ein</p>);
         else{
             if (status === "unauthenticated" || session.user.config.cardsSet === "app") {
-                const appCards = await getSearchAppCards(query);
-                setCards(appCards);
+                const appCards = await getAppCardsByQuery(query);
+                setCards(sortAlphaCards(appCards));
             } else if (session.user.config.cardsSet === "meine") {
                 const myCards = await getUserCardsByQuery(query, session.user._id);
                 
