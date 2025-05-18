@@ -7,6 +7,6 @@ export async function POST(request) {
         const resp = await signup(email,password);
         return NextResponse.json(resp);
     } catch (error) {
-        console.log(error)
+        console.log({message: error, ok: false })
     }
 }

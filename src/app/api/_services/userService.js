@@ -3,7 +3,7 @@ import { bcryptCompare, bcryptHash } from "@/libs/bcrypt";
 import { decrypt, encrypt } from "@/libs/crypto";
 import { filterCardsByFirstLetter } from "@/utils/filterCardsByFirstLetter";
 import User from '@/app/api/_models/user';
-import { progressGenerator } from "@/libs/progressGenerator";
+import { getAllAppCards } from "@/app/api/_services/cardService";
 
 
 export const deleteUserCard = async (userId, cardId) => {
@@ -83,6 +83,14 @@ export const updateAppCardsProgress = async (userId, progress, date) => {
         await userStreakUpdate(userId, date, progress.length);
 };
 
+export const createUserProgress = async ()=>{
+        const cards = await getAllAppCards();
+        const progress = cards.map((card)=>{
+            return {cardId: card._id, level:0, practiceDate: new Date("2000")}
+        });
+        return progress;
+};
+
 export const signup = async (email, password) => {
         if (!password || password.length < 3)
                 return {message: "Passwörter müssen mindestens 3 Zeichen lang sein" , ok: false };
@@ -101,7 +109,7 @@ export const signup = async (email, password) => {
                         ponsSecret: "",
                 },
                 streak: [{ dayPlayed: new Date('2000'), cardsPlayed: 0 }],
-                progressAppCards: await progressGenerator(),
+                progressAppCards: await createUserProgress(),
         });
         /////////////////////////////////////////////////////TODO PG
         await userCreate(user);

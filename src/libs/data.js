@@ -57,7 +57,7 @@ export const getUserCardsByQuery = async (query, userId) => {
 //Woterbuch letter page
 export const getAppCardsByFirstLetter = async (firstLetter) => {
 	try {
-		const res = await fetch(`/api/cards/${firstLetter}`);
+		const res = await fetch(`/api/cards/starts-with/${firstLetter}`);
 		const cards = await res.json();
 		return cards;
 	} catch (error) {
