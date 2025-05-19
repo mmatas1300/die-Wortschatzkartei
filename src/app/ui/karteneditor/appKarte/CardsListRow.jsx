@@ -3,7 +3,7 @@ import { createContext } from 'react';
 import CircularChart from "@/components/karteneditor/CircularChart";
 import 'react-circular-progressbar/dist/styles.css';
 import ResetMessage from '@/app/ui/karteneditor/ResetMessage';
-import {resetAppCardProgress} from "@/libs/data";
+import {resetAppCardProgress} from "@/services/FetchAPI";
 import { selectColorCard } from "@/libs/selectColorCards";
 
 export const cardListContext = createContext();

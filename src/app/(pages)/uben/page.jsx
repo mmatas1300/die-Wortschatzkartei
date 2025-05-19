@@ -6,7 +6,7 @@ import CardMessage from "@/components/CardMessage";
 import PlayScreen from "@/app/ui/uben/PlayScreen";
 import {progressUpdate} from "@/libs/progressUpdate";
 import { Fade } from "react-awesome-reveal";
-import { getAppCards, getUserProgressAppCards, getUserLastGame, getUserCards } from "@/libs/data";
+import { getAppCards, getUserProgressAppCards, getUserLastGame, getUserCards } from "@/services/FetchAPI";
 
 function UbenPage() {
 

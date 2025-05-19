@@ -4,7 +4,7 @@ import { createContext } from 'react';
 import UpdateMessage from '@/app/ui/karteneditor/meineKarte/UpdateMessage';
 import 'react-circular-progressbar/dist/styles.css';
 import ResetMessage from '@/app/ui/karteneditor/ResetMessage';
-import { deleteUserCard, updateUserCard } from "@/libs/data";
+import { deleteUserCard, updateUserCard } from "@/services/FetchAPI";
 import { selectColorCard } from "@/libs/selectColorCards";
 import CircularChart from "@/components/karteneditor/CircularChart";
 

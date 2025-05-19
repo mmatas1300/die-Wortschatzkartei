@@ -1,4 +1,4 @@
-import { updateUserConfig } from '@/libs/data';
+import { updateUserConfig } from '@/services/FetchAPI';
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { Spinner } from "@material-tailwind/react";

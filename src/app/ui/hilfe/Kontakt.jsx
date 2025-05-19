@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Spinner } from "@material-tailwind/react";
 import EmailTemplate from "./EmailTemplate";
-import { sendEmail } from "@/libs/data";
+import { sendEmail } from "@/services/FetchAPI";
 
 
 const Kontakt = () => {

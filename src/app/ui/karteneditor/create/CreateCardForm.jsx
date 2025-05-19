@@ -3,7 +3,7 @@ import { Spinner } from "@material-tailwind/react";
 import { useSession } from 'next-auth/react'
 import { createCard } from '@/libs/getFormCardData';
 import { verbFields, nomenMUFFields, nomenFields, nomenFieldsPl, andereFields } from '@/app/ui/karteneditor/create/fields';
-import { updateUserCard } from '@/libs/data';
+import { updateUserCard } from '@/services/FetchAPI';
 import PonsContainerKarteneditor from '@/components/Pons/PonsContainerKarteneditor';
 
 const CreateCardForm = () => {

@@ -1,4 +1,4 @@
-import { connectDB } from "@/libs/mongodb";
+import { connectDB } from "@/services/mongodb";
 import { AndereCard } from "@/app/api/_models/card";
 
 export const cardFindAll = async () => {

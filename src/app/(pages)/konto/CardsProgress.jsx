@@ -1,7 +1,7 @@
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react';
-import { getUserProgressAppCards, getUserCards } from "@/libs/data";
+import { getUserProgressAppCards, getUserCards } from "@/services/FetchAPI";
 import { Spinner } from "@material-tailwind/react";
 
 

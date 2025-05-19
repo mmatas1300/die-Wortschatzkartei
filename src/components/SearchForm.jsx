@@ -1,4 +1,4 @@
-const SearchForm = ({handleSubmit, buttonState, style}) => {
+const SearchForm = ({handleSubmit, buttonDisable, style}) => {
     return (
         <form onSubmit={handleSubmit} className={style}>
             <div className="relative">
@@ -8,7 +8,7 @@ const SearchForm = ({handleSubmit, buttonState, style}) => {
                     </svg>
                 </div>
                 <input required type="search" name="search" id="default-search" className="block w-full p-4 ps-10 text-sm" />
-                <button disabled={buttonState} type="submit" className="absolute end-2.5 bottom-2 bg-green-card cursor-pointer px-4 py-2">Suchen</button>
+                <button disabled={buttonDisable} type="submit" className="absolute end-2.5 bottom-2 bg-green-card cursor-pointer px-4 py-2">Suchen</button>
             </div>
         </form>
     );

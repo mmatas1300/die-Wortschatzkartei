@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react'
 import { cardListContext } from '@/app/ui/karteneditor/meineKarte/CardsListRow';
 import { updateCard } from '@/libs/getFormCardData';
 import { nomenFields, nomenFieldsPl, verbFields, nomenMUFFields, andereFields } from '@/app/ui/karteneditor/meineKarte/fields';
-import { updateUserCard } from '@/libs/data';
+import { updateUserCard } from '@/services/FetchAPI';
 
 const EditCardForm = () => {
 

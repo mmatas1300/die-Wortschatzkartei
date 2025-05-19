@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import CardsListRow from "@/app/ui/karteneditor/appKarte/CardsListRow";
 import { RefreshCcw } from 'lucide-react';
-import { getAppCards, getUserProgressAppCards } from "@/libs/data";
+import { getAppCards, getUserProgressAppCards } from "@/services/FetchAPI";
 import SearchForm from '@/components/SearchForm';
 import { sortCardsByLevel } from "@/libs/sortArrays";
 import { Spinner } from "@material-tailwind/react";

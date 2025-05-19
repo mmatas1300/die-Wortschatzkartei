@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useSession } from 'next-auth/react'
 import { CircleArrowLeft as ArrowIcon } from 'lucide-react';
 import { Fade } from "react-awesome-reveal";
-import { getAppCardsByFirstLetter, getUserCardsByFirstLetter } from "@/libs/data";
+import { getAppCardsByFirstLetter, getUserCardsByFirstLetter } from "@/services/FetchAPI";
 import CardsGrid from '@/app/ui/worterbuch/letter/CardsGrid';
 import { sortAlphaCards } from '@/libs/sortArrays';
 

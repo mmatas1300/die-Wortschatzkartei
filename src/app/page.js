@@ -1,5 +1,4 @@
 'use client'
-import Karte from "@/components/Karte";
 import FAQ from "@/app/ui/hilfe/FAQ";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
@@ -10,7 +9,6 @@ export default function Home() {
     const { status } = useSession();
 
     return (
-
         <section className="flex flex-col items-center justify-between my-12 mx-4">
             <Fade triggerOnce>
                 <h1 className="p-5 rounded-2xl my-3 mx-10 text-center text-3xl shadow-xl">die Wortschatzkartei</h1>

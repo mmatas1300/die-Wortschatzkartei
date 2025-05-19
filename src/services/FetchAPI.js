@@ -33,22 +33,20 @@ export const signin = async (email, password) => {
 export const getAppCardsByQuery = async (query) => {
 	try {
 		const res = await fetch(`/api/cards/search/${query}`);
-		const cards = await res.json();
-		return cards;
+		return await res.json();
 	} catch (error) {
 		console.log(error);
 	}
 };
 
-export const getUserCardsByQuery = async (query, userId) => {
+export const getUserCardsByQuery = async (userId, query) => {
 	try {
 		const res = await fetch(`/api/user/cards/search/${query}`, {
 			method: "POST",
 			body: JSON.stringify({ userId: userId }),
 			headers: { "Content-type": "application/json" },
 		});
-		const cards = await res.json();
-		return cards;
+		return await res.json();
 	} catch (error) {
 		console.log(error);
 	}

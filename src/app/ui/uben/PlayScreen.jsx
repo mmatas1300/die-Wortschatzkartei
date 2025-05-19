@@ -4,7 +4,7 @@ import FlipCard from "./FlipCard";
 import CardMessage from "@/components/CardMessage";
 import { shuffleArray } from "@/libs/sortArrays";
 import { calcNextPracticeDate } from "@/libs/calcNextPracticeDate";
-import { saveAppCardsProgress, saveUserCardsProgress } from "@/libs/data";
+import { saveAppCardsProgress, saveUserCardsProgress } from "@/services/FetchAPI";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useSoundEffect } from "./useSoundEffect";
 

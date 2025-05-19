@@ -2,7 +2,7 @@ import { Spinner } from "@material-tailwind/react";
 import { useState } from "react"
 import style from '@/app/ui/login/login.module.css'
 import { useRouter } from "next/navigation";
-import { signin, signup } from "@/libs/data";
+import { signin, signup } from "@/services/FetchAPI";
 
 const Form = () => {
 
