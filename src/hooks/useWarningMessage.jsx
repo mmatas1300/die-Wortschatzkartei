@@ -3,9 +3,11 @@ import { useState } from "react";
 export const useWarningMessage = ()=>{
     const [warningMessage, setWarningMessage] = useState("");
     const [warningTrigger, setWarningTrigger] = useState(false);
-    const showWarning = (message)=>{
-        setWarningMessage(message)
+    const [warningColor, setWarningColor] = useState(false);
+    const showWarning = (message, color = null)=>{
+        setWarningMessage(message);
+        setWarningColor(color);
         setWarningTrigger(!warningTrigger);
     };
-    return [warningMessage,warningTrigger,showWarning];
+    return [warningMessage,warningTrigger,warningColor,showWarning];
 }

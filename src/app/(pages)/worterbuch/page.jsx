@@ -16,7 +16,7 @@ function WorterbuchPage() {
 
     const { data: session, status } = useSession();
     const [cards, setCards] = useState(null);
-    const [warningMessage, warningTrigger, setWarningMessage] = useWarningMessage();
+    const [warningMessage, warningTrigger, warningColor, setWarningMessage] = useWarningMessage();
     const [buttonDisable, setButtonDisable] = useState(false);
 
     const handleSubmit = async (e) => {
