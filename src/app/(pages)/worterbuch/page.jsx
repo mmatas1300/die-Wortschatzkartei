@@ -9,7 +9,7 @@ import LettersGrid from "@/app/ui/worterbuch/LettersGrid";
 import SearchCardsGrid from "@/app/ui/worterbuch/SearchCardsGrid";
 import { sortAlphaCards } from "@/libs/sortArrays";
 import AutohideSnackbar from "@/components/Snackbar";
-import { colorRedCard } from "@/utils/computedStyles";
+import { hexColor } from "@/utils/colors";
 import { useWarningMessage } from "@/hooks/useWarningMessage";
 
 function WorterbuchPage() {
@@ -41,7 +41,7 @@ function WorterbuchPage() {
 
     return (
         <section className="my-12">
-            <AutohideSnackbar message={warningMessage} color={colorRedCard()} trigger={warningTrigger}/>
+            <AutohideSnackbar message={warningMessage} color={hexColor.redCard} trigger={warningTrigger}/>
             <Fade triggerOnce>
                 <h1 className="text-center">Wörterbuch</h1>
                 <div className="flex flex-row justify-center items-center">
