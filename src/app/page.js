@@ -1,5 +1,5 @@
 'use client'
-import FAQ from "@/app/ui/hilfe/FAQ";
+import FAQ from "@/app/(pages)/hilfe/_components/FAQ";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 import { useSession } from "next-auth/react";

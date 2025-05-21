@@ -1,5 +1,6 @@
 "use client"
-import AccordionFAQ from "./AccordionFAQ";
+import AccordionFAQ from "@/app/(pages)/hilfe/_components/AccordionFAQ";
+
 
 const FAQ = ()=>{
     return(

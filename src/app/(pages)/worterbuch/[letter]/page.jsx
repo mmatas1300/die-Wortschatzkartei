@@ -16,14 +16,13 @@ function WorterMitPage({ params }) {
     useEffect(() => {
         const getData = async ()=>{
             if(status === "unauthenticated" || session?.user.config.cardsSet === "app"){
-                const appCards = await getAppCardsByFirstLetter(params.letter);
-                setCards(sortAlphaCards(appCards));
+                const body = await getAppCardsByFirstLetter(params.letter);
+                setCards(sortAlphaCards(body.data));
             } else if(session?.user.config.cardsSet === "user"){
-                const userCards = await getUserCardsByFirstLetter(session.user._id,params.letter);
-                setCards(sortAlphaCards(userCards));
+                const body = await getUserCardsByFirstLetter(session.user._id,params.letter);
+                setCards(sortAlphaCards(body.data));
             }
         };
-
         if(status !== "loading")
             getData();
 

@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 const LettersGrid = () => {
-    const alphabet = Array.from(Array(26)).map((e, i) => i + 65).splice(23, 2);
+    const alphabet = Array.from(Array(26)).map((e, i) => i + 65);
+    alphabet.splice(23, 2);
     return (
         <div className="flex flex-row justify-center items-center flex-wrap mt-4">
             {alphabet.map((letter) => {
