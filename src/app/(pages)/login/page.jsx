@@ -1,6 +1,6 @@
 'use client'
 import { Fade } from "react-awesome-reveal";
-import Form from "@/app/ui/login/Form";
+import Form from "@/app/(pages)/login/_components/Form";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";

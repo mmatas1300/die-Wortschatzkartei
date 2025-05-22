@@ -93,10 +93,10 @@ export const createUserProgress = async ()=>{
 
 export const signup = async (email, password) => {
         if (!password || password.length < 3)
-                return {message: "Illegal password size" , ok: false };
+                return {message: "Passwörter müssen mindestens 3 Zeichen lang sein" , ok: false };
         const userFound = await userFindByEmail(email);
         if (userFound)
-                return { message: "This Email already exists", ok: false };
+                return { message: "Diese E-Mail existiert bereits", ok: false };
         const hashedPassword = await bcryptHash(password);
         const user = new User({
                 email,

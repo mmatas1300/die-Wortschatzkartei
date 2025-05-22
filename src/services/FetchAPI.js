@@ -7,9 +7,7 @@ export const signup = async (email, password) => {
 			body: JSON.stringify({ email: email, password: password }),
 			headers: { "Content-type": "application/json" }
 		});
-		const data = await response.json();
-		if (!response.ok) return data;
-		return null;
+		return await response.json();
 	} catch (error) {
 		console.log(error);
 	}
