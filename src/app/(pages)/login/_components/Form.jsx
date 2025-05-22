@@ -6,6 +6,7 @@ import { signin, signup } from "@/services/FetchAPI";
 import { useWarningMessage } from "@/hooks/useWarningMessage";
 import { hexColor } from "@/utils/colors";
 import AutohideSnackbar from "@/components/Snackbar";
+import registerValidation from "@/utils/registerValidaton";
 
 const Form = () => {
 
@@ -17,26 +18,15 @@ const Form = () => {
     const [warningMessage, warningTrigger, warningColor, setWarningMessage] = useWarningMessage();
     const router = useRouter();
 
-    const dataValidation = (data) => {
-        let validation = true;
-        if (data.get("email").length === 0) {
-            setWarningMessage("Gib deine E-Mail-Adresse ein",hexColor.redCard);
-            validation = false;
-        } else if (data.get("password").length < 3) {
-            setWarningMessage("Passwörter müssen mindestens 3 Zeichen lang sein",hexColor.redCard)
-            validation = false;
-        } else if (data.get("password") !== data.get("confirmPassword")) {
-            setWarningMessage("Die Passwörter stimmen nicht überein",hexColor.redCard)
-            validation = false;
-        }
-        return validation;
-    };
-
     const handleRegistrierenSubmit = async (e) => {
         e.preventDefault();
         setButtonState(spinner);
         const formData = new FormData(e.currentTarget);
-        if (!dataValidation(formData)) setButtonState(weiterButton);
+        const infoValidated = registerValidation(formData.get("email"),formData.get("password"),formData.get("confirmPassword"));
+        if (infoValidated){
+            useWarningMessage(infoValidated,hexColor.redCard)
+            setButtonState(weiterButton);
+        }
         else {
             const body = await signup(formData.get("email"), formData.get("password"));
             if (!body.ok) {
