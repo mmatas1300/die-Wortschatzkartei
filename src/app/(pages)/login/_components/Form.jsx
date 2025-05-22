@@ -24,7 +24,7 @@ const Form = () => {
         const formData = new FormData(e.currentTarget);
         const infoValidated = registerValidation(formData.get("email"),formData.get("password"),formData.get("confirmPassword"));
         if (infoValidated){
-            useWarningMessage(infoValidated,hexColor.redCard)
+            setWarningMessage(infoValidated,hexColor.redCard)
             setButtonState(weiterButton);
         }
         else {
