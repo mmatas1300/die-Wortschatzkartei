@@ -3,33 +3,34 @@ import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react';
 import { getUserProgressAppCards, getUserCards } from "@/services/FetchAPI";
 import { Spinner } from "@material-tailwind/react";
+import { hexColor } from '@/utils/colors';
 
 
 const CardsProgress = () => {
 
     const { data: session, status } = useSession();
     const [percentage, setPercentage] = useState(null);
-    const cardColorOrange = getComputedStyle(document.documentElement).getPropertyValue('--orange-card');
+    const cardColorOrange = hexColor.orangeCard;
 
     useEffect(() => {
         const loadData = async () => {
             if (session.user.config.cardsSet === "app") {
-                const progressData = await getUserProgressAppCards(session.user._id);
+                const body = await getUserProgressAppCards(session.user._id);
                 let acc = 0;
-                for (const card of progressData.progress) {
+                for (const card of body.data) {
                     acc = acc + card.level
                 }
-                setPercentage(100 * acc / (7 * progressData.progress.length))
+                setPercentage(100 * acc / (7 * body.data.length))
             } else {
-                const cards = await getUserCards(session.user._id);
-                if (cards.length === 0) {
+                const body = await getUserCards(session.user._id);
+                if (body.data.length === 0) {
                     setPercentage(0);
                 } else {
                     let acc = 0;
-                    for (const card of cards) {
+                    for (const card of body.data) {
                         acc = acc + card.level
                     }
-                    setPercentage(100 * acc / (7 * cards.length))
+                    setPercentage(100 * acc / (7 * body.data.length))
                 }
             }
         }

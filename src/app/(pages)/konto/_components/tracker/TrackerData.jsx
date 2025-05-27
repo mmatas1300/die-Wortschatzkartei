@@ -1,11 +1,10 @@
+import { hexColor } from '@/utils/colors'
 import { Award, Flame } from 'lucide-react'
 
 const TrackerData = ({streak, streakFull}) => {
 
-    const iconColorRed = getComputedStyle(document.documentElement)
-        .getPropertyValue('--red-card');
-    const iconColorOrange = getComputedStyle(document.documentElement)
-        .getPropertyValue('--orange-card');
+    const iconColorRed = hexColor.redCard;
+    const iconColorOrange = hexColor.orangeCard;
 
     const currentStreak = ()=>{
         let currentStreak = 0;

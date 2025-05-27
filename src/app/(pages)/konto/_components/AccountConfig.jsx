@@ -40,7 +40,7 @@ const AccountConfig = () => {
                         <label className='mt-2' htmlFor="cardsSet">Möchtest du lieber deine eigenen Karten verwenden oder die der App?</label>
                         <select name="cardsSet">
                             {session.user.config.cardsSet === "app" ? (<><option value="app">App-Karten</option>
-                                <option value="meine">Meine Karten</option></>) : (<><option value="meine">Meine Karten</option><option value="app">App-Karten</option>
+                                <option value="user">Meine Karten</option></>) : (<><option value="user">Meine Karten</option><option value="app">App-Karten</option>
                                 </>)} 
                         </select>
                         <label className='mt-2' htmlFor="cardsPerDay">Tageshöchstwert für neue Karten:</label>

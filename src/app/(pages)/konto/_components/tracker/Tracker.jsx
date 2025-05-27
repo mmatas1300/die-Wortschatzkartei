@@ -16,10 +16,9 @@ const Tracker = () => {
 
     useEffect(()=>{
         const loadData = async ()=>{
-            const data = await getUserStreak(session.user._id);
-
+            const body = await getUserStreak(session.user._id);
             const gridDays = new Array(119);
-            const streakReverse = data.progress.toReversed();
+            const streakReverse = body.data.toReversed();
             streakReverse.pop();
             setStreakFull(streakReverse);
 

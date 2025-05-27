@@ -2,9 +2,9 @@
 import { useSession } from 'next-auth/react'
 import { Spinner } from "@material-tailwind/react";
 import { Fade } from 'react-awesome-reveal';
-import AccountConfig from '@/app/ui/konto/AccountConfig';
-import Tracker from '@/components/tracker/Tracker';
-import CardsProgress from './CardsProgress';
+import AccountConfig from '@/app/(pages)/konto/_components/AccountConfig';
+import Tracker from '@/app/(pages)/konto/_components/tracker/Tracker';
+import CardsProgress from '@/app/(pages)/konto/_components/CardsProgress';
 
 
 function KontoPage() {
