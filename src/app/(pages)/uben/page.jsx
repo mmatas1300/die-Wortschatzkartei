@@ -20,7 +20,7 @@ function UbenPage() {
                 const progressData = await getUserProgressAppCards(session.user._id);
                 const progress = progressUpdate(cards, progressData.progress);
                 setMainMessage(<PlayScreen cards={cards} progress={progress} />);
-            } else if (session.user.config.cardsSet === "meine") {
+            } else if (session.user.config.cardsSet === "user") {
                 const cards = await getUserCards(session.user._id);
                 if (cards.length === 0) {
                     setMainMessage(<CardMessage message={"Du hast keine Karten zum Üben!!!"} />);

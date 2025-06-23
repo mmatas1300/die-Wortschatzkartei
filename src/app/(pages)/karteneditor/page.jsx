@@ -1,11 +1,9 @@
 "use client"
-import { MeineCardList } from "@/app/ui/karteneditor/meineKarte/MeineCardsList";
-import CreateCardForm from "@/app/ui/karteneditor/create/CreateCardForm";
+import CreateCardForm from "@/app/(pages)/karteneditor/_components/create/CreateCardForm";
 import { Fade } from "react-awesome-reveal";
-import { AppCardList } from "@/app/ui/karteneditor/appKarte/AppCardsList";
 import { useSession } from "next-auth/react";
 import { Spinner } from "@material-tailwind/react";
-import PonsCard from "@/components/Pons/PonsContainerKarte";
+import { CardsList } from "./_components/CardsList";
 
 const KarteneditorPage = () => {
 
@@ -18,10 +16,10 @@ const KarteneditorPage = () => {
                 {status === "loading" ? (<Spinner className="mt-[calc(35vh)] h-10 w-10" />) : (
                     session.user.config.cardsSet === "app" ?
                         (
-                            <AppCardList />
+                            <CardsList />
                         ) : (<>
                             <CreateCardForm />
-                            <MeineCardList />
+                            <CardsList />
                         </>
                         )
                 )}

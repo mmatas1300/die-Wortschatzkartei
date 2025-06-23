@@ -1,4 +1,4 @@
-import { baloo } from '@/app/ui/fonts';
+import { baloo } from '@/utils/fonts';
 import "./globals.css";
 import Providers from './Providers';
 import Navbar from '@/components/nav/Navbar';

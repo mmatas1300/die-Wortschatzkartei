@@ -1,11 +1,9 @@
 import bcrypt from 'bcryptjs'
 
 export const bcryptHash = async (chain)=>{
-    const chainHashed = await bcrypt.hash(chain, 10);
-    return chainHashed;
+    return await bcrypt.hash(chain, 10);
 }
 
-export const bcryptCompare = async (formPassword, userFoundPassword)=>{
-    const passwordMatch = await bcrypt.compare(formPassword, userFoundPassword);
-    return passwordMatch;
+export const bcryptCompare = async (formPassword, userFoundPassword)=>{ 
+    return await bcrypt.compare(formPassword, userFoundPassword);
 }

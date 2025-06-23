@@ -1,6 +1,5 @@
 import {connectDB}  from "@/services/mongodb";
 import User from '@/app/api/_models/user';
-import * as Types from "@/app/types.js"
 
 /**
  * Find a user by ID

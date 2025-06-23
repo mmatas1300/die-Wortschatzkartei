@@ -6,7 +6,7 @@ import { Spinner } from "@material-tailwind/react";
 const AccountConfig = () => {
 
     const submitButton = (<button className='mb-3'>Fertig</button>);
-    
+
     const [stateButton, setStateButton] = useState(submitButton);
     const { data: session, update } = useSession();
 
@@ -17,11 +17,11 @@ const AccountConfig = () => {
         const config = {
             nick: formData.get('nick') ? formData.get('nick') : session.user.config.nick,
             cardsSet: formData.get('cardsSet'),
-            cardsPerDay: formData.get('cardsPerDay')>0 & formData.get('cardsPerDay')<=50 ? Math.round(formData.get('cardsPerDay')) : session.user.config.cardsPerDay,
+            cardsPerDay: formData.get('cardsPerDay') > 0 & formData.get('cardsPerDay') <= 50 ? Math.round(formData.get('cardsPerDay')) : session.user.config.cardsPerDay,
             ponsSecret: formData.get('ponsSecret') ? formData.get('ponsSecret') : session.user.config.ponsSecret,
         }
         try {
-            await updateUserConfig(session.user._id,config);
+            await updateUserConfig(session.user._id, config);
             await update({ user: { ...session.user, config: config } })
         } catch (error) {
             //console.log(error)
@@ -41,7 +41,7 @@ const AccountConfig = () => {
                         <select name="cardsSet">
                             {session.user.config.cardsSet === "app" ? (<><option value="app">App-Karten</option>
                                 <option value="user">Meine Karten</option></>) : (<><option value="user">Meine Karten</option><option value="app">App-Karten</option>
-                                </>)} 
+                                </>)}
                         </select>
                         <label className='mt-2' htmlFor="cardsPerDay">Tageshöchstwert für neue Karten:</label>
                         <input type="text" placeholder={session.user.config.cardsPerDay} name='cardsPerDay' />
