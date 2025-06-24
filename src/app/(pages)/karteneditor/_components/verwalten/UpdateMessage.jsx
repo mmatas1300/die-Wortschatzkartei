@@ -1,7 +1,7 @@
 import React from 'react';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
 import { Pencil as PencilIcon } from 'lucide-react';
-import ScrollAreaUpdate from '@/app/(pages)/karteneditor/_components/meineKarte/ScrollAreaUpdate';
+import ScrollAreaUpdate from '@/app/(pages)/karteneditor/_components/verwalten/ScrollAreaUpdate';
 
 const UpdateMessage = () => (
     <AlertDialog.Root>

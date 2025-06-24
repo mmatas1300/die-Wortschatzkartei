@@ -1,9 +1,9 @@
 "use client"
-import CreateCardForm from "@/app/(pages)/karteneditor/_components/create/CreateCardForm";
+import CreateCardForm from "@/app/(pages)/karteneditor/_components/editor/CreateCardForm";
 import { Fade } from "react-awesome-reveal";
 import { useSession } from "next-auth/react";
 import { Spinner } from "@material-tailwind/react";
-import { CardsList } from "./_components/CardsList";
+import { CardsList } from "./_components/verwalten/CardsList";
 
 const KarteneditorPage = () => {
 

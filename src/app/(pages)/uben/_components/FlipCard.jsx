@@ -1,7 +1,7 @@
 import ReactFlipCard from 'reactjs-flip-card'
 import Karte from '@/components/Karte';
 import { useSoundEffect } from "../../../../hooks/useSoundEffect";
-import CircularChart from '@/app/(pages)/karteneditor/_components/CircularChart';
+import CircularChart from '@/app/(pages)/karteneditor/_components/verwalten/CircularChart';
 
 const FlipCard = ({ card, flipCard, setFlipCard, vanish, richtigButton, falschButton }) => {
 

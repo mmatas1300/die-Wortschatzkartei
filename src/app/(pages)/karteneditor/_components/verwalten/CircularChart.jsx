@@ -1,11 +1,10 @@
 import {  selectColorChart } from "@/libs/selectColorCards";
+import { hexColor } from "@/utils/colors";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 const CircularChart = ({level,type})=>{
 
-    const cardColorBlack = getComputedStyle(document.documentElement)
-    .getPropertyValue('--black-card');
-
+    const cardColorBlack = hexColor.blackCard;
     const chartColor = getComputedStyle(document.documentElement)
     .getPropertyValue(selectColorChart(type));
 

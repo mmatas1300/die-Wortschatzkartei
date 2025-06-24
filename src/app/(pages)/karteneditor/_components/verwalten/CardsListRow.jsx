@@ -1,10 +1,12 @@
 import { useSession } from 'next-auth/react';
 import { createContext } from 'react';
-import CircularChart from "@/app/(pages)/karteneditor/_components/CircularChart";
+import CircularChart from "@/app/(pages)/karteneditor/_components/verwalten/CircularChart";
 import 'react-circular-progressbar/dist/styles.css';
-import ResetMessage from '@/app/(pages)/karteneditor/_components/ResetMessage';
+import ResetMessage from '@/app/(pages)/karteneditor/_components/verwalten/ResetMessage';
 import { resetAppCardProgress, deleteUserCard, updateUserCard } from "@/services/FetchAPI";
 import { selectColorCard } from "@/libs/selectColorCards";
+import UpdateMessage from '@/app/(pages)/karteneditor/_components/verwalten/UpdateMessage';
+import DeleteMessage from '@/app/(pages)/karteneditor/_components/verwalten/DeleteMessage';
 
 export const cardListContext = createContext();
 
@@ -33,7 +35,7 @@ const CardsListRow = ({ card, setRefresh, refresh }) => {
             <div className="w-14 h-14 mx-4 text-sm flex flex-row justify-center items-center my-2 lg:my-0">{<CircularChart level={card.level} type={card.type} />}</div>
             <div className="w-28 mx-1 flex-1 text-sm text-center truncate">{card.wort}</div>
 
-            {session.user.config.cardsSet = "app" ?
+            {session.user.config.cardsSet == "app" ?
                 (<>
                     <div className="w-36 mx-1 text-sm text-center truncate hidden lg:block">{card.ubersetzung}</div>
                     <div className="w-6 mx-2 mr-10 active:scale-95 hover:cursor-pointer">
