@@ -6,7 +6,7 @@ import { shuffleArray } from "@/libs/sortArrays";
 import { calcNextPracticeDate } from "@/libs/calcNextPracticeDate";
 import { saveAppCardsProgress, saveUserCardsProgress } from "@/services/FetchAPI";
 import ProgressBar from "@ramonak/react-progress-bar";
-import { useSoundEffect } from "./useSoundEffect";
+import { useSoundEffect } from "@/hooks/useSoundEffect";
 
 
 
