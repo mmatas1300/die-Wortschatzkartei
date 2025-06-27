@@ -5,7 +5,7 @@ export async function POST(request) {
     const {message} = await request.json()
     const error = await resendSendEmail(message);  
     if (error)
-        return NextResponse.json({message: error , ok: false});
+        return NextResponse.json({message: error.message},{status:400});
     else
-        return NextResponse.json({message: "Email sent" ,ok: true});
+        return NextResponse.json({message: "Email sent"},{status:202});
 }

@@ -1,5 +1,6 @@
 import { getUserConfig } from "@/app/api/_services/userService";
 import { decrypt } from "@/libs/crypto";
+import { ponsAdapter } from "@/app/api/adapters/ponsAdapter";
 
 export const getWordByQuery = async (userId, query) => {
     const URL = `https://api.pons.com/v1/dictionary?q=${query}&l=deen&in=de&language=en`;

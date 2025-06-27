@@ -12,14 +12,14 @@ export const getAppCardsByQuery = async (query) => {
 export const getAppCardsByFirstLetter = async (firstLetter) => {
     const regExpFirstLetter = new RegExp("^" + firstLetter.toLowerCase());
     const appCards = await getAllAppCards();
-    const filterCards = filterCardsByRegExp(regExpFirstLetter, appCards);
+    const filteredCards = filterCardsByRegExp(regExpFirstLetter, appCards);
     switch (firstLetter.toLowerCase()) {
         case "a":
-            return filterCards.concat(filterCardsByRegExp(new RegExp("^ä"), appCards))
+            return filteredCards.concat(filterCardsByRegExp(new RegExp("^ä"), appCards))
         case "o":
-            return filterCards.concat(filterCardsByRegExp(new RegExp("^ö"), appCards))
+            return filteredCards.concat(filterCardsByRegExp(new RegExp("^ö"), appCards))
         case "u":
-            return filterCards.concat(filterCardsByRegExp(new RegExp("^ü"), appCards))
+            return filteredCards.concat(filterCardsByRegExp(new RegExp("^ü"), appCards))
     }
-    return filterCards;
+    return filteredCards;
 };

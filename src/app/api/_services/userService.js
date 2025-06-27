@@ -112,7 +112,7 @@ export const signup = async (email, password) => {
                 progressAppCards: await createUserProgress(),
         });
         await userCreate(user);
-        return {message: "Successful registration"};
+        return {message: "Erfolgreiche Registrierung!"};
 };
 
 export const authorize = async (email, password) => {
