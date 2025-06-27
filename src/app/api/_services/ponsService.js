@@ -12,5 +12,5 @@ export const getWordByQuery = async (userId, query) => {
             }
         }
     )
-    return await resp.json();
+    return ponsAdapter(await resp.json());
 };
