@@ -1,54 +1,22 @@
 import { Schema, model, models } from "mongoose";
 
-const verbCardSchema = new Schema({
+const cardSchema = new Schema({
     type: String,
-    wort: String,
-    prasens: [String],
-    prateritum:[String],
-    partizip2: String,
-    bild: String,
-    verwandte: String,
-    beispiel: String,
-    ubersetzung: String
-})
-
-const nomenCardSchema = new Schema({
-    type: String,
-    wort: String,
+    word: String,
     plural: String,
-    bild: String,
-    verwandte: String,
-    beispiel: String,
-    ubersetzung: String
+    image: String,
+    related: String,
+    example: String,
+    translation: String,
+    present: [String],
+    past: [String],
+    participle2: String,
+    masculinePlural: String,
+    feminineSingular: String,
+    femininePlural: String,
 })
 
-const nomenMUFCardSchema = new Schema({
-    type: String,
-    wort: String,
-    manner: String,
-    frau: String,
-    frauen: String,
-    bild: String,
-    verwandte: String,
-    beispiel: String,
-    ubersetzung: String
-})
+const Card = models.Card || model('Card', cardSchema,'cards'); 
 
-const andereCardSchema = new Schema({
-    type: String,
-    wort: String,
-    bild: String,
-    verwandte: String,
-    beispiel: String,
-    ubersetzung: String
-})
 
-const AndereCard = models.AndereCard || model('AndereCard', andereCardSchema,'cards'); 
-
-const NomenMUFCard = models.NomenMUFCard || model('NomenMUFCard', nomenMUFCardSchema,'cards'); 
-
-const NomenCard = models.NomenCard || model('NomenCard', nomenCardSchema,'cards'); 
-
-const VerbCard = models.VerbCard || model('VerbCard', verbCardSchema,'cards');
-
-export {NomenCard,VerbCard,NomenMUFCard,AndereCard};
+export {Card};

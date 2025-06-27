@@ -1,7 +1,7 @@
-import { userCardCreate, userCardDeleteById, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userCreate, userFindByEmail, userFindById, userProgressCreate, userProgressDeleteByIds, userStreakUpdate } from "@/app/api/_repositories/userRepository";
+import { userCardCreate, userCardDeleteById, userCardsCreate, userCardsDeleteByIds, userConfigUpdate, userCreate, userFindByEmail, userFindById, userProgressCreate, userProgressDeleteByIds, userStreakUpdate } from "@/app/api/_repositories/_mongo/userRepository";
 import { bcryptCompare, bcryptHash } from "@/libs/bcrypt";
 import { decrypt, encrypt } from "@/libs/crypto";
-import { filterCardsByFirstLetter } from "@/utils/filterCardsByFirstLetter";
+import { filterCardsByRegExp } from "@/utils/filterCardsByRegExp";
 import User from '@/app/api/_models/user';
 import { getAllAppCards } from "@/app/api/_services/cardService";
 
@@ -31,7 +31,7 @@ export const getUserCardsByQuery = async (userId, query) => {
         const regExp = new RegExp(`.*${query.toLowerCase()}.*`);
         const userCards = await getUserCards(userId);
         const filterCards = userCards.filter((card) => {
-                return regExp.test(card.wort.toLowerCase()) || regExp.test(card.beispiel.toLowerCase()) || regExp.test(card.verwandte.toLowerCase())
+                return regExp.test(card.word.toLowerCase()) || regExp.test(card.example.toLowerCase()) || regExp.test(card.related.toLowerCase())
         });
         return filterCards;
 };
@@ -39,14 +39,14 @@ export const getUserCardsByQuery = async (userId, query) => {
 export const getUserCardsByFirstLetter = async (userId, firstLetter) => {
         const regExpFirstLetter = new RegExp("^" + firstLetter.toLowerCase());
         const userCards = await getUserCards(userId);
-        const filterCards = filterCardsByFirstLetter(regExpFirstLetter, userCards);
+        const filterCards = filterCardsByRegExp(regExpFirstLetter, userCards);
         switch (firstLetter.toLowerCase()) {
                 case "a":
-                        return filterCards.concat(filterCardsByFirstLetter(new RegExp("^ä"), userCards))
+                        return filterCards.concat(filterCardsByRegExp(new RegExp("^ä"), userCards))
                 case "o":
-                        return filterCards.concat(filterCardsByFirstLetter(new RegExp("^ö"), userCards))
+                        return filterCards.concat(filterCardsByRegExp(new RegExp("^ö"), userCards))
                 case "u":
-                        return filterCards.concat(filterCardsByFirstLetter(new RegExp("^ü"), userCards))
+                        return filterCards.concat(filterCardsByRegExp(new RegExp("^ü"), userCards))
         }
         return filterCards;
 };
@@ -86,7 +86,7 @@ export const updateAppCardsProgress = async (userId, progress, date) => {
 export const createUserProgress = async ()=>{
         const cards = await getAllAppCards();
         const progress = cards.map((card)=>{
-            return {cardId: card._id, level:0, practiceDate: new Date("2000")}
+            return {cardId: card._id, level:0, lastPlayedDate: new Date("2000")}
         });
         return progress;
 };
