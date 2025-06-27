@@ -93,10 +93,10 @@ export const createUserProgress = async ()=>{
 
 export const signup = async (email, password) => {
         if (!password || password.length < 3)
-                return {message: "Passwörter müssen mindestens 3 Zeichen lang sein" , ok: false };
+                throw new Error("Passwörter müssen mindestens 3 Zeichen lang sein");
         const userFound = await userFindByEmail(email);
         if (userFound)
-                return { message: "Diese E-Mail existiert bereits", ok: false };
+                throw new Error("Diese E-Mail existiert bereits");
         const hashedPassword = await bcryptHash(password);
         const user = new User({
                 email,
@@ -108,12 +108,11 @@ export const signup = async (email, password) => {
                         cardsPerDay: 10,
                         ponsSecret: "",
                 },
-                streak: [{ dayPlayed: new Date('2000'), cardsPlayed: 0 }],
+                streak: [{ lastPlayedDate: new Date('2000'), cardsPlayed: 0 }],
                 progressAppCards: await createUserProgress(),
         });
-        /////////////////////////////////////////////////////TODO PG
         await userCreate(user);
-        return {message: "Successful registration", ok: true };
+        return {message: "Successful registration"};
 };
 
 export const authorize = async (email, password) => {
