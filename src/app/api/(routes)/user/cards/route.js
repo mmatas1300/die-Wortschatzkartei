@@ -5,19 +5,19 @@ export async function PUT(request) {
     const { userId, card } = await request.json()
     try {
         await updateUserCard(userId, card)
-        return NextResponse.json({ message: "Update successful", ok: true });
+        return new NextResponse(null, {status: 204});
     } catch (error) {
-        return NextResponse.json({message: error, ok: false});
+        return NextResponse.json({message: error.message},{status: 400});
     }
 }
 
 export async function POST(request) {
     const { userId } = await request.json()
     try {
-        const userCards = await getUserCards(userId);
-        return NextResponse.json({data: userCards, ok: true});
+        const cards = await getUserCards(userId);
+        return NextResponse.json({cards: cards},{status:200});
     } catch (error) {
-        return NextResponse.json({message: error, ok: false});
+        return NextResponse.json({message: error.message},{status: 400});
     }
 }
 
@@ -25,8 +25,8 @@ export async function DELETE(request) {
     const { userId, cardId } = await request.json()
     try {
         await deleteUserCard(userId, cardId);
-        return NextResponse.json({ message: "Delete successful", ok: true })
+        return new NextResponse(null, {status: 204});
     } catch (error) {
-        return NextResponse.json({message: error, ok: false});
+        return NextResponse.json({message: error.message},{status: 400});
     }
 }

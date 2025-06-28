@@ -7,8 +7,8 @@ export async function PUT(request){
     const {userId, progress, date } = await request.json();
     try {
         await updateAppCardsProgress(userId,progress,date);
-        return NextResponse.json({message: "Update successful" , ok: true});
+        return new NextResponse(null, {status: 204});
     } catch (error) {
-        return NextResponse.json({message: error , ok: false});
+        return NextResponse.json({message: error.message},{status:400});
     }
 }
