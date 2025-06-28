@@ -3,7 +3,7 @@ import { useState } from "react"
 import style from '@/app/(pages)/login/_style/login.module.css'
 import { useRouter } from "next/navigation";
 import { signin, signup } from "@/services/FetchAPI";
-import { useWarningMessage } from "@/hooks/useWarningMessage";
+import { useWarningMessage } from "@/hooks/useNotification";
 import { hexColor } from "@/utils/colors";
 import AutohideSnackbar from "@/components/Snackbar";
 import registerValidation from "@/utils/registerValidaton";

@@ -10,7 +10,7 @@ import SearchCardsGrid from "@/app/(pages)/worterbuch/_components/SearchCardsGri
 import { sortAlphaCards } from "@/libs/sortArrays";
 import AutohideSnackbar from "@/components/Snackbar";
 import { hexColor } from "@/utils/colors";
-import { useWarningMessage } from "@/hooks/useWarningMessage";
+import { useWarningMessage } from "@/hooks/useNotification";
 
 function WorterbuchPage() {
 
