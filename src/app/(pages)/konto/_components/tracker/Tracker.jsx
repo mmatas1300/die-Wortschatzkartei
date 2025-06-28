@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import TrackerGrid from "./TrackerGrid";
-import { getUserStreak } from "@/services/FetchAPI";
+import { getUserStreak } from "@/libs/FetchAPI";
 import { useSession } from "next-auth/react";
 import { Spinner } from "@material-tailwind/react";
 import TrackerData from "./TrackerData";

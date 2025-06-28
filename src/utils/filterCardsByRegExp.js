@@ -1,5 +1,5 @@
-export const filterCardsByRegExp = (expRegFirstLetter, cards)=>{
+export const filterCardsByRegExp = (expReg, cards)=>{
         return cards.filter((card) => {
-                return expRegFirstLetter.test(card.word.toLowerCase());
+                return expReg.test(card.word.toLowerCase());
         });
 }

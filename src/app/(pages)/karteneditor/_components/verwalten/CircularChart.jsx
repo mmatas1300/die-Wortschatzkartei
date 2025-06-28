@@ -1,5 +1,5 @@
 import {  selectColorChart } from "@/libs/selectColorCards";
-import { hexColor } from "@/utils/colors";
+import { hexColor } from "@/utils/hexColors";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 const CircularChart = ({level,type})=>{

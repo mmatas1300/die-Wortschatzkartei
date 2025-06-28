@@ -2,9 +2,9 @@ import { Spinner } from "@material-tailwind/react";
 import { useState } from "react"
 import style from '@/app/(pages)/login/_style/login.module.css'
 import { useRouter } from "next/navigation";
-import { signin, signup } from "@/services/FetchAPI";
+import { signin, signup } from "@/libs/FetchAPI";
 import { useWarningMessage } from "@/hooks/useNotification";
-import { hexColor } from "@/utils/colors";
+import { hexColor } from "@/utils/hexColors";
 import AutohideSnackbar from "@/components/Snackbar";
 import registerValidation from "@/utils/registerValidaton";
 

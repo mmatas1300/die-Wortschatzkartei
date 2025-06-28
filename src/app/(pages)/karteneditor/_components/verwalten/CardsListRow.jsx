@@ -3,7 +3,7 @@ import { createContext } from 'react';
 import CircularChart from "@/app/(pages)/karteneditor/_components/verwalten/CircularChart";
 import 'react-circular-progressbar/dist/styles.css';
 import ResetMessage from '@/app/(pages)/karteneditor/_components/verwalten/ResetMessage';
-import { resetAppCardProgress, deleteUserCard, updateUserCard } from "@/services/FetchAPI";
+import { resetAppCardProgress, deleteUserCard, updateUserCard } from "@/libs/FetchAPI";
 import { selectColorCard } from "@/libs/selectColorCards";
 import UpdateMessage from '@/app/(pages)/karteneditor/_components/verwalten/UpdateMessage';
 import DeleteMessage from '@/app/(pages)/karteneditor/_components/verwalten/DeleteMessage';

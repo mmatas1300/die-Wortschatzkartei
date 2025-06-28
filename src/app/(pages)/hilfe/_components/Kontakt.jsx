@@ -1,11 +1,11 @@
 "use client"
 import { useState } from "react";
 import { Spinner } from "@material-tailwind/react";
-import { sendEmail } from "@/services/FetchAPI";
+import { sendEmail } from "@/libs/FetchAPI";
 import emailTemplate from "@/utils/emailTemplate";
 import { useWarningMessage } from "@/hooks/useNotification";
 import AutohideSnackbar from "@/components/Snackbar";
-import { hexColor } from "@/utils/colors";
+import { hexColor } from "@/utils/hexColors";
 
 
 const Kontakt = () => {

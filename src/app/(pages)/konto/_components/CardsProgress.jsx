@@ -1,9 +1,9 @@
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react';
-import { getUserProgressAppCards, getUserCards } from "@/services/FetchAPI";
+import { getUserProgressAppCards, getUserCards } from "@/libs/FetchAPI";
 import { Spinner } from "@material-tailwind/react";
-import { hexColor } from '@/utils/colors';
+import { hexColor } from '@/utils/hexColors';
 
 
 const CardsProgress = () => {

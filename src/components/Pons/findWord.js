@@ -1,4 +1,4 @@
-import { getPonsInfo } from '@/services/FetchAPI';
+import { getPonsInfo } from '@/libs/FetchAPI';
 
 const findWord = async (id,word) => {
     const data = await getPonsInfo(id, word);

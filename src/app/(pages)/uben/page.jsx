@@ -5,7 +5,7 @@ import { Spinner } from "@material-tailwind/react";
 import CardMessage from "@/components/CardMessage";
 import {progressUpdate} from "@/libs/progressUpdate";
 import { Fade } from "react-awesome-reveal";
-import { getAppCards, getUserProgressAppCards, getUserLastGame, getUserCards } from "@/services/FetchAPI";
+import { getAppCards, getUserProgressAppCards, getUserLastGame, getUserCards } from "@/libs/FetchAPI";
 import PlayScreen from "@/app/(pages)/uben/_components/PlayScreen";
 
 function UbenPage() {

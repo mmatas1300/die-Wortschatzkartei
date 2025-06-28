@@ -3,13 +3,13 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { CircleArrowLeft as ArrowIcon } from "lucide-react";
 import { Fade } from "react-awesome-reveal";
-import { getAppCardsByQuery, getUserCardsByQuery } from "@/services/FetchAPI";
+import { getAppCardsByQuery, getUserCardsByQuery } from "@/libs/FetchAPI";
 import SearchForm from "@/components/SearchForm";
 import LettersGrid from "@/app/(pages)/worterbuch/_components/LettersGrid";
 import SearchCardsGrid from "@/app/(pages)/worterbuch/_components/SearchCardsGrid";
 import { sortAlphaCards } from "@/libs/sortArrays";
 import AutohideSnackbar from "@/components/Snackbar";
-import { hexColor } from "@/utils/colors";
+import { hexColor } from "@/utils/hexColors";
 import { useWarningMessage } from "@/hooks/useNotification";
 
 function WorterbuchPage() {

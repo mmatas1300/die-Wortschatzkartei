@@ -1,4 +1,4 @@
-import { hexColor } from '@/utils/colors'
+import { hexColor } from '@/utils/hexColors'
 import { Award, Flame } from 'lucide-react'
 
 const TrackerData = ({streak, streakFull}) => {
