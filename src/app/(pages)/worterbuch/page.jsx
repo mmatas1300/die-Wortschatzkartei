@@ -10,29 +10,37 @@ import { sortAlphaCards } from "@/libs/sortArrays";
 import { hexColor } from "@/utils/hexColors";
 import { AlertMessageContext } from "@/contexts/AlertMessageContext";
 import CardsFoundGrid from "@/app/(pages)/worterbuch/_components/CardsFoundGrid";
+import { cardAdapter } from "@/utils/cardAdapter";
 
 function WorterbuchPage() {
 
     const { data: session, status } = useSession();
     const [cards, setCards] = useState(null);
-    const {showNotification} = useContext(AlertMessageContext);
+    const { showNotification } = useContext(AlertMessageContext);
     const [buttonDisable, setButtonDisable] = useState(false);
 
-    const handleSubmit = async (e) => {
+    const searchCard = async (e) => {
         e.preventDefault();
         setButtonDisable(true);
         const formData = new FormData(e.currentTarget);
         const query = formData.get("search");
-        const searchRegex = /^[a-zA-ZäÄöÖüÜß\s]+$/;       
-        if (!searchRegex.test(query)) setWarningMessage("Bitte geben Sie nur Buchstaben ein");
-        else{
+        const searchRegex = /^[a-zA-ZäÄöÖüÜß\s]+$/;
+        if (!searchRegex.test(query)) showNotification("Bitte geben Sie nur Buchstaben ein", hexColor.redCard);
+        else {
             if (status === "unauthenticated" || session.user.config.cardsSet === "app") {
-                const body = await getAppCardsByQuery(query);
-                if(!body.ok) setWarningMessage("Fehler, versuchen Sie es später nochmal!");
-                setCards(sortAlphaCards(body.data));
+                try {
+                    const resp = await getAppCardsByQuery(query);
+                    setCards(sortAlphaCards(resp.cards.map( card => cardAdapter(card))));
+                } catch (error) {
+                    showNotification(error.message,hexColor.redCard)
+                }
             } else if (session.user.config.cardsSet === "user") {
-                const body = await getUserCardsByQuery(session.user._id, query);
-                setCards(sortAlphaCards(body.data));
+                try {
+                    const resp = await getUserCardsByQuery(session.user._id, query);
+                    setCards(sortAlphaCards(resp.cards.map( card => cardAdapter(card))));
+                } catch (error) {
+                    showNotification(error.message,hexColor.redCard)
+                }
             }
         }
         setButtonDisable(false);
@@ -48,11 +56,11 @@ function WorterbuchPage() {
                             <p />
                         )}
                     </div>
-                    <SearchForm handleSubmit={handleSubmit} buttonDisable={buttonDisable} style={"w-full max-w-md mx-4 mt-4"}/>
+                    <SearchForm handleSubmit={searchCard} buttonDisable={buttonDisable} style={"w-full max-w-md mx-4 mt-4"} />
                     <div className="me-9 h-7 w-7" />
                 </div>
-                {cards ? 
-                    (cards.length === 0 ? 
+                {cards ?
+                    (cards.length === 0 ?
                         (<h1 className="mt-[calc(30vh)] text-center">Wir konnten keine Karte finden</h1>) :
                         (<CardsFoundGrid cards={cards} />)
                     ) : (<LettersGrid />)}

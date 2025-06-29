@@ -29,25 +29,21 @@ export const signin = async (email, password) => {
 
 //Worterbuch
 export const getAppCardsByQuery = async (query) => {
-	try {
-		const res = await fetch(`/api/cards/search/${query}`);
-		return await res.json();
-	} catch (error) {
-		console.log(error);
-	}
+	const resp = await fetch(`/api/cards/search/${query}`);
+	if (resp.status != 200)
+		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal.");
+	return await resp.json();
 };
 
 export const getUserCardsByQuery = async (userId, query) => {
-	try {
-		const res = await fetch(`/api/user/cards/search/${query}`, {
-			method: "POST",
-			body: JSON.stringify({ userId: userId }),
-			headers: { "Content-type": "application/json" },
-		});
-		return await res.json();
-	} catch (error) {
-		console.log(error);
-	}
+	const resp = await fetch(`/api/user/cards/search/${query}`, {
+		method: "POST",
+		body: JSON.stringify({ userId: userId }),
+		headers: { "Content-type": "application/json" },
+	});
+	if (resp.status != 200)
+		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal.");
+	return await resp.json();
 };
 
 //Woterbuch letter page
@@ -227,7 +223,7 @@ export const getPonsInfo = async (userId, word) => {
 		body: JSON.stringify({ userId: userId, query: word }),
 		headers: { "Content-type": "application/json" }
 	});
-	if(resp.status != 200)
+	if (resp.status != 200)
 		throw new Error("Please verify your secret number or card.");
 	return await resp.json();
 }
