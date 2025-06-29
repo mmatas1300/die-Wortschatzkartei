@@ -1,5 +1,5 @@
 import ReactFlipCard from 'reactjs-flip-card'
-import Karte from '@/components/Karte';
+import Karte from '@/components/Card';
 import { useSoundEffect } from "../../../../hooks/useSoundEffect";
 import CircularChart from '@/app/(pages)/karteneditor/_components/verwalten/CircularChart';
 

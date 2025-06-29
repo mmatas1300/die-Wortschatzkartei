@@ -1,12 +1,12 @@
-import Karte from "@/components/Karte";
+import Card from "@/components/Card";
 
-const SearchCardsGrid = ({ cards }) => {
+const CardsFoundGrid = ({ cards }) => {
     return (
         <div className="flex flex-row flex-wrap justify-center items-center mt-4">
             {cards.map((card) => {
                 return (
                     <div key={card._id} className="m-5 hover:scale-105 transition-all">
-                        <Karte {...card} />
+                        <Card card={card} />
                     </div>
                 )
             })}
@@ -14,4 +14,4 @@ const SearchCardsGrid = ({ cards }) => {
     );
 };
 
-export default SearchCardsGrid;
+export default CardsFoundGrid;

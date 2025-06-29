@@ -7,6 +7,7 @@ import Logo from "@/components/nav/Logo"
 import { useSession } from 'next-auth/react'
 import { signOut } from 'next-auth/react';
 import { Spinner } from "@material-tailwind/react";
+import { hexColor } from '@/utils/hexColors';
 
 const Navbar = () => {
 
@@ -42,7 +43,7 @@ const Navbar = () => {
         };
     }, []);
 
-    const varLinks = (status) => {
+    const navLinks = (status) => {
         if (status === "authenticated") {
             return (<>
                 <MenuItem onClick={() => { toggleNavbar(windowSize) }} icon={<CircleUserIcon />} component={<Link href="/konto" />}> Mein Konto</MenuItem>
@@ -74,7 +75,7 @@ const Navbar = () => {
                 <div className='w-[74px]' />
             </div>
 
-            <Sidebar rootStyles={{ height: "100vh", position: "fixed", top: 0, border: 0 }} backgroundColor={"rgb(0,120,163)"} width={"250px"} toggled={toggle} customBreakPoint={"960px"} onBackdropClick={() => { setToggle(false) }} collapsed={!toggle} collapsedWidth={!toggle ? "0px" : "250px"} >
+            <Sidebar rootStyles={{ height: "100vh", position: "fixed", top: 0, border: 0 }} backgroundColor={hexColor.blueCard} width={"250px"} toggled={toggle} customBreakPoint={"960px"} onBackdropClick={() => { setToggle(false) }} collapsed={!toggle} collapsedWidth={!toggle ? "0px" : "250px"} >
 
                 <div className='flex flex-row justify-between'>
                     <Logo />
@@ -83,10 +84,10 @@ const Navbar = () => {
 
                 <Menu menuItemStyles={{
                     button: {
-                        ":hover": { backgroundColor: "#4CAB2A", borderRadius: "16px", margin: "0px 10px", transitionProperty: "all", transitionDuration: "150ms"},
+                        ":hover": { backgroundColor: hexColor.greenCard, borderRadius: "16px", margin: "0px 10px", transitionProperty: "all", transitionDuration: "150ms"},
                     }
                 }}>
-                    {varLinks(status)}
+                    {navLinks(status)}
                 </Menu>
             </Sidebar>
         </nav>

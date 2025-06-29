@@ -220,19 +220,16 @@ export const resetAppCardProgress = async (userId, cardId) => {
 	}
 }
 
-//KartePons
+//CardPons
 export const getPonsInfo = async (userId, word) => {
-	try {
-		const resp = await fetch('/api/pons', {
-			method: "POST",
-			body: JSON.stringify({ userId: userId, query: word }),
-			headers: { "Content-type": "application/json" }
-		});
-		const data = await resp.json();
-		return data;
-	} catch (error) {
-		console.log(error)
-	}
+	const resp = await fetch('/api/pons', {
+		method: "POST",
+		body: JSON.stringify({ userId: userId, query: word }),
+		headers: { "Content-type": "application/json" }
+	});
+	if(resp.status != 200)
+		throw new Error("Please verify your secret number or card.");
+	return await resp.json();
 }
 
 //Kontakt

@@ -5,15 +5,15 @@ const PonsCard = ({ wordData }) => {
 
             <div className="pons">
                 <div className="">
-                    {parse(wordData.headword_full)}
-                    {wordData.arabs.slice(0, 2).map((element, index) => {
+                    {parse(wordData.word)}
+                    {wordData.entries.map((element, index) => {
                         return (
                             <div key={index} className="flex flex-col mt-4">
                                 <div>
                                     {parse(element.header)}
                                 </div>
 
-                                {element.translations.slice(0, 2).map((traslation, index) => {
+                                {element.translations.map((traslation, index) => {
                                     return (
                                         <div key={index}>
                                             {parse(traslation.source)}

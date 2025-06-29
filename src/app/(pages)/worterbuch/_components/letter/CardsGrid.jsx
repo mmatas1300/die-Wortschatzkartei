@@ -1,5 +1,5 @@
 import { Spinner } from "@material-tailwind/react";
-import Karte from "@/components/Karte";
+import Karte from "@/components/Card";
 
 const CardsGrid = ({cards}) => {
     return (

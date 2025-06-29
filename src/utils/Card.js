@@ -43,6 +43,21 @@ export class Card {
                 return "bg-purple-card";
         }
     }
+
+    getType() {
+        switch (this.type) {
+            case "NeuterNoun":
+            case "MasculineNoun":
+            case "FeminineNoun":
+            case "PluralNoun":
+            case "MFNoun":
+                return "Nomen";
+            case "Verb":
+                return "Verb";
+            default:
+                return this.type;
+        }
+    }
 }
 
 export class NounPluralCard extends Card {

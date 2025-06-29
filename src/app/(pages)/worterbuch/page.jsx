@@ -1,22 +1,21 @@
 "use client";
 import { useSession } from "next-auth/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CircleArrowLeft as ArrowIcon } from "lucide-react";
 import { Fade } from "react-awesome-reveal";
 import { getAppCardsByQuery, getUserCardsByQuery } from "@/libs/FetchAPI";
 import SearchForm from "@/components/SearchForm";
 import LettersGrid from "@/app/(pages)/worterbuch/_components/LettersGrid";
-import SearchCardsGrid from "@/app/(pages)/worterbuch/_components/SearchCardsGrid";
 import { sortAlphaCards } from "@/libs/sortArrays";
-import AutohideSnackbar from "@/components/Snackbar";
 import { hexColor } from "@/utils/hexColors";
-import { useWarningMessage } from "@/hooks/useNotification";
+import { AlertMessageContext } from "@/contexts/AlertMessageContext";
+import CardsFoundGrid from "@/app/(pages)/worterbuch/_components/CardsFoundGrid";
 
 function WorterbuchPage() {
 
     const { data: session, status } = useSession();
     const [cards, setCards] = useState(null);
-    const [warningMessage, warningTrigger, warningColor, setWarningMessage] = useWarningMessage();
+    const {showNotification} = useContext(AlertMessageContext);
     const [buttonDisable, setButtonDisable] = useState(false);
 
     const handleSubmit = async (e) => {
@@ -41,7 +40,6 @@ function WorterbuchPage() {
 
     return (
         <section className="my-12">
-            <AutohideSnackbar message={warningMessage} color={hexColor.redCard} trigger={warningTrigger}/>
             <Fade triggerOnce>
                 <h1 className="text-center">Wörterbuch</h1>
                 <div className="flex flex-row justify-center items-center">
@@ -56,7 +54,7 @@ function WorterbuchPage() {
                 {cards ? 
                     (cards.length === 0 ? 
                         (<h1 className="mt-[calc(30vh)] text-center">Wir konnten keine Karte finden</h1>) :
-                        (<SearchCardsGrid cards={cards} />)
+                        (<CardsFoundGrid cards={cards} />)
                     ) : (<LettersGrid />)}
             </Fade>
         </section>

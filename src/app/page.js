@@ -21,7 +21,6 @@ export default function Home() {
                     </div>
                 </div>
 
-
                 <div className="flex flex-col-reverse lg:flex-row justify-center items-center my-5 lg:mx-32">
                     <div>
                         <h1 className="p-5 rounded-2xl mx-10 text-center">Translate your card with PONS</h1>
