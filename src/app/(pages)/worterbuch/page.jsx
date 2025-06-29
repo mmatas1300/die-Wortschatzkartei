@@ -27,20 +27,15 @@ function WorterbuchPage() {
         const searchRegex = /^[a-zA-ZäÄöÖüÜß\s]+$/;
         if (!searchRegex.test(query)) showNotification("Bitte geben Sie nur Buchstaben ein", hexColor.redCard);
         else {
-            if (status === "unauthenticated" || session.user.config.cardsSet === "app") {
-                try {
-                    const resp = await getAppCardsByQuery(query);
-                    setCards(sortAlphaCards(resp.cards.map( card => cardAdapter(card))));
-                } catch (error) {
-                    showNotification(error.message,hexColor.redCard)
-                }
-            } else if (session.user.config.cardsSet === "user") {
-                try {
-                    const resp = await getUserCardsByQuery(session.user._id, query);
-                    setCards(sortAlphaCards(resp.cards.map( card => cardAdapter(card))));
-                } catch (error) {
-                    showNotification(error.message,hexColor.redCard)
-                }
+            let resp;
+            try {
+                if (status === "unauthenticated" || session.user.config.cardsSet === "app")
+                    resp = await getAppCardsByQuery(query);
+                else
+                    resp = await getUserCardsByQuery(session.user._id, query);
+                setCards(sortAlphaCards(resp.cards.map( card => cardAdapter(card))));
+            } catch (error) {
+                showNotification(error.message,hexColor.redCard)
             }
         }
         setButtonDisable(false);

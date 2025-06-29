@@ -48,27 +48,21 @@ export const getUserCardsByQuery = async (userId, query) => {
 
 //Woterbuch letter page
 export const getAppCardsByFirstLetter = async (firstLetter) => {
-	try {
-		const res = await fetch(`/api/cards/starts-with/${firstLetter}`);
-		const cards = await res.json();
-		return cards;
-	} catch (error) {
-		console.log(error);
-	}
+	const resp = await fetch(`/api/cards/starts-with/${firstLetter}`);
+	if (resp.status != 200)
+		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal.");
+	return await resp.json();
 };
 
 export const getUserCardsByFirstLetter = async (userId, firstLetter) => {
-	try {
-		const res = await fetch(`/api/user/cards/starts-with/${firstLetter}`, {
+		const resp = await fetch(`/api/user/cards/starts-with/${firstLetter}`, {
 			method: "POST",
 			body: JSON.stringify({ userId: userId }),
 			headers: { "Content-type": "application/json" },
 		});
-		const cards = await res.json();
-		return cards;
-	} catch (error) {
-		console.log(error);
-	}
+	if (resp.status != 200)
+		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal.");
+	return await resp.json();
 };
 
 //Konto
