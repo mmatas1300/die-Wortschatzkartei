@@ -1,18 +1,19 @@
 import { updateUserConfig } from '@/libs/FetchAPI';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useSession } from 'next-auth/react';
-import { Spinner } from "@material-tailwind/react";
+import LoadingButton from '@/components/LoadingButton';
+import { AlertMessageContext } from '@/contexts/AlertMessageContext';
+import { hexColor } from '@/utils/hexColors';
 
 const AccountConfig = () => {
-
-    const submitButton = (<button className='mb-3'>Fertig</button>);
-
-    const [stateButton, setStateButton] = useState(submitButton);
+    
     const { data: session, update } = useSession();
+    const [buttonLoading, setButtonLoading] = useState(false);
+    const {showNotification} = useContext(AlertMessageContext);
 
-    const handleSubmit = async (e) => {
+    const updateAccount = async (e) => {
         e.preventDefault();
-        setStateButton(<Spinner className="mt-2.5 mb-4 h-[37px] w-[37px]" />);
+        setButtonLoading(true);
         const formData = new FormData(e.currentTarget)
         const config = {
             nick: formData.get('nick') ? formData.get('nick') : session.user.config.nick,
@@ -23,10 +24,11 @@ const AccountConfig = () => {
         try {
             await updateUserConfig(session.user._id, config);
             await update({ user: { ...session.user, config: config } })
+            showNotification("Die Daten wurden aktualisiert",hexColor.greenCard)
         } catch (error) {
-            //console.log(error)
+            showNotification(error.message,hexColor.redCard)
         }
-        setStateButton(submitButton);
+        setButtonLoading(false);
     };
 
     return (
@@ -34,7 +36,7 @@ const AccountConfig = () => {
             <div className='bg-blue-card rounded-3xl lg:rotate-6 h-[470px]'>
                 <div className={`bg-red-card w-96 rounded-3xl p-8 flex flex-col justify-center items-center lg:rotate-6 h-[470px]`}>
                     <h1>Kontoeinstellungen</h1>
-                    <form className='mt-4 flex flex-col justify-center items-center' onSubmit={handleSubmit}>
+                    <form className='mt-4 flex flex-col justify-center items-center' onSubmit={updateAccount}>
                         <label htmlFor="nick">Spitzname:</label>
                         <input type="text" placeholder={session.user.config.nick} name='nick' />
                         <label className='mt-2' htmlFor="cardsSet">Möchtest du lieber deine eigenen Karten verwenden oder die der App?</label>
@@ -47,7 +49,7 @@ const AccountConfig = () => {
                         <input type="text" placeholder={session.user.config.cardsPerDay} name='cardsPerDay' />
                         <label className='mt-2' htmlFor="ponsSecret">PONS secret:</label>
                         <input type="password" placeholder={session.user.config.ponsSecret} name='ponsSecret' />
-                        {stateButton}
+                        <LoadingButton buttonStyle="mb-3" isLoading={buttonLoading} spinnerStyle='mt-2.5 mb-4 h-[37px] w-[37px]'>Fertig</LoadingButton>
                     </form>
                 </div>
             </div>
