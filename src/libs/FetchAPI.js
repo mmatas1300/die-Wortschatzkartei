@@ -1,37 +1,32 @@
+import { UserDefaultError } from "@/utils/Errors";
 import { signIn } from "next-auth/react";
 
 export const signup = async (email, password) => {
-	try {
-		const response = await fetch('/api/auth/signup', {
-			method: "POST",
-			body: JSON.stringify({ email: email, password: password }),
-			headers: { "Content-type": "application/json" }
-		});
-		return await response.json();
-	} catch (error) {
-		console.log(error);
-	}
+	const resp = await fetch('/api/auth/signup', {
+		method: "POST",
+		body: JSON.stringify({ email: email, password: password }),
+		headers: { "Content-type": "application/json" }
+	});
+	if (resp.status != 201)
+		throw new UserDefaultError();
 };
 
 //signIn
 export const signin = async (email, password) => {
-	try {
-		const res = await signIn("credentials", {
-			email: email,
-			password: password,
-			redirect: false
-		});
-		return res;
-	} catch (error) {
-		console.log(error)
-	}
+	const resp = await signIn("credentials", {
+		email: email,
+		password: password,
+		redirect: false
+	});
+	if (!resp.ok)
+		throw new UserDefaultError();
 };
 
 //Worterbuch
 export const getAppCardsByQuery = async (query) => {
 	const resp = await fetch(`/api/cards/search/${query}`);
 	if (resp.status != 200)
-		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal.");
+		throw new UserDefaultError();
 	return await resp.json();
 };
 
@@ -42,7 +37,7 @@ export const getUserCardsByQuery = async (userId, query) => {
 		headers: { "Content-type": "application/json" },
 	});
 	if (resp.status != 200)
-		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal");
+		throw new UserDefaultError();
 	return await resp.json();
 };
 
@@ -50,7 +45,7 @@ export const getUserCardsByQuery = async (userId, query) => {
 export const getAppCardsByFirstLetter = async (firstLetter) => {
 	const resp = await fetch(`/api/cards/starts-with/${firstLetter}`);
 	if (resp.status != 200)
-		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal");
+		throw new UserDefaultError();
 	return await resp.json();
 };
 
@@ -61,7 +56,7 @@ export const getUserCardsByFirstLetter = async (userId, firstLetter) => {
 		headers: { "Content-type": "application/json" },
 	});
 	if (resp.status != 200)
-		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal");
+		throw new UserDefaultError();
 	return await resp.json();
 };
 
@@ -230,5 +225,5 @@ export const sendEmail = async (email) => {
 		headers: { "Content-type": "application/json" }
 	});
 	if (resp.status != 202)
-		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal");
+		throw new UserDefaultError();
 }
