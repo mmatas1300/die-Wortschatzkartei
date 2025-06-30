@@ -42,7 +42,7 @@ export const getUserCardsByQuery = async (userId, query) => {
 		headers: { "Content-type": "application/json" },
 	});
 	if (resp.status != 200)
-		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal.");
+		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal");
 	return await resp.json();
 };
 
@@ -50,18 +50,18 @@ export const getUserCardsByQuery = async (userId, query) => {
 export const getAppCardsByFirstLetter = async (firstLetter) => {
 	const resp = await fetch(`/api/cards/starts-with/${firstLetter}`);
 	if (resp.status != 200)
-		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal.");
+		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal");
 	return await resp.json();
 };
 
 export const getUserCardsByFirstLetter = async (userId, firstLetter) => {
-		const resp = await fetch(`/api/user/cards/starts-with/${firstLetter}`, {
-			method: "POST",
-			body: JSON.stringify({ userId: userId }),
-			headers: { "Content-type": "application/json" },
-		});
+	const resp = await fetch(`/api/user/cards/starts-with/${firstLetter}`, {
+		method: "POST",
+		body: JSON.stringify({ userId: userId }),
+		headers: { "Content-type": "application/json" },
+	});
 	if (resp.status != 200)
-		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal.");
+		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal");
 	return await resp.json();
 };
 
@@ -218,23 +218,17 @@ export const getPonsInfo = async (userId, word) => {
 		headers: { "Content-type": "application/json" }
 	});
 	if (resp.status != 200)
-		throw new Error("Please verify your secret number or card.");
+		throw new Error("Please verify your secret number or card");
 	return await resp.json();
 }
 
 //Kontakt
 export const sendEmail = async (email) => {
-	try {
-		const res = await fetch('/api/contact', {
-			method: "POST",
-			body: JSON.stringify({ message: email }),
-			headers: { "Content-type": "application/json" }
-		});
-		if (res.ok)
-			return true;
-		else
-			return false;
-	} catch (error) {
-		console.log(error);
-	}
+	const resp = await fetch('/api/contact', {
+		method: "POST",
+		body: JSON.stringify({ message: email }),
+		headers: { "Content-type": "application/json" }
+	});
+	if (resp.status != 202)
+		throw new Error("Es ist ein Fehler aufgetreten! Bitte versuchen Sie es später noch einmal");
 }
