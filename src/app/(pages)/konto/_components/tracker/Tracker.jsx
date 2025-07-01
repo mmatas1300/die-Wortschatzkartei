@@ -29,7 +29,7 @@ const Tracker = () => {
             gridDays.forEach((gridDay) => {
                 for (let i = 0; i < streakReverse.length; i++) {
 
-                    const streakDayDate = new Date(streakReverse[i].lastDayPlayed);
+                    const streakDayDate = new Date(streakReverse[i].lastPlayedDate);
                     const gridDayDate = new Date(gridDay.date);
 
                     if(streakDayDate<gridDays[gridDays.length-1].date){
