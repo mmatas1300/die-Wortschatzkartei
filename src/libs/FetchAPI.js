@@ -136,17 +136,14 @@ export const getUserLastGame = async (userId) => {
 };
 
 export const getUserStreak = async (userId) => {
-	try {
-		const res = await fetch('api/user/streak', {
-			method: "POST",
-			body: JSON.stringify({ userId: userId }),
-			headers: { "Content-type": "application/json" }
-		});
-		const data = await res.json();
-		return data;
-	} catch (error) {
-		console.log(error);
-	}
+	const resp = await fetch('api/user/streak', {
+		method: "POST",
+		body: JSON.stringify({ userId: userId }),
+		headers: { "Content-type": "application/json" }
+	});
+	if (resp.status != 200)
+		throw new UserDefaultError();
+	return await resp.json();
 };
 
 

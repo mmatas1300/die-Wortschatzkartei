@@ -9,7 +9,7 @@ import { AlertMessageContext } from '@/contexts/AlertMessageContext';
 
 const CardsProgress = () => {
 
-    const { data: session} = useSession();
+    const { data: session, status} = useSession();
     const [percentage, setPercentage] = useState(null);
     const cardColorOrange = hexColor.orangeCard;
     const { showNotification } = useContext(AlertMessageContext);
@@ -32,6 +32,7 @@ const CardsProgress = () => {
             } catch (error) {
                 showNotification(error.message, hexColor.redCard);
             }
+            console.log("mi estatus es "+ status);
             if (cardsProgress.length === 0)
                 setPercentage(0);
             else {

@@ -16,9 +16,9 @@ const Tracker = () => {
 
     useEffect(()=>{
         const loadData = async ()=>{
-            const body = await getUserStreak(session.user._id);
+            const resp = await getUserStreak(session.user._id);
             const gridDays = new Array(119);
-            const streakReverse = body.data.toReversed();
+            const streakReverse = resp.userStreak.toReversed();
             streakReverse.pop();
             setStreakFull(streakReverse);
 
@@ -26,7 +26,6 @@ const Tracker = () => {
                 gridDays[i] = { date: new Date(), cardsPlayed: 0 };
                 gridDays[i].date = new Date(gridDays[i].date.setDate(gridDays[i].date.getDate() - i));
             }
-
             gridDays.forEach((gridDay) => {
                 for (let i = 0; i < streakReverse.length; i++) {
 
@@ -45,9 +44,7 @@ const Tracker = () => {
             })
             setStreak(gridDays);
         }
-
         loadData()
-        
     },[])
     
     return(

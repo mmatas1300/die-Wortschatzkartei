@@ -13,7 +13,6 @@ const TrackerGrid = ({ streak }) => {
     return (
 
         <div className="bg-blue-card p-3 rounded-lg grid grid-flow-col grid-rows-7 gap-1">
-            
             {   
                 streak.toReversed().map((day) => {
                     return (
