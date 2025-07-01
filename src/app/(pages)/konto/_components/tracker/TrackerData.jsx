@@ -26,7 +26,7 @@ const TrackerData = ({streak, streakFull}) => {
         let secuence = 0;
     
         for( let i = 1; i<streakFull.length; i++){
-            if( new Date(new Date(streakFull[i-1].dayPlayed).getFullYear(), new Date(streakFull[i-1].dayPlayed).getMonth(), new Date(streakFull[i-1].dayPlayed).getDate()).getTime()-new Date(new Date(streakFull[i].dayPlayed).getFullYear(), new Date(streakFull[i].dayPlayed).getMonth(), new Date(streakFull[i].dayPlayed).getDate()).getTime()  !== 86400000){
+            if( new Date(new Date(streakFull[i-1].lastPlayedDate).getFullYear(), new Date(streakFull[i-1].lastPlayedDate).getMonth(), new Date(streakFull[i-1].lastPlayedDate).getDate()).getTime()-new Date(new Date(streakFull[i].lastPlayedDate).getFullYear(), new Date(streakFull[i].lastPlayedDate).getMonth(), new Date(streakFull[i].lastPlayedDate).getDate()).getTime()  !== 86400000){
                 longestStreak = Math.max(longestStreak, i-secuence);
                 secuence = i;
             }
