@@ -6,6 +6,8 @@ import { getAppCards, getUserCards, getUserProgressAppCards } from "@/libs/Fetch
 import SearchForm from '@/components/SearchForm';
 import { sortCardsByLevel } from "@/libs/sortArrays";
 import { Spinner } from "@material-tailwind/react";
+import { cardAdapter } from "@/utils/cardAdapter";
+import { hexColor } from "@/utils/hexColors";
 
 export const CardsList = () => {
 
@@ -14,40 +16,43 @@ export const CardsList = () => {
     const [cardsBackup, setCardsBackup] = useState([]);
     const [refresh, setRefresh] = useState(false);
 
-    const handleSubmit = (e) => {
+    const searchCard = (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
         const search = formData.get("search");
         const regExp = new RegExp(`.*${search.toLowerCase()}.*`);
-        const filterCards = cardsBackup.filter((card) => { return regExp.test(card.wort.toLowerCase()) })
-        setCards(filterCards);
+        const filteredCards = cardsBackup.filter((card) => { return regExp.test(card.word.toLowerCase()) })
+        setCards(filteredCards);
     };
 
     useEffect(() => {
         const init = async () => {
-            let cards = [];
-            switch (session.user.config.cardsSet) {
-                case "app":
-                    const bodyCards = await getAppCards();
-                    const body = await getUserProgressAppCards(session.user._id);
+            try {
+                let cards = [];
+                switch (session.user.config.cardsSet) {
+                    case "app":
+                        const respAppCards = await getAppCards();
+                        const respProgressApp = await getUserProgressAppCards(session.user._id);
 
-                    body.data.forEach(element => {
-                        const cardFound = bodyCards.data.filter((card) => {
-                            return card._id === element.cardId;
-                        })
-                        cards.push({ ...cardFound[0], level: element.level, practiceDate: element.practiceDate });
-                    });
-                    break;
+                        respProgressApp.userProgressAppCards.forEach(element => {
+                            const cardFound = respAppCards.cards.filter((card) => {
+                                return card._id === element.cardId;
+                            })
+                            cards.push({ ...cardFound[0], level: element.level, lastPlayedDate: element.lastPlayedDate });
+                        });
+                        break;
 
-                case "user":
-                    const bodycards = await getUserCards(session.user._id);
-                    cards = bodycards.data;
-                    break;
-            }
-            const sortCards = sortCardsByLevel(cards);
-            setCards(sortCards);
-            setCardsBackup(sortCards);
-
+                    case "user":
+                        const respUserCards = await getUserCards(session.user._id);
+                        cards = respUserCards.cards;
+                        break;
+                }
+                const sortedCards = sortCardsByLevel(cards.map(card => cardAdapter(card)));
+                setCards(sortedCards);
+                setCardsBackup(sortedCards);
+            } catch (error) {
+                showNotification(error.message,hexColor.redCard);
+            }  
         }
         if (status === "authenticated") {
             init();
@@ -59,7 +64,7 @@ export const CardsList = () => {
             <h2 className="text-center my-2">Karten verwalten</h2>
             <div className="flex flex-col justify-center items-center bg-red-card p-3 rounded-3xl">
 
-                <SearchForm handleSubmit={handleSubmit} buttonState={false} style={"w-60 lg:w-full max-w-md -ms-10 mt-4 -mb-16 p-4 rounded-xl bg-black-card"} />
+                <SearchForm handleSubmit={searchCard} buttonState={false} style={"w-60 lg:w-full max-w-md -ms-10 mt-4 -mb-16 p-4 rounded-xl bg-black-card"} />
 
                 <div className={`self-end flex flex-row me-8`}>
                     <button onClick={() => { setRefresh(!refresh) }} className={`bg-black-card p-2 z-0 rounded-none rounded-t-lg transition duration-200 hover:scale-105 hover:bg-yellow-card px-3`}><RefreshCcw /></button>

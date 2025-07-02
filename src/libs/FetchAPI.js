@@ -73,18 +73,13 @@ export const updateUserConfig = async (userId, config) => {
 
 //verwalten und uben
 export const updateUserCard = async (userId, card) => {
-	try {
-		const res = await fetch('/api/user/cards', {
-			method: "PUT",
-			body: JSON.stringify({ userId: userId, card: card }),
-			headers: { "Content-type": "application/json" }
-		});
-		const data = await res.json();
-		if (!res.ok) return data;
-		return null;
-	} catch (error) {
-		console.log(error)
-	}
+	const resp = await fetch('/api/user/cards', {
+		method: "PUT",
+		body: JSON.stringify({ userId: userId, card: card }),
+		headers: { "Content-type": "application/json" }
+	});
+	if (resp.status != 204)
+		throw new UserDefaultError();
 };
 
 export const getUserCards = async (userId) => {
@@ -154,27 +149,27 @@ export const getUserProgressAppCards = async (userId) => {
 };
 
 export const saveUserCardsProgress = async (userId, cards) => {
-	try {
-		await fetch('/api/user/cards/progress', {
-			method: "PUT",
-			body: JSON.stringify({ userId: userId, cards: cards, date: new Date().setHours(0, 0, 0) }),
-			headers: { "Content-type": "application/json" }
-		});
-	} catch (error) {
-		console.log(error);
-	}
+	const resp = await fetch('/api/user/cards/progress', {
+		method: "PUT",
+		body: JSON.stringify({ userId: userId, cards: cards, date: new Date().setHours(0, 0, 0) }),
+		headers: { "Content-type": "application/json" }
+	});
+	if (resp.status != 204)
+		throw new UserDefaultError();
+	return await resp.json();
 };
 
 export const saveAppCardsProgress = async (userId, progress) => {
-	try {
-		await fetch('/api/user/progress-app-cards/save', {
-			method: "PUT",
-			body: JSON.stringify({ userId: userId, progress: progress, date: new Date().setHours(0, 0, 0) }),
-			headers: { "Content-type": "application/json" }
-		});
-	} catch (error) {
-		console.log(error);
-	}
+
+	const resp = await fetch('/api/user/progress-app-cards/save', {
+		method: "PUT",
+		body: JSON.stringify({ userId: userId, progress: progress, date: new Date().setHours(0, 0, 0) }),
+		headers: { "Content-type": "application/json" }
+	});
+	if (resp.status != 204)
+		throw new UserDefaultError();
+	return await resp.json();
+
 };
 
 export const resetAppCardProgress = async (userId, cardId) => {
