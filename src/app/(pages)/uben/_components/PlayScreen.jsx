@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import FlipCard from "./FlipCard";
-import CardMessage from "@/components/CardMessage";
+import CardMessage from "@/app/(pages)/uben/_components/CardNotification";
 import { shuffleArray } from "@/libs/sortArrays";
 import { calcNextPracticeDate } from "@/libs/calcNextPracticeDate";
 import { saveAppCardsProgress, saveUserCardsProgress } from "@/libs/FetchAPI";

@@ -112,27 +112,22 @@ export const deleteUserCard = async (userId, cardId) => {
 
 //Uben
 export const getAppCards = async () => {
-	try {
-		const res = await fetch('/api/cards');
-		const data = await res.json();
-		return data;
-	} catch (error) {
-		console.log(error)
-	}
+	const resp = await fetch('/api/cards');
+	if (resp.status != 200)
+		throw new UserDefaultError();
+	return await resp.json();
 };
 
 export const getUserLastGame = async (userId) => {
-	try {
-		const res = await fetch('api/user/last-game', {
-			method: "POST",
-			body: JSON.stringify({ userId: userId }),
-			headers: { "Content-type": "application/json" }
-		});
-		const data = await res.json();
-		return data;
-	} catch (error) {
-		console.log(error);
-	}
+	const resp = await fetch('api/user/last-game', {
+		method: "POST",
+		body: JSON.stringify({ userId: userId }),
+		headers: { "Content-type": "application/json" }
+	});
+	if (resp.status != 200)
+		throw new UserDefaultError();
+	return await resp.json();
+
 };
 
 export const getUserStreak = async (userId) => {
@@ -156,7 +151,6 @@ export const getUserProgressAppCards = async (userId) => {
 	if (resp.status != 200)
 		throw new UserDefaultError();
 	return await resp.json();
-
 };
 
 export const saveUserCardsProgress = async (userId, cards) => {

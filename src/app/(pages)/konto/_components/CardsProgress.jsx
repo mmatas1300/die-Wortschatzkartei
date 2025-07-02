@@ -9,7 +9,7 @@ import { AlertMessageContext } from '@/contexts/AlertMessageContext';
 
 const CardsProgress = () => {
 
-    const { data: session, status} = useSession();
+    const { data: session, status } = useSession();
     const [percentage, setPercentage] = useState(null);
     const cardColorOrange = hexColor.orangeCard;
     const { showNotification } = useContext(AlertMessageContext);
@@ -29,18 +29,17 @@ const CardsProgress = () => {
                         cardsProgress = resp.cards;
                         break;
                 }
+                if (cardsProgress.length === 0)
+                    setPercentage(0);
+                else {
+                    let accumulator = 0;
+                    for (const card of cardsProgress) {
+                        accumulator = accumulator + card.level;
+                    }
+                    setPercentage(100 * accumulator / (7 * cardsProgress.length));
+                }
             } catch (error) {
                 showNotification(error.message, hexColor.redCard);
-            }
-            console.log("mi estatus es "+ status);
-            if (cardsProgress.length === 0)
-                setPercentage(0);
-            else {
-                let accumulator = 0;
-                for (const card of cardsProgress) {
-                    accumulator = accumulator + card.level;
-                }
-                setPercentage(100 * accumulator / (7 * cardsProgress.length));
             }
         }
         loadData();

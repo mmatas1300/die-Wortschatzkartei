@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 
-const CardMessage = ({ message }) => {
+const CardNotification = ({ children }) => {
 
     const [rotation, setRotation] = useState({ rotate20: "", rotate5: "", rotate10: "" });
 
@@ -22,7 +22,7 @@ const CardMessage = ({ message }) => {
                 <div className={`bg-green-card ${rotation.rotate5} rounded-2xl transition-all`}>
                     <div className={`bg-blue-card ${rotation.rotate5} rounded-2xl transition-all`}>
                         <div className={`bg-red-card px-4 py-16 rounded-2xl ${rotation.rotate10} transition-all`}>
-                            <div className="text-base text-center">{message}</div>
+                            <div className="text-base text-center">{children}</div>
                         </div>
                     </div>
                 </div>
@@ -32,4 +32,4 @@ const CardMessage = ({ message }) => {
     );
 };
 
-export default CardMessage;
+export default CardNotification;
