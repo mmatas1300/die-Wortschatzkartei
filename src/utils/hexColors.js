@@ -6,5 +6,6 @@ export const hexColor = {
     whiteCard: "#F8F9FA",
     blackCard: "#1E1E1E",
     orangeCard: "#FE7413",
-    yellowCard: "#E89E00"
+    yellowCard: "#E89E00",
+    purpleMFCard: "#694B72"
 }

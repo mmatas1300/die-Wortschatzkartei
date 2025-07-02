@@ -1,6 +1,6 @@
 import { useSession } from 'next-auth/react';
 import { createContext } from 'react';
-import CircularChart from "@/app/(pages)/karteneditor/_components/verwalten/CircularChart";
+import CircularChart from "@/components/CircularChart";
 import 'react-circular-progressbar/dist/styles.css';
 import ResetMessage from '@/app/(pages)/karteneditor/_components/verwalten/ResetMessage';
 import { resetAppCardProgress, deleteUserCard, updateUserCard } from "@/libs/FetchAPI";

@@ -5,7 +5,7 @@ import { Spinner } from "@material-tailwind/react";
 import CardNotification from "@/app/(pages)/uben/_components/CardNotification";
 import { Fade } from "react-awesome-reveal";
 import { getAppCards, getUserProgressAppCards, getUserLastGame, getUserCards } from "@/libs/FetchAPI";
-import PlayScreen from "@/app/(pages)/uben/_components/PlayScreen";
+import GameScreen from "@/app/(pages)/uben/_components/GameScreen";
 import { hexColor } from "@/utils/hexColors";
 import { AlertMessageContext } from "@/contexts/AlertMessageContext";
 import { cardAdapter } from "@/utils/cardAdapter";
@@ -24,7 +24,7 @@ function UbenPage() {
                     const respAppCards = await getAppCards();
                     const respUserProgressApp = await getUserProgressAppCards(session.user._id);
                     const appCards = updateProgressAppCards(respAppCards.cards.map(card => cardAdapter(card)), respUserProgressApp.userProgressAppCards);
-                    setScreenContent(<PlayScreen cards={appCards}/>);
+                    setScreenContent(<GameScreen cards={appCards}/>);
                     break;
 
                 case "user":
@@ -32,7 +32,7 @@ function UbenPage() {
                     if (respUserCards.cards.length === 0) {
                         setScreenContent(<CardNotification>Du hast keine Karten zum Üben!!!</CardNotification>);
                     } else {
-                        setScreenContent(<PlayScreen cards={respUserCards.cards} />);
+                        setScreenContent(<GameScreen cards={respUserCards.cards.map(card => cardAdapter(card))} />);
                     }
                     break;
             }
@@ -41,7 +41,7 @@ function UbenPage() {
         const startPractice = async () => {
             try {
                 const resp = await getUserLastGame(session.user._id);
-                const allowToPlayDate = new Date(resp.lastGameData);
+                const allowToPlayDate = new Date(resp.lastGameData.lastPlayedDate);
                 allowToPlayDate.setDate(allowToPlayDate.getDate() + 1);
                 const today = new Date();
                 if (allowToPlayDate.getTime() < today.getTime()) {
