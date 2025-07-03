@@ -94,15 +94,14 @@ export const getUserCards = async (userId) => {
 };
 
 export const deleteUserCard = async (userId, cardId) => {
-	try {
-		await fetch('/api/user/cards', {
-			method: "DELETE",
-			body: JSON.stringify({ userId: userId, cardId: cardId }),
-			headers: { "Content-type": "application/json" }
-		});
-	} catch (error) {
-		console.log(error);
-	}
+	const resp = await fetch('/api/user/cards', {
+		method: "DELETE",
+		body: JSON.stringify({ userId: userId, cardId: cardId }),
+		headers: { "Content-type": "application/json" }
+	});
+	if (resp.status != 204)
+		throw new UserDefaultError();
+
 };
 
 //Uben
@@ -169,19 +168,17 @@ export const saveAppCardsProgress = async (userId, progress) => {
 	if (resp.status != 204)
 		throw new UserDefaultError();
 	return await resp.json();
-
 };
 
 export const resetAppCardProgress = async (userId, cardId) => {
-	try {
-		await fetch('/api/user/progress-app-cards', {
-			method: "PUT",
-			body: JSON.stringify({ userId: userId, progress: [{ cardId: cardId, level: 0, practiceDate: new Date("2000") }] }),
-			headers: { "Content-type": "application/json" }
-		});
-	} catch (error) {
-		console.log(error)
-	}
+
+	const resp = await fetch('/api/user/progress-app-cards', {
+		method: "PUT",
+		body: JSON.stringify({ userId: userId, progress: [{ cardId: cardId, level: 0, practiceDate: new Date("2000") }] }),
+		headers: { "Content-type": "application/json" }
+	});
+	if (resp.status != 204)
+		throw new UserDefaultError();
 }
 
 //CardPons
