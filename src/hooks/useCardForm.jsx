@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useCreateCardForm = (defaultFields) => {
+export const useCardForm = (defaultFields) => {
     const [formFields, setFormFields] = useState(defaultFields);
     const [formColor, setFormColor] = useState("bg-green-card");
 

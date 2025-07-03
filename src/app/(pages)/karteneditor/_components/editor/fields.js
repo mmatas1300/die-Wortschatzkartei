@@ -170,15 +170,15 @@ export const pluralFields = (handleColor) => {
             </div>
             <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
                 <label htmlFor="wordPlural">Wort:</label>
-                <input className='lg:max-w-56' type="text" placeholder='Apfel' name="wordPlural" required />
+                <input className='lg:max-w-56' type="text" placeholder='Eltern' name="wordPlural" required />
             </div>
             <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
                 <label htmlFor="related">Verwandte Wörter:</label>
-                <input className='lg:max-w-56' type="text" placeholder='das Obst' name="related" />
+                <input className='lg:max-w-56' type="text" placeholder='Vater | Mutter' name="related" />
             </div>
             <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
                 <label htmlFor="example">Beispiel:</label>
-                <input className='lg:max-w-56' type="text" placeholder='Ich esse einen Apfel' name="example" />
+                <input className='lg:max-w-56' type="text" placeholder='Meine Eltern leben in Berlin' name="example" />
             </div>
             <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
                 <label htmlFor="image">Bild:</label>
@@ -186,7 +186,7 @@ export const pluralFields = (handleColor) => {
             </div>
             <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
                 <label htmlFor="translation">Übersetzung:</label>
-                <input className='lg:max-w-56' type="text" placeholder='Apple' name="translation" />
+                <input className='lg:max-w-56' type="text" placeholder='Parents' name="translation" />
             </div>
         </div>
     );

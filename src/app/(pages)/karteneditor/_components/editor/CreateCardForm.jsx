@@ -5,16 +5,12 @@ import { verbFields, MFNounFields, nounFields, pluralFields, genericFields } fro
 import { updateUserCard } from '@/libs/FetchAPI';
 import PonsContainerKarteneditor from '@/components/Pons/PonsContainerKarteneditor';
 import { hexColor } from '@/utils/hexColors';
-import { useCreateCardForm } from '@/hooks/useCreateCardForm';
+import { useCardForm } from '@/hooks/useCardForm';
 import LoadingButton from '@/components/LoadingButton';
 import { AlertMessageContext } from '@/contexts/AlertMessageContext';
 
 
 const CreateCardForm = () => {
-    const [buttonLoading, setButtonLoading] = useState(false);
-    const { data: session, status } = useSession();
-    const { formColor, formFields, setForm } = useCreateCardForm(nounFields(handleColorNoun));
-    const { showNotification } = useContext(AlertMessageContext);
 
     const handleColorNoun = (e) => {
         if (e.target.value === "NeuterNoun") {
@@ -27,6 +23,12 @@ const CreateCardForm = () => {
             setForm(pluralFields(handleColorNoun), "bg-yellow-card")
         }
     };
+    const [buttonLoading, setButtonLoading] = useState(false);
+    const { data: session, status } = useSession();
+    const { formColor, formFields, setForm } = useCardForm(nounFields(handleColorNoun));
+    const { showNotification } = useContext(AlertMessageContext);
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -35,7 +37,7 @@ const CreateCardForm = () => {
             const formData = new FormData(e.currentTarget)
             const card = createCard(formData);
             await updateUserCard(session.user._id, card);
-            showNotification("Karte hinzugefügt!", hexColor.redCard);
+            showNotification("Karte hinzugefügt!", hexColor.greenCard);
             setTimeout(function () {
                 if (card.type === "NeuterNoun" || card.type === "MasculineNoun" || card.type === "FeminineNoun" || card.type === "PluralNoun") setForm(nounFields((handleColorNoun)), "bg-green-card")
                 e.target.reset();

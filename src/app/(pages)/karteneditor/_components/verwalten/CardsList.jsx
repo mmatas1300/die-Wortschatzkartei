@@ -1,5 +1,5 @@
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CardsListRow from "@/app/(pages)/karteneditor/_components/verwalten/CardsListRow";
 import { RefreshCcw } from 'lucide-react';
 import { getAppCards, getUserCards, getUserProgressAppCards } from "@/libs/FetchAPI";
@@ -8,6 +8,7 @@ import { sortCardsByLevel } from "@/libs/sortArrays";
 import { Spinner } from "@material-tailwind/react";
 import { cardAdapter } from "@/utils/cardAdapter";
 import { hexColor } from "@/utils/hexColors";
+import { AlertMessageContext } from "@/contexts/AlertMessageContext";
 
 export const CardsList = () => {
 
@@ -15,6 +16,7 @@ export const CardsList = () => {
     const [cards, setCards] = useState(null);
     const [cardsBackup, setCardsBackup] = useState([]);
     const [refresh, setRefresh] = useState(false);
+    const {showNotification} = useContext(AlertMessageContext);
 
     const searchCard = (e) => {
         e.preventDefault();
