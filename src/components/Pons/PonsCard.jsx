@@ -1,12 +1,12 @@
 import parse from 'html-react-parser';
 
 const PonsCard = ({ wordData }) => {
-    return (
 
+    return (
             <div className="pons">
                 <div className="">
-                    {parse(wordData.word)}
-                    {wordData.entries.map((element, index) => {
+                    {parse(wordData.data.word)}
+                    {wordData.data.entries.map((element, index) => {
                         return (
                             <div key={index} className="flex flex-col mt-4">
                                 <div>

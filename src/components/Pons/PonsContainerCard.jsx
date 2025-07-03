@@ -10,15 +10,18 @@ const PonsContainerCard = ({ word }) => {
 
     const { data: session } = useSession();
     const [wordData, setWordData] = useState(null);
-    const {showNotification} = useContext(AlertMessageContext);
+    const { showNotification } = useContext(AlertMessageContext);
 
-    useEffect(async () => {
-        try {
-            const data = await getPonsInfo(session.user._id, word);
-            setWordData(data);
-        } catch (error) {
-            showNotification(error.message,hexColor.redCard);
+    useEffect(() => {
+        const loadData = async () => {
+            try {
+                const data = await getPonsInfo(session.user._id, word);
+                setWordData(data);
+            } catch (error) {
+                showNotification(error.message, hexColor.redCard);
+            }
         }
+        loadData();
     }, [])
 
     return (
