@@ -47,7 +47,7 @@ function WorterbuchPage() {
                 <h1 className="text-center">Wörterbuch</h1>
                 <div className="flex flex-row justify-center items-center">
                     <div className="me-9 h-7 w-7">
-                        {cards ? (<ArrowIcon size={40} onClick={() => { setCards(null); }} className="bg-orange-card hover:bg-yellow-card cursor-pointer ms-5 rounded-full" />) : (
+                        {cards ? (<ArrowIcon id="ReturnLettersGrid" size={40} onClick={() => { setCards(null); }} className="bg-orange-card hover:bg-yellow-card cursor-pointer ms-5 rounded-full" />) : (
                             <p />
                         )}
                     </div>
@@ -56,7 +56,7 @@ function WorterbuchPage() {
                 </div>
                 {cards ?
                     (cards.length === 0 ?
-                        (<h1 className="mt-[calc(30vh)] text-center">Wir konnten keine Karte finden</h1>) :
+                        (<h1 id="NoCardsFoundNotification" className="mt-[calc(30vh)] text-center">Wir konnten keine Karte finden</h1>) :
                         (<CardsFoundGrid cards={cards} />)
                     ) : (<LettersGrid />)}
             </Fade>

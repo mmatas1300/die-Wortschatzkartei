@@ -14,7 +14,7 @@ export const AlertMessageContextProvider = ({ children }) => {
     return (
         
         <AlertMessageContext.Provider value={data}>
-            <AutohideSnackbar message={message} color={color} trigger={trigger}/>
+            <AutohideSnackbar  message={message} color={color} trigger={trigger}/>
             {children}
         </AlertMessageContext.Provider>
     )
