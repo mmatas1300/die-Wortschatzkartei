@@ -48,7 +48,7 @@ const Form = () => {
         <div className={style["section"]}>
             <div className={formState}>
                 <div className={`${style["form-container"]} ${style["sign-up"]}`}>
-                    <form onSubmit={handleSignUp}>
+                    <form id="signup" onSubmit={handleSignUp}>
                         <h1 className="mb-1">Registrieren</h1>
                         <p className="mb-1 text-center">Es geht ganz schnell und einfach.</p>
                         <label htmlFor="email">Deine E-Mail-Adresse:</label>
@@ -61,7 +61,7 @@ const Form = () => {
                     </form>
                 </div>
                 <div className={`${style["form-container"]} ${style["sign-in"]}`}>
-                    <form onSubmit={handleSignIn}>
+                    <form id="signin" onSubmit={handleSignIn}>
                         <h1 className="mb-2">Anmelden</h1>
                         <p className="mb-2">Willkommen zurück!</p>
                         <label htmlFor="email">Deine E-Mail-Adresse:</label>
@@ -76,14 +76,14 @@ const Form = () => {
                         <div className={`${style["toggle-panel"]} ${style["toggle-left"]}`}>
                             <h1 className="mb-2">Willkommen zurück!</h1>
                             <p className="mb-2">Du hast bereits ein Konto?</p>
-                            <button onClick={() => { setFormState(style["container"]) }}>
+                            <button id="SwitchToSignIn" onClick={() => { setFormState(style["container"]) }}>
                                 Anmelden
                             </button>
                         </div>
                         <div className={`${style["toggle-panel"]} ${style["toggle-right"]}`}>
                             <h1 className="mb-2">Willkommen!</h1>
                             <p className="mb-2">Du hast kein Konto?</p>
-                            <button onClick={() => { setFormState(`${style["container"]} ${style["active"]}`) }}>
+                            <button id="SwitchToSignUp" onClick={() => { setFormState(`${style["container"]} ${style["active"]}`) }}>
                                 Registrieren
                             </button>
                         </div>

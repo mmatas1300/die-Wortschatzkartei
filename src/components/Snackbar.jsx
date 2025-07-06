@@ -20,7 +20,7 @@ export default function AutohideSnackbar({ message, color, trigger}) {
     };
 
     return (
-        <div id='Notification'>
+        <div data-test='Notification'>
             <Snackbar
                 anchorOrigin={{ vertical: "top", horizontal: "right" }}
                 sx={{

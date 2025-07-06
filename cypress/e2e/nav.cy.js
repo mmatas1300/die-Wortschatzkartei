@@ -1,27 +1,42 @@
-describe('navigate no auth', () => {
+describe('navigate desk - unauth', () => {
     beforeEach(() => {
         cy.visit('http://localhost:3000/')
         cy.viewport(1920, 1080)
     })
 
     it('redirects to worterbuch', () => {
-        cy.get('#navLinkWorterbuch').click()
+        cy.getDataTest('NavLinkWorterbuch').click()
         cy.url().should('eq', 'http://localhost:3000/worterbuch')
+        cy.contains("h1", "Wörterbuch");
     })
 
     it('redirects to hilfe', () => {
-        cy.get('#navLinkHilfe').click()
+        cy.getDataTest('NavLinkHilfe').click()
         cy.url().should('eq', 'http://localhost:3000/hilfe')
+        cy.contains("h1", "Hilfe");
     })
 
     it('redirects to Login', () => {
-        cy.get('#navLinkLogin').click()
+        cy.getDataTest('NavLinkLogin').click()
         cy.url().should('eq', 'http://localhost:3000/login')
+        cy.contains("h1", "Anmelden/Registrieren");
     })
 
     it('redirects to HOME', () => {
-        cy.get('#logo').click({ force: true })
+        cy.getDataTest('Logo').click({ force: true, multiple: true })
         cy.url().should('eq', 'http://localhost:3000/')
+        cy.contains("h1", "Create your own cards");
+
+    })
+
+    it('redirects to login when unauth', () => {
+        cy.visit('http://localhost:3000/konto')
+        cy.contains("h1", "Anmelden/Registrieren")
+        cy.visit('http://localhost:3000/karteneditor')
+        cy.contains("h1", "Anmelden/Registrieren")
+        cy.visit('http://localhost:3000/uben')
+        cy.contains("h1", "Anmelden/Registrieren")
+
     })
 })
 
@@ -32,10 +47,10 @@ describe('responsive navbar', () => {
     })
 
     it('close and open navbar', () => {
-        cy.get('#CloseNavButton').should('not.be.visible')
-        cy.get('#NavButton').click()
-        cy.get('#CloseNavButton').should('be.visible').click();
-        cy.get('#CloseNavButton').should('not.be.visible')
+        cy.getDataTest('CloseNavButton').should('not.be.visible')
+        cy.getDataTest('NavButton').click()
+        cy.getDataTest('CloseNavButton').should('be.visible').click();
+        cy.getDataTest('CloseNavButton').should('not.be.visible')
     })
 
 })
@@ -47,33 +62,32 @@ context('Viewport', () => {
     })
 
     it('view in multiple devices', () => {
+        const delay = 10;
         cy.viewport(2999, 2999)
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('macbook-15')
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('macbook-13')
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('macbook-11')
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('ipad-2')
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('ipad-mini')
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('iphone-6+')
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('iphone-6')
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('iphone-5')
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('iphone-4')
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('iphone-3')
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('ipad-2', 'portrait')
-        cy.wait(3000)
+        cy.wait(delay)
         cy.viewport('iphone-4', 'landscape')
-        cy.wait(3000)
+        cy.wait(delay)
     })
 })
-
-

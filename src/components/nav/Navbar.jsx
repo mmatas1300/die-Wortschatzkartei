@@ -55,9 +55,9 @@ const Navbar = () => {
             </>)
         } else if (status === "unauthenticated") {
             return (<>
-                <MenuItem id='navLinkWorterbuch' onClick={() => { toggleNavbar(windowSize) }} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
-                <MenuItem id='navLinkHilfe' onClick={() => { toggleNavbar(windowSize) }} icon={<CircleHelpIcon />} component={<Link href="/hilfe" />}> Hilfe</MenuItem>
-                <MenuItem id='navLinkLogin' onClick={() => { toggleNavbar(windowSize) }} icon={<LogInIcon />} component={<Link href="/login" />}> Anmelden</MenuItem>
+                <MenuItem data-test='NavLinkWorterbuch' onClick={() => { toggleNavbar(windowSize) }} icon={<LibraryIcon />} component={<Link href="/worterbuch" />}> Wörterbuch</MenuItem>
+                <MenuItem data-test='NavLinkHilfe' onClick={() => { toggleNavbar(windowSize) }} icon={<CircleHelpIcon />} component={<Link href="/hilfe" />}> Hilfe</MenuItem>
+                <MenuItem data-test='NavLinkLogin' onClick={() => { toggleNavbar(windowSize) }} icon={<LogInIcon />} component={<Link href="/login" />}> Anmelden</MenuItem>
             </>)
         } else {
             () => { setToggle(false) };
@@ -68,7 +68,7 @@ const Navbar = () => {
     return (
         <nav>
             <div className="lg:hidden h-14 bg-blue-card flex flex-row justify-between  items-center">
-                <button id='NavButton' className='mt-0 ml-4' onClick={() => { setToggle(true) }}><MenuIcon /></button>
+                <button data-test='NavButton' className='mt-0 ml-4' onClick={() => { setToggle(true) }}><MenuIcon /></button>
                 <div className={toggle ? "hidden" : "flex"}>
                     <Logo />
                 </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
 
                 <div className='flex flex-row justify-between'>
                     <Logo />
-                    <button id="CloseNavButton" className='lg:hidden block p-3 my-auto mx-2' onClick={() => { setToggle(false) }}><XIcon size={16} /></button>
+                    <button data-test="CloseNavButton" className='lg:hidden block p-3 my-auto mx-2' onClick={() => { setToggle(false) }}><XIcon size={16} /></button>
                 </div>
 
                 <Menu menuItemStyles={{

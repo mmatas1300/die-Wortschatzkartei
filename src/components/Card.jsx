@@ -25,7 +25,7 @@ const Card = ({ card }) => {
     }, [card]);
 
     return (
-        <div id={card.word} className={`flex flex-col justify-center items-center w-80  rounded-3xl text-xl ${card.getColor()}`}>
+        <div data-test={card.word} className={`flex flex-col justify-center items-center w-80  rounded-3xl text-xl ${card.getColor()}`}>
             <div className='flex flex-row justify-between items-center  mt-4 w-64'>
                 {status == "authenticated" && session.user.config.ponsSecret ?
                     <div className='relative inline-block'>

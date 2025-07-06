@@ -7,7 +7,7 @@ const LettersGrid = () => {
         <div className="flex flex-row justify-center items-center flex-wrap mt-4">
             {alphabet.map((letter) => {
                 return (
-                    <Link id={String.fromCharCode(letter)} key={letter} href={`/worterbuch/${String.fromCharCode(letter)}`} className="bg-orange-card hover:bg-yellow-card w-32 h-32 m-3 cursor-pointer text-base flex justify-center items-center rounded-xl transition duration-200 hover:scale-110">
+                    <Link data-test={String.fromCharCode(letter)} key={letter} href={`/worterbuch/${String.fromCharCode(letter)}`} className="bg-orange-card hover:bg-yellow-card w-32 h-32 m-3 cursor-pointer text-base flex justify-center items-center rounded-xl transition duration-200 hover:scale-110">
                         {String.fromCharCode(letter)}
                     </Link>
                 );

@@ -29,7 +29,7 @@ const Kontakt = () => {
         <div className="flex flex-col justify-center items-center mt-16">
             <div className="bg-orange-card mt-4 rounded-3xl lg:rotate-6">
                 <div className="bg-red-card rounded-3xl rounded-tr-[60px] overflow-hidden w-screen max-w-[430px] lg:-rotate-6">
-                    <form onSubmit={submitForm} className="flex flex-col justify-center items-center w-80 py-7 m-auto">
+                    <form id="KontaktForm" onSubmit={submitForm} className="flex flex-col justify-center items-center w-80 py-7 m-auto">
                         <h1>Kontakt</h1>
                         <h1 className="text-lg mb-2">Sie möchten mit uns in Kontakt treten?</h1>
                         <label htmlFor="name" className="self-start">Name:</label>

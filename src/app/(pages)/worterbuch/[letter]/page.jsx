@@ -38,7 +38,7 @@ function WorterMitPage({ params }) {
         <section className='my-12'>
             <Fade triggerOnce>
                 <div className="flex flex-row justify-between items-center">
-                    <Link id="ReturnToLettersGrid" href="/worterbuch" className='bg-orange-card hover:bg-yellow-card ms-12 h-10 w-10 rounded-full'>
+                    <Link data-test="ReturnToLettersGrid" href="/worterbuch" className='bg-orange-card hover:bg-yellow-card ms-12 h-10 w-10 rounded-full'>
                         <ArrowIcon size={40} />
                     </Link>
                     <h1 className="text-xl text-center mx-auto">Wörter mit {params.letter}</h1>
