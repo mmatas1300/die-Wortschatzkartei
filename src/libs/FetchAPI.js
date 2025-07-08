@@ -155,7 +155,6 @@ export const saveUserCardsProgress = async (userId, cards) => {
 	});
 	if (resp.status != 204)
 		throw new UserDefaultError();
-	return await resp.json();
 };
 
 export const saveAppCardsProgress = async (userId, progress) => {
@@ -167,7 +166,6 @@ export const saveAppCardsProgress = async (userId, progress) => {
 	});
 	if (resp.status != 204)
 		throw new UserDefaultError();
-	return await resp.json();
 };
 
 export const resetAppCardProgress = async (userId, cardId) => {
